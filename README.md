@@ -45,6 +45,7 @@ nicolasfilippelli22@gmail.com
 Rosbelg15@gmail.com
 
 **Celeste Gonzalez - Estudiante FullStack**
+milenniacode@gmail.com
 
 
 ### Paginas de referencia ###
