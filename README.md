@@ -35,11 +35,28 @@ Si sos amante de los animalitos como nosotros, unite a nuestra comunidad y segui
 **Jonatan Ballestero - Estudiante FullStack** - 
 jonatan.a.ballestero@gmail.com
 
-
 **Ramon Britez - Estudiante FullStack**
+rbritez966@gmail.com
 
 **Nico Filippelli - Estudiante FullStack**
+nicolasfilippelli22@gmail.com
 
 **Rocio Vazquez - Estudiante FullStack**
+Rosbelg15@gmail.com
 
 **Celeste Gonzalez - Estudiante FullStack**
+
+
+### Paginas de referencia ###
+
+-Planet Shop | Tienda de mascotas
+
+-Tienda de Mascotas - Todo para Tu Mascota
+
+-Whiskas Argentina | Alimenta su curiosidad
+
+-MisPichos.com:El Delivery De Tus Mascotas
+
+-Wish
+
+Tomando referencia del contenido de estas paginas, podemos cumplir nuestro objetivo de tener un E-Commerce funcional, dinamico y agradable al publico.
