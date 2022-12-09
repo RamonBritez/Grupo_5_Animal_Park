@@ -38,7 +38,7 @@ jonatan.a.ballestero@gmail.com
 
 **Ramon Britez - Estudiante FullStack**
 
-**Nico Felippelli - Estudiante FullStack**
+**Nico Filippelli - Estudiante FullStack**
 
 **Rocio Vazquez - Estudiante FullStack**
 
