@@ -49,14 +49,16 @@ Rosbelg15@gmail.com
 
 ### Paginas de referencia ###
 
--Planet Shop | Tienda de mascotas
+-Planet Shop | Tienda de mascotas - https://petplanetshop.com.ar/
 
--Tienda de Mascotas - Todo para Tu Mascota
+-Tienda de Mascotas - Todo para Tu Mascota - https://www.mitiendademascotas.com/web/
 
--Whiskas Argentina | Alimenta su curiosidad
+-Whiskas Argentina | Alimenta su curiosidad - https://www.whiskas.com.ar/
 
--MisPichos.com:El Delivery De Tus Mascotas
+-MisPichos.com:El Delivery De Tus Mascotas - https://mispichos.com/#navbar
 
--Wish
+-Wish - https://www.wish.com/ar
+
+-MercadoLibre - https://www.mercadolibre.com.ar/
 
 Tomando referencia del contenido de estas paginas, podemos cumplir nuestro objetivo de tener un E-Commerce funcional, dinamico y agradable al publico.
