@@ -1,8 +1,8 @@
-const express = require("express")
-const app = express()
-const path = require("path")
-app.use(express.static("public"))
-const PORT = 3000
+const express = require("express");
+const app = express();
+const path = require("path");
+app.use(express.static("public"));
+const PORT = 3000;
 
 
 app.get("/", (req, res) => {
