@@ -48,6 +48,12 @@ Rosbelg15@gmail.com
 milenniacode@gmail.com
 
 
+
+### TABLERO DE TRABAJO: ###
+
+https://trello.com/c/uiq2FlzN/34-crear-un-tablero-de-trabajo
+
+
 ### Paginas de referencia ###
 
 -Planet Shop | Tienda de mascotas - https://petplanetshop.com.ar/
