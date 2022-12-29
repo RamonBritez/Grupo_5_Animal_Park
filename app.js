@@ -13,6 +13,12 @@ app.get("/Login", (req, res) => {
     res.sendFile(path.join(__dirname, "views/Login.html"))
 })
 
+app.get("/register", (req, res) => {
+
+    res.sendFile(path.join(__dirname, "views/register.html"))
+
+})
+
 app.listen(PORT,()=>{
     console.log(`
     server listen in port ${PORT}
