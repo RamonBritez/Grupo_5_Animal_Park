@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+:root {
+    --primary: #485550;
+    --secondary: #c0eb6a;
+    --background: #d9d9d9;
+    --menu: #ffffff;
+    --specialFont: #f4f6f0;
+    --font-family: "Roboto", sans-serif; 
+  }
+  
+  /* HEADER */
+  
+  header {
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+  
+  header a {
+    display: flex;
+  }
+  
+  header a img {
+    align-self: center;
+    width: 45px;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* FIN HEADER */
+  
+  /* CUERPO */
+  body {
+    background-image: url(/img/background.jpg);
+    background-size: contain;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    font-family: var(--font-family);
+  }
+  
+  main div.login__menu {
+    height: 640px;
+    width: 700px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main div.login__menu div.login__menu-icon {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 47px;
+    border-bottom: 1px solid black;
+    gap: 6px;
+  }
+  
+  main div.login__menu div.login__menu-icon img {
+    width: 35px;
+  }
+  
+  main div.login__menu div.login__menu-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Tablet */
+  
+  @media (min-width: 768px) {
+    header {
+        background-color: var(--primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70px;
+      }
+      
+      header a {
+        display: flex;
+      }
+      
+      header a img {
+        align-self: center;
+        width: 65px;
+        box-shadow: 0 3px rgba(0, 0, 0, 0.2);
+      }
+    main div.login__menu {
+      height: 600px;
+      width: 1020px;
+    }
+  }
+  
+    /* Desktop */
+  
+    @media (min-width: 1028px) {
+        header {
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+          }
+          
+          header a {
+            display: flex;
+          }
+          
+          header a img {
+            align-self: center;
+            width: 90px;
+            box-shadow: 0 3px rgba(0, 0, 0, 0.2);
+          }
+        main div.login__menu {
+          height: 600px;
+          width: 1028px;
+        }
+      }
+  /* FIN CUERPO */
