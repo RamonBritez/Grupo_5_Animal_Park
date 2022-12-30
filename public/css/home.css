@@ -78,6 +78,21 @@ header nav div.burger-menu {
 
 /* --- MAIN --- */
 
+    /* --- Filtros --- */
+    main nav.filter div{
+        padding: 50px 20px;
+        margin: 50px;
+        display: flex;
+        border: 1px black solid; 
+        justify-content: center;
+              
+    }
+
+    main nav.filter div a{
+        color: #03A600;
+    }
+    /* --- FIN FILTROS --- */
+
     /* --- OFERTAS --- */
 
 section div.productContainer {
@@ -99,6 +114,7 @@ section div.productContainer {
     padding: 1rem 0.5rem;
     margin-bottom: 1rem;
     max-width: 300px;
+    flex-wrap: wrap;
     }
 
 
@@ -174,8 +190,9 @@ footer div.contacto ul li img{
   }
 
     header div.logo img {
-    width: 100px;
+    width: 150px;
     display: flex;
+    flex-wrap: wrap;
     }
 
 header nav {
