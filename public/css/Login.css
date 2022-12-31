@@ -85,6 +85,10 @@
     margin: 15px 0px;
   }
 
+  main div.login__menu div.login__menu-form div.opciones a {
+    margin-top: 15px;
+  }
+
   main div.login__menu div.login__menu-form div.iniciar-sesion{
     display: flex;
     align-content: center;
@@ -94,7 +98,7 @@
   main div.login__menu div.login__menu-form div.iniciar-sesion button{
     display: flex;
     margin: auto;
-    width: 40%;
+    width: 30%;
     height: 50px;
     font-size: 100%;
     text-align: center;
@@ -134,7 +138,12 @@
     width: 80%;
     font-size: 100%;
     margin-bottom: 15px;
-    background-color: var(--menu);    
+    background-color: var(--menu);  
+  }
+  
+  main div.login__menu div.login__menu-form div.crear-cuenta button a{
+    text-decoration: none;
+    color: black;
   }
   
   @media (min-width: 768px) {
@@ -183,7 +192,7 @@
           }
         main div.login__menu {
           height: 100%;
-          width: 70%;
+          width: 40%;
         }
       }
   /* FIN CUERPO */
