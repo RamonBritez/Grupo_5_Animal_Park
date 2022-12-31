@@ -34,6 +34,9 @@ a {
     /* HEADER */
 header{
     background-color: #C0EB6A;
+    width: 100vw;
+  
+    
 }
 
 header div.logo img {
@@ -49,8 +52,29 @@ header div.busqueda{
     align-items: center;
     border: 1px black;
     box-shadow: 10px;
-    
 }
+header div.busqueda input{
+width: 40vw;
+height: 2.2rem;
+padding: 5px;
+margin: 10px;
+border: 2px solid rgba(0,0,0, 0.5);
+border-radius: 10px;
+
+}
+
+header div.busqueda button{
+    height: 2.2rem;
+    width: 2rem;
+    border: 2px solid rgba(0,0,0, 0.5);
+    border-radius: 10px;
+}
+
+header div.busqueda button:hover{
+    background-color: var(--grisClaro);
+}
+
+
 
 header nav ul.listaSuperior{
     display: none;
@@ -79,19 +103,67 @@ header nav div.burger-menu {
 /* --- MAIN --- */
 
     /* --- Filtros --- */
-    main nav.filter div{
-        padding: 50px 20px;
-        margin: 50px;
-        display: flex;
-        border: 1px black solid; 
-        justify-content: center;
-              
-    }
 
-    main nav.filter div a{
-        color: #03A600;
-    }
-    /* --- FIN FILTROS --- */
+main section.carrusel{
+    width: 90vw;
+    height:50vh; 
+    border: 1px solid black;
+    margin: 5%;
+
+    display: flex;
+    justify-items: center;
+    border-radius: 10px;
+    box-shadow: 3px 2px;
+}
+
+main section.carrusel div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section.carrusel div img{
+    height: 100%;
+    justify-content: center;
+    margin: 5px;
+}
+main nav.filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+main nav.filter div.filter{
+    padding: 20px;
+    margin: 5px;
+    display: flex;
+    border: 1px black solid; 
+    flex-direction: column;
+    box-shadow:  black 5px 2px;
+    align-items: center;
+    border-radius: 10%;
+          
+}
+
+main nav.filter div:hover{
+background-color: var(--grisOscuro);
+}
+
+main nav.filter div a{
+    display: flex;
+    flex-direction: column;
+    color: var(--verdeFlour);
+    text-align: center;
+    align-items: center;
+}
+
+main nav.filter div a img {
+    margin: 1rem;
+    width: 50px;
+    height: 50px;
+    
+}
+/* --- FIN FILTROS --- */
 
     /* --- OFERTAS --- */
 
@@ -135,33 +207,40 @@ section div.productContainer {
 
     /* --- FIN OFERTAS ---*/
 
-
-
-
 /* --- FIN MAIN --- */
 
 
 /* --- FOOTER --- */
 
 footer {
+    width: 100vw;
     background-color: var(--verdeClaro);
     justify-content: space-between;
-    padding: 20px;
     padding-top: 0;
     border: 1px solid rgba(0, 0, 0, 0.3);
+
 }
 footer div#suscribe{
-    display: block;
     padding: 10px;
+    width: 100vw;
     border: 1px solid rgba(0, 0, 0, 0.2);
     background-color: var(--grisClaro);
     text-align: center;
+}
+footer div#suscribe input{
+    width: 50vw;
+    height: 2rem;
+}
+footer div#suscribe button{
+    height: 2rem;
 }
 
 footer nav {
     display: flex;
     justify-content: space-between;
 }
+
+
 footer nav div#logo img{
     height: 5rem;
     width: 10rem;
@@ -211,13 +290,18 @@ header nav ul.listaSuperior li {
     border: 1px solid black;
     padding: 5px;
     background-color: var(--grisClaro);
+    border-radius: 5px;
     
+}
+
+header nav ul.listaSuperior li:Hover{
+color: var(--verdeFlour);
+background-color: black;
 }
 
 header nav ul.listaSuperior li a {
     color: var(--verdeFlour);
     text-shadow: black 200px;
-    
 }
 
 div.busqueda{
