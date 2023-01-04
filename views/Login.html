@@ -22,11 +22,11 @@
                 <p><i class="fa-solid fa-circle-user"></i> Iniciar sesión</p>
             </div>
             <div class="login__menu-form">
-                <form action="Login">
+                <form action="/Login" method="post">
                     <h2>Tu e-mail</h2>
-                    <input type="email" placeholder="Ej: jose@email.com">
+                    <input type="email" name="usuario" placeholder="Ej: jose@email.com">
                     <h2>Contraseña</h2>
-                    <input type="contraseña">
+                    <input type="contraseña" name="contraseña" placeholder="Ingrese su contraseña">
                 </form>
                 <div class="opciones">
                     <label><input type="checkbox">Recordar mi usuario</label>
@@ -36,7 +36,7 @@
                 <button>Ingresar</button>
                 </div>
                 <div class="google-facebook">
-                    <button> Iniciar sesión con Google</button>
+                    <button>Iniciar sesión con Google</button>
                     <button> Iniciar sesión con Facebook</button>
                 </div>
                 <div class="crear-cuenta">
