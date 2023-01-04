@@ -24,7 +24,7 @@ a {
 
 :root{
 
-    --verdeClaro: #b1f824;
+    --verdeClaro: #9fe01c;
     --verdeFlour: #03A600;
     --grisOscuro: #485550;
     --grisClaro: #D9D9D9;
@@ -87,6 +87,8 @@ header nav ul.listaSuperior{
 
 header nav.burger-menu{
     align-self: flex-end;
+    display: flex;
+    justify-content: center;
 }
 
 header nav div.burger-menu {
@@ -301,10 +303,15 @@ footer div.contacto ul li i{
  display: flex;
 }
 
+footer div#logo {
+    display: flex;
+    justify-content: center;
+}
 footer div#logo img{
-    height: 12rem;
-    width: 100vw;
+    height: 30vh;
+    width: 90vw;
     padding-top: 5px;
+    
 }
 
 
