@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/carrito.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+             rel="stylesheet"
+    />
+    <title>Carrito - Animal Park</title>
+  </head>
+  <body>
+    <header>
+      <section>
+        <a href="/"><img src="image/logoCuadrado.jpeg" alt="Home" /></a>
+         <div><input type="text" placeholder="Buscar...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div><i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-circle-user"></i></div>
+    </section>
+    <nav>
+        <ul class="listaSuperior">
+        <li><a href="">Menu</a></li>
+        <li><a href="">Alimentos</a></li>
+        <li><a href="">Accesorios</a></li>
+        <li><a href="">Marcas</a></li>
+        <li><a href="">Ofertas</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+      <div class="titulo">
+        <h1>Carrito de compras:</h1>
+      </div>
+      <section class="lista">
+        <article class="producto">
+          <img src="/image/producto.jpg" alt="plato para perro" />
+          <div class="datos">
+            <h2>Plato sasha</h2>
+            <p>Plato negro con diseño de huellitas blancas, tamaño:20x15</p>
+            <p>$840</p>
+          </div>
+          <div class="boton">
+            <button><i class="fa-solid fa-circle-minus"></i></button>
+            <span> 05 </span>
+            <button><i class="fa-solid fa-circle-plus"></i></button>
+            <button><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </article>
+        <article class="producto">
+          <img src="/image/CamaMichi.jpg" />
+          <div class="datos">
+            <h2>Cama Iglu Nina</h2>
+            <p>cama para gatos tipo iglu, Tamaño: 50x50, color:gris</p>
+            <p>$2500</p>
+          </div>
+          <div class="boton">
+            <button><i class="fa-solid fa-circle-minus"></i></button>
+            <span> 05 </span>
+            <button><i class="fa-solid fa-circle-plus"></i></button>
+            <button><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </article>
+      </section>
+      <section class="envios">
+        <h2>Metodos de envio</h2>
+        <i class="fa-solid fa-truck"></i>
+        <div class="envio">
+          <button>Correo Argentino</button>
+          <button>Andreani</button>
+          <button>Retiro en sucursales</button>
+        </div>
+      </section>
+            <section class="descuento">
+        <div>
+          <input type="text" placeholder="ingresa tu cupón" />
+          <i class="fa-solid fa-tag"></i>
+        </div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </section>
+      <section class="precio">
+        <h2>sub total $3.340</h2>
+        <h2>envio $560</h2>
+        <h2>total $3.900</h2>
+      </section>
+      <button class="pagar">pagar</button>
+      <button class="seguir comprando">seguir comprando</button>
+    </main>
+  </body>
+</html>
