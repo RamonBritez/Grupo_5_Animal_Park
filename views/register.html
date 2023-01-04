@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stylePrueba.css">
-    <link rel="stylesheet" href="css/register.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/stylePrueba.css" />
+    <link rel="stylesheet" href="css/register.css" />
     <title>Registrarse - Animal Park</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-     
+      <a href="/"><img src="image/logoCuadrado.jpeg" alt="Home" /></a>
     </header>
     <main>
-        <div class="register__menu">
-            <div class="register__menu-icon"><img src="image/register.png"><p>Crear Cuenta</p></div>
-            <div class="register__menu-form">
-                
-            </div>
+      <div class="register__menu">
+        <div class="register__menu-icon">
+          <img src="image/register.png" />
+          <p>Crear Cuenta</p>
         </div>
+        <div class="register__menu-form">
+          <div id="registerForm-fullName">
+            <p>Tu nombre y apellido</p>
+            <input type="text" name="name" placeholder="Ej: Cosme Fulanito" />
+          </div>
+          <div id="registerForm-email">
+            <p>Tu e-mail</p>
+            <input type="text" name="name" placeholder="Ej: cosme@email.com" />
+          </div>
+          <div id="registerForm-password">
+            <p>Contraseña</p>
+            <input
+              type="text"
+              name="name"
+              placeholder="La contraseña debe contener al menos seis caracteres."
+            />
+          </div>
+          <div id="registerForm-repeatPassword">
+            <p>Vuelve a escribir la constraseña</p>
+            <input type="text" name="name" />
+          </div>
+          <div id="registerForm-terms">
+            <input type="checkbox" name="" id="" />
+            <p>Acepto los <a href="/terms">terminos y condiciones</a></p>
+          </div>
+          <div id="registerForm-send">
+            <input type="button" value="Registrar">
+          </div>
+        </div>
+        <div class="register__menu-separator">
+          <div class="separator-line"></div>
+          <div class="text">O</div>
+          <div class="separator-line"></div>
+        </div>
+        <div class="register__otherNetwork">
+          <button><img src="image/google.png">Crear cuenta con Google</button>
+          <button><img src="image/facebook.png">Crear cuenta con Facebook</button>
+        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
