@@ -173,6 +173,7 @@ section div.productContainer {
         text-transform: uppercase;
         background-color: var(--amarillo);
         color: var(--verdePrueba1);
+        font-weight: 500;
 
     }
 
@@ -180,6 +181,7 @@ section div.productContainer {
         background-color: black;
         color: var(--verdeFlour);
         border: var(--verdeFlour) 2px solid;
+        font-weight: 600;
     }
 
     div.imageContainer img {
@@ -231,10 +233,12 @@ main div#suscribe button{
 footer {
   display: flex; 
   width: 100vw;
+  height: 40vh;
   background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 0;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  flex-direction: column;
 
 }
 
@@ -242,6 +246,7 @@ footer {
 footer nav {
     display: flex;
     justify-content: space-between;
+    width: 100vw;
 }
 
 footer nav h4 {
@@ -263,17 +268,19 @@ footer div.contacto ul li i{
  display: flex;
 }
 
-footer a div#logo {
+footer div#logo {
     display: flex;
     justify-content: center;
-}
-footer div#logo img{
-    height: 30vh;
-    width: 90vw;
-    padding-top: 5px;
-    
+    align-items: center;
+   
 }
 
+footer div#logo a img{
+    width: 80vw;
+    height: 20vh;
+    
+    
+}
 
 /* --- FIN FOOTER --- */
 
