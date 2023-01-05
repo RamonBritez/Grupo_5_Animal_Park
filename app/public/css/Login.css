@@ -1,18 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
-:root {
-  --primary: #485550;
-  --secondary: #c0eb6a;
-  --background: #d9d9d9;
-  --menu: #ffffff;
-  --specialFont: #f4f6f0;
-  --font-family: "Roboto", sans-serif;
-}
 
-/* selector universal */
-* {
-  box-sizing: border-box;
-  font-family: var(--font-family);
-}
 
 /* HEADER */
 
