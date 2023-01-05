@@ -20,7 +20,6 @@ header.main-header{
     display: flex;
     background-color: var(--primary);
     width: 100%;
-    border-radius: ;   
 }
 
 header div.logo img {
