@@ -8,6 +8,10 @@
   --font-family: "Roboto", sans-serif;
   --verdePrueba1: #11644d;
   --verdePrueba2: #a0b046;
+  --verdeFlour: #03A600;
+  --naranja: #f78145;
+  --amarillo: #f2c94e;
+  --rojo: #f24e4e;
 
   
 }
@@ -105,14 +109,66 @@ header nav div.burger-menu {
     justify-content: center
   }
 
-  header div.logo{
-    width: 5vw;
+  header div.logo img{
+    width: 120px;
+    height: 100px;
+    flex-wrap: wrap;
     
   }
   header section {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
     }
+
+    header {
+      padding-bottom: 20px;
+    }
+  
+  header nav {
+      flex-grow: 1;
+      height: 40px;
+  }
+  
+  header nav ul.listaSuperior {
+  
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      
+      
+  }
+  
+  header nav ul.listaSuperior li {
+      border: 2px solid black;
+      padding: 7px 15px;
+      background-color: var(--grisClaro);
+      border-radius: 5px;
+      margin: 0% 1%;
+  
+      
+  }
+  
+  header nav ul.listaSuperior li:Hover{
+  color: var(--verdeFlour);
+  font-weight: 600;
+  background-color: var(--amarillo);
+  border: var(--verdeFlour) 3px solid;
+  }
+  
+  header nav ul.listaSuperior li a {
+      color: var(--verdeFlour);
+      text-shadow: black 200px;
+      text-transform: uppercase;
+  }
+  
+
+  header nav div.burger-menu{
+      display:none;
+  }
+  
+  
+  /* --- FIN HEADER --- */
 }
 
 
