@@ -1,0 +1,191 @@
+
+
+/* HEADER */
+
+header {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+header a {
+  display: flex;
+}
+
+header a img {
+  align-self: center;
+  width: 45px;
+  box-shadow: 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* FIN HEADER */
+
+/* CUERPO */
+body {
+  background-image: url(/img/background.jpg);
+  background-repeat: repeat;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
+
+main div.login__menu {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+main div.login__menu div.login__menu-icon {
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  border-bottom: 2px solid black;
+  gap: 6px;
+}
+
+main div.login__menu div.login__menu-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 90%;
+}
+
+main div.login__menu div.login__menu-form form input {
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  border: 1px black solid;
+}
+
+main div.login__menu div.login__menu-form div.opciones {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0px;
+}
+
+main div.login__menu div.login__menu-form div.opciones a {
+  margin-top: 15px;
+}
+
+main div.login__menu div.login__menu-form div.iniciar-sesion {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+main div.login__menu div.login__menu-form div.iniciar-sesion button {
+  display: flex;
+  margin: auto;
+  width: 30%;
+  height: 50px;
+  font-size: 100%;
+  text-align: center;
+  font-weight: bold;
+  margin: 5%;
+  align-items: center;
+  justify-content: center;
+  border: 1px black solid;
+}
+
+main div.login__menu div.login__menu-form div.google-facebook {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main div.login__menu div.login__menu-form div.google-facebook button {
+  height: 50px;
+  width: 80%;
+  font-size: 100%;
+  margin-bottom: 15px;
+  background-color: var(--menu);
+}
+
+main div.login__menu div.login__menu-form div.google-facebook button img {
+  height: 50%;
+  width: 5%;
+  margin: 5px;
+}
+
+main div.login__menu div.login__menu-form div.crear-cuenta {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 100%;
+}
+
+main div.login__menu div.login__menu-form div.crear-cuenta button {
+  height: 50px;
+  width: 80%;
+  font-size: 100%;
+  margin-bottom: 15px;
+  background-color: var(--menu);
+}
+
+main div.login__menu div.login__menu-form div.crear-cuenta button a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (min-width: 768px) {
+  header {
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+  }
+
+  header a {
+    display: flex;
+  }
+
+  header a img {
+    align-self: center;
+    width: 65px;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.2);
+  }
+  main div.login__menu {
+    height: 100%;
+    width: 70%;
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 1028px) {
+  header {
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+
+  header a {
+    display: flex;
+  }
+
+  header a img {
+    align-self: center;
+    width: 90px;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.2);
+  }
+  main div.login__menu {
+    height: 100%;
+    width: 40%;
+  }
+}
+/* FIN CUERPO */
