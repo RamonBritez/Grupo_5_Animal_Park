@@ -72,7 +72,21 @@ img {
 body{ 
     background-color:var(--grisClaro);
 }
-main article {
-    background-color: #D9D9D9; 
 
+main  { 
+    background-color: #D9D9D9; 
+    padding: 7px;
+    height:26px;
+    font-size: 10px;
+border-radius: 10px;
+
+}
+main section{
+  display: flex;
+  gap: 10px;
+}
+main section article{
+  background-color:var(--verdeFlour);
+  border-radius: 10px;
+  
 }
