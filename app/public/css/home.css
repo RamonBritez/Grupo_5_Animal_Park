@@ -47,6 +47,10 @@ main {
     background-repeat: repeat;
 }
 
+main h1 {
+    text-align: center;
+}
+
    
 /* CARRUSEL */
 

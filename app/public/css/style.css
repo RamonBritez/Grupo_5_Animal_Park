@@ -6,6 +6,10 @@
   --menu: #ffffff;
   --specialFont: #f4f6f0;
   --font-family: "Roboto", sans-serif;
+  --verdePrueba1: #11644d;
+  --verdePrueba2: #a0b046;
+
+  
 }
 
 /* selector universal */
@@ -20,16 +24,22 @@
 
 header.main-header{
     display: flex;
-    background-color: var(--primary);
+    background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
     width: 100%;
+    justify-content: space-between;
+    
 }
 
 header div.logo img {
     width: 120px;
     height: 50px;
     flex-wrap: wrap;
-    
-   
+}
+
+header section{
+  margin-right: 20%;
+  display: flex;
+  justify-content: center;
 }
 
 header div.busqueda {
@@ -39,10 +49,10 @@ header div.busqueda {
   box-shadow: 10px;
 }
 header div.busqueda input{
-width: 40vw;
+width: 50vw;
 height: 2.2rem;
 padding: 5px;
-margin: 10px;
+margin: 10px 2px;
 border: 2px solid rgba(0,0,0, 0.5);
 border-radius: 10px;
 
@@ -59,18 +69,22 @@ header div.busqueda button:hover {
   background-color: var(--grisClaro);
 }
 
+  
 header nav ul.listaSuperior {
   display: none;
 }
 
-header nav.burger-menu{
-    align-self: flex-end;
+header nav{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 header nav div.burger-menu {
-  color: var(--verdeFlour);
-  border: 1px solid var(--verdeFlour);
-  background-color: var(--grisClaro);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: var(--background);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,4 +93,51 @@ header nav div.burger-menu {
   border-radius: 5px;
   font-size: 1.2rem;
   align-self: flex-end;
+  margin-right: 5px;
 }
+
+/* Tablet */
+
+@media (min-width: 768px){
+
+  header{
+    
+    justify-content: center
+  }
+
+  header div.logo{
+    width: 5vw;
+    
+  }
+  header section {
+    display: flex;
+    flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer nav button.boton-arriba{
+  display: none;
+}
+
+
+/* Desktop */
+
+@media (min-width: 1180px){
+
+
+}
+
+
+
+
