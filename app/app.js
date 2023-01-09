@@ -24,6 +24,12 @@ app.get("/carrito", (req, res) => {
 
 })
 
+app.get("/prueba", (req, res) => {
+
+    res.sendFile(path.join(__dirname, "views/prueba.html"))
+
+})
+
 
 
 app.listen(PORT,()=>{
