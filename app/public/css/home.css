@@ -56,12 +56,14 @@ main div.info{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 100%;
+    width: 100vw;
+    height: 80px;
     background-color: var(--amarillo);
     color: var(--verdePrueba1);
 }   
+
 main div.info div{
- border: var(--verdePrueba1) 1px solid;
+ border-right: var(--verdePrueba1) 1px solid;
  height: 50px;
  display: flex;
  justify-content: center;
@@ -72,8 +74,13 @@ main div.info div{
 
 }
 
+main div.info div:last-child{
+    border: none;
+}
+
 main div.info div i {
-   font-size: 32px;
+   font-size: 28px;
+   flex-wrap: wrap;
 }
 /* CARRUSEL */
 
