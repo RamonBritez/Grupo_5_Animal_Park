@@ -43,16 +43,45 @@ a {
 
 /* --- MAIN --- */
 main {
-    background-image: url(/img/background.jpg);
-    background-repeat: repeat;
-  
+    background-image: url(/img/sepiaVerde.jpeg);
+    background-repeat: repeat;  
 }
 
 main h1 {
     text-align: center;
 }
 
-   
+main div.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 80px;
+    background-color: var(--amarillo);
+    color: var(--verdePrueba1);
+}   
+
+main div.info div{
+ border-right: var(--verdePrueba1) 1px solid;
+ height: 50px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ margin: 1px 5px;
+ padding: 10px;
+
+}
+
+main div.info div:last-child{
+    border: none;
+}
+
+main div.info div i {
+   font-size: 28px;
+   flex-wrap: wrap;
+}
 /* CARRUSEL */
 
 main section.carrusel{
@@ -85,13 +114,20 @@ main section.carrusel div img{
 /* --- FIN CARRUSEL --- */
 
  /* --- Filtros --- */
-main nav.filter {
+main section.filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main section.filter nav.filter {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 20px;
 }
-main nav.filter div.filter{
+main section.filter nav.filter div.filter{
     height: 100px;
     width: 150px;
     padding: 20px;
@@ -103,13 +139,15 @@ main nav.filter div.filter{
     align-items: center;
     justify-content: center;
     border-radius: 10%;
-    /*background-color: var(--grisClaro);*/
-    background: linear-gradient(var(--amarillo),var(--naranja),var(--rojo));
+    background-color: var(--amarillo);
+   
           
 }
 
 main nav.filter div:hover{
-border: #9fe01c 5px groove;
+    font-weight: 600;
+    background: linear-gradient(var(--amarillo),var(--naranja),var(--rojo));
+    border: var(--verdePrueba1) 3px solid;
 }
 
 main nav.filter div.filter a{
@@ -135,12 +173,16 @@ main nav.filter div.filter i{
 /* --- FIN FILTROS --- */
 
     /* --- OFERTAS --- */
+section h2{
+    text-align: center;
+    text-transform: uppercase;
+}
 
 section div.productContainer {
     display: flex;
     flex-wrap: wrap;
     padding: 2rem 1rem;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     justify-content: space-around;
     background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
 }
@@ -150,12 +192,14 @@ section div.productContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid var(--verdeClaro);
+    align-items: center;
+    border: 1px solid var(--amarillo);
     border-radius: 5px;
     padding: 1rem 0.5rem;
     margin-bottom: 1rem;
-    max-width: 300px;
-    flex-wrap: wrap;
+    width: 220px;
+    height: 280px;
+    flex-wrap: nowrap;
     background-color: var(--grisClaro);
     }
 
@@ -167,30 +211,19 @@ section div.productContainer {
 
     section div.productContainer article.productCard div.imageContainer img{
         width: 100%;
+        height: 100%;
     }
 
     section div.productContainer article.productCard a.btn{
 
-        border: 1px black solid;
+        
         width: 75%;
         height: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 5px;
         margin-top: 10px;
-        text-transform: uppercase;
-        background-color: var(--amarillo);
-        color: var(--verdePrueba1);
-        font-weight: 500;
-
-    }
-
-    section div.productContainer article.productCard a.btn:hover{
-        background-color: black;
-        color: var(--verdeFlour);
-        border: var(--verdeFlour) 2px solid;
-        font-weight: 600;
+        
     }
 
     div.imageContainer img {
@@ -204,30 +237,34 @@ section div.productContainer {
 
     /* SEPARADORES */
 
-main div#separador {
-    text-align: center;
-    margin: 1rem;
-    justify-content: center;
-}
+
 
 main div#suscribe{
     display: flex;
+    flex-direction: column;
     padding: 10px;
     width: 100vw;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    background-color: var(--grisClaro);
+    background-color: var(--amarillo);
     text-align: center;
     justify-content: center;
    
 }
-main div#suscribe input{
+
+main div#suscribe div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main div#suscribe div input{
     width: 50vw;
     height: 2rem;
     font-size: 20px;
     margin: 0px 15px;
     border-radius: 5px;
+    padding: 2px;
 }
-main div#suscribe button{
+main div#suscribe div button{
     height: 2rem;
     width: 5rem;
     border-radius: 5px;

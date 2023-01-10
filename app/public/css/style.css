@@ -51,6 +51,7 @@ header.main-header{
     background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
     width: 100vw;
     justify-content: space-between;
+    align-items: center;
     
 }
 
