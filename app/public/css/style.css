@@ -58,7 +58,7 @@ a {
 header.main-header{
     display: flex;
     background: linear-gradient(var(--verdePrueba4), var(--verdePrueba3));
-    width: 100vw;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     
@@ -142,7 +142,8 @@ header nav div.burger-menu {
 
   header{
     
-    justify-content: center
+    justify-content: center;
+   
   }
 
   header div.logo img{
