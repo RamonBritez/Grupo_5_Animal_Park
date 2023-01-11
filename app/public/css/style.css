@@ -8,6 +8,8 @@
   --font-family: "Roboto", sans-serif;
   --verdePrueba1: #11644d;
   --verdePrueba2: #a0b046;
+  --verdePrueba3: #14a667;
+  --verdePrueba4: #d7e87b;
   --verdeFlour: #03A600;
   --naranja: #f78145;
   --amarillo: #f2c94e;
@@ -22,6 +24,13 @@
   font-family: var(--font-family);
   padding: 0;
   margin: 0;
+}
+ul ,li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* BOTONES */ 
@@ -48,7 +57,7 @@
 
 header.main-header{
     display: flex;
-    background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
+    background: linear-gradient(var(--verdePrueba4), var(--verdePrueba3));
     width: 100vw;
     justify-content: space-between;
     align-items: center;

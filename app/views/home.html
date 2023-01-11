@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="/css/home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 </head>
 
 <body>
 
-    <header class="main-header">
+    <header class="main-header" id="top">
 
         <div class="logo"><img src="/img/logo_cuadrado_fondo_blanco-mod.png" alt="Logo-mobile" class="logo"></div>
     
@@ -41,9 +45,9 @@
 <main>
         
     <div class="info">
-        <div><a href=""></a><i class="fa-solid fa-truck-fast"></i><span>Envios a todo el país</span> </div>
-        <div><a href=""></a><i class="fa-solid fa-wallet"></i><span>Multiples metodos de pago</span></div>
-        <div><a href=""></a><i class="fa-solid fa-hand-holding-dollar"></i><span>Suscribite y obtene descuentos!</span></div>
+        <div class=" animate__animated animate__flipInX"><a href=""></a><i class="fa-solid fa-truck-fast"></i><span>Envios a todo el país</span> </div>
+        <div class=" animate__animated animate__flipInX"><a href=""></a><i class="fa-solid fa-wallet"></i><span>Multiples metodos de pago</span></div>
+        <div class=" animate__animated animate__flipInX"><a href=""></a><i class="fa-solid fa-hand-holding-dollar"></i><span>Suscribite y obtene descuentos!</span></div>
     </div>
 
     <section class="carrusel">        
@@ -154,42 +158,42 @@
 
     <footer>
  
-       
-        <nav>
-        <button class="boton-arriba">></button>
+       <a href="#top" class="boton-arriba"><button>^</button></a>
+    
+    <nav>
+        
         <nav class="interaccion">
             
-            <div class="contacto">
+            <div class="info-footer">
                 <h4>Contactanos</h4>
                 <ul>
-                    <li><a href="#">Contacto</a></li>
+                    <li><i class="fa-brands fa-whatsapp"><p> +54 11-2525-2525</p></i></li>
                     <li id="fb"><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
                     <li id="ig"><a href="#"><i class="fa-brands fa-instagram"></i></li>
                 </ul>
             </div>
 
-            <div class="ayuda">
+            <div class="info-footer">
             <h4>Sobre nosotros</h4>
-            <ul>
+                <ul>
                 <li><a href="#">Quienes somos?</a></li>
                 <li><a href="#">Proveedores</a></li>
                 <li><a href="#">Terminos y condiciones</a></li>
-            </ul>
+                </ul>
             </div>
     
-        <div class="cuenta">
-            <h4>Cuenta</h4>
+            <div class="info-footer">
+            <h4>Ayuda</h4>
             <ul>
-                <li><a href="#">Ingresar</a></li>
+                <li><a href="#">FAQ</a></li>
                 <li><a href="#">Registrarme</a></li>
             </ul>
-        </div>
-     </nav>
+            </div>
+        </nav>
     </nav>
+    
     <div id="logo"><a href="/views/home.html"><img src="/img/logo_banner_fondo_blanco_mod.png" alt="logo"></a></div>
-   
-
-        
+     
     </footer>
 
 
