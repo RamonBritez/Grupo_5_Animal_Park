@@ -7,14 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="css/home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -45,7 +43,7 @@
     </header>
 
 <main>
-    <a href="https://wa.me/5411234567890?text=Me%20gustaría%20saber%20el%20precio%20del%20coche" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+    
         
     <div class="info">
         <div class=" animate__animated animate__flipInX"><a href=""></a><i class="fa-solid fa-truck-fast"></i><span>Envios a todo el país</span> </div>
@@ -53,15 +51,45 @@
         <div class=" animate__animated animate__flipInX"><a href=""></a><i class="fa-solid fa-hand-holding-dollar"></i><span>Suscribite y obtene descuentos!</span></div>
     </div>
 
-    <section class="carrusel">        
-            <div>
-                <img src="https://media.giphy.com/media/WzR8zb0PN6bUmfz4DW/giphy.gif" alt="party">
-                <p>Aca va un carrusel</p>
+    <section class="carrusel">
+        <div class="carrusel">
+         <div class="slide-inner">
+            <input class="slide-open" type="radio" id="slide-1" 
+                  name="slide" aria-hidden="true" hidden="" checked="checked">
+            <div class="slide-item">
+                <img src="/image/gatos.jpg">
             </div>
-        </section>
-
-      
-    
+            <input class="slide-open" type="radio" id="slide-2" 
+                  name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="/image/perros.jpg">
+            </div>
+            <input class="slide-open" type="radio" id="slide-3" 
+                  name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="/image/gecko.jpg">
+            </div>
+            <label for="slide-3" class="slide-control prev control-1">‹</label>
+            <label for="slide-2" class="slide-control next control-1">›</label>
+            <label for="slide-1" class="slide-control prev control-2">‹</label>
+            <label for="slide-3" class="slide-control next control-2">›</label>
+            <label for="slide-2" class="slide-control prev control-3">‹</label>
+            <label for="slide-1" class="slide-control next control-3">›</label>
+            <ol class="slide-indicador">
+                <li>
+                    <label for="slide-1" class="slide-circulo">•</label>
+                </li>
+                <li>
+                    <label for="slide-2" class="slide-circulo">•</label>
+                </li>
+                <li>
+                    <label for="slide-3" class="slide-circulo">•</label>
+                </li>
+            </ol>
+        </div>
+    </div>
+    </section>
+  
     <section class="filter">
         <h2>Tenemos de todo para tus mascotas!</h2>
     <nav class="filter">
@@ -150,6 +178,7 @@
     </section>
 
     <div id="suscribe">
+        
         <h2>Obtene descuentos y promos suscribiendote</h2>
         <div> <input type="email" placeholder="Ingresa tu mail">
             <button> <a href="">Suscribite</a> </button>
@@ -170,7 +199,7 @@
             <div class="info-footer">
                 <h4>Contactanos</h4>
                 <ul>
-                    <li><i class="fa-brands fa-whatsapp"><p> +54 11-2525-2525</p></i></li>
+                    <li><a href="https://wa.me/5411234567890?text=Me%20gustaría%20saber%20el%20precio%20del%20producto"><i class="fa-brands fa-whatsapp"></i></a></li>
                     <li id="fb"><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
                     <li id="ig"><a href="#"><i class="fa-brands fa-instagram"></i></li>
                 </ul>
