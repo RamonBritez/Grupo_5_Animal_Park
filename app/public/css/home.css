@@ -210,7 +210,44 @@ main nav.filter div.filter i{
 }
 /* --- FIN FILTROS --- */
 
-    /* --- OFERTAS --- */
+/* --- PUBLICIDAD --- */
+
+    main section.publicidad {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+        border-radius: 10px;
+    }
+
+
+    main section.publicidad img {
+        width: 100%;
+    }
+
+
+    main section.vende-humo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--amarillo);
+        border: var(--verdePrueba3) 2px solid;
+    }
+    main section.vende-humo div.texto{
+        text-align: center;
+    }
+    main section.vende-humo h2 {
+        margin-bottom: 10px;
+    }
+
+    main section.vende-humo img {
+        width: 100%;
+        height: 100%;
+    }
+/* --- FIN PUBLICIDAD ---*/
+
+/* --- OFERTAS --- */
 section h2{
     text-align: center;
     text-transform: uppercase;
@@ -272,9 +309,6 @@ section div.productContainer {
     }
 
     /* --- FIN OFERTAS ---*/
-
-    /* SEPARADORES */
-
 
 
 main div#suscribe{
