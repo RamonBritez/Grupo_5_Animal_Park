@@ -16,7 +16,7 @@ section.carrusel{
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 300px;
+    height: 250px;
 }
 .slide-open:checked + .slide-item {
     position: static;
@@ -184,7 +184,7 @@ main section.filter nav.filter div.filter{
 
 main nav.filter div:hover{
     font-weight: 600;
-    background: linear-gradient(var(--amarillo),var(--naranja),var(--rojo));
+    background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
     border: var(--verdePrueba1) 3px solid;
 }
 
@@ -281,12 +281,17 @@ main div#suscribe{
     display: flex;
     flex-direction: column;
     padding: 10px;
+    height: 6.5rem;
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.2);
     background-color: var(--amarillo);
     text-align: center;
     justify-content: center;
    
+}
+main div#suscribe h2{
+    margin-bottom: 1rem;
+    padding: 2px;
 }
 
 main div#suscribe div{
@@ -298,15 +303,11 @@ main div#suscribe div input{
     width: 50vw;
     height: 2rem;
     font-size: 20px;
-    margin: 0px 15px;
+    margin-right: 15px;
     border-radius: 5px;
     padding: 2px;
 }
-main div#suscribe div button{
-    height: 2rem;
-    width: 5rem;
-    border-radius: 5px;
-}
+
 
 
 /* --- FIN MAIN --- */
@@ -325,19 +326,28 @@ footer {
 
 }
 
-footer a.boton-arriba{
+footer div.boton-arriba{
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
-footer a.boton-arriba button{
+
+footer div.boton-arriba a{
  height: 20px;
  width: 40px;
  border-radius: 5px;
  background-color: var(--verdePrueba2);
+ border: 2px var(--verdePrueba1) solid;
+ border-radius: 5px;
+ text-align: center;
 }
+
+footer div.boton-arriba a:hover{
+    box-shadow: 0 0 10px var(--amarillo);
+    transform: scale(1.2);
+}
+
 
 footer nav {
     display: flex;
