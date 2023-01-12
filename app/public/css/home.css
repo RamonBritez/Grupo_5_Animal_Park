@@ -386,6 +386,13 @@ footer nav nav.interaccion ul li{
     font-size: 16px;
 }
 
+footer nav nav.interaccion ul.red-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 
 footer div.info-footer ul li i{
 
