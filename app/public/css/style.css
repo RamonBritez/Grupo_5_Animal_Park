@@ -10,10 +10,8 @@
   --verdePrueba2: #a0b046;
   --verdePrueba3: #14a667;
   --verdePrueba4: #d7e87b;
-  --verdeFlour: #03A600;
-  --naranja: #f78145;
   --amarillo: #f2c94e;
-  --rojo: #f24e4e;
+  
 
   
 }
@@ -106,7 +104,7 @@ header div.busqueda button {
 }
 
 header div.busqueda button:hover {
-  background-color: var(--grisClaro);
+  background-color: var(--background);
 }
 
   
