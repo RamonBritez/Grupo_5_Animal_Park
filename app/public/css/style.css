@@ -134,6 +134,18 @@ header nav div.burger-menu {
   margin-right: 5px;
 }
 
+/* MAIN */ 
+main {
+  background-image: url(/img/sepiaMArron2.jpeg);
+  background-repeat: repeat;  
+  background-position: center;
+}
+
+
+
+
+
+
 /* Tablet */
 
 @media (min-width: 768px){
@@ -142,6 +154,11 @@ header nav div.burger-menu {
     
     justify-content: center;
    
+  }
+
+
+  header div.busqueda{
+    margin-left: 30px;
   }
 
   header div.logo img{
@@ -168,8 +185,8 @@ header nav div.burger-menu {
   header nav ul.listaSuperior {
   
       display: flex;
-      justify-content: center;
-      width: 100%;
+      justify-content: flex-end;
+      width: 90%;
       
       
   }
@@ -177,7 +194,7 @@ header nav div.burger-menu {
 header nav ul.listaSuperior li {
      
       padding: 7px 15px;
-      margin: 0% 1%;
+     
       
   }
 

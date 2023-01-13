@@ -108,14 +108,7 @@ section.carrusel{
 }
 
 /* --- MAIN --- */
-main {
-    background-image: url(/img/sepiaMArron2.jpeg);
-    background-repeat: repeat;  
-}
 
-main h1 {
-    text-align: center;
-}
 
 main div.info{
     display: flex;
@@ -229,21 +222,32 @@ main nav.filter div.filter i{
 
     main section.vende-humo{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         background-color: var(--amarillo);
         border: var(--verdePrueba3) 2px solid;
+        margin-bottom: 50px;
+        flex-wrap: nowrap;
     }
     main section.vende-humo div.texto{
-        text-align: center;
+       
+        width: 80%;
+        padding: 15px;
+        margin-left: 20px;
+        font-size: 10px;
     }
     main section.vende-humo h2 {
         margin-bottom: 10px;
+        font-size: 14px;
+        
     }
-
+    main section.vende-humo div.imagen{
+        display: none;
+    }
     main section.vende-humo img {
-        width: 100%;
-        height: 100%;
+        width: 75%;
+        height: 75%;
+
     }
 /* --- FIN PUBLICIDAD ---*/
 
@@ -464,6 +468,35 @@ footer div#logo a img{
 
 
 @media (min-width: 768px) {
+/* Carrusel */
+section.carrusel div.carrusel{
+    width: 90%;
+}
+.slide-inner{
+    height: 400px;
+}
+
+/* texto */
+main section.vende-humo{
+    justify-content: space-between;
+}
+
+
+main section.vende-humo div.texto{
+       
+   font-size: 16px;
+}
+main section.vende-humo h2 {
+    font-size: 20px;
+    
+}
+
+main section.vende-humo div.imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 footer div.boton-arriba{
