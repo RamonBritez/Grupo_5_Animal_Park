@@ -210,8 +210,9 @@ main nav.filter div.filter i{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 50px;
+        margin: 50px 0;
         border-radius: 10px;
+        width: 100%;
     }
 
 
@@ -278,7 +279,7 @@ section div.productContainer {
     margin-bottom: 1rem;
     width: 220px;
     height: 280px;
-    flex-wrap: nowrap;
+    
     background-color: var(--background);
     }
 
@@ -328,8 +329,7 @@ main div#suscribe{
    
 }
 main div#suscribe h2{
-    margin-bottom: 1rem;
-    padding: 2px;
+    padding: 2px 2px;
 }
 
 main div#suscribe div{
@@ -344,6 +344,14 @@ main div#suscribe div input{
     margin-right: 15px;
     border-radius: 5px;
     padding: 2px;
+}
+
+main div#suscribe div a{
+    height: 1.8rem;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -497,6 +505,9 @@ main section.vende-humo div.imagen{
     align-items: center;
 }
 
+main section.publicidad{
+    padding: 0px 50px;
+}
 
 
 footer div.boton-arriba{
