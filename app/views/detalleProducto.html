@@ -4,174 +4,207 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>detalleProducto</title>
+        <title>Document</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/detalleProducto.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
     </head>
 
 <body>
 
-    <header class="main-header">
+    <header class="main-header" id="top">
 
         <div class="logo"><img src="/img/logo_cuadrado_fondo_blanco-mod.png" alt="Logo-mobile" class="logo"></div>
-    <section>
+    
         <div class="busqueda">
             <input type="search" placeholder="Buscar productos">
             <button>
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </div>
-
+      
         <nav>
            
             <div class="burger-menu">
                 <i class="fas fa-bars"></i>
              </div>
             <ul class="listaSuperior">
-                <li><a class="btn" href="">Carrito</a></li>
-                <li><a class="btn" href="">Login/Micuenta</a></li>
-                <li><a class="btn" href="">Ayuda</a></li>
+                <li><a class="btn" href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a class="btn" href=""><i class="fa-solid fa-user"></i></a></li>
+                <li><a class="btn" href=""><i class="fa-solid fa-circle-question"></i></a></li>
             </ul>
         </nav>
-        <main>
-    </section>
+
     </header>
-       
-    <div class="card-img">
-        <img src="image/whiskas.png" alt="imagen-producto-whiskas"/>
-    </div>
-    <div class="container-info-product">
-        <div class="container-price">
-            <span>$7.560</span>
-            <i class="fa-solid fa-angle-right"></i>
-        </div>
+
+    <main>
+        <section>
+            <h2>Productos</h2>
+            <div class="productsContainer">
+                <article class="productCard">
+                    <div class="imageContainer">
+                        <img src="image/whiskas.png" alt="Foto">
+                    </div>
+
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+    <section>
 
         <div class="title">
-        <h3 class="font-weight-light">Whiskas sabor Pescado por 10,1 kilos</h3>
-         <p>$7.560-</p>
-        </div>
-
-         <a href="" class="btn">Comprar</a>
-         <a href="" class="btn">Agregar al carrito</a>
-         <a href="" class="btn">Favoritos</a>
-       
-         <div class="container-description">
-            <div class="title-description">
-                <h4>Descripción</h4>
-                <i class="fa-solid fa-chevron-down"></i>
+            <h3 class="font-weight-light">Whiskas sabor Pescado por 10,1 kilos</h3>
+             <p>$7.560-</p>
             </div>
-            <div class="container-info-product">
-                <p>
-                    Whiskas adulto es un alimento para gatos adultos a partir de los 12 meses de edad. Contiene croquetas con un gran sabor y un relleno cremoso para satisfacer el exigente paladar de los gatos. Whiskas tiene un sabor inigualable que incluye todos los nutrientes necesarios para una alimentación completa. Su formulación estimula la ingesta de agua ayudando a mantener el tracto urinario saludable. 
-                </p>
-            </div>
+    
+             <a href="" class="btn">COMPRAR</a>
+             <a href="" class="btn">Favoritos</a>
+           
+             <div class="container-description">
+                <div class="title-description">
+                    <h4>Descripción</h4>
 
-        
+                </div>
+                <div class="container-info-product">
+                    <p>
+                        "Whiskas Adulto" es un alimento para gatos adultos a partir de los 12 meses de edad. Contiene croquetas con un gran sabor y un relleno cremoso para satisfacer el exigente paladar de los gatos. Whiskas tiene un sabor inigualable que incluye todos los nutrientes necesarios para una alimentación completa. Su formulación estimula la ingesta de agua ayudando a mantener el tracto urinario saludable. 
+                    </p>
+                </div>
+
+    </section>
+
+
+    <section>
         <div class="container-social">
-            <span>Compartir</span>
+            <span>Comparti este producto</span>
            <div class="container-buttons-social">
             <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="#"><i class="fa-brands fa-facebook"></i></a>
             <a href="#"><i class="fa-brands fa-twitter"></i></a>
             <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
            </div> 
+    </section>
+      
 
-           
-        </div>
-    </div>
-</article>
-</main>
 
-<section class="container-related-products">
-    <h2> Productos relacionados</h2>
-    <div class="card-list-products">
-        <div class="card">
-           
-            <div class="card-img">
-                <img src="image/whiskas.png" alt="producto-1">
+        <section>
+            <h2>Productos del mismo vendedor</h2>
+            <div class="productsContainer">
+                <article class="productCard">
+                    <div class="imageContainer"> 
+                        <img src="image/whiskas.png" alt="">
+                    </div>
+                    <h3> Whiskas 1 </h3>
+                    <p>$ 7.500</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </article>
+                <article class="productCard">
+                    <div class="imageContainer"> 
+                        <img src="image/whiskas.png" alt="">
+                    </div>
+                    <h3> Whiskas 2</h3>
+                    <p>$ 6.520</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </article>
+                <article class="productCard">
+                    <div class="imageContainer"> 
+                        <img src="image/whiskas.png" alt="">
+                    </div>
+                    <h3> Whiskas 3 </h3>
+                    <p>$ 7.600</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </article>
             </div>
-            <div class="info-card">
-                <div class="text-product">
-                    <h3>Producto recomendado 1</h3>
-                    <p class="categoria">
-                        Alimento de gatos
-                    </p>
-                </div>
-                <div class="price">$8.600</div>
-            </div>
-        </div>
+        </section>
 
-        <div class="card">
-            <div class="card-img">
-                <img src="image/whiskas.png" alt="producto-2">
-            </div>
-            <div class="info-card">
-                <div class="text-product">
-                    <h3>Producto recomendado 1</h3>
-                    <p class="categoria">
-                        Alimento de gatos
-                    </p>
-                </div>
-                <div class="price">$8.550</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="card-img">
-                <img src="image/whiskas.png" alt="producto-3">
+        <section>
+            <h2>Productos que te pueden interesar</h2>
+            <div class="productsContainer">
+                <article class="productCard">
+                    <div class="imageContainer"> 
+                        <img src="image/whiskas.png" alt="">
+                    </div>
+                    <h3> Whiskas 1 </h3>
+                    <p>$ 555</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </article>
+                <article class="productCard">
+                    <div class="imageContainer"> 
+                        <img src="image/whiskas.png" alt="">
+                    </div>
+                    <h3> Whiskas 2</h3>
+                    <p>$ 44</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </article>
+                <article class="productCard">
+                    <div class="imageContainer"> 
+                        <img src="image/whiskas.png" alt="">
+                    </div>
+                    <h3> Whiskas 3 </h3>
+                    <p>$ 222</p>
+                    <a href="" class="btn">Agregar al carrito</a>
+                </article>
             </div>
-            <div class="info-card">
-                <div class="text-product">
-                    <h3>Producto recomendado 1</h3>
-                    <p class="categoria">
-                        Alimento de gatos
-                    </p>
-                </div>
-                <div class="price">$9.655</div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+
+
+
+    </main>
+
+
+
+
 
 
 
 <footer>
+ 
+    <div class="boton-arriba"><a href="#top">^</a></div>
+ 
+ <nav>
+     
+     <nav class="interaccion">
+         <div class="info-footer">
+             <h4>Contactanos</h4>
+             <ul class="red-social">
+                 <li><a href="https://wa.me/5411234567890?text=Me%20gustaría%20saber%20el%20precio%20del%20producto"><i class="fa-brands fa-whatsapp"></i></a></li>
+                 <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
+                 <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+             </ul>
+         </div>
 
-        <nav>
-        <button class="boton-arriba">></button>
-        <nav class="interaccion">
-            
-            <div class="contacto">
-                <h4>Contactanos</h4>
-                <ul>
-                    <li><a href="#">Contacto</a></li>
-                    <li id="fb"><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li id="ig"><a href="#"><i class="fa-brands fa-instagram"></i></li>
-                </ul>
-            </div>
-
-            <div class="ayuda">
-            <h4>Sobre nosotros</h4>
-            <ul>
-                <li><a href="#">Quienes somos?</a></li>
-                <li><a href="#">Proveedores</a></li>
-                <li><a href="#">Terminos y condiciones</a></li>
-            </ul>
-            </div>
-    
-       
+         <div class="info-footer">
+         <h4>Sobre nosotros</h4>
+             <ul>
+             <li><a href="#">Quienes somos?</a></li>
+             <li><a href="#">Proveedores</a></li>
+             <li><a href="#">Terminos y condiciones</a></li>
+             </ul>
+         </div>
+ 
+         <div class="info-footer">
+         <h4>Ayuda</h4>
+         <ul>
+             <li><a href="#">FAQ</a></li>
+             <li><a href="/register">Registrarme</a></li>
+         </ul>
+         </div>
      </nav>
-    </nav>
-    <div id="logo"><a href="/views/home.html"><img src="/img/logo_banner_fondo_blanco_mod.png" alt="logo"></a></div>
-   
-    </footer>
-
-
-
-
-
-
+ </nav>
+ 
+ <div id="logo"><a href="/views/home.html"><img src="/img/logo_banner_fondo_blanco_mod.png" alt="logo"></a></div>
+  
+</footer>
     
 </body>
 </html>
