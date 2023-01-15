@@ -25,51 +25,22 @@ ul ,li {
 a {
     text-decoration: none;
 }
-/* FIN HEADER*/
 
-
-
-/* Variables */
-
-:root{
-
-    --verdeClaro: #9fe01c;
-    --verdeFlour: #03A600;
-    --grisOscuro: #485550;
-    --grisClaro: #D9D9D9;
-    --naranja: #f7f7f7;
-    --amarillo: #c2f695;
-    --rojo: #c2f695;
-    --verdePrueba1: #14a667;
-    --verdePrueba2: #d7e87b;
-
-
+h5 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
 }
 
-.btn{
-    border: 2px solid rgb(119, 118, 118);
-    padding: 6px 15px;
-    align-content: center;
-    background-color: var(--amarillo);
-    color: var(--verdePrueba1);
-    font-weight: 500;
-    font-size: 20px;
-    border-radius: 5px;
-    margin: 1rem;
-    text-transform: uppercase;
-    
-   }
-  
 
-   
-  
-  .btn:hover{
-    font-weight: 600;
-    background: linear-gradient(var(--amarillo),var(--naranja),var(--rojo));
-    border: var(--verdePrueba1) 3px solid;
-  }
+h3 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
 
-/* FIN VARIABLES*/
+}
+/* FIN HEADER*/
+
 
 /*Producto*/
 section div.containerBox {
@@ -80,6 +51,48 @@ section div.containerBox {
     justify-content: space-around;
     background: linear-gradient(var(--grisClaro), var(grey));
 }
+
+section div.container-description {
+    display: flex;
+    width: 100% ;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 1rem 20rem;
+    box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
+    justify-content: center;
+
+}
+section div.container-description p {
+    width: 100%;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+
+
+section div.container-info-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+
+section.compra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+   
+}
+
+section.compra div.botones {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin: 30px;
+}
 /*Fin producto*/
 
 
@@ -89,7 +102,7 @@ section div.productsContainer { /*recomend y venta*/
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 1rem 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     justify-content: space-between;
     background: linear-gradient(var(--grisClaro), var(grey));
@@ -113,7 +126,7 @@ section div.productsContainer { /*recomend y venta*/
     }
 
     section div.productsContainer article.productCard div.imageContainer{
-    width: 100%;
+    width: 80%;
     height: 150px;
     margin-bottom: 0.5rem;
 
@@ -127,9 +140,11 @@ section div.productsContainer { /*recomend y venta*/
 
     section div.productsContainer article.productCard a.btn{
        
-        width: 75%;
         height: 2rem;
         display: flex;
+        align-content: center;
+        justify-content: center;
+        
         
         
     }
@@ -144,22 +159,28 @@ section div.productsContainer { /*recomend y venta*/
         }
 
     section div.container-social {
+    padding: 30px;
     width: 100%;
-    height: 60vh;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    padding: 2rem 1rem;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
-    justify-content: space-between;
+    padding: 15px 5px;
+    box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
+    justify-content: space-evenly;
+    
     }   
+  
+    a.comparte i {
+    font-size: 26px;
+    padding: 0 5px;
+    }
 
+    section.interes {
+        display: flex;
+        justify-content: center;
+    }
 /* FIN PRODUCTOS RECOMENDADOS */
-
-
-
-
 
 
 
@@ -193,6 +214,7 @@ footer {
    border: 2px var(--verdePrueba1) solid;
    border-radius: 5px;
    text-align: center;
+
   }
   
   footer div.boton-arriba a:hover{
@@ -290,7 +312,7 @@ footer {
      
     }
   
-  
+
     header div.busqueda{
       margin-left: 30px;
     }
@@ -328,8 +350,7 @@ footer {
   header nav ul.listaSuperior li {
        
         padding: 7px 15px;
-       
-        
+               
     }
   
     header nav div.burger-menu{
@@ -339,10 +360,7 @@ footer {
     
     /* --- FIN HEADER --- */
   }
-  
-  
-  
-  
+    
   
   footer nav button.boton-arriba{
     display: none;

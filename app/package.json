@@ -1,0 +1,23 @@
+{
+  "name": "grupo_5_animal_park",
+  "version": "1.0.0",
+  "description": "Somos Animal Park.\r Un grupo de amigos con el sueño de poder amar y cuidar a cada uno de los animales del planeta siendo ecológicamente responsables, innovando para poder hacer nuestro gran sueño realidad.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamonBritez/Grupo_5_Animal_Park.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RamonBritez/Grupo_5_Animal_Park/issues"
+  },
+  "homepage": "https://github.com/RamonBritez/Grupo_5_Animal_Park#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

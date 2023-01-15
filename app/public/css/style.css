@@ -135,10 +135,11 @@ header nav div.burger-menu {
 }
 
 /* MAIN */ 
-main {
+body {
   background-image: url(/img/sepiaMArron2.jpeg);
   background-repeat: repeat;  
   background-position: center;
+  background-size: contain;
 }
 
 
