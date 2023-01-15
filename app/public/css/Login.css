@@ -50,6 +50,7 @@ main div.login__menu {
   display: flex;
   flex-direction: column;
   max-width: 500px;
+  background-color: rgba(58, 56, 56, 0.5);
 }
 
 main div.login__menu div.login__menu-icon {
