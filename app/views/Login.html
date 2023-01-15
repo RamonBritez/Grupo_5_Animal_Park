@@ -23,18 +23,27 @@
                 <p><i class="fa-solid fa-circle-user"></i> Iniciar sesión</p>
             </div>
             <div class="login__menu-form">
-                <form action="/Login" method="post">
-                    <h2>Tu e-mail</h2>
-                    <input type="email" name="usuario" placeholder="Ej: jose@email.com">
-                    <h2>Contraseña</h2>
-                    <input type="password" name="contraseña" placeholder="Ingrese su contraseña">
+                <form action="" method="post">
+                    
+                    <label for="email">Tu e-mail
+                    <input type="email" name="email" placeholder="Ej: jose@email.com" id="email">
+                    <span class="error">El email ingresado es incorrecto</span>
+                    </label>
+
+                    <label for="password">contraseña
+                    <input type="password" name="contraseña" placeholder="Ingrese su contraseña" id="password">
+                    <span class="error">La contraseña ingresada es incorrecta</span>
+                    </label>
+                    
                 </form>
                 <div class="opciones">
-                    <label><input type="checkbox">Recordar mi usuario</label>
-                    <a href=""><i class="fa-solid fa-play"></i>¿Necesitas ayuda?</a>
+                    <label for="terminos">
+                        <input type="checkbox" name="checkbox" id="terminos">Recordar mi usuario
+                    </label>
+                    <a href="#"><i class="fa-solid fa-play"></i>¿Necesitas ayuda?</a>
                 </div>
                 <div class="iniciar-sesion">
-                <button>Ingresar</button>
+                    <button type="submit">Ingresar</button>
                 </div>
                 <div class="google-facebook">
                     <button>Iniciar sesión con Google</button>
