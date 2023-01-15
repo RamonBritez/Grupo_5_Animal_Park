@@ -218,7 +218,113 @@ footer nav button.boton-arriba{
   display: none;
 }
 
+footer {
+  display: flex; 
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  flex-direction: column;
 
+}
+
+footer div.boton-arriba{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer div.boton-arriba a{
+ height: 20px;
+ width: 40px;
+ border-radius: 5px;
+ background-color: var(--verdePrueba2);
+ border: 2px var(--verdePrueba1) solid;
+ border-radius: 5px;
+ text-align: center;
+}
+
+footer div.boton-arriba a:hover{
+    box-shadow: 0 0 10px var(--amarillo);
+    transform: scale(1.2);
+}
+
+
+footer nav {
+    display: flex;
+    width: 100%;
+    padding: 0 5px;
+}
+
+footer nav nav.interaccion{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5px;
+    
+}
+
+footer nav nav.interaccion div.info-footer{
+
+    flex-direction: column;
+    text-align: center;
+}
+
+footer nav nav.interaccion h4 {
+    font-size: 20px;
+    
+    margin-top: 5px 0;
+    margin-bottom: 5px 0;
+}
+
+footer nav nav.interaccion ul{
+    
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+footer nav nav.interaccion ul li{
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+footer nav nav.interaccion ul.red-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+footer div.info-footer ul li i{
+
+ padding: 0 5px;
+ font-size: 30px;
+ display: flex;
+}
+
+footer div.info-footer ul li i p{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+   
+}
+
+footer div#logo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0;
+    
+}
+
+footer div#logo a img{
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    
+    
+}
 /* Desktop */
 
 @media (min-width: 1180px){

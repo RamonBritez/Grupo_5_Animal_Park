@@ -9,14 +9,18 @@
       src="https://kit.fontawesome.com/1db27a1d0e.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/register.css" />
     <title>Registrarse - Animal Park</title>
   </head>
   <body>
-    <header>
-      <div class="header__topBar">
-        <a href="/" class="logo"
-          ><img src="image/logoCuadrado.jpeg" alt="" class="logo"
+    <header class="main-header" id="top">
+      <div class="logo">
+        <a href="/"
+          ><img
+            src="/img/logo_cuadrado_fondo_blanco-mod.png"
+            alt="Logo-mobile"
+            class="logo"
         /></a>
       </div>
     </header>
@@ -59,7 +63,7 @@
             <input type="password" name="repeatPassword" id="repeatPassword" />
           </div>
           <div class="form-terms">
-            <input type="checkbox" name="terms" id="terms">
+            <input type="checkbox" name="terms" id="terms" />
             <label for="terms">Acepto los </label>
             <a href="#" target="_blank">terminos y condiciones</a>
           </div>
@@ -71,10 +75,68 @@
           <div class="line"></div>
         </div>
         <div class="register__container-network">
-          <button><img src="image/google.png" alt="" srcset=""> Crear cuenta con Google</button>
-          <button><img src="image/facebook.png" alt="" srcset=""> Crear cuenta con Facebook</button>
+          <button>
+            <img src="image/google.png" alt="" srcset="" /> Crear cuenta con
+            Google
+          </button>
+          <button>
+            <img src="image/facebook.png" alt="" srcset="" /> Crear cuenta con
+            Facebook
+          </button>
         </div>
       </div>
     </main>
+    <footer>
+      <div class="boton-arriba"><a href="#top">^</a></div>
+
+      <nav>
+        <nav class="interaccion">
+          <div class="info-footer">
+            <h4>Contactanos</h4>
+            <ul class="red-social">
+              <li>
+                <a
+                  href="https://wa.me/5411234567890?text=Me%20gustaría%20saber%20el%20precio%20del%20producto"
+                  ><i class="fa-brands fa-whatsapp"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="info-footer">
+            <h4>Sobre nosotros</h4>
+            <ul>
+              <li><a href="#">Quienes somos?</a></li>
+              <li><a href="#">Proveedores</a></li>
+              <li><a href="#">Terminos y condiciones</a></li>
+            </ul>
+          </div>
+
+          <div class="info-footer">
+            <h4>Ayuda</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="/register">Registrarme</a></li>
+            </ul>
+          </div>
+        </nav>
+      </nav>
+
+      <div id="logo">
+        <a href="/views/home.html"
+          ><img src="/img/logo_banner_fondo_blanco_mod.png" alt="logo"
+        /></a>
+      </div>
+    </footer>
   </body>
 </html>
