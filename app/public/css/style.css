@@ -34,7 +34,7 @@ a {
 /* BOTONES */ 
  .btn{
   border: 2px solid black;
-  padding: 7px 15px;
+  padding: 7px 7px;
   background-color: var(--amarillo);
   color: var(--verdePrueba1);
   font-weight: 500;
