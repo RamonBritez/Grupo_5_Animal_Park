@@ -46,47 +46,6 @@ h3 {
 /* FIN HEADER*/
 
 
-
-/* Variables */
-
-:root{
-
-    --verdeClaro: #9fe01c;
-    --verdeFlour: #03A600;
-    --grisOscuro: #485550;
-    --grisClaro: #D9D9D9;
-    --naranja: #f7f7f7;
-    --amarillo: #c2f695;
-    --rojo: #c2f695;
-    --verdePrueba1: #14a667;
-    --verdePrueba2: #d7e87b;
-
-
-}
-
-.btn{
-    border: 2px solid rgb(119, 118, 118);
-    padding: 6px 15px;
-    align-content: center;
-    background-color: var(--amarillo);
-    color: var(--verdePrueba1);
-    font-weight: 500;
-    font-size: 20px;
-    border-radius: 5px;
-    margin: 10px;
-    text-transform: uppercase;
-   }
-  
-   
-  
-  .btn:hover{
-    font-weight: 600;
-    background: linear-gradient(var(--amarillo),var(--naranja),var(--rojo));
-    border: var(--verdePrueba1) 3px solid;
-  }
-
-/* FIN VARIABLES*/
-
 /*Producto*/
 section div.containerBox {
     display: flex;
@@ -99,14 +58,32 @@ section div.containerBox {
 
 section div.container-description {
     display: flex;
+    width: 100% ;
     flex-direction: row-reverse;
     align-items: center;
     flex-wrap: wrap;
     padding: 1rem 20rem;
     box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
-    justify-content: space-evenly;
+    justify-content: center;
 
 
+
+}
+
+section.compra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+   
+}
+
+section.compra div.botones {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin: 20px;
 }
 /*Fin producto*/
 
