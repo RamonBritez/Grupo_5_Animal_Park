@@ -9,27 +9,34 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
              rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css">
     <title>Carrito - Animal Park</title>
   </head>
   <body>
-    <header>
-      <section>
-        <a href="/"><img src="image/logoCuadrado.jpeg" alt="Home" /></a>
-         <div><input type="text" placeholder="Buscar...">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <div><i class="fa-solid fa-cart-shopping"></i>
-                <i class="fa-solid fa-circle-user"></i></div>
-    </section>
-    <nav>
-        <ul class="listaSuperior">
-        <li><a href="">Menu</a></li>
-        <li><a href="">Alimentos</a></li>
-        <li><a href="">Accesorios</a></li>
-        <li><a href="">Marcas</a></li>
-        <li><a href="">Ofertas</a></li>
-        </ul>
-    </nav>
-    </header>
+    <header class="main-header" id="top">
+
+      <div class="logo"><img src="/img/logo_cuadrado_fondo_blanco-mod.png" alt="Logo-mobile" class="logo"></div>
+  
+      <div class="busqueda">
+          <input type="search" placeholder="Buscar productos">
+          <button>
+              <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+      </div>
+    
+      <nav>
+         
+          <div class="burger-menu">
+              <i class="fas fa-bars"></i>
+           </div>
+          <ul class="listaSuperior">
+              <li><a class="btn" href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
+              <li><a class="btn" href=""><i class="fa-solid fa-user"></i></a></li>
+              <li><a class="btn" href=""><i class="fa-solid fa-circle-question"></i></a></li>
+          </ul>
+      </nav>
+
+  </header>
     <main>
       <div class="titulo">
         <h1>Carrito de compras:</h1>
@@ -39,8 +46,8 @@
           <img src="/image/producto.jpg" alt="plato para perro" />
           <div class="datos">
             <h2>Plato sasha</h2>
-            <p>Plato negro con diseño de huellitas blancas, tamaño:20x15</p>
-            <p>$840</p>
+            <p class="descripcion">Plato negro con diseño de huellitas blancas, tamaño:20x15</p>
+            <p class="precio">$840</p>
           </div>
           <div class="boton">
             <button><i class="fa-solid fa-circle-minus"></i></button>
@@ -53,8 +60,8 @@
           <img src="/image/CamaMichi.jpg" />
           <div class="datos">
             <h2>Cama Iglu Nina</h2>
-            <p>cama para gatos tipo iglu, Tamaño: 50x50, color:gris</p>
-            <p>$2500</p>
+            <p class="descripcion">Cama para gatos tipo iglu, Tamaño: 50x50, color:gris</p>
+            <p class="precio">$2500</p>
           </div>
           <div class="boton">
             <button><i class="fa-solid fa-circle-minus"></i></button>
@@ -65,28 +72,44 @@
         </article>
       </section>
       <section class="envios">
-        <h2>Metodos de envio</h2>
-        <i class="fa-solid fa-truck"></i>
         <div class="envio">
-          <button>Correo Argentino</button>
-          <button>Andreani</button>
+        <h2>Metodos de envio:</h2>
+        <i class="fa-solid fa-truck"></i>
+      </div>
+        <div class="metodo">
+          <a href="https://www.correoargentino.com.ar/">Correo Argentino</a>
+          <a href="https://www.andreani.com/">andreani</a>
           <button>Retiro en sucursales</button>
         </div>
       </section>
-            <section class="descuento">
-        <div>
-          <input type="text" placeholder="ingresa tu cupón" />
+
+      <section class="descuento">
+        <div class="cupon">
+          <input type="text" placeholder="Ingresa tu cupón"/>
           <i class="fa-solid fa-tag"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <i class="fa-solid fa-magnifying-glass"></i>
       </section>
+      
       <section class="precio">
-        <h2>sub total $3.340</h2>
-        <h2>envio $560</h2>
-        <h2>total $3.900</h2>
+   <ul>
+    <div>
+      <li> Total sin envio</li>
+      <li>$3.340</li>
+    </div>
+    <div>
+      <li>Envio</li>
+      <li>$540</li>
+    </div>
+    <div>
+      <li> Total con envio</li>
+      <li>$3.900</li>
+    </div>
+   </ul>
+
       </section>
-      <button class="pagar">pagar</button>
-      <button class="seguir comprando">seguir comprando</button>
+      <button class="pagar">Comprar </button>
+      <button class="seguir comprando">Seguir comprando</button>
     </main>
   </body>
 </html>

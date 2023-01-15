@@ -1,92 +1,142 @@
-:root {
-  --verdeClaro: #c0eb6a;
-  --verdeFlour: #03a600;
-  --verdeRaro:#B6C97A;
-  --grisOscuro: #485550;
-  --grisClaro: #d9d9d9;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
-body i{
-    color:var(--verdeRaro);
-}
-header i {
-    color: var(--verdeClaro)
-}
-
-header section{
-    justify-content: space-between;
-  display: flex;
-  align-content: center;
-  background-color: var(--grisOscuro);
-  padding: 5px;
-  flex-direction: row;
-  gap: 5px;
-}
-header section a{
-  display: inline-block;
-  width: 45px;
-  height: 45px;
- 
-}
-header section div {
-  display: flex;
-  align-items: center;
-  gap:10px
-}
-header nav{
-    
-    background-color: var(--grisOscuro);
-  padding: 7px;
-}
-header nav ul{
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-     
-}
-
-li {
-    display:inline-block;
-    list-style: none;
-    background-color: #C0EB6A;
-    padding: 7px;
-    height:26px;
-    font-size: 10px;
-border-radius: 10px;
-}
-li a{color: rgb(0, 0, 0);}
 img {
   width: 40px;
   height: 40px;
 }
-body{ 
-    background-color:var(--grisClaro);
+body {
+  background-color: var(--grisClaro);
+  background-image:url("/img/background.jpg");
+  background-size: cover;
 }
 
-main  { 
-    background-color: #D9D9D9; 
-    padding: 7px;
-    height:26px;
-    font-size: 10px;
-border-radius: 10px;
-
+main {
+  padding: 7px;
+  height: 26px;
+  font-size: 10px;
+  border-radius: 10px;
 }
-main section{
+main h1{
+  font-size: 1.7rem;
+}
+
+main > section.lista {
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
-main section article{
-  background-color:var(--verdeFlour);
+main section article {
+  background-color: var(--verdementa);
   border-radius: 10px;
-  
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
 }
+main > section article div p.descripcion {
+  display: none;
+}
+main > section article div.boton button {
+  width: 23px;
+  height: 23px;
+  border: none;
+  border-radius: 50%;
+}
+main > section.lista article.producto div.boton {
+  display: flex;
+  gap: 7px;
+}
+main i{
+  color:#035e02e5
+}
+main > section.lista article.producto div.boton span {
+  font-size: 23px;
+  text-align: center;
+}
+main > section.lista article.producto div.datos {
+  display: flex;
+  flex-direction: column;
+}
+
+main > section.lista article.producto div.datos h2 {
+  font-size: 16px;}
+  main>section.lista article.producto div.datos p.precio{
+    font-size: 12px;
+  }
+  main>section.envios div.envio{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+margin:5px 5px 5px;
+  }
+  main>section.envios div.metodo a{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #03A600;
+    color: white;
+    justify-content: center;
+    gap:5px;
+    margin: 5px 3px 5px;
+    border-radius: 15px;
+     }
+  main>section.envios div.metodo button{
+    width:98.3%;
+    border: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #03A600;
+    color: white;
+    justify-content: center;
+    gap:5px;
+    margin: 5px 3px 5px;
+    border-radius: 15px;
+     }
+   
+main>section.descuento div.cupon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 8px;
+font-size: 25px;
+}
+main>section.descuento div.cupon input{
+  border-color: var(--verdeoscuro);
+
+}
+ main>section.precio{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  background-color: none;
+align-items: center;
+width: 100%;
+
+
+} 
+main>section.precio ul{
+  width: 98%;
+}
+main>section.precio ul div{
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+margin-left: 50px;
+}
+
+main>section.precio ul div li{
+font-size: 16px;
+text-align: start;
+width: 50%;
+ }
+
+
+
+
+
+
