@@ -235,7 +235,8 @@ main nav.filter div.filter i{
         width: 80%;
         padding: 15px;
         margin-left: 20px;
-        font-size: 10px;
+        font-size: 14px;
+        text-align: center;
     }
     main section.vende-humo h2 {
         margin-bottom: 10px;
@@ -491,8 +492,8 @@ main section.vende-humo{
 
 
 main section.vende-humo div.texto{
-       
-   font-size: 16px;
+    text-align: start;
+    font-size: 16px;
 }
 main section.vende-humo h2 {
     font-size: 20px;

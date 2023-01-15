@@ -48,6 +48,7 @@ a {
   box-shadow: 0 0 10px var(--amarillo);
   background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
   border: var(--verdePrueba1) 3px solid;
+  
 }
 
 
@@ -100,11 +101,13 @@ header div.busqueda button {
   width: 2rem;
   border: 2px solid rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  
+  background-color: var(--amarillo);
 }
 
 header div.busqueda button:hover {
-  background-color: var(--background);
+  background: linear-gradient(var(--verdePrueba4), var(--verdePrueba3));
+  box-shadow: 0 0 10px var(--amarillo);
+  color: var(--verdePrueba1);
 }
 
   
@@ -120,18 +123,12 @@ header nav{
 }
 
 header nav div.burger-menu {
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  background-color: var(--background);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2.3rem;
-  width: 2.1rem;
-  border-radius: 5px;
-  font-size: 1.2rem;
   align-self: flex-end;
   margin-right: 5px;
+  border: 3px solid var(--verdePrueba1);
 }
 
 /* MAIN */ 
