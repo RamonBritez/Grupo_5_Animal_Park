@@ -94,7 +94,7 @@ section.compra div.botones {
 
 section div.productsContainer { /*recomend y venta*/
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     padding: 1rem 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -114,13 +114,11 @@ section div.productsContainer { /*recomend y venta*/
     margin: 10px;
     margin-bottom: 1rem;
     width: 220px;
-    height: 280px;
     flex-wrap: nowrap;
     background: linear-gradient( rgb(192, 242, 200), white);    }
 
     section div.productsContainer article.productCard div.imageContainer{
     width: 80%;
-    height: 150px;
     margin-bottom: 0.5rem;
 
     }
@@ -172,6 +170,8 @@ section div.productsContainer { /*recomend y venta*/
     section.interes {
         display: flex;
         justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 /* FIN PRODUCTOS RECOMENDADOS */
 
