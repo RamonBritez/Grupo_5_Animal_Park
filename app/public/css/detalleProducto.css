@@ -1,35 +1,11 @@
-/* GENERALES */
-/*Header*/
-@import url('/font-awesome-6.1.2/css/font-awesome.min.css');
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    max-width: 1400px;
-    margin: 0 auto;
-    background-image: url(/img/sepiaMArron2.jpg);
-    background-repeat: repeat;
-}
-ul ,li {
-    list-style: none;
-
-}
-
-a {
-    text-decoration: none;
-}
 
 h5 {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
+    background-color: beige;
+    margin: 20px 20px ;
 }
 
 
@@ -37,45 +13,45 @@ h3 {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
+    background-color:beige
 
 }
+
+h6{
+   font-size: 20px;
+   background-color: beige;
+
+}
+
+
 /* FIN HEADER*/
 
 
 /*Producto*/
 section div.containerBox {
     display: flex;
-    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    margin: 70px;
     padding: 2rem 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    justify-content: space-around;
-    background: linear-gradient(var(--grisClaro), var(grey));
+    background: linear-gradient( rgb(192, 242, 200), white);
 }
 
 section div.container-description {
     display: flex;
+    justify-content: center;
     width: 100% ;
     align-items: center;
     flex-direction: column;
-    flex-wrap: nowrap;
-    padding: 1rem 20rem;
+    padding: 1rem 1rem;
     box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
-    justify-content: center;
 
-}
-section div.container-description p {
-    width: 100%;
-    flex-wrap: nowrap;
-    text-align: center;
 }
 
 
-section div.container-info-product {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-}
+
 
 
 section.compra {
@@ -100,7 +76,7 @@ section.compra div.botones {
 
 section div.productsContainer { /*recomend y venta*/
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     padding: 1rem 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -120,14 +96,11 @@ section div.productsContainer { /*recomend y venta*/
     margin: 10px;
     margin-bottom: 1rem;
     width: 220px;
-    height: 280px;
     flex-wrap: nowrap;
-    background-color: var(--background);
-    }
+    background: linear-gradient( rgb(192, 242, 200), white);    }
 
     section div.productsContainer article.productCard div.imageContainer{
     width: 80%;
-    height: 150px;
     margin-bottom: 0.5rem;
 
     }
@@ -174,11 +147,19 @@ section div.productsContainer { /*recomend y venta*/
     a.comparte i {
     font-size: 26px;
     padding: 0 5px;
+       
+}
+    a.comparte i:hover {
+        font-weight: 300;
+        background: rgb(236, 244, 137);
+
     }
 
     section.interes {
         display: flex;
         justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 /* FIN PRODUCTOS RECOMENDADOS */
 
