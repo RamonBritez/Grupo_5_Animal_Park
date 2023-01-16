@@ -1,24 +1,4 @@
-/* GENERALES */
-/*Header*/
-@import url('/font-awesome-6.1.2/css/font-awesome.min.css');
 
-
-body {
-    font-family: 'Roboto', sans-serif;
-    max-width: 1400px;
-    margin: 0 auto;
-    background-repeat: repeat;
-}
-ul ,li {
-    list-style: none;
-
-}
-
-a {
-    text-decoration: none;
-    background-color: beige;
-
-}
 
 h5 {
     text-align: center;
@@ -165,6 +145,12 @@ section div.productsContainer { /*recomend y venta*/
     a.comparte i {
     font-size: 26px;
     padding: 0 5px;
+       
+}
+    a.comparte i:hover {
+        font-weight: 300;
+        background: rgb(236, 244, 137);
+
     }
 
     section.interes {
