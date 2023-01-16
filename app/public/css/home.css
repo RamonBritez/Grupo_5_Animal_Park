@@ -279,8 +279,7 @@ section div.productContainer {
     margin-bottom: 1rem;
     width: 220px;
     height: 280px;
-    
-    background-color: var(--background);
+    background: linear-gradient( rgb(192, 242, 200), white);
     }
 
     section div.productContainer article.productCard div.imageContainer{
