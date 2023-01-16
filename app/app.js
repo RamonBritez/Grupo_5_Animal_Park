@@ -45,3 +45,12 @@ app.listen(PORT,()=>{
     server listen in port ${PORT}
     http://localhost:${PORT}`)
 })
+
+
+
+
+
+
+app.get("/error", (req, res) => {
+    res.sendFile(path.join(__dirname, "views/error.html"))
+})

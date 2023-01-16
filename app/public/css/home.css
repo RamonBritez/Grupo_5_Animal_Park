@@ -16,7 +16,7 @@ section.carrusel{
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 300px;
+    height: 200px;
 }
 .slide-open:checked + .slide-item {
     position: static;
@@ -130,9 +130,10 @@ main div.info div{
  justify-content: center;
  align-items: center;
  flex-direction: column;
- margin: 1px 5px;
- padding: 10px;
+ margin: 1px 2px;
+ padding: 5px;
  animation-duration:2s;
+ text-align: center;
 }
 
 main div.info div:last-child{
@@ -140,7 +141,7 @@ main div.info div:last-child{
 }
 
 main div.info div i {
-   font-size: 28px;
+   font-size: 14pxpx;
    flex-wrap: wrap;
 }
 
@@ -170,9 +171,7 @@ main section.filter nav.filter div.filter{
     align-items: center;
     justify-content: center;
     border-radius: 10%;
-    background-color: var(--amarillo);
-   
-          
+    background-color: var(--amarillo);    
 }
 
 main nav.filter div:hover{
@@ -235,7 +234,8 @@ main nav.filter div.filter i{
         width: 80%;
         padding: 15px;
         margin-left: 20px;
-        font-size: 10px;
+        font-size: 14px;
+        text-align: center;
     }
     main section.vende-humo h2 {
         margin-bottom: 10px;
@@ -279,8 +279,7 @@ section div.productContainer {
     margin-bottom: 1rem;
     width: 220px;
     height: 280px;
-    
-    background-color: var(--background);
+    background: linear-gradient( rgb(192, 242, 200), white);
     }
 
     section div.productContainer article.productCard div.imageContainer{
@@ -352,6 +351,7 @@ main div#suscribe div a{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 10px;
 }
 
 
@@ -438,6 +438,14 @@ footer nav nav.interaccion ul.red-social{
     align-items: center;
     
 }
+footer div.info-footer ul li a{
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+}
 
 
 footer div.info-footer ul li i{
@@ -447,12 +455,6 @@ footer div.info-footer ul li i{
  display: flex;
 }
 
-footer div.info-footer ul li i p{
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-   
-}
 
 footer div#logo {
     display: flex;
@@ -478,11 +480,24 @@ footer div#logo a img{
 @media (min-width: 768px) {
 /* Carrusel */
 section.carrusel div.carrusel{
-    width: 90%;
+    width: 100%;
 }
 .slide-inner{
     height: 400px;
 }
+/*info bajo header */
+main div.info div{
+    height: 100px;
+}
+
+main div.info div i{
+    font-size: 26px;
+}
+main div.info div span{
+    font-size: 26px;
+}
+
+
 
 /* texto */
 main section.vende-humo{
@@ -491,8 +506,8 @@ main section.vende-humo{
 
 
 main section.vende-humo div.texto{
-       
-   font-size: 16px;
+    text-align: start;
+    font-size: 16px;
 }
 main section.vende-humo h2 {
     font-size: 20px;
@@ -510,9 +525,18 @@ main section.publicidad{
 }
 
 
+main div#suscribe div a{
+    font-size: 16px;
+}
+
+/* FOOTER */ 
+
+
 footer div.boton-arriba{
     display: none;
 }
+footer div.info-footer ul li a{
+    font-size: 16px;
 
-
+}
 }
