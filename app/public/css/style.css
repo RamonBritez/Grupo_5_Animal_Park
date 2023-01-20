@@ -37,7 +37,6 @@ a {
   color: var(--verdePrueba1);
   font-weight: 500;
   border-radius: 5px;
-  margin: 0% 1%;
   text-transform: uppercase;
  }
 
@@ -46,6 +45,7 @@ a {
   box-shadow: 0 0 10px var(--amarillo);
   background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
   border: var(--verdePrueba1) 3px solid;
+  color: var(--verdePrueba1);
   
 }
 
@@ -184,14 +184,15 @@ body {
   
       display: flex;
       justify-content: flex-end;
-      width: 90%;
+      align-items: center;
+      width: 100%;
       
       
   }
   
 header nav ul.listaSuperior li {
      
-      padding: 7px 15px;
+      padding: 0 5px;
      
       
   }
