@@ -50,7 +50,8 @@ main div.login__menu {
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  background-color: rgba(58, 56, 56, 0.5);
+  background-color: rgba(255, 253, 253, 0.8);
+  padding: 0 10px;  
 }
 
 main div.login__menu div.login__menu-icon {
@@ -61,6 +62,7 @@ main div.login__menu div.login__menu-icon {
   height: 80px;
   border-bottom: 2px solid black;
   gap: 6px;
+  margin-bottom: 15px;
 }
 
 main div.login__menu div.login__menu-form {
