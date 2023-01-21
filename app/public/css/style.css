@@ -200,7 +200,7 @@ footer nav nav.interaccion div.info-footer{
 }
 
 footer nav nav.interaccion h4 {
-    font-size: 20px;
+    font-size: 18px;
     
     margin-top: 5px 0;
     margin-bottom: 5px 0;
@@ -224,7 +224,7 @@ footer nav nav.interaccion ul.red-social{
     
 }
 footer div.info-footer ul li a{
-    font-size: 10px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -361,7 +361,6 @@ footer div.info-footer ul li a{
 footer section.final{
   justify-content: space-around;
   flex-direction: row;
-  margin: 0 5px;
   width: 100%;
 }
 
