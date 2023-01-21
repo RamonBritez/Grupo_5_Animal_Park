@@ -239,20 +239,26 @@ footer div.info-footer ul li i{
  font-size: 30px;
  display: flex;
 }
+footer section.final{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-footer #qr{
+footer section.final div#qr{
     display: none;
 }
+
 footer div#logo {
     display: flex;
     justify-content: center;
     padding-bottom: 0;
+    width: 100%;
     
 }
 
 footer div#logo a img{
-    width: 100%;
-    max-width: 300px;
+    max-width: 290px;
     border-radius: 5px; 
 }
 
@@ -353,30 +359,33 @@ footer div.info-footer ul li a{
 }
 
 footer section.final{
-  display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-direction: row;
   margin: 0 5px;
+  width: 100%;
 }
-footer #qr{
+
+
+footer section.final div#qr{
   display: flex;
+  justify-content: end;
+  width: 100%;
   margin-bottom: 5px;
   margin-right: 5px;
 }
+
 footer section.final div#qr img{
-  width: 100%;
   max-width: 100px;
   height: 100px;
 } 
 
 footer div#logo {
-  display: flex;
-  justify-content: center;
   padding-bottom: 0;
-  
+  width: 100%;
+  justify-content: start;
 }
 
 footer div#logo a img{
-  width: 100%;
   max-width: 300px;
   border-radius: 5px; 
 }
