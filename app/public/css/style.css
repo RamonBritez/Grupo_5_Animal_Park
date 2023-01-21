@@ -75,9 +75,10 @@ header div.logo img {
 }
 
 header section{
-  margin-right: 20%;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 header div.busqueda {
@@ -129,6 +130,10 @@ header nav div.burger-menu {
   align-self: flex-end;
   margin-right: 5px;
   border: 3px solid var(--verdePrueba1);
+}
+
+header nav.navegacion{
+  display: none;
 }
 
 /* MAIN */ 
@@ -262,7 +267,7 @@ footer div#logo a img{
 @media (min-width: 768px){
 
   header{
-    
+    flex-direction: column;
     justify-content: center;
     padding-bottom: 20px;
    
@@ -283,7 +288,9 @@ footer div#logo a img{
   }
   header section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 10px;
     }
 
@@ -293,6 +300,22 @@ footer div#logo a img{
       height: 40px;
   }
   
+  header nav.navegacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  header nav.navegacion ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  header nav.navegacion ul li{
+    margin: 5px 10px;
+  }
   header nav ul.listaSuperior {
   
       display: flex;
