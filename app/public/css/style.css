@@ -139,83 +139,7 @@ body {
   background-size: contain;
 }
 
-
-
-
-
-
-/* Tablet */
-
-@media (min-width: 768px){
-
-  header{
-    
-    justify-content: center;
-    padding-bottom: 20px;
-   
-  }
-
-
-  header div.busqueda{
-    margin-left: 30px;
-    width: 475px;
-
-  }
-
-  header div.logo img{
-    width: 120px;
-    height: 100px;
-    flex-wrap: wrap;
-    
-  }
-  header section {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    }
-
-  
-  header nav {
-      flex-grow: 1;
-      height: 40px;
-  }
-  
-  header nav ul.listaSuperior {
-  
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 100%;
-      
-      
-  }
-  
-header nav ul.listaSuperior li {
-     
-      padding: 0 5px;
-     
-      
-  }
-
-  header nav div.burger-menu{
-      display:none;
-  }
-  
-  
-  /* --- FIN HEADER --- */
-}
-
-
-
-
-
-
-
-
-
-footer nav button.boton-arriba{
-  display: none;
-}
+/* --- FOOTER --- */
 
 footer {
   display: flex; 
@@ -294,6 +218,14 @@ footer nav nav.interaccion ul.red-social{
     align-items: center;
     
 }
+footer div.info-footer ul li a{
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+}
 
 
 footer div.info-footer ul li i{
@@ -303,13 +235,9 @@ footer div.info-footer ul li i{
  display: flex;
 }
 
-footer div.info-footer ul li i p{
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-   
+footer #qr{
+    display: none;
 }
-
 footer div#logo {
     display: flex;
     justify-content: center;
@@ -320,16 +248,117 @@ footer div#logo {
 footer div#logo a img{
     width: 100%;
     max-width: 300px;
-    border-radius: 5px;
-    
-    
+    border-radius: 5px; 
 }
-/* Desktop */
 
-@media (min-width: 1180px){
+/* --- FIN FOOTER --- */
 
+
+
+
+
+/* Tablet */
+
+@media (min-width: 768px){
+
+  header{
+    
+    justify-content: center;
+    padding-bottom: 20px;
+   
+  }
+
+
+  header div.busqueda{
+    margin-left: 30px;
+    width: 475px;
+
+  }
+
+  header div.logo img{
+    width: 120px;
+    height: 100px;
+    flex-wrap: wrap;
+    
+  }
+  header section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    }
+
+  
+  header nav {
+      flex-grow: 1;
+      height: 40px;
+  }
+  
+  header nav ul.listaSuperior {
+  
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      
+      
+  }
+  
+header nav ul.listaSuperior li {
+     
+      padding: 0 5px;
+     
+      
+  }
+
+  header nav div.burger-menu{
+      display:none;
+  }
+  
+  
+  /* --- FIN HEADER --- */
+}
+
+/* FOOTER */ 
+
+
+footer div.boton-arriba{
+  display: none;
+}
+footer div.info-footer ul li a{
+  font-size: 16px;
 
 }
+
+footer section.final{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px;
+}
+footer #qr{
+  display: flex;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+footer section.final div#qr img{
+  width: 100%;
+  max-width: 100px;
+  height: 100px;
+} 
+
+footer div#logo {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0;
+  
+}
+
+footer div#logo a img{
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px; 
+}
+
+
 
 
 
