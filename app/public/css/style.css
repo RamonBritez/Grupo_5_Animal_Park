@@ -245,7 +245,7 @@ footer section.final{
   align-items: center;
 }
 
-footer section.final div#qr{
+footer section.final div.qr{
     display: none;
 }
 
@@ -345,7 +345,7 @@ header nav ul.listaSuperior li {
   
   
   /* --- FIN HEADER --- */
-}
+
 
 /* FOOTER */ 
 
@@ -366,7 +366,7 @@ footer section.final{
 }
 
 
-footer section.final div#qr{
+footer section.final div.qr{
   display: flex;
   justify-content: end;
   width: 100%;
@@ -374,9 +374,9 @@ footer section.final div#qr{
   margin-right: 5px;
 }
 
-footer section.final div#qr img{
+footer section.final div.qr img{
   max-width: 100px;
-  height: 100px;
+  max-height: 100px;
 } 
 
 footer div#logo {
@@ -392,6 +392,6 @@ footer div#logo a img{
 
 
 
-
+}
 
 
