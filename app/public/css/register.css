@@ -183,3 +183,26 @@ main div.register__container div.register__container-network button img {
   height: 25px;
   width: 25px;
 }
+
+div.existentAccount {
+  width: 100%;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+div.existentAccount p {
+  font-size: 15px;
+  text-align: center;
+}
+
+div.existentAccount a {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  font-size: 15px;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}

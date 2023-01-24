@@ -7,7 +7,6 @@ section.carrusel{
 
 .carrusel {
     position: relative;
-    margin-top: 10px;
     margin-bottom: 15px;
     width: 100%;
 }
@@ -112,30 +111,36 @@ section.carrusel{
 
 main div.info{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
     width: 100%;
     height: 100px;
     background-color: var(--amarillo);
-    color: var(--verdePrueba1);
-    flex-wrap: nowrap;
-    
+    color: var(--verdePrueba1);   
 }   
 
 main div.info div{
- border-right: var(--verdePrueba1) 1px solid;
+ 
  height: 50px;
+ width: 50px;
  display: flex;
  justify-content: center;
  align-items: center;
  flex-direction: column;
- margin: 1px 2px;
- padding: 5px;
+ margin: 1px 0;
  animation-duration:2s;
  text-align: center;
+ width: 30%;
+ flex-wrap: nowrap;
 }
 
+main div.info div#center{
+border-left: var(--verdePrueba1) 1px solid;
+border-right: var(--verdePrueba1) 1px solid;
+width: 40%;
+
+}
 main div.info div:last-child{
     border: none;
 }
@@ -161,7 +166,7 @@ main section.filter nav.filter {
 }
 main section.filter nav.filter div.filter{
     height: 100px;
-    width: 150px;
+    width: 100px;
     padding: 20px;
     margin: 3px;
     display: flex;
@@ -193,7 +198,7 @@ main nav.filter div.filter a{
 
 main nav.filter div.filter i{
     color: var(--verdePrueba1);
-   font-size: 46px;
+   font-size: 36px;
    margin-bottom: 5px ;
     display: flex;
     justify-content: center;
@@ -203,21 +208,10 @@ main nav.filter div.filter i{
 /* --- FIN FILTROS --- */
 
 /* --- PUBLICIDAD --- */
-
-    main section.publicidad {
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 50px 0;
-        border-radius: 10px;
-        width: 100%;
+    .publicidad {
+        display: none;
     }
 
-
-    main section.publicidad img {
-        width: 100%;
-    }
 
 
     main section.vende-humo{
@@ -359,126 +353,13 @@ main div#suscribe div a{
 /* --- FIN MAIN --- */
 
 
-/* --- FOOTER --- */
-
-footer {
-  display: flex; 
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
-  justify-content: center;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  flex-direction: column;
-
-}
-
-footer div.boton-arriba{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-footer div.boton-arriba a{
- height: 20px;
- width: 40px;
- border-radius: 5px;
- background-color: var(--verdePrueba2);
- border: 2px var(--verdePrueba1) solid;
- border-radius: 5px;
- text-align: center;
-}
-
-footer div.boton-arriba a:hover{
-    box-shadow: 0 0 10px var(--amarillo);
-    transform: scale(1.2);
-}
-
-
-footer nav {
-    display: flex;
-    width: 100%;
-    padding: 0 5px;
-}
-
-footer nav nav.interaccion{
-    display: flex;
-    justify-content: space-between;
-    margin: 0 5px;
-    
-}
-
-footer nav nav.interaccion div.info-footer{
-
-    flex-direction: column;
-    text-align: center;
-}
-
-footer nav nav.interaccion h4 {
-    font-size: 20px;
-    
-    margin-top: 5px 0;
-    margin-bottom: 5px 0;
-}
-
-footer nav nav.interaccion ul{
-    
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-footer nav nav.interaccion ul li{
-    margin-top: 5px;
-    font-size: 16px;
-}
-
-footer nav nav.interaccion ul.red-social{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-footer div.info-footer ul li a{
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-   
-}
-
-
-footer div.info-footer ul li i{
-
- padding: 0 5px;
- font-size: 30px;
- display: flex;
-}
-
-
-footer div#logo {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 0;
-    
-}
-
-footer div#logo a img{
-    width: 100%;
-    max-width: 300px;
-    border-radius: 5px;
-    
-    
-}
-
-/* --- FIN FOOTER --- */
 
 
 /* TABLET */
 
 
 @media (min-width: 768px) {
-/* Carrusel */
+  /* Carrusel */
 section.carrusel div.carrusel{
     width: 100%;
 }
@@ -488,15 +369,38 @@ section.carrusel div.carrusel{
 /*info bajo header */
 main div.info div{
     height: 100px;
+    width: 200px;
 }
 
 main div.info div i{
     font-size: 26px;
 }
 main div.info div span{
-    font-size: 26px;
+    font-size: 22px;
+}
+/* Filtros */
+main section.filter nav.filter div.filter{
+    width: 150px;
 }
 
+main nav.filter div.filter i{
+    font-size: 46px; 
+}
+/* Banners */
+main section.publicidad {
+        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    border-radius: 10px;
+    width: 100%;
+}
+
+
+main section.publicidad img {
+    width: 100%;
+}
 
 
 /* texto */
@@ -529,14 +433,4 @@ main div#suscribe div a{
     font-size: 16px;
 }
 
-/* FOOTER */ 
-
-
-footer div.boton-arriba{
-    display: none;
-}
-footer div.info-footer ul li a{
-    font-size: 16px;
-
-}
 }

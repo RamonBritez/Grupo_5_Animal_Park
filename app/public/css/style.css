@@ -37,7 +37,6 @@ a {
   color: var(--verdePrueba1);
   font-weight: 500;
   border-radius: 5px;
-  margin: 0% 1%;
   text-transform: uppercase;
  }
 
@@ -46,6 +45,7 @@ a {
   box-shadow: 0 0 10px var(--amarillo);
   background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
   border: var(--verdePrueba1) 3px solid;
+  color: var(--verdePrueba1);
   
 }
 
@@ -75,9 +75,10 @@ header div.logo img {
 }
 
 header section{
-  margin-right: 20%;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 header div.busqueda {
@@ -87,7 +88,7 @@ header div.busqueda {
   box-shadow: 10px;
 }
 header div.busqueda input{
-width: 50vw;
+width: 100%;
 height: 2.2rem;
 padding: 5px;
 margin: 10px 2px;
@@ -131,90 +132,19 @@ header nav div.burger-menu {
   border: 3px solid var(--verdePrueba1);
 }
 
+header nav.navegacion{
+  display: none;
+}
+
 /* MAIN */ 
 body {
-  background-image: url(/img/sepiaMArron2.jpeg);
+  background-image: url(/img/sepiaMarron.jpeg);
   background-repeat: repeat;  
   background-position: center;
   background-size: contain;
 }
 
-
-
-
-
-
-/* Tablet */
-
-@media (min-width: 768px){
-
-  header{
-    
-    justify-content: center;
-   
-  }
-
-
-  header div.busqueda{
-    margin-left: 30px;
-  }
-
-  header div.logo img{
-    width: 120px;
-    height: 100px;
-    flex-wrap: wrap;
-    
-  }
-  header section {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    }
-
-  header {
-      padding-bottom: 20px;
-  }
-  
-  header nav {
-      flex-grow: 1;
-      height: 40px;
-  }
-  
-  header nav ul.listaSuperior {
-  
-      display: flex;
-      justify-content: flex-end;
-      width: 90%;
-      
-      
-  }
-  
-header nav ul.listaSuperior li {
-     
-      padding: 7px 15px;
-     
-      
-  }
-
-  header nav div.burger-menu{
-      display:none;
-  }
-  
-  
-  /* --- FIN HEADER --- */
-}
-
-
-
-
-
-
-
-
-
-footer nav button.boton-arriba{
-  display: none;
-}
+/* --- FOOTER --- */
 
 footer {
   display: flex; 
@@ -270,7 +200,7 @@ footer nav nav.interaccion div.info-footer{
 }
 
 footer nav nav.interaccion h4 {
-    font-size: 20px;
+    font-size: 18px;
     
     margin-top: 5px 0;
     margin-bottom: 5px 0;
@@ -293,6 +223,14 @@ footer nav nav.interaccion ul.red-social{
     align-items: center;
     
 }
+footer div.info-footer ul li a{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+}
 
 
 footer div.info-footer ul li i{
@@ -301,35 +239,158 @@ footer div.info-footer ul li i{
  font-size: 30px;
  display: flex;
 }
+footer section.final{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-footer div.info-footer ul li i p{
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-   
+footer section.final div.qr{
+    display: none;
 }
 
 footer div#logo {
     display: flex;
     justify-content: center;
     padding-bottom: 0;
+    width: 100%;
     
 }
 
 footer div#logo a img{
+    max-width: 290px;
+    border-radius: 5px; 
+}
+
+/* --- FIN FOOTER --- */
+
+
+
+
+
+/* Tablet */
+
+@media (min-width: 768px){
+
+  header{
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
+   
+  }
+
+
+  header div.busqueda{
+    margin-left: 30px;
+    width: 475px;
+
+  }
+
+  header div.logo img{
+    width: 120px;
+    height: 100px;
+    flex-wrap: wrap;
+    
+  }
+  header section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    }
+
+  
+  header nav {
+      flex-grow: 1;
+      height: 40px;
+  }
+  
+  header nav.navegacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    max-width: 300px;
-    border-radius: 5px;
-    
-    
+  }
+  header nav.navegacion ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  header nav.navegacion ul li{
+    margin: 5px 10px;
+  }
+  header nav ul.listaSuperior {
+  
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      
+      
+  }
+  
+header nav ul.listaSuperior li {
+     
+      padding: 0 5px;
+     
+      
+  }
+
+  header nav div.burger-menu{
+      display:none;
+  }
+  
+  
+  /* --- FIN HEADER --- */
+
+
+/* FOOTER */ 
+
+
+footer div.boton-arriba{
+  display: none;
 }
-/* Desktop */
-
-@media (min-width: 1180px){
-
+footer div.info-footer ul li a{
+  font-size: 16px;
 
 }
 
+footer section.final{
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+}
 
+
+footer section.final div.qr{
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+footer section.final div.qr img{
+  max-width: 100px;
+  max-height: 100px;
+} 
+
+footer div#logo {
+  padding-bottom: 0;
+  width: 100%;
+  justify-content: start;
+}
+
+footer div#logo a img{
+  max-width: 300px;
+  border-radius: 5px; 
+}
+
+
+
+}
 
 
