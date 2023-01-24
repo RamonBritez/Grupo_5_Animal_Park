@@ -2,7 +2,7 @@
   "name": "grupo_5_animal_park",
   "version": "1.0.0",
   "description": "Somos Animal Park.\r Un grupo de amigos con el sueño de poder amar y cuidar a cada uno de los animales del planeta siendo ecológicamente responsables, innovando para poder hacer nuestro gran sueño realidad.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

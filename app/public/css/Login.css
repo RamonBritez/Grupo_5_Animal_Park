@@ -46,17 +46,19 @@ main {
 main div.login__menu {
   height: 100%;
   width: 100%;
-  border: 1px solid black;
+  border: none;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   max-width: 500px;
   background-color: rgba(255, 253, 253, 0.8);
-  padding: 0 10px;  
+  padding: 0 25px;  
+  box-shadow: 15px 15px 25px rgb(100, 100, 100);
 }
 
 main div.login__menu div.login__menu-icon {
   display: flex;
-  font-size: 25px;
+  font-size: 30px;
   align-items: center;
   justify-content: center;
   height: 80px;
@@ -83,6 +85,11 @@ main div.login__menu div.login__menu-form form input {
   width: 100%;
   text-align: center;
   border: 1px black solid;
+  border-radius: 10px;
+}
+
+main div.login__menu div.login__menu-form form input:hover{
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 main div.login__menu div.login__menu-form div.opciones {
@@ -101,6 +108,7 @@ main div.login__menu div.login__menu-form div.iniciar-sesion {
   justify-content: center;
 }
 
+
 main div.login__menu div.login__menu-form div.iniciar-sesion button {
   display: flex;
   margin: auto;
@@ -113,6 +121,13 @@ main div.login__menu div.login__menu-form div.iniciar-sesion button {
   align-items: center;
   justify-content: center;
   border: 1px black solid;
+  background-color: var(--amarillo); 
+  border-radius: 5px;
+}
+
+main div.login__menu div.login__menu-form div.iniciar-sesion button:hover{
+  background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 main div.login__menu div.login__menu-form div.google-facebook {
@@ -128,8 +143,13 @@ main div.login__menu div.login__menu-form div.google-facebook button {
   width: 80%;
   font-size: 100%;
   margin-bottom: 15px;
-  background-color: var(--menu);
+  background-color: var(--amarillo); 
 }
+
+main div.login__menu div.login__menu-form div.google-facebook button:hover{
+  background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
+}
+
 
 main div.login__menu div.login__menu-form div.google-facebook button img {
   height: 50%;
@@ -146,12 +166,17 @@ main div.login__menu div.login__menu-form div.crear-cuenta {
   font-size: 100%;
 }
 
+
 main div.login__menu div.login__menu-form div.crear-cuenta button {
   height: 50px;
   width: 80%;
   font-size: 100%;
   margin-bottom: 15px;
-  background-color: var(--menu);
+  background-color: var(--amarillo);
+}
+
+main div.login__menu div.login__menu-form div.crear-cuenta button:hover{
+  background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
 }
 
 main div.login__menu div.login__menu-form div.crear-cuenta button a {
