@@ -6,6 +6,7 @@ main section.producto {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 5px 10px;
     border: 0.5px rgba(0, 0, 0, 0.5) solid;
     border-radius: 5px;
@@ -235,17 +236,20 @@ section div.productsContainer { /*recomend y venta*/
     section.main{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         flex-wrap: wrap;
-
     }
     section.producto{
-        width: 60%;
-        max-width: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 40%;
+        max-width: 420px;
+
     }
     section.compra {
-        width: 40%;
+        width: 45%;
         display: flex;
+        flex-wrap: wrap;
         margin-top: 20px;
         height: 500px;
     }
@@ -254,20 +258,25 @@ section div.productsContainer { /*recomend y venta*/
         display: flex;
         align-items: center;
         flex-direction: column;
-        width: 300px;
+        width: 350px;
         border: solid 1px black;
         height: 300px;
     }
     section.compra div.metodo-pago div.options{
         display: flex;
         flex-direction: row;
+        text-align: center;
+        align-items: center;
+        padding: 0 10px;
+        justify-content: space-around;
     }
     section.compra div.metodo-pago div.options input{
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
-        justify-content: center;
+        
+        margin: 0 5px;
     }
 
     section.compra div.metodo-pago img{
