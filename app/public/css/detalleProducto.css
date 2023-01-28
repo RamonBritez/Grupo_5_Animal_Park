@@ -65,7 +65,7 @@ section.compra div.metodo-pago{
     display: none;
 }
 
-section.compra div.botones {
+section.compra div.acciones {
     width: 100%;
     justify-content: space-around;
     display: flex;
@@ -262,6 +262,10 @@ section div.productsContainer { /*recomend y venta*/
         border: solid 1px black;
         height: 300px;
     }
+    section.compra div.metodo-pago h2{
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
     section.compra div.metodo-pago div.options{
         display: flex;
         flex-direction: row;
@@ -278,10 +282,67 @@ section div.productsContainer { /*recomend y venta*/
         
         margin: 0 5px;
     }
-
+    section.compra div.metodo-pago div.tipoDePago{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        padding: 0 10px;
+        justify-content: space-around;
+    }
+    section.compra div.metodo-pago div.tipoDePago input{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        
+        margin: 0 5px;
+    }
     section.compra div.metodo-pago img{
         width: 100%;
         padding: 5px;
+    }
+    section.compra div.metodo-pago div.cantidad{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    section.compra div.metodo-pago div.cantidad span{
+        border: 0.5px solid rgba(0, 0, 0, 0.3);
+        background-color: white;
+        padding: 5px;
+        margin: 0 10px;
+    }
+    section.compra div.metodo-pago div.cantidad button{
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 50%;
+        color: var(--verdePrueba1);
+    }
+
+    section.compra div.metodo-pago div.total{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+    }
+    section.compra div.metodo-pago div.total span.totalFinal{
+        border: 1px solid black;
+        border-radius: 5px;
+        text-align: center;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+
+    section.compra div.acciones{
+        justify-content: space-around;
+        margin-top: 10px;
+
     }
 
 }
