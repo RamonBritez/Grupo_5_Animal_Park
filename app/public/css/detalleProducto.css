@@ -1,13 +1,155 @@
+/*Producto*/
 
-
-h5 {
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 25px;
-    background-color: beige;
-    margin: 20px 20px ;
+main section.producto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border: 0.5px rgba(0, 0, 0, 0.5) solid;
+    border-radius: 5px;
 }
 
+h1 {
+    text-align: center;
+    font-size: 25px;
+    margin: 5px 20px ;
+    text-transform: uppercase;
+}
+
+section div.containerBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: var(--amarillo);
+    border-radius: 10px;
+    
+}
+
+article.showProduct div.imageContainer{
+    background: linear-gradient( rgb(192, 242, 200), white);
+}
+
+article.showProduct div.imageContainer img{
+    width: 250px;
+    height: 300px;
+    margin: 10px
+}
+
+article.showProduct div.altImg{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+}
+
+article.showProduct div.altImg img{
+    width: 75px;
+    height: 90px;
+    margin: 0 5px;
+    margin-top: 5px;
+    background: linear-gradient( rgb(192, 242, 200), white);
+}
+
+section.compra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 75px;  
+}
+section.compra div.metodo-pago{
+    display: none;
+}
+
+section.compra div.botones {
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    margin: 0 20px;
+}
+
+section.product div.info-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+section.producto div.info-product h2{
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+}
+
+section.producto div.info-product .price{
+    color: var(--verdePrueba1);
+}
+
+
+/* Descripcion */
+
+
+section.container-description{
+    display: flex;
+    justify-content: center;
+    width: 100% ;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1rem;
+    box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
+} 
+section.container-description h5{
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+section.container-description h6{
+   font-size: 20px;
+   background-color: beige;
+   text-align: center;
+
+}
+
+
+/*Fin producto*/
+
+
+/* Compartir */
+section div.container-social {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 5px;
+    box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
+    justify-content: space-evenly;
+    
+    }   
+  
+    a.comparte i {
+    font-size: 26px;
+    padding: 0 5px;
+       
+}
+    a.comparte i:hover {
+        font-weight: 300;
+        background: rgb(236, 244, 137);
+
+    }
+/* Fin Compartir */ 
+h5{
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
 
 h3 {
     text-align: center;
@@ -16,61 +158,6 @@ h3 {
     background-color:beige
 
 }
-
-h6{
-   font-size: 20px;
-   background-color: beige;
-
-}
-
-
-/* FIN HEADER*/
-
-
-/*Producto*/
-section div.containerBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: content-box;
-    margin: 70px;
-    padding: 2rem 1rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background: linear-gradient( rgb(192, 242, 200), white);
-}
-
-section div.container-description {
-    display: flex;
-    justify-content: center;
-    width: 100% ;
-    align-items: center;
-    flex-direction: column;
-    padding: 1rem 1rem;
-    box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
-
-}
-
-
-
-
-
-section.compra {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 200px;
-   
-}
-
-section.compra div.botones {
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    margin: 30px;
-}
-/*Fin producto*/
-
 
 /* PRODUCTOS RECOMENDADOS */
 
@@ -131,29 +218,7 @@ section div.productsContainer { /*recomend y venta*/
     
         }
 
-    section div.container-social {
-    padding: 30px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 15px 5px;
-    box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
-    justify-content: space-evenly;
     
-    }   
-  
-    a.comparte i {
-    font-size: 26px;
-    padding: 0 5px;
-       
-}
-    a.comparte i:hover {
-        font-weight: 300;
-        background: rgb(236, 244, 137);
-
-    }
 
     section.interes {
         display: flex;
@@ -163,189 +228,55 @@ section div.productsContainer { /*recomend y venta*/
     }
 /* FIN PRODUCTOS RECOMENDADOS */
 
-
-
-
-
-/* --- FOOTER --- */
-
-footer {
-    display: flex; 
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
-    justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    flex-direction: column;
-  
-  }
-  
-  footer div.boton-arriba{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  
-  footer div.boton-arriba a{
-   height: 20px;
-   width: 40px;
-   border-radius: 5px;
-   background-color: var(--verdePrueba2);
-   border: 2px var(--verdePrueba1) solid;
-   border-radius: 5px;
-   text-align: center;
-
-  }
-  
-  footer div.boton-arriba a:hover{
-      box-shadow: 0 0 10px var(--amarillo);
-      transform: scale(1.2);
-  }
-  
-  
-  footer nav {
-      display: flex;
-      width: 100%;
-      padding: 0 5px;
-  }
-  
-  footer nav nav.interaccion{
-      display: flex;
-      justify-content: space-between;
-      margin: 0 5px;
-      
-  }
-  
-  footer nav nav.interaccion div.info-footer{
-  
-      flex-direction: column;
-      text-align: center;
-  }
-  
-  footer nav nav.interaccion h4 {
-      font-size: 20px;
-      
-      margin-top: 5px 0;
-      margin-bottom: 5px 0;
-  }
-  
-  footer nav nav.interaccion ul{
-      
-      align-items: center;
-      margin-bottom: 10px;
-  }
-  
-  footer nav nav.interaccion ul li{
-      margin-top: 5px;
-      font-size: 16px;
-  }
-  
-  footer nav nav.interaccion ul.red-social{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-  }
-  
-  
-  footer div.info-footer ul li i{
-  
-   padding: 0 5px;
-   font-size: 30px;
-   display: flex;
-  }
-  
-  footer div.info-footer ul li i p{
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-     
-  }
-  
-  footer div#logo {
-      display: flex;
-      justify-content: center;
-      padding-bottom: 0;
-      
-  }
-  
-  footer div#logo a img{
-      width: 100%;
-      max-width: 300px;
-      border-radius: 5px;
-      
-      
-  }
-  
-  /* --- FIN FOOTER --- */
-  
-  
-  /* MEDIA */
  
 /* Tablet */
 
 @media (min-width: 768px){
-
-    header{
-      
-      justify-content: center;
-     
-    }
-  
-
-    header div.busqueda{
-      margin-left: 30px;
-    }
-  
-    header div.logo img{
-      width: 120px;
-      height: 100px;
-      flex-wrap: wrap;
-      
-    }
-    header section {
-      display: flex;
-      flex-direction: column;
-      margin-top: 10px;
-      }
-  
-    header {
-        padding-bottom: 20px;
-    }
-    
-    header nav {
-        flex-grow: 1;
-        height: 40px;
-    }
-    
-    header nav ul.listaSuperior {
-    
+    section.main{
         display: flex;
-        justify-content: flex-end;
-        width: 90%;
-        
-        
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
     }
-    
-  header nav ul.listaSuperior li {
-       
-        padding: 7px 15px;
-               
+    section.producto{
+        width: 60%;
+        max-width: 500px;
     }
-  
-    header nav div.burger-menu{
-        display:none;
+    section.compra {
+        width: 40%;
+        display: flex;
+        margin-top: 20px;
+        height: 500px;
     }
-    
-    
-    /* --- FIN HEADER --- */
-  }
-    
-  
-  footer nav button.boton-arriba{
-    display: none;
-  }
+
+    section.compra div.metodo-pago{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 300px;
+        border: solid 1px black;
+        height: 300px;
+    }
+    section.compra div.metodo-pago div.options{
+        display: flex;
+        flex-direction: row;
+    }
+    section.compra div.metodo-pago div.options input{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section.compra div.metodo-pago img{
+        width: 100%;
+        padding: 5px;
+    }
+
+}
+
   
   
   /* Desktop */
