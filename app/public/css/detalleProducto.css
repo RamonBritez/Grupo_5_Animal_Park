@@ -59,12 +59,61 @@ section.compra {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 75px;  
+    margin: 10px 0;
+    border: 1px black solid;
+
 }
 section.compra div.metodo-pago{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    margin: 10px 0;
+    
+}
+
+section.compra div.metodo-pago div.cajaPago img, .cajaEnvio, .tipoDePago{
     display: none;
 }
 
+section.compra div.metodo-pago div.cantidad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+section.compra div.metodo-pago div.cantidad span{
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 5px;
+    margin: 0 10px;
+}
+section.compra div.metodo-pago div.cantidad button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    color: var(--verdePrueba1);
+}
+
+section.compra div.metodo-pago div.total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+section.compra div.metodo-pago div.total span.totalFinal{
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin-left:20px;
+    background-color: white;
+}
 section.compra div.acciones {
     width: 100%;
     justify-content: space-around;
@@ -236,7 +285,7 @@ section div.productsContainer { /*recomend y venta*/
     section.main{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
     }
     section.producto{
@@ -244,23 +293,55 @@ section div.productsContainer { /*recomend y venta*/
         flex-wrap: wrap;
         width: 40%;
         max-width: 420px;
+        background-color: rgba(255, 255, 255, 0.5);
 
     }
     section.compra {
-        width: 45%;
+        width: 40%;
         display: flex;
         flex-wrap: wrap;
         margin-top: 20px;
         height: 500px;
-    }
+        align-items: center;
+        justify-content: center;
+        min-width: 320px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
 
+        
+    }
     section.compra div.metodo-pago{
         display: flex;
+        justify-content: center;
         align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    section.compra div.metodo-pago .cajaPago, .cajaEnvio{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
         flex-direction: column;
-        width: 350px;
-        border: solid 1px black;
-        height: 300px;
+        width: 100%;
+    }
+    section.compra div.metodo-pago div.cajaPago img{
+        width:85%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 5px;
+    }
+
+    section.compra div.metodo-pago .cajaPago .tipoDePago{
+        flex-direction: column;
+    }
+    section.compra div.metodo-pago .cajaPago .tipoDePago div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
     }
     section.compra div.metodo-pago h2{
         margin-top: 5px;
@@ -279,9 +360,9 @@ section div.productsContainer { /*recomend y venta*/
         flex-direction: column;
         text-align: center;
         align-items: center;
-        
         margin: 0 5px;
     }
+    
     section.compra div.metodo-pago div.tipoDePago{
         display: flex;
         flex-direction: row;
@@ -295,50 +376,10 @@ section div.productsContainer { /*recomend y venta*/
         flex-direction: column;
         text-align: center;
         align-items: center;
-        
         margin: 0 5px;
     }
-    section.compra div.metodo-pago img{
-        width: 100%;
-        padding: 5px;
-    }
-    section.compra div.metodo-pago div.cantidad{
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    section.compra div.metodo-pago div.cantidad span{
-        border: 0.5px solid rgba(0, 0, 0, 0.3);
-        background-color: white;
-        padding: 5px;
-        margin: 0 10px;
-    }
-    section.compra div.metodo-pago div.cantidad button{
-        width: 30px;
-        height: 30px;
-        border: none;
-        border-radius: 50%;
-        color: var(--verdePrueba1);
-    }
-
-    section.compra div.metodo-pago div.total{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-    }
-    section.compra div.metodo-pago div.total span.totalFinal{
-        border: 1px solid black;
-        border-radius: 5px;
-        text-align: center;
-        padding: 5px;
-        margin-left: 10px;
-    }
-
-
+  
+   
     section.compra div.acciones{
         justify-content: space-around;
         margin-top: 10px;
