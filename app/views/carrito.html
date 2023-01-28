@@ -15,42 +15,42 @@
   </head>
   <body>
     <header class="main-header" id="top">
-      <div class="logo">
-        <img
-          src="/img/logo_cuadrado_fondo_blanco-mod.png"
-          alt="Logo-mobile"
-          class="logo"
-        />
-      </div>
-
+      <section>
+      <div class="logo"><a href="/"><img src="/img/logo_cuadrado_fondo_blanco-mod.png" alt="Logo-mobile" class="logo"></a></div>
+  
       <div class="busqueda">
-        <input type="search" placeholder="Buscar productos" />
-        <button>
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+          <input type="search" placeholder="Buscar productos">
+          <button>
+              <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
       </div>
-
+    
       <nav>
-        <div class="burger-menu btn">
-          <i class="fas fa-bars"></i>
-        </div>
-        <ul class="listaSuperior">
-          <li>
-            <a class="btn" href="/carrito"
-              ><i class="fa-solid fa-cart-shopping"></i
-            ></a>
-          </li>
-          <li>
-            <a class="btn" href=""><i class="fa-solid fa-user"></i></a>
-          </li>
-          <li>
-            <a class="btn" href=""
-              ><i class="fa-solid fa-circle-question"></i
-            ></a>
-          </li>
-        </ul>
+         
+          <div class="burger-menu btn">
+              <i class="fas fa-bars"></i>
+          </div>
+          
+          <ul class="listaSuperior">
+              <li><a class="btn" href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
+              <li><a class="btn" href="/login"><i class="fa-solid fa-user"></i></a></li>
+              <li><a class="btn" href="/error"><i class="fa-solid fa-circle-question"></i></a></li>
+          </ul>
       </nav>
-    </header>
+      </section>
+
+      <nav class="navegacion">
+          <ul>
+              <li class="btn"><a href="/register">Registrarme</a></li>
+              <li class="btn"><a href="/error">Quienes somos?</a></li>
+              <li class="btn"><a href="/error">Proveedores</a></li>
+              <li class="btn"><a href="#products">Productos</a></li>
+              <li class="btn"><a href="#pets">mascotas</a></li>
+          </ul>
+
+      </nav>
+
+  </header>
     <main>
       <div class="titulo">
         <h1>Carrito de compras:</h1>
@@ -126,7 +126,7 @@
         </ul>
       </section> <div class="comprar">
       <button><i class="fa-solid fa-money-check-dollar"> Pagar</i></button>
-      <button><i class="fa-solid fa-cart-shopping">Agregar al carrito</i>
+      <button><i class="fa-solid fa-cart-shopping">Seguir agregando productos</i>
       </button></div>
     </main>
     <footer>
@@ -163,9 +163,12 @@
            </div>
        </nav>
    </nav>
-   
-   <div id="logo"><a href="/views/home.html"><img src="/img/logo_banner_fondo_blanco_mod.png" alt="logo"></a></div>
+   <section class="final">
+   <div id="logo"><a href="/"><img src="/img/logo_banner_fondo_blanco_mod.png" alt="logo"></a></div>
+   <div class="qr"><img src="/image/qr-chelo.png" alt="qr"></div>
+   </section>
     
 </footer>
+
   </body>
 </html>
