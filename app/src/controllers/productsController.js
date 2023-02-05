@@ -1,19 +1,21 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsDB = path.join(__dirname, '../data/productsDB.json');
+const productsDB = path.join(__dirname, '../database/productsDB.json');
+
 const products = JSON.parse(fs.readFileSync(productsDB, 'utf-8'));
+
 const writeJson = (products) => {
-	fs.writeFileSync(products, JSON.stringify(products), {encoding: "utf-8"})
+	fs.writeFileSync(productsDB, JSON.stringify(products), {encoding: "utf-8"})
 }
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 	// Root - Show all products
-	index: (req, res) => {
+ 	index: (req, res) => {
 		res.render("products", {products, toThousand})
-	},
+	}, 
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
@@ -21,7 +23,7 @@ const controller = {
 
 		let product = products.find(product => product.id == productId);
 
-		res.render("detail", {
+		res.render("detalleProducto", {
 			product,
 			toThousand
 		})
@@ -29,7 +31,7 @@ const controller = {
 
 	// Create - Form to create
 	create: (req, res) => {
-		res.render("product-create-form")
+		res.render("products-create")
 	},
 	
 	// Create -  Method to store
@@ -43,13 +45,12 @@ const controller = {
 			discount: req.body.discount,
 			category: req.body.category,
 			description: req.body.description,
-			image: "default-image.png",
 		}
 		products.push(newProduct);
 
 		writeJson(products);
 
-		res.redirect('/products/')
+		res.redirect('/products')
 	},
 
 	// Update - Form to edit
