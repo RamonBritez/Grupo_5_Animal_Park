@@ -1,35 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error</title>
-    <link rel="stylesheet" href="css/allStyle.css" />
-    <script
-      src="https://kit.fontawesome.com/1db27a1d0e.js"
-      crossorigin="anonymous"
-    ></script>
-</head>
-<body>
-    <header class="main-header" id="top">
+    <%- include("partials/head")  %> 
 
-        <div class="logo"><a href="/"><img src="/img/logo_cuadrado_fondo_blanco-mod.png" alt="Logo-mobile" class="logo"></a></div>
+    <body>
     
-        <nav>
-           
-            <div class="burger-menu btn">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <ul class="listaSuperior">
-                <li><a class="btn" href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a class="btn" href="/login"><i class="fa-solid fa-user"></i></a></li>
-                <li><a class="btn" href="/error"><i class="fa-solid fa-circle-question"></i></a></li>
-            </ul>
-        </nav>
-
-    </header>
+    <%- include("partials/header")  %> 
    
     <main>
         <div class="error-container">
@@ -40,11 +15,6 @@
         </div>
     </main>
 
-<footer>
-
-     <div id="logo"><a href="/views/home.html"><img src="/img/logo_banner_fondo_blanco_mod.png" alt="logo"></a></div>
-      
- </footer>
-
+    <%- include("partials/footer")  %> 
 </body>
 </html>
