@@ -1,115 +1,13 @@
 /* Carrusel robado */
-section.carrusel{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carrusel {
-    position: relative;
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-.slide-inner {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 200px;
-}
-.slide-open:checked + .slide-item {
-    position: static;
-    opacity: 100;
-}
-.slide-item {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    -webkit-transition: opacity 0.6s ease-out;
-    transition: opacity 0.6s ease-out;
-    flex-wrap: nowrap;
-    
-}
-.slide-item img {
-    height: 100%;
-    width: 100%;
-    margin: auto;
-}
-.slide-control {
-    background: rgba(0, 0, 0, 0.28);
-    border-radius: 50%;
-    color: #fff;
-    cursor: pointer;
-    display: none;
-    font-size: 40px;
-    height: 40px;
-    line-height: 35px;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translate(0, -50%);
-    cursor: pointer;
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    text-align: center;
-    width: 40px;
-    z-index: 10;
-}
-.slide-control.prev {
-    left: 2%;
-}
-.slide-control.next {
-    right: 2%;
-}
-.slide-control:hover {
-    background: rgba(0, 0, 0, 0.8);
-    color: #aaaaaa;
-}
-#slide-1:checked ~ .control-1,
-#slide-2:checked ~ .control-2,
-#slide-3:checked ~ .control-3 {
-    display: block;
-}
-.slide-indicador {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    bottom: 2%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 10;
-}
-.slide-indicador li {
-    display: inline-block;
-    margin: 0 5px;
-}
-.slide-circulo {
-    color: #828282;
-    cursor: pointer;
-    display: block;
-    font-size: 35px;
-}
-.slide-circulo:hover {
-    color: #aaaaaa;
-}
-#slide-1:checked ~ .control-1 ~ .slide-indicador 
-     li:nth-child(1) .slide-circulo,
-#slide-2:checked ~ .control-2 ~ .slide-indicador 
-      li:nth-child(2) .slide-circulo,
-#slide-3:checked ~ .control-3 ~ .slide-indicador 
-      li:nth-child(3) .slide-circulo {
-    color: #428bca;
-}
 
 /* --- MAIN --- */
 
-
-main div.info{
+main.home{
+    width: 100%;
+    padding: 0%;
+    
+}
+main div.home-info{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -120,7 +18,7 @@ main div.info{
     color: var(--verdePrueba1);   
 }   
 
-main div.info div{
+main div.home-info div{
  
  height: 50px;
  width: 50px;
@@ -135,84 +33,27 @@ main div.info div{
  flex-wrap: nowrap;
 }
 
-main div.info div#center{
+main div.home-info div#center{
 border-left: var(--verdePrueba1) 1px solid;
 border-right: var(--verdePrueba1) 1px solid;
 width: 40%;
 
 }
-main div.info div:last-child{
+main div.home-info div:last-child{
     border: none;
 }
 
-main div.info div i {
+main div.home-info div i {
    font-size: 14pxpx;
    flex-wrap: wrap;
 }
 
- /* --- Filtros --- */
-main section.filter{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
 
-main section.filter nav.filter {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-main section.filter nav.filter div.filter{
-    height: 100px;
-    width: 100px;
-    padding: 20px;
-    margin: 3px;
-    display: flex;
-    border: 1px black solid; 
-    flex-direction: column;
-    box-shadow:  black 3px 2px 10px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10%;
-    background-color: var(--amarillo);    
-}
-
-main nav.filter div:hover{
-    font-weight: 600;
-    background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
-    border: var(--verdePrueba1) 3px solid;
-}
-
-main nav.filter div.filter a{
-    display: flex;
-    flex-direction: column;
-    color: var(--verdePrueba1);
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
-}
-
-main nav.filter div.filter i{
-    color: var(--verdePrueba1);
-   font-size: 36px;
-   margin-bottom: 5px ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-/* --- FIN FILTROS --- */
 
 /* --- PUBLICIDAD --- */
     .publicidad {
         display: none;
     }
-
-
 
     main section.vende-humo{
         display: flex;
@@ -245,69 +86,6 @@ main nav.filter div.filter i{
 
     }
 /* --- FIN PUBLICIDAD ---*/
-
-/* --- OFERTAS --- */
-section h2{
-    text-align: center;
-    text-transform: uppercase;
-}
-
-section div.productContainer {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2rem 1rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    justify-content: space-around;
-    background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
-}
-
-    section div.productContainer article.productCard{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--amarillo);
-    border-radius: 5px;
-    padding: 1rem 0.5rem;
-    margin-bottom: 1rem;
-    width: 220px;
-    height: 280px;
-    background: linear-gradient( rgb(192, 242, 200), white);
-    }
-
-    section div.productContainer article.productCard div.imageContainer{
-    width: 100%;
-    height: 150px;
-    margin-bottom: 0.5rem;
-    }
-
-    section div.productContainer article.productCard div.imageContainer img{
-        width: 100%;
-        height: 100%;
-    }
-
-    section div.productContainer article.productCard a.btn{
-
-        
-        width: 75%;
-        height: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-        
-    }
-
-    div.imageContainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    }
-
-    /* --- FIN OFERTAS ---*/
-
 
 main div#suscribe{
     display: flex;
@@ -359,33 +137,20 @@ main div#suscribe div a{
 
 
 @media (min-width: 768px) {
-  /* Carrusel */
-section.carrusel div.carrusel{
-    width: 100%;
-}
-.slide-inner{
-    height: 400px;
-}
+
 /*info bajo header */
-main div.info div{
+main div.home-info div{
     height: 100px;
     width: 200px;
 }
 
-main div.info div i{
+main div.home-info div i{
     font-size: 26px;
 }
-main div.info div span{
+main div.home-info div span{
     font-size: 22px;
 }
-/* Filtros */
-main section.filter nav.filter div.filter{
-    width: 150px;
-}
 
-main nav.filter div.filter i{
-    font-size: 46px; 
-}
 /* Banners */
 main section.publicidad {
         
