@@ -1,5 +1,5 @@
 @import url('style.css');
-@import url('detalleProducto.css');
+@import url('detail.css');
 @import url('footer.css');
 @import url('header.css');
 @import url('bootstrap-grid.min.css');
@@ -11,5 +11,7 @@
 @import url('carrusel.css');
 @import url('filter.css');
 @import url('tarjetas.css');
+@import url('products.css');
+@import url('create.css');
 
 

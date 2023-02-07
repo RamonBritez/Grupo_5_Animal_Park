@@ -1,19 +1,29 @@
+const fs = require('fs');
+const path = require('path');
+
+const productsDB = path.join(__dirname, '../database/productsDB.json');
+
+const products = JSON.parse(fs.readFileSync(productsDB, 'utf-8'));
+
+
 module.exports = {
+
+    
     
     index: (req, res) => {
-        res.render("home")
+        res.render("home", {products})
     },
 
 
     login: (req, res) => {
-        res.render("Login")
+        res.render("login/Login")
     },
     
     error: (req, res) => {
         res.render("error")
     },
 
-    detalleProducto:(req, res) => {
-        res.render("detalleProducto")
+    register: (req, res) => {
+        res.render("login/register")
     },
 }

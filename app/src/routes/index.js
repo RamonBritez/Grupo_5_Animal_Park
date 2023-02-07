@@ -8,6 +8,6 @@ router.get("/login", controller.login)
 
 router.get("/error", controller.error)
 
-router.get("/detalleProducto", controller.detalleProducto)
+router.get("/register", controller.register)
 
 module.exports = router;
