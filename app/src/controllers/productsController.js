@@ -52,7 +52,9 @@ const controller = {
 
 		writeJson(products);
 
-		res.redirect('/products')
+		res.sed(
+			"agregrado correctamente"
+		)
 	},
 
 	// Update - Form to edit
