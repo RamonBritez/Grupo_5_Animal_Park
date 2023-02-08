@@ -48,13 +48,16 @@ const controller = {
 			discount: req.body.discount,
 			category: req.body.category,
 			description: req.body.description,
+			pet: req.body.pet,
+			weight: req.body.weight,
+			image:"whiskas.png"
 		}
 		products.push(newProduct);
 
 		writeJson(products);
 
-		res.send(
-			"agregrado correctamente"
+		res.redirect(
+			"/products"
 		)
 	},
 

@@ -1,4 +1,3 @@
-
 [
     {
         "id": 1,
@@ -7,6 +6,8 @@
         "discount": "50",
         "category": "visited",
         "description": "Whizcas 10kg.",
+        "pet": "Gatos",
+        "weight": "20kg",
         "image": "whiskas.png"
     },
     {
@@ -16,6 +17,8 @@
         "discount": "50",
         "category": "visited",
         "description": "Whizcas 10kg.",
+        "pet": "Gatos",
+        "weight": "20kg",
         "image": "whiskas.png"
     },
     {
@@ -25,6 +28,8 @@
         "discount": "50",
         "category": "visited",
         "description": "Whizcas 10kg.",
+        "pet": "Gatos",
+        "weight": "20kg",
         "image": "whiskas.png"
     },
     {
@@ -34,6 +39,8 @@
         "discount": "50",
         "category": "visited",
         "description": "Whizcas 10kg.",
+        "pet": "Gatos",
+        "weight": "20kg",
         "image": "whiskas.png"
     },
     {
@@ -43,6 +50,41 @@
         "discount": "50",
         "category": "visited",
         "description": "Whizcas 10kg.",
+        "pet": "Gatos",
+        "weight": "20kg",
+        "image": "whiskas.png"
+    },
+    {
+        "id": 6,
+        "name": "dasdasd",
+        "price": "333",
+        "discount": "3333",
+        "category": "alimentos",
+        "description": "asdasdasd",
+        "pet": "Gatos",
+        "weight": "20kg",
+        "image": "whiskas.png"
+    },
+    {
+        "id": 7,
+        "name": "asda",
+        "price": "ads",
+        "discount": "dsa",
+        "category": "accesorios",
+        "description": "asd",
+        "pet": "Gatos",
+        "weight": "20kg",
+        "image": "whiskas.png"
+    },
+    {
+        "id": 8,
+        "name": "asdasdasd",
+        "price": "asdasd",
+        "discount": "sdasdasd",
+        "category": "alimentos",
+        "description": "dsaasdasdasdasda",
+        "pet": "perros",
+        "weight": "asdasdasd",
         "image": "whiskas.png"
     }
 ]
