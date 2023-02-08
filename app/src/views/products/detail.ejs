@@ -28,10 +28,13 @@
             <div class="info-product">
                 <h2 class="title"><%- product.name %></h2>
                 <h2 class="price">$<%- product.price %></h2>
-                <button type="submit" class="btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                <form action="/products/edit/<%- product.id %>">
+                    <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
+                </form>
+
                 <form action="/products/delete/<%- product.id %>?_method=delete" method="post">
-                    <button type="submit" class="btn">BORRAAAR</button>
-                  </form>
+                    <button type="submit" class="btn">Borrar</button>
+                 </form>
             </div>
         </section>
 
