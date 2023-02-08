@@ -21,7 +21,7 @@ section div.productContainer {
     border: 1px solid var(--amarillo);
     border-radius: 5px;
     padding: 1rem 0.5rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
     width: 220px;
     height: 280px;
     background: linear-gradient( rgb(192, 242, 200), white);

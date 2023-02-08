@@ -27,6 +27,7 @@ const controller = {
 
 		res.render("products/detail", {
 			product,
+			products,
 			toThousand
 		})
 	},
