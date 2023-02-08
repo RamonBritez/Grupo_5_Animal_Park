@@ -53,7 +53,7 @@ const controller = {
 
 		writeJson(products);
 
-		res.sed(
+		res.send(
 			"agregrado correctamente"
 		)
 	},
@@ -73,7 +73,6 @@ const controller = {
 	// Update - Method to update
 	update: (req, res) => {
 		let productId = Number(req.params.id);
-
 		products.forEach(product => {
 			if(product.id === productId){
 				product.name = req.body.name,
