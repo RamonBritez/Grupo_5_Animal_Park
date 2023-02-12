@@ -10,4 +10,6 @@ router.get("/error", controller.error)
 
 router.get("/register", controller.register)
 
+router.get("/carrito", controller.carrito)
+
 module.exports = router;

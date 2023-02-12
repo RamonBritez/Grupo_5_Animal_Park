@@ -16,7 +16,7 @@ module.exports = {
 
 
     login: (req, res) => {
-        res.render("login/Login")
+        res.render("users/Login")
     },
     
     error: (req, res) => {
@@ -24,6 +24,9 @@ module.exports = {
     },
 
     register: (req, res) => {
-        res.render("login/register")
+        res.render("users/register")
+    },
+    carrito: (req, res) => {
+        res.render("products/carrito")
     },
 }

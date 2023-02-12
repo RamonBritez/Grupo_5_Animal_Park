@@ -99,7 +99,7 @@ const controller = {
 
 		writeJson(newProductsArray);
 
-		res.send('Producto eliminado correctamente');
+		res.redirect('/products');
 	}
 };
 
