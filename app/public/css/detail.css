@@ -153,6 +153,7 @@ body.detail section.container-description{
     align-items: center;
     padding: 1rem 1rem;
     box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
+    margin-bottom: 50px;
 } 
 body.detail section.container-description h5{
     font-size: 16px;

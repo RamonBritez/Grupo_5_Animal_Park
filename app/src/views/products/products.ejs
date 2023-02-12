@@ -8,8 +8,19 @@
 
 <main>
 
-	<%- include('../partials/tarjetas')  %> 
-    <a href="/products/create">agregar producto</a>
+
+    <section class="ofertas">
+        <h2>Ofertas</h2>
+    
+        <%- include("../partials/tarjetasDescuento")  %> 
+
+   </section>
+
+   <section class="ofertas">
+    <h2>Todos los productos</h2>
+    <%- include("../partials/tarjetas")  %>
+   </section>
+
 	
 
 

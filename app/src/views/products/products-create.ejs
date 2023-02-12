@@ -17,7 +17,7 @@
 			</div>
 			
 			<div class="login__menu-form">
-				<form action="/products" method="post">
+				<form action="/products" method="post" enctype="multipart/form-data">
 					<div class="form-container">
 						
 						<div class="input">
@@ -70,7 +70,7 @@
 						
 						<div class="input">
 							<label for="image" class="form-label">imagen</label>
-							<input type="file">
+							<input type="file" id="image" name="image">
 						</div>
 
 						<div class="description">
