@@ -14,9 +14,12 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 	// Root - Show all products
  	index: (req, res) => {
+		let oferta = products.filter(product => product.discount > 0);
 		res.render("products/products", {
 			products,
-			toThousand})
+			toThousand,
+			oferta
+		})
 	}, 
 
 	// Detail - Detail from one product
@@ -50,7 +53,7 @@ const controller = {
 			description: req.body.description,
 			pet: req.body.pet,
 			weight: req.body.weight,
-			image:"whiskas.png"
+			image: req.file ? req.file.filename : null
 		}
 		products.push(newProduct);
 
@@ -87,7 +90,7 @@ const controller = {
 		});
 		writeJson(products);
 		
-		res.send('Producto editado correctamente');
+		res.redirect('/products');
 	},
 
 	// Delete - Delete one product from DB
@@ -99,7 +102,7 @@ const controller = {
 
 		writeJson(newProductsArray);
 
-		res.send('Producto eliminado correctamente');
+		res.redirect('/products');
 	}
 };
 

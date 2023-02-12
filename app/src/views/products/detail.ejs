@@ -16,18 +16,25 @@
             <div class="containerBox">
                 <article class="showProduct">
                     <div class="imageContainer">
-                        <img src="image/whiskas.png" alt="Foto">
+                        <img src="/image/whiskas.png" alt="Foto">
                     </div>
                     <div class="altImg">
-                        <img src="image/whiskas.png" alt="alt1">
-                        <img src="image/whiskas.png" alt="alt2">
-                        <img src="image/whiskas.png" alt="alt3">
+                        <img src="/image/whiskas.png" alt="alt1">
+                        <img src="/image/whiskas.png" alt="alt2">
+                        <img src="/image/whiskas.png" alt="alt3">
                     </div>
                 </article>
             </div>
             <div class="info-product">
-                <h2 class="title">Whiskas sabor Pescado por 10,1 kilos</h2>
-                <h2 class="price">$7.560-</h2>
+                <h2 class="title"><%- product.name %></h2>
+                <h2 class="price">$<%- product.price %></h2>
+                <form action="/products/edit/<%- product.id %>">
+                    <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
+                </form>
+
+                <form action="/products/delete/<%- product.id %>?_method=delete" method="post">
+                    <button type="submit" class="btn">Borrar</button>
+                 </form>
             </div>
         </section>
 
@@ -51,7 +58,7 @@
                             <input type="radio" name="pago" value="Efectivo"> Efectivo
                         </div>
                     </div>
-                    <img src="image/pagos.png" alt="pagos">
+                    <img src="/image/pagos.png" alt="pagos">
                 </div>
                 
                 <div class="cantidad">

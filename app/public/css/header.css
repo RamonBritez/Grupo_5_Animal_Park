@@ -121,13 +121,7 @@ header nav.navegacion{
   display: none;
 }
 
-/* MAIN */ 
-body {
-  background-image: url(/img/sepiaMarron.jpeg);
-  background-repeat: repeat;  
-  background-position: center;
-  background-size: contain;
-}
+
 
 
 /* Tablet */
