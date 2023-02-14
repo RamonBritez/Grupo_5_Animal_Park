@@ -1,1 +1,156 @@
-[{"id":1,"name":"Nutrique Gato Adulto","price":"3697","discount":"10","category":"alimentos","description":"+/ Años","pet":"gatos","weight":"2kg","image":"1676164813110_products_.png"},{"id":2,"name":"Nutrique Gato Adulto Castrado","price":"4105","discount":"0","category":"alimentos","description":"Control de peso","pet":"gatos","weight":"2kg","image":"1676165016569_products_.png"},{"id":3,"name":"Nutrique Gato Adulto Healthy","price":"10463","discount":"15","category":"alimentos","description":"Healthy M.","pet":"gatos","weight":"7,5kg","image":"1676165257611_products_.png"},{"id":4,"name":"Nutrique Gato Adulto Urinary Care","price":"3689","discount":"0","category":"alimentos","description":"Urinary Care","pet":"gatos","weight":"2kg","image":"1676165325047_products_.png"},{"id":5,"name":"Nutrique Gato Bebé","price":"11398","discount":"25","category":"alimentos","description":"Gato bebé y gato cachorro","pet":"gatos","weight":"7,5kg","image":"1676165377177_products_.png"},{"id":6,"name":"Nutrique Gato Kitten","price":"782","discount":"0","category":"alimentos","description":"Kitten cachorro","pet":"gatos","weight":"350gr","image":"1676165429489_products_.png"},{"id":7,"name":"Ropa Para Perros","price":"1500","discount":"10","category":"accesorios","description":"Buzo Vestido Ambar ","pet":"perros","weight":"","image":"1676166281180_products_.PNG"},{"id":8,"name":"Nutrique Cachorro","price":"1394","discount":"5","category":"alimentos","description":"Raza Mediana","pet":"perros","weight":"1kg","image":"1676166390464_products_.png"},{"id":9,"name":"Nutrique Perro Adulto","price":"7420","discount":"0","category":"alimentos","description":"Raza pequeña y mini","pet":"perros","weight":"7,5kg","image":"1676166482766_products_.png"},{"id":10,"name":"Alfalfa en cubos","price":"700","discount":"5","category":"alimentos","description":"Ricos en vitaminas para todo tipo de roedores","pet":"roedores","weight":"100gr","image":"1676166605412_products_.png"},{"id":11,"name":"Shulet Tortugin","price":"350","discount":"0","category":"alimentos","description":"Alimento completo para tortugas acuáticas y complemento para terrestres","pet":"peces","weight":"100gr","image":"1676166732128_products_.webp"},{"id":12,"name":"Hectopar","price":"500","discount":"0","category":"higiene/prevencion","description":"Pulguicida para gatos mas de 4kg","pet":"gatos","weight":"100gr","image":"1676166988307_products_.jpg"},{"id":13,"name":"Shulet Tropical","price":"870","discount":"0","category":"alimentos","description":"Alimento completo balanceado para peces tropicales","pet":"peces","weight":"100gr","image":"1676168189895_products_.webp"},{"id":14,"name":"Zoomarlo","price":"560","discount":"0","category":"alimentos","description":"Mazorca de maiz molida premium","pet":"roedores","weight":"250gr","image":"1676168295408_products_.jfif"}]
+[
+  {
+    "id": 1,
+    "name": "Nutrique Gato Adulto",
+    "price": "3697",
+    "discount": "10",
+    "category": "alimentos",
+    "description": "+/ Años",
+    "pet": "gatos",
+    "weight": "2kg",
+    "image": "1676164813110_products_.png"
+  },
+  {
+    "id": 2,
+    "name": "Nutrique Gato Adulto Castrado",
+    "price": "4105",
+    "discount": "0",
+    "category": "alimentos",
+    "description": "Control de peso",
+    "pet": "gatos",
+    "weight": "2kg",
+    "image": "1676165016569_products_.png"
+  },
+  {
+    "id": 3,
+    "name": "Nutrique Gato Adulto Healthy",
+    "price": "10463",
+    "discount": "15",
+    "category": "alimentos",
+    "description": "Healthy M.",
+    "pet": "gatos",
+    "weight": "7,5kg",
+    "image": "1676165257611_products_.png"
+  },
+  {
+    "id": 4,
+    "name": "Nutrique Gato Adulto Urinary Care",
+    "price": "3689",
+    "discount": "0",
+    "category": "alimentos",
+    "description": "Urinary Care",
+    "pet": "gatos",
+    "weight": "2kg",
+    "image": "1676165325047_products_.png"
+  },
+  {
+    "id": 5,
+    "name": "Nutrique Gato Bebé",
+    "price": "11398",
+    "discount": "25",
+    "category": "alimentos",
+    "description": "Gato bebé y gato cachorro",
+    "pet": "gatos",
+    "weight": "7,5kg",
+    "image": "1676165377177_products_.png"
+  },
+  {
+    "id": 6,
+    "name": "Nutrique Gato Kitten",
+    "price": "782",
+    "discount": "0",
+    "category": "alimentos",
+    "description": "Kitten cachorro",
+    "pet": "gatos",
+    "weight": "350gr",
+    "image": "1676165429489_products_.png"
+  },
+  {
+    "id": 7,
+    "name": "Ropa Para Perros",
+    "price": "1500",
+    "discount": "10",
+    "category": "accesorios",
+    "description": "Buzo Vestido Ambar ",
+    "pet": "perros",
+    "weight": "",
+    "image": "1676166281180_products_.PNG"
+  },
+  {
+    "id": 8,
+    "name": "Nutrique Cachorro",
+    "price": "1394",
+    "discount": "5",
+    "category": "alimentos",
+    "description": "Raza Mediana",
+    "pet": "perros",
+    "weight": "1kg",
+    "image": "1676166390464_products_.png"
+  },
+  {
+    "id": 9,
+    "name": "Nutrique Perro Adulto",
+    "price": "7420",
+    "discount": "0",
+    "category": "alimentos",
+    "description": "Raza pequeña y mini",
+    "pet": "perros",
+    "weight": "7,5kg",
+    "image": "1676166482766_products_.png"
+  },
+  {
+    "id": 10,
+    "name": "Alfalfa en cubos",
+    "price": "700",
+    "discount": "5",
+    "category": "alimentos",
+    "description": "Ricos en vitaminas para todo tipo de roedores",
+    "pet": "roedores",
+    "weight": "100gr",
+    "image": "1676166605412_products_.png"
+  },
+  {
+    "id": 11,
+    "name": "Shulet Tortugin",
+    "price": "350",
+    "discount": "0",
+    "category": "alimentos",
+    "description": "Alimento completo para tortugas acuáticas y complemento para terrestres",
+    "pet": "peces",
+    "weight": "100gr",
+    "image": "1676166732128_products_.webp"
+  },
+  {
+    "id": 12,
+    "name": "Hectopar",
+    "price": "500",
+    "discount": "0",
+    "category": "higiene/prevencion",
+    "description": "Pulguicida para gatos mas de 4kg",
+    "pet": "gatos",
+    "weight": "100gr",
+    "image": "1676166988307_products_.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Shulet Tropical",
+    "price": "870",
+    "discount": "0",
+    "category": "alimentos",
+    "description": "Alimento completo balanceado para peces tropicales",
+    "pet": "peces",
+    "weight": "100gr",
+    "image": "1676168189895_products_.webp"
+  },
+  {
+    "id": 14,
+    "name": "Zoomarlo",
+    "price": "1400",
+    "discount": "0",
+    "category": "alimentos",
+    "description": "Mazorca de maíz premium",
+    "pet": "roedores",
+    "weight": "300gr",
+    "image": "1676239983247_products_.jfif"
+  }
+]

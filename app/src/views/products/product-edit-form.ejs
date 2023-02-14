@@ -22,22 +22,22 @@
 						
 						<div class="input">
 							<label for="name" class="form-label">Nombre del producto:</label>
-							<input type="text" id="name" name="name" placeholder="<%- productToEdit.name%>" class="form-input">
+							<input type="text" id="name" name="name" value="<%- productToEdit.name %>" class="form-input">
 						</div>
 						
 						<div class="input">
 							<label for="price" class="form-label">Precio del producto:</label>
-							<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+							<input type="text" id="price" name="price" value="<%- productToEdit.price %>" class="form-input">
 						</div>
 						
 						<div class="input">
 							<label for="discount" class="form-label">Descuento:</label>
-							<input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
+							<input type="text" id="discount" name="discount" value="<%- productToEdit.discount %>" class="form-input">
 						</div>
 						
 						<div class="input">
 							<label for="weight" class="form-label">Peso:</label>
-							<input type="text" id="weight" name="weight" placeholder="Ej: 20kg" class="form-input">
+							<input type="text" id="weight" name="weight" value="<%- productToEdit.weight %>" class="form-input">
 						</div>
 						
 						
@@ -45,12 +45,12 @@
 							<label for="pet" class="form-label">Animal:</label>
 							<select name="pet" id="pet" class="form-input">
 								<option value="">Elegí</option>
-								<option value="gatos">Gatos</option>
-								<option value="perros">Perros</option>
-								<option value="peces">Peces</option>
-								<option value="aves">Aves</option>
-								<option value="reptiles">Reptiles</option>
-								<option value="roedores">Roedores</option>
+								<option value="gatos" <%- productToEdit.pet === "gatos" && "selected" %>>Gatos</option>
+								<option value="perros" <%- productToEdit.pet === "perros" && "selected" %>>Perros</option>
+								<option value="peces" <%- productToEdit.pet === "peces" && "selected" %>>Peces</option>
+								<option value="aves" <%- productToEdit.pet === "aves" && "selected" %>>Aves</option>
+								<option value="reptiles" <%- productToEdit.pet === "reptiles" && "selected" %>>Reptiles</option>
+								<option value="roedores" <%- productToEdit.pet === "roedores" && "selected" %>>Roedores</option>
 							</select>
 						</div>
 							
@@ -59,23 +59,23 @@
 								<label for="category" class="form-label">Categoria:</label>
 								<select name="category" id="category" class="form-input">
 									<option value="">Elegí</option>
-									<option value="alimentos">Alimentos</option>
-									<option value="accesorios">Accesorios</option>
-									<option value="juguetes">Juguetes</option>
-									<option value="vestimenta">Vestimenta</option>
-									<option value="higiene/prevencion">Higiene/Prevencion</option>
-									<option value="camas/cuchas">Camas/Cuchas</option>
+									<option value="alimentos" <%- productToEdit.category === "alimentos" && "selected" %>>Alimentos</option>
+									<option value="accesorios" <%- productToEdit.category === "accesorios" && "selected" %>>Accesorios</option>
+									<option value="juguetes" <%- productToEdit.juguetes === "alimentos" && "selected" %>>Juguetes</option>
+									<option value="vestimenta" <%- productToEdit.category === "vestimenta" && "selected" %>>Vestimenta</option>
+									<option value="higiene/prevencion" <%- productToEdit.category === "higiene/prevencion" && "selected" %>>Higiene/Prevencion</option>
+									<option value="camas/cuchas" <%- productToEdit.category === "camas/cuchas" && "selected" %>>Camas/Cuchas</option>
 							</select>
 						</div>
 						
 						<div class="input">
 							<label for="image" class="form-label">imagen</label>
-							<input type="file">
+							<input type="file" name="image" id="image" >
 						</div>
 
 						<div class="description">
 							<label for="description" class="form-label">Descripción:</label>
-							<textarea name="description" id="description" class="form-input"></textarea>
+							<textarea name="description" id="description" class="form-input"><%- productToEdit.description %></textarea>
 						</div>
 						
 						<div class="save-product">

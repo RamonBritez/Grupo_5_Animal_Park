@@ -89,8 +89,7 @@ const controller = {
 			}
 		});
 		writeJson(products);
-		
-		res.redirect('/products');
+		res.redirect('/products/');
 	},
 
 	// Delete - Delete one product from DB

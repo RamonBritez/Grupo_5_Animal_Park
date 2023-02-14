@@ -11,7 +11,11 @@ module.exports = {
     
     
     index: (req, res) => {
-        res.render("home", {products})
+        let oferta = products.filter(product => product.discount > 0);
+        res.render("home", {
+            products,
+            oferta
+        })
     },
 
 
