@@ -64,12 +64,16 @@ header div.busqueda {
   width: 100%;
 }
 
-header div.busqueda div{
+header div.busqueda form{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+header div.busqueda form h2{
+  color: blueviolet;
 }
 
 header div.busqueda input{
@@ -143,7 +147,7 @@ header nav.navegacion{
       align-items: center;
     }
     
-    header div.busqueda div{
+    header div.busqueda form{
         max-width: 500px;
         display: flex;
         width: 100%;

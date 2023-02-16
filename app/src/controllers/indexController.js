@@ -18,6 +18,19 @@ module.exports = {
         })
     },
 
+    search: (req, res) => {
+		let { keywords } = req.query
+		let results = products.filter(product => product.name.toLowerCase() === keywords.toLowerCase())
+
+
+		res.render(`products/results`, {
+			keywords,
+			results,
+		})
+	},
+	
+
+
 
     login: (req, res) => {
         res.render("users/Login")
