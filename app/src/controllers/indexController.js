@@ -46,4 +46,8 @@ module.exports = {
     carrito: (req, res) => {
         res.render("products/carrito")
     },
+    admin: (req, res) => {
+        res.render("users/admin")
+    },
+
 }
