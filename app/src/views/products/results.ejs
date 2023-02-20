@@ -12,22 +12,8 @@
 		<section class="ofertas">
 		<h2>Resultados de la búsqueda: <%= keywords %></h2>
 		</section>		 
-				<section>
-                	<div class="productContainer">
-                	<% listProduct.forEach(product => { %>
-                	<article class="productCard animate__animated animate__fadeInRight">                      
-                		<div class="imageContainer">
-               	 			<img src="/image/products/<%- product.image %>" alt="ProductoDestacado-1">
-                		</div>
-                    	<p><%- product.name %></p>
-                    	<h2>$<%- product.price %></h2>
-                     	<% if (product.discount > 0) { %>							 
-                        	<span><%- product.discount %>% OFF</span>
-                    	<% } %>
-                    	<a href="/products/detail/<%- product.id %>" class="btn">Ver detalles</a>
-                    </article>
-                    <% }) %>
-                </section>
+		<%- include('../partials/cardResults') %>
+		
 		 
 	<% }else{ %>		
 		<section class="ofertas">
