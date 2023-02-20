@@ -60,6 +60,11 @@ body {
   background-size: contain;
 }
 
+.text-error{
+  color: red;
+  font-size: 12px;
+}
+
 
 
 
