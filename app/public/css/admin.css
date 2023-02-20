@@ -22,7 +22,8 @@
 
 .admin-table .fila-admin .data-admin{
     font-size: 18px;
-   
+    border-bottom: 1px black solid;
+  
 }
 
 .admin-table .fila-admin i{
