@@ -30,9 +30,6 @@ app.use("/products", products);
 
 
 
-
-
-
 app.listen(PORT,()=>{
     console.log(`
     server listen in port ${PORT}
