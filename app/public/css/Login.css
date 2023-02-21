@@ -66,6 +66,10 @@ main div.login__menu div.login__menu-form form input {
   border-radius: 10px;
 }
 
+div.login__menu{
+  font-size: 15px;
+}
+
 main div.login__menu div.login__menu-form form input:hover{
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }

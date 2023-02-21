@@ -174,5 +174,27 @@
       "description": "Perro adulto +7 años",
       "pet": "perros",
       "image": "1676933887692_products_.png"
+   },
+   {
+      "id": 17,
+      "name": "Alimento Whiskas",
+      "price": 5040,
+      "discount": 15,
+      "category": "alimentos",
+      "weight": "10",
+      "description": "para gato adulto sabor pescado",
+      "pet": "gatos",
+      "image": "1676934573105_products_.webp"
+   },
+   {
+      "id": 18,
+      "name": "Bonacqua",
+      "price": 1300,
+      "discount": 0,
+      "category": "higiene/prevencion",
+      "weight": "50",
+      "description": "Azul de mitelino 50ml",
+      "pet": "peces",
+      "image": "1676934665503_products_.png"
    }
 ]
