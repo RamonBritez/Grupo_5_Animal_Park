@@ -1,0 +1,42 @@
+
+ header nav .btn-close-container {
+     background-color: var(--amarillo);
+     border-radius: 2px;
+     color: rgb(0, 0, 0);
+     margin-right: 15px;
+ }
+ 
+ header nav{
+     display: none;
+
+ }
+ header nav ul.menu {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+header nav ul.menu li{
+    margin-left: 15px;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+header nav ul.menu li a {
+    color: var(--verdePrueba1);
+
+}
+
+
+header nav.active {
+    display: flex;
+    background-color: var(--amarillo);
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+}
