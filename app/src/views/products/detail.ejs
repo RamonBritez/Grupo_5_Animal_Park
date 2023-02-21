@@ -8,11 +8,12 @@
 
     <%- include("../partials/header")  %>
 
-    <main>
+    <main class="detail">
        
-       <section class="main">
+    <section class="detail-product">
+
         <section class="producto">
-            <h1>Producto</h1>
+            <h1><%- product.name  %></h1>
             <div class="containerBox">
                 <article class="showProduct">
                     <div class="imageContainer">
@@ -28,6 +29,11 @@
             <div class="info-product">
                 <h2 class="title"><%- product.name %></h2>
                 <h2 class="price">$<%- product.price %></h2>
+                <% if (product.discount > 0) { %>
+                    <span>$<%- product.price - (product.price * product.discount / 100) %></span>
+                <% } %>
+
+                
                 <form action="/products/edit/<%- product.id %>">
                     <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
                 </form>
@@ -38,7 +44,6 @@
             </div>
         </section>
 
-        
         <section class="compra">
             <div class="metodo-pago">
                 <div class="cajaEnvio">
@@ -89,9 +94,14 @@
 
     <section class="container-description"> 
             <h5>Descripción</h5>
-            <h6>
-               <%- product.description %>
-            </h6>
+            <h6><%- product.description %></h6>
+            <h5>Marca</h5>
+            <h6><%- product.brand %> </h6>
+            <h5>Peso</h5>
+            <h6><%- product.weight %> </h6>
+            
+
+            
     </section>
 
 
