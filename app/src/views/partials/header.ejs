@@ -11,21 +11,34 @@
         </form>
     </div>
   
-    <nav>
-        <div class="burger-menu btn">
+
+
+
+
+   
+        <div class="burger-menu btn" id="burger-menu" >
             <i class="fas fa-bars"></i>
         </div>
+  
+        <nav class="menu-container" id="menu">
 
-        <div class="cont-menu active" id="menu">
-            <ul>
+            <ul class="menu">
                 <li> <a href="/"> Home </a></li>
-                <li> <a href="/"> Productos </a></li>
-                <li> <a href="/"> Carrito </a></li>
-                <li> <a href="/"> Contáctenos </a></li>
+                <li> <a href="/products"> Productos </a></li>
+                <li> <a href="/carrito"> Carrito </a></li>
+                <li> <a href="/error"> Contáctenos </a></li>
             </ul>
-        </div>
-        
-        <ul class="listaSuperior">
+            
+            <div class="btn-close-container">
+                <i class="fa-regular fa-circle-xmark" id="btn-close"></i>
+            </div>
+         </nav>
+
+
+
+
+<nav>
+    <ul class="listaSuperior">
             <li><a class="btn" href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
             <li><a class="btn" href="/login"><i class="fa-solid fa-user"></i></a></li>
             <li><a class="btn" href="/error"><i class="fa-solid fa-circle-question"></i></a></li>
@@ -44,4 +57,6 @@
 
     </nav>
 
+
+    <script src="JS/burger-menu.js"></script>
 </header>
