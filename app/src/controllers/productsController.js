@@ -62,11 +62,12 @@ const controller = {
 	
 		if (errors.isEmpty()) {
 		  const products = readJSON("productsDB.json");
-		  const { name, price, category, pet,description, discount, weight} = req.body;
+		  const { name, brand, price, category, pet,description, discount, weight} = req.body;
 	
 		  const newProduct = {
 			id: products.length ? products[products.length - 1].id + 1 : 1,
 			name: name.trim(),
+			brand: brand,
 			price: +price ,
 			discount: +discount,
 			category,

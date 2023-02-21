@@ -1,6 +1,10 @@
 const { check } = require("express-validator");
 
 module.exports = [
+    check("brand")
+        .notEmpty().withMessage("Indica la marca que buscas").bail()
+        .isLength({ min: 5, max: 25 }).withMessage("El nombre debe tener entre 5 y 25 caracteres"),
+
     check("name")
         .notEmpty().withMessage("El nombre es obligatorio").bail()
         .isLength({ min: 3, max: 20 }).withMessage("El nombre debe tener entre 3 y 20 caracteres"),
@@ -23,4 +27,5 @@ module.exports = [
     
     check("weight")
         .isInt({min:0,max:50}).withMessage("El limite es de 50kg")
+    
 ];

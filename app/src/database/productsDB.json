@@ -174,5 +174,17 @@
       "description": "Perro adulto +7 años",
       "pet": "perros",
       "image": "1676933887692_products_.png"
+   },
+   {
+      "id": 17,
+      "name": "Alimento",
+      "brand": "Voraz",
+      "price": 5200,
+      "discount": 10,
+      "category": "alimentos",
+      "weight": "21",
+      "description": "Alimento para Perros Voraz Carne 21 kilos.",
+      "pet": "perros",
+      "image": "1677013187826_products_.jpg"
    }
 ]
