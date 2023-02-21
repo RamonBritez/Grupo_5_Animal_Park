@@ -128,7 +128,12 @@ header nav.navegacion{
       justify-content: center;
       padding-bottom: 20px;
     }
-  
+    header .botonera {
+      display: flex;
+   }
+    header .burger-menu {
+      display: none;
+    }
   
     header div.busqueda{
       width: 100%;
