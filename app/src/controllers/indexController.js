@@ -18,6 +18,28 @@ module.exports = {
         })
     },
 
+    search: (req, res) => {
+		let { keywords } = req.query
+        let text = keywords.toLowerCase()
+		//let results = products.filter(product => product.name.toLowerCase() === keywords.toLowerCase())
+        let listProduct = []
+
+        let results = products.forEach(product => {
+			let busqueda = product.name.toLowerCase()
+			if(busqueda.indexOf(text) !== -1){
+				listProduct.push(product)
+				
+			}
+		})
+
+		res.render(`products/results`, {
+			keywords,
+			listProduct,
+		})
+	},
+	
+
+
 
     login: (req, res) => {
         res.render("users/Login")
@@ -33,4 +55,8 @@ module.exports = {
     carrito: (req, res) => {
         res.render("products/carrito")
     },
+    admin: (req, res) => {
+        res.render("users/admin")
+    },
+
 }

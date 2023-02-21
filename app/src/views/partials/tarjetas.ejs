@@ -5,12 +5,13 @@
             
         <div class="imageContainer">
             <img src="/image/products/<%- product.image %>" alt="ProductoDestacado-1">
+            <% if (product.discount > 0) { %>							 
+                <span class="discount"><%- product.discount %>% OFF</span>
+            <% } %>
         </div>
         <p><%- product.name %></p>
         <h2>$<%- product.price %></h2>
-                            <% if (product.discount > 0) { %>							 
-                                <span><%- product.discount %>% OFF</span>
-                            <% } %>
+                         
         <a href="/products/detail/<%- product.id %>" class="btn">Ver detalles</a>
     </article>
     <% }) %>

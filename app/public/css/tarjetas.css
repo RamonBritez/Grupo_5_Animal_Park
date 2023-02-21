@@ -12,7 +12,7 @@ section div.productContainer {
     background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
 }
 
-    section div.productContainer article.productCard{
+section div.productContainer article.productCard{
 
     display: flex;
     flex-direction: column;
@@ -25,20 +25,20 @@ section div.productContainer {
     width: 230px;
     height: 380px;
     background: linear-gradient( rgb(192, 242, 200), white);
-    }
+}
 
-    section div.productContainer article.productCard div.imageContainer{
+section div.productContainer article.productCard div.imageContainer{
     width: 100%;
     height: 260px;
     margin-bottom: 0.5rem;
-    }
+}
 
-    section div.productContainer article.productCard div.imageContainer img{
+section div.productContainer article.productCard div.imageContainer img{
         width: 100%;
         height: 100%;
-    }
+}
 
-    section div.productContainer article.productCard a.btn{
+section div.productContainer article.productCard a.btn{
 
         
         width: 75%;
@@ -48,11 +48,38 @@ section div.productContainer {
         align-items: center;
         margin-top: 10px;
         
+}
+
+div.imageContainer{
+        position: relative;
     }
 
-    div.imageContainer img {
+div.imageContainer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 
-    }
+}
+
+div.imageContainer span.discount {
+        position: absolute;
+        margin-right: 5px;
+        top: 5px;
+        right: 5px;
+        background-color: var(--amarillo);
+        opacity: 0.7;
+        width: 80px;
+        color: var(--verdePrueba1);
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 5px;
+        transition: opacity 0.2s;
+}
+div.imageContainer:hover span.discount {
+
+    opacity: 1;
+    border: 2px var(--verdePrueba1) solid ;
+    box-shadow: 2px 2px 5px var(--amarillo);
+
+}

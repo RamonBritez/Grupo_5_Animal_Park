@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('../partials/head', {title:'Resultados de tu busqueda'}) %>
+<body>
+	<!-- Header -->
+	<%- include('../partials/header') %>
+	<!-- /Header -->
+	<main class="results">
+		<%- include('../partials/filtersCategory') %>
+
+	<% if (listProduct.length > 0) { %>
+		<section class="ofertas">
+		<h2>Resultados de la búsqueda: <%= keywords %></h2>
+		</section>		 
+		<%- include('../partials/cardResults') %>
+		
+		 
+	<% }else{ %>		
+		<section class="ofertas">
+							<h2 >No hay productos que coincidan con esa búsqueda</h2>
+		</section>				
+	<% } %>
+		
+	</main>
+
+	<!-- /todos los productos -->
+
+	<!-- footer -->
+	<%- include('../partials/footer') %>
+	<!-- /footer -->
+</body>	
+</html>

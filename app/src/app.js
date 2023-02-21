@@ -16,11 +16,13 @@ app.use(express.json());
 /* Routers */
 const indexRouter = require("./routes");
 const products = require("./routes/products");
+const admin  = require("./routes/admin");
 
 
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", products);
+app.use("/admin", admin);
 
 
 
