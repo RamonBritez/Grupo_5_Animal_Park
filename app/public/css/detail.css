@@ -294,16 +294,17 @@ main.detail section div.productsContainer { /*recomend y venta*/
 /* Tablet */
 
 @media (min-width: 768px){
-    main.detail section.main{
+    main.detail section.detail-product{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         flex-wrap: wrap;
     }
+
     main.detail section.producto{
         display: flex;
         flex-wrap: wrap;
-        width: 40%;
+        width: 100%;
         max-width: 420px;
         background-color: rgba(255, 255, 255, 0.5);
 
@@ -313,27 +314,20 @@ main.detail section div.productsContainer { /*recomend y venta*/
         display: flex;
         flex-wrap: wrap;
         margin-top: 20px;
-        height: 500px;
+        height: 400px;
         align-items: center;
         justify-content: center;
         min-width: 320px;
         padding: 10px;
-        background-color: rgba(255, 255, 255, 0.5);
-
-        
+        background-color: rgba(255, 255, 255, 0.5);   
     }
     main.detail section.compra div.metodo-pago{
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding: 0;
-        margin: 0;
+        width: 100%;
     }
     main.detail section.compra div.metodo-pago .cajaPago, .cajaEnvio{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
         flex-direction: column;
         width: 100%;
     }

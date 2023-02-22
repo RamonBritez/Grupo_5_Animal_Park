@@ -30,7 +30,8 @@ header nav ul.menu li a {
 
 header nav.active {
     display: flex;
-    background: linear-gradient(var(--amarillo), var(--verdePrueba3));;
+    background-image: url(/image/animalPark/BG-MB.jpeg);
+    background-size: cover;
     position: fixed;
     z-index: 10;
     width: 100%;
