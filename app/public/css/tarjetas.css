@@ -12,6 +12,10 @@ section div.productContainer {
     background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
 }
 
+section div.productContainer p{
+    font-size: 16px;
+    text-align: center;
+}
 section div.productContainer article.productCard{
 
     display: flex;
@@ -22,8 +26,8 @@ section div.productContainer article.productCard{
     border-radius: 5px;
     padding: 1rem 0.5rem;
     margin: 1rem;
-    width: 230px;
-    height: 380px;
+    width: 250px;
+    height: 400px;
     background: linear-gradient( rgb(192, 242, 200), white);
 }
 
@@ -36,17 +40,16 @@ section div.productContainer article.productCard div.imageContainer{
 section div.productContainer article.productCard div.imageContainer img{
         width: 100%;
         height: 100%;
+        object-fit:cover;
 }
 
 section div.productContainer article.productCard a.btn{
-
-        
-        width: 75%;
-        height: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
+    width: 75%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
         
 }
 

@@ -34,6 +34,7 @@ section.carrusel{
     height: 100%;
     width: 100%;
     margin: auto;
+    object-fit: cover;
 }
 .slide-control {
     background: rgba(0, 0, 0, 0.28);
