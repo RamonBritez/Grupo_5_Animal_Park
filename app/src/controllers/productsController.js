@@ -179,7 +179,7 @@ const controller = {
 		let newProductsArray = products.filter(product => product.id !== productId);
 
 
-		writeJson(newProductsArray);
+		writeJSON("productsDB.json", newProductsArray);
 
 		res.redirect('/products');
 	}
