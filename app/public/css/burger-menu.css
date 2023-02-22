@@ -1,6 +1,6 @@
 
  header nav .btn-close-container {
-     background-color: var(--amarillo);
+     background-color: blanchedalmond;
      border-radius: 2px;
      color: rgb(0, 0, 0);
      margin-right: 15px;
@@ -30,7 +30,7 @@ header nav ul.menu li a {
 
 header nav.active {
     display: flex;
-    background-color: var(--amarillo);
+    background: linear-gradient(var(--amarillo), var(--verdePrueba3));;
     position: fixed;
     z-index: 10;
     width: 100%;
