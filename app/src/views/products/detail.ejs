@@ -3,7 +3,6 @@
 
 <%- include("../partials/head")  %> 
 
-
 <body class="detail">
 
     <%- include("../partials/header")  %>
@@ -30,6 +29,7 @@
                 <h2 class="title"><%- product.name %></h2>
                 <h2 class="price">$<%- product.price %></h2>
                 <% if (product.discount > 0) { %>
+                    <span>Descuento del <%- product.discount %>%</span>
                     <span>$<%- product.price - (product.price * product.discount / 100) %></span>
                 <% } %>
 
@@ -89,22 +89,14 @@
             </section>
     </section>
 
-
-
-
     <section class="container-description"> 
             <h5>Descripción</h5>
             <h6><%- product.description %></h6>
             <h5>Marca</h5>
             <h6><%- product.brand %> </h6>
             <h5>Peso</h5>
-            <h6><%- product.weight %> </h6>
-            
-
-            
+            <h6><%- product.weight %> </h6>    
     </section>
-
-
 
     <section>
         <div class="container-social">
@@ -117,19 +109,16 @@
            </div> 
     </section>
       
-
     <h5>Productos del mismo vendedor</h5>
         <section class="interes">
            <%- include("../partials/tarjetas")  %> 
         </section>
 
 
-        <h5>Productos que te pueden interesar</h5>
+    <h5>Productos que te pueden interesar</h5>
         <section class="interes">
             <%- include("../partials/tarjetas")  %> 
         </section>
-
-
 
     </main>
 
