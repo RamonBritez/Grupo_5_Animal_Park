@@ -238,5 +238,29 @@
       "description": "nada para test 1 -.......",
       "pet": "perros",
       "image": "1677108246662_products_.jpg"
+   },
+   {
+      "id": 21,
+      "name": "hola",
+      "brand": "pedigree",
+      "price": 1400,
+      "discount": 0,
+      "category": "alimentos",
+      "weight": "34",
+      "description": "asdasfasfasfasfasfasfasfasfasf",
+      "pet": "perros",
+      "image": "1677109687979_products_.jpeg"
+   },
+   {
+      "id": 22,
+      "name": "dibujin",
+      "brand": "dibujin",
+      "price": 1212,
+      "discount": 15,
+      "category": "alimentos",
+      "weight": "12",
+      "description": "dfgjsdfgjfgjrfgjsfgjfgsdjdfgjdfg",
+      "pet": "gatos",
+      "image": "1677109712302_products_.jpg"
    }
 ]
