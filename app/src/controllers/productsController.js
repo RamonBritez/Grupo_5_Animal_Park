@@ -123,7 +123,7 @@ const controller = {
 		}
 	
 		if (errors.isEmpty()) {
-		  const { name, price, category, description, discount, weight} = req.body;
+		  const { name, brand, price, category, pet ,description, discount, weight} = req.body;
 		  const products = readJSON("productsDB.json");
 	
 		  const productsModify = products.map((product) => {
@@ -131,9 +131,11 @@ const controller = {
 			  let productModify = {
 				...product,
 				name: name.trim(),
+				brand,
 				price: +price,
 				discount: +discount,
 				category,
+				pet,
 				weight,
 				description: description.trim(),
 				image: req.file ? req.file.filename : product.image,

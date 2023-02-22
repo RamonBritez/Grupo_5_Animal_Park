@@ -226,5 +226,17 @@
       "description": "para gato adulto sabor pescado",
       "pet": "gatos",
       "image": "1676934573105_products_.webp"
+   },
+   {
+      "id": 20,
+      "name": "nadaa2222",
+      "brand": "pekass",
+      "price": 1234,
+      "discount": 0,
+      "category": "alimentos",
+      "weight": "15",
+      "description": "nada para test 1 -.......",
+      "pet": "perros",
+      "image": "1677108246662_products_.jpg"
    }
 ]

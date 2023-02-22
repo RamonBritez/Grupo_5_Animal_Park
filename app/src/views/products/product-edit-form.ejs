@@ -27,6 +27,12 @@
 						</div>
 						
 						<div class="input">
+							<label for="brand" class="form-label">Nombre del producto:</label>
+							<input type="text" id="brand" name="brand" value="<%= locals.old && old.brand ? old.brand : brand %>" class="form-input">
+							<small class="text-error"><%= locals.errors && errors.brand ? errors.brand.msg : null%></small>
+						</div>
+						
+						<div class="input">
 							<label for="price" class="form-label">Precio del producto:</label>
 							<input type="text" id="price" name="price" value="<%= price %>" class="form-input">
 							<small class="text-error"><%= locals.errors && errors.price ? errors.price.msg : null%></small>
