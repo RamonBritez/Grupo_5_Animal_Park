@@ -30,6 +30,9 @@ header nav ul.menu li{
     align-items: center;
     text-align: center;
     font-size: 20px;
+    border-bottom: 1px var(--verdePrueba1) solid;
+    border-radius: 15px;
+    border-top: 1px var(--amarillo) solid;
 }
 
 header nav ul.menu li i{
