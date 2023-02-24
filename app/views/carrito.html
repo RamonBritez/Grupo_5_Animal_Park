@@ -7,10 +7,9 @@
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
       rel="stylesheet"
-
     />
     <link rel="stylesheet" href="css/carrito.css" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <title>Carrito - Animal Park</title>
   </head>
   <body>
@@ -52,120 +51,240 @@
       </nav>
     </header>
     <main>
-      <div class="titulo">
-        <h1>Carrito de compras:</h1>
-      </div>
-      <section class="lista">
-        <article class="producto">
-          <img src="/image/producto.jpg" alt="plato para perro" />
-          <div class="datos">
-            <h2>Plato sasha</h2>
-            <p class="descripcion">
-              Plato negro con diseño de huellitas blancas, tamaño:20x15
-            </p>
-            <p class="precio">$840</p>
+      <div class="producto">
+        <section class="lista">
+          <div class="titulo">
+            <h2>Carrito de compras:</h2>
           </div>
-          <div class="boton">
-            <button><i class="fa-solid fa-circle-minus"></i></button>
-            <span> 05 </span>
-            <button><i class="fa-solid fa-circle-plus"></i></button>
-            <button><i class="fa-solid fa-trash"></i></button>
-          </div>
-        </article>
-        <article class="producto">
-          <img src="/image/CamaMichi.jpg" />
-          <div class="datos">
-            <h2>Cama Nina</h2>
-            <p class="descripcion">
-              Cama para gatos tipo iglu, Tamaño: 50x50, color:gris
-            </p>
-            <p class="precio">$2500</p>
-          </div>
-          <div class="boton">
-            <button><i class="fa-solid fa-circle-minus"></i></button>
-            <span> 05 </span>
-            <button><i class="fa-solid fa-circle-plus"></i></button>
-            <button><i class="fa-solid fa-trash"></i></button>
-          </div>
-        </article>
-      </section>
-      <section class="envios">
-        <div class="envio">
-          <h2>Metodos de envio:</h2>
-          <i class="fa-solid fa-truck"></i>
-        </div>
-        <div class="metodo">
-          <a href="https://www.correoargentino.com.ar/">Correo Argentino</a>
-          <a href="https://www.andreani.com/">andreani</a>
-          <button>Retiro en sucursales</button>
-        </div>
-      </section>
+          <article class="producto">
+            <img src="/image/producto.jpg" alt="plato para perro" />
+            <div class="datos">
+              <a href="#"><h3>Plato sasha</h3></a>
+              <p class="precio">$840</p>
+            </div>
+            <a href="detalleProducto" class="btn detalleProducto"
+              >Ver detalles</a
+            >
 
-      <section class="descuento">
-        <div class="cupon">
-          <input type="text" placeholder="Ingresa tu cupón" />
-          <i class="fa-solid fa-tag"></i>
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-      </section>
+            <div class="boton">
+              <button><i class="fa-solid fa-circle-minus"></i></button>
+              <span> 05 </span>
+              <button><i class="fa-solid fa-circle-plus"></i></button>
+              <button><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </article>
+          <article class="producto">
+            <img src="/image/CamaMichi.jpg" alt="cama iglu" />
+            <div class="datos">
+              <a href="#"><h3>Cama Nina</h3></a>
+              <p class="precio">$2500</p>
+            </div>
+            <a href="detalleProducto" class="btn detalleProducto"
+              >Ver detalles</a
+            >
+            <div class="boton">
+              <button><i class="fa-solid fa-circle-minus"></i></button>
+              <span> 05 </span>
+              <button><i class="fa-solid fa-circle-plus"></i></button>
+              <button><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </article>
+          <article class="producto">
+            <img src="/image/CamaMichi.jpg" alt="cama iglu" />
+            <div class="datos">
+              <a href="#"><h3>Whiskas</h3></a>
+              <p class="precio">$7.600</p>
+            </div>
+            <a href="detalleProducto" class="btn detalleProducto"
+              >Ver detalles</a
+            >
 
-      <section class="precio">
-        <ul>
-          <div>
-            <li>Total sin envio</li>
-            <li>$3.340</li>
+            <div class="boton">
+              <button><i class="fa-solid fa-circle-minus"></i></button>
+              <span> 01 </span>
+              <button><i class="fa-solid fa-circle-plus"></i></button>
+              <button><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </article>
+
+          <div class="envio">
+            <h2>Metodos de envio:</h2>
+            <i class="fa-solid fa-truck"></i>
           </div>
-          <div>
-            <li>Envio</li>
-            <li>$540</li>
+          <div class="metodo">
+            <div class="boton-envio btn">
+              <a href="https://www.correoargentino.com.ar/">Correo Argentino</a>
+              <i class="fa-solid fa-gifts"></i>
+            </div>
+            <div class="boton-envio btn">
+              <a href="https://www.andreani.com/">Andreani</a>
+              <i class="fa-solid fa-a"></i>
+            </div>
+            <div class="boton-envio btn">
+              <a href="#"> Retiro en sucursales</a>
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
           </div>
-          <div>
-            <li>Total con envio</li>
-            <li>$3.900</li>
+          <div class="cupon">
+            <input type="text" placeholder="Ingresa tu cupón" />
+            <i class="fa-solid fa-tag"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
           </div>
-        </ul>
-      </section> <div class="comprar">
-      <button><i class="fa-solid fa-money-check-dollar"> Pagar</i></button>
-      <button><i class="fa-solid fa-cart-shopping">Agregar al carrito</i>
-      </button></div>
+
+          <div class="precio">
+            <ul>
+              <div>
+                <li>Total sin envio</li>
+                <li>$10.940</li>
+              </div>
+              <div>
+                <li>Envio</li>
+                <li>$660</li>
+              </div>
+              <div>
+                <li>Total con envio</li>
+                <li>$11.600</li>
+              </div>
+            </ul>
+          </div>
+
+          <div class="comprar">
+            <button class="btn">
+              <i class="fa-solid fa-money-check-dollar"> Pagar</i>
+            </button>
+            <button class="btn">
+              <i class="fa-solid fa-cart-shopping">Agregar al carrito</i>
+            </button>
+          </div>
+        </section>
+        <div class="desktop">
+          <section class="ofertas">
+            <h3 class="titulo">Tambien podrias necesitar:</h3>
+            <article class="productCard">
+              <div class="imageContainer">
+                <img src="image/whiskas.png" alt="productoDestacado-2" />
+              </div>
+              <a href="#" class="nombre"><h3>Whiska</h3></a>
+              <p>$9.560</p>
+              <a href="detalleProducto" class="btn">Ver detalle</a>
+            </article>
+            <article class="productCard">
+              <div class="imageContainer">
+                <img src="image/whiskas.png" alt="productoDestacado-2" />
+              </div>
+              <a href="#" class="nombre"><h3>Whiska</h3></a>
+              <p>$9.560</p>
+              <a href="detalleProducto" class="btn">Ver detalle</a>
+            </article>
+            <article class="productCard">
+              <div class="imageContainer">
+                <img src="image/whiskas.png" alt="productoDestacado-3" />
+              </div>
+              <a href="#" class="nombre"><h3>Whiskass</h3></a>
+              <p>$8.560</p>
+              <a href="detalleProducto" class="btn">Ver detalle</a>
+            </article>
+            <article class="productCard">
+              <div class="imageContainer">
+                <img src="image/whiskas.png" alt="productoDestacado-2" />
+              </div>
+              <a href="#" class="nombre"><h3>Whiskaas</h3></a>
+              <p>$7.560</p>
+              <a href="detalleProducto" class="btn">ver detalle </a>
+            </article>
+
+            <div class="relacionados">
+              <h3 class="titulo">Otras personas tambien compraron:</h3>
+
+              <article class="productCard">
+                <div class="imageContainer">
+                  <img src="image/whiskas.png" alt="productoDestacado-2" />
+                </div>
+                <a href="#" class="nombre"><h3>Whiska</h3></a>
+                <p>$9.560</p>
+                <a href="detalleProducto" class="btn">Ver detalle</a>
+              </article>
+              <article class="productCard">
+                <div class="imageContainer">
+                  <img src="image/whiskas.png" alt="productoDestacado-3" />
+                </div>
+                <a href="#" class="nombre"><h3>Whiskass</h3></a>
+                <p>$8.560</p>
+                <a href="detalleProducto" class="btn">Ver detalle</a>
+              </article>
+              <article class="productCard">
+                <div class="imageContainer">
+                  <img src="image/whiskas.png" alt="productoDestacado-2" />
+                </div>
+                <a href="#" class="nombre"><h3>Whiskaas</h3></a>
+                <p>$7.560</p>
+                <a href="detalleProducto" class="btn">ver detalle </a>
+              </article>
+              <article class="productCard">
+                <div class="imageContainer">
+                  <img src="image/whiskas.png" alt="productoDestacado-2" />
+                </div>
+                <a href="#" class="nombre"><h3>Whiskaas</h3></a>
+                <p>$7.560</p>
+                <a href="detalleProducto" class="btn">ver detalle </a>
+              </article>
+            </div>
+
+           
+          </section>
+        </div>
+      </div> <footer>
+              <div class="boton-arriba"><a href="#top">^</a></div>
+
+              <nav>
+                <nav class="interaccion">
+                  <div class="info-footer">
+                    <h4>Contactanos</h4>
+                    <ul class="red-social">
+                      <li>
+                        <a
+                          href="https://wa.me/5411234567890?text=Me%20gustaría%20saber%20el%20precio%20del%20producto"
+                          ><i class="fa-brands fa-whatsapp"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="https://www.facebook.com/"
+                          ><i class="fa-brands fa-facebook"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="https://www.instagram.com/"
+                          ><i class="fa-brands fa-instagram"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="info-footer">
+                    <h4>Sobre nosotros</h4>
+                    <ul>
+                      <li><a href="/error">Quienes somos?</a></li>
+                      <li><a href="/error">Proveedores</a></li>
+                      <li><a href="/error">Terminos y condiciones</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="info-footer">
+                    <h4>Ayuda</h4>
+                    <ul>
+                      <li><a href="/error">FAQ</a></li>
+                      <li><a href="/register">Registrarme</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </nav>
+
+              <div id="logo">
+                <a href="/views/home.html"
+                  ><img src="/img/logo_banner_fondo_blanco_mod.png" alt="logo"
+                /></a>
+              </div>
+            </footer>
     </main>
-    <footer>
- 
-      <div class="boton-arriba"><a href="#top">^</a></div>
-   
-   <nav>
-       
-       <nav class="interaccion">
-           <div class="info-footer">
-               <h4>Contactanos</h4>
-               <ul class="red-social">
-                   <li><a href="https://wa.me/5411234567890?text=Me%20gustaría%20saber%20el%20precio%20del%20producto"><i class="fa-brands fa-whatsapp"></i></a></li>
-                   <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
-                   <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
-               </ul>
-           </div>
-
-           <div class="info-footer">
-           <h4>Sobre nosotros</h4>
-               <ul>
-               <li><a href="/error">Quienes somos?</a></li>
-               <li><a href="/error">Proveedores</a></li>
-               <li><a href="/error">Terminos y condiciones</a></li>
-               </ul>
-           </div>
-   
-           <div class="info-footer">
-           <h4>Ayuda</h4>
-           <ul>
-               <li><a href="/error">FAQ</a></li>
-               <li><a href="/register">Registrarme</a></li>
-           </ul>
-           </div>
-       </nav>
-   </nav>
-   
-   <div id="logo"><a href="/views/home.html"><img src="/img/logo_banner_fondo_blanco_mod.png" alt="logo"></a></div>
-    
-</footer>
   </body>
 </html>
