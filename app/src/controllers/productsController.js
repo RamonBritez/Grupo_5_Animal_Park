@@ -51,15 +51,6 @@ const controller = {
 		  });
 		}
 	
-		if (!req.file) {
-		  errors.errors.push({
-			value: "",
-			msg: "El producto debe tener una imagen",
-			param: "image",
-			location: "file",
-		  });
-		}
-	
 		if (errors.isEmpty()) {
 		  const products = readJSON("productsDB.json");
 		  const { name, brand, price, category, pet,description, discount, weight} = req.body;
@@ -74,7 +65,7 @@ const controller = {
 			weight,
 			description: description.trim(),
 			pet,
-			image: req.file.filename,
+			image:req.file ? req.file.filename : 'default.jpg'
 		  };
 	
 		  products.push(newProduct);

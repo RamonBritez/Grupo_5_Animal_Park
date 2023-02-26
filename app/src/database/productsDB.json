@@ -262,5 +262,65 @@
       "description": "dfgjsdfgjfgjrfgjsfgjfgsdjdfgjdfg",
       "pet": "gatos",
       "image": "1677109712302_products_.jpg"
+   },
+   {
+      "id": 24,
+      "name": "nada",
+      "brand": "nadaa",
+      "price": 1400,
+      "discount": 0,
+      "category": "camas/cuchas",
+      "weight": "12",
+      "description": "nada para test parte 8092",
+      "pet": "perros",
+      "image": "1677422972549_products_.jpeg"
+   },
+   {
+      "id": 25,
+      "name": "Zoomarlo",
+      "brand": "nadaa",
+      "price": 1234,
+      "discount": 0,
+      "category": "camas/cuchas",
+      "weight": "12",
+      "description": "ASDASFASFASFASFASFASF",
+      "pet": "perros",
+      "image": "1677423067541_products_.png"
+   },
+   {
+      "id": 26,
+      "name": "asdasd",
+      "brand": "asdasdasd",
+      "price": 1234,
+      "discount": 0,
+      "category": "alimentos",
+      "weight": "12",
+      "description": "asdasdasfdgsadgaghWERGW",
+      "pet": "peces",
+      "image": "default.jpg"
+   },
+   {
+      "id": 27,
+      "name": "Zoomarlo",
+      "brand": "nadaa",
+      "price": 1234,
+      "discount": 0,
+      "category": "accesorios",
+      "weight": "12",
+      "description": "asdasdaDFDASFawsdfds",
+      "pet": "gatos",
+      "image": "default.jpg"
+   },
+   {
+      "id": 28,
+      "name": "asdasdas",
+      "brand": "pedigree",
+      "price": 1234,
+      "discount": 0,
+      "category": "vestimenta",
+      "weight": "12",
+      "description": "asdasdfasdgasdgsdgdasdasd",
+      "pet": "perros",
+      "image": "default.jpg"
    }
 ]
