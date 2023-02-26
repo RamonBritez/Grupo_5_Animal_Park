@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %> 
+
+<body>
+
+	<%- include('../partials/header') %> 
+
+	<main class="form-create">
+
+		<div class="login__menu">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="products-title">Formulario de creación de productos</h2>
+				</div>
+			</div>
+			
+			<div class="login__menu-form">
+				<form action="/products" method="post" enctype="multipart/form-data" novalidate>
+					<div class="form-container">
+						
+						
+						<div class="input">
+							<label for="name" class="form-label">Nombre del producto:</label>
+							<input type="text" id="name" name="name" placeholder="Ej: Comida para gatos" class="form-input <%= locals.errors && errors.name ? 'is-invalid' : null%>"  value="<%= locals.old && locals.old.name ? locals.old.name : null %>">
+							<small class="text-error"><%= locals.errors && errors.name ? errors.name.msg : null%></small>
+						</div>
+
+						<div class="input">
+							<label for="brand" class="form-label">Marca del producto:</label>
+							<input type="text" id="brand" name="brand" placeholder="Ej: Pedigree" class="form-input <%= locals.errors && errors.brand ? 'is-invalid' : null%>"  value="<%= locals.old && locals.old.brand ? locals.old.brand : null %>">
+							<small class="text-error"><%= locals.errors && errors.brand ? errors.brand.msg : null%></small>
+						</div>
+						
+						<div class="input">
+							<label for="price" class="form-label">Precio del producto:</label>
+							<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input" value="<%= locals.old && locals.old.price ? locals.old.price : null %>">
+							<small class="text-error"><%= locals.errors && errors.price ? errors.price.msg : null%></small>
+						</div>
+						
+						<div class="input">
+							<label for="discount" class="form-label">Descuento:</label>
+							<input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input" value="0" <%= locals.old && locals.old.discount ? locals.old.discount : null %>>
+							<small class="text-error"><%= locals.errors && errors.discount ? errors.discount.msg : null%></small>
+						</div>
+						
+						<div class="input">
+							<label for="weight" class="form-label">Peso:</label>
+							<input type="number" id="weight" name="weight" placeholder="Ej: 20kg" class="form-input" value="<%= locals.old && locals.old.weight ? locals.old.weight : null %>">
+							<small class="text-error"><%= locals.errors && errors.weight ? errors.weight.msg : null%></small>
+						</div>
+						
+						
+						<div class="selectores">
+							<label for="pet" class="form-label">Animal:</label>
+							<select name="pet" id="pet" class="form-input">
+								<option value="" selected hidden>Elegí</option>
+								<option value="gatos"<%= (locals.old && old.pet && old.pet === "gatos") && 'selected'%>>Gatos</option>
+								<option value="perros"<%= (locals.old && old.pet && old.pet === "perros") && 'selected'%>>Perros</option>
+								<option value="peces"<%= (locals.old && old.pet && old.pet === "peces") && 'selected'%>>Peces</option>
+								<option value="aves"<%= (locals.old && old.pet && old.pet === "aves") && 'selected'%>>Aves</option>
+								<option value="reptiles"<%= (locals.old && old.pet && old.pet === "reptiles") && 'selected'%>>Reptiles</option>
+								<option value="roedores"<%= (locals.old && old.pet && old.pet === "roedores") && 'selected'%>>Roedores</option>
+							</select>
+						</div>
+							
+							
+							<div class="selectores">
+								<label for="category" class="form-label">Categoria:</label>
+								<select name="category" id="category" class="form-input">
+									<option value="">Elegí</option>
+									<option value="alimentos"<%= (locals.old && old.category && old.category === "alimentos") && 'selected'%>>Alimentos</option>
+									<option value="accesorios"<%= (locals.old && old.category && old.category === "accesorios") && 'selected'%>>Accesorios</option>
+									<option value="juguetes"<%= (locals.old && old.category && old.category === "juguetes") && 'selected'%>>Juguetes</option>
+									<option value="vestimenta"<%= (locals.old && old.category && old.category === "vestimenta") && 'selected'%>>Vestimenta</option>
+									<option value="higiene/prevencion"<%= (locals.old && old.category && old.category === "higiene/prevencion") && 'selected'%>>Higiene/Prevencion</option>
+									<option value="camas/cuchas"<%= (locals.old && old.category && old.category === "camas/cuchas") && 'selected'%>>Camas/Cuchas</option>
+							</select>
+						</div>
+						
+						<div class="input">
+							<label for="image" class="form-label">imagen</label>
+							<input type="file" id="image" name="image" accept="image/*">
+							<small class="text-error"><%= locals.errors && errors.image? errors.image.msg : null%></small>
+						</div>
+
+						<div class="description">
+							<label for="description" class="form-label">Descripción:</label>
+							<textarea name="description" id="description" class="form-input"><%= locals.old && locals.old.description ? locals.old.description : null %></textarea>
+							<small class="text-error"><%= locals.errors && errors.description? errors.description.msg : null%></small>
+						</div>
+						
+						<div class="save-product">
+							<button type="submit" class="btn">Guardar producto</button>
+						</div>
+					</div>
+				</form>
+			</div>
+	
+		</div>
+	
+	</main>
+
+
+    <%- include('../partials/footer') %> 
+    
+</body>
+</html>

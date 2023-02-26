@@ -1,0 +1,68 @@
+ /* --- Filtros --- */
+ main section.filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main section.filter nav.filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+main section.filter nav.filter div.filter{
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    margin: 3px;
+    display: flex;
+    border: 1px black solid; 
+    flex-direction: column;
+    box-shadow:  black 3px 2px 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    background-color: var(--amarillo);    
+}
+
+main nav.filter div:hover{
+    font-weight: 600;
+    background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
+    border: var(--verdePrueba1) 3px solid;
+}
+
+main nav.filter div.filter a{
+    display: flex;
+    flex-direction: column;
+    color: var(--verdePrueba1);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
+}
+
+main nav.filter div.filter i{
+    color: var(--verdePrueba1);
+   font-size: 36px;
+   margin-bottom: 5px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@media (min-width: 768px) {
+
+/* Filtros */
+main section.filter nav.filter div.filter{
+    width: 150px;
+}
+
+main nav.filter div.filter i{
+    font-size: 46px; 
+}
+
+}

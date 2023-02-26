@@ -1,0 +1,18 @@
+<section>
+    <div class="productContainer">
+        <% products.forEach(product => { %>
+        <article class="productCard animate__animated animate__fadeInRight">
+            
+        <div class="imageContainer">
+            <img src="/image/products/<%- product.image %>" alt="ProductoDestacado-1">
+            <% if (product.discount > 0) { %>							 
+                <span class="discount"><%- product.discount %>% OFF</span>
+            <% } %>
+        </div>
+        <p><%- product.name %></p>
+        <h2>$<%- product.price %></h2>
+                         
+        <a href="/products/detail/<%- product.id %>" class="btn">Ver detalles</a>
+    </article>
+    <% }) %>
+</section>

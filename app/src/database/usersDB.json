@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "name": "RocioV",
+        "role": "admin",
+        "email": "RocioV@xxx.com",
+        "image": "register.png"
+      },  
+      {
+        "id": 1,
+        "name": "NicoF",
+        "role": "admin",
+        "email": "NicoF@xxx.com",
+        "image": "register.png"
+      },
+      {
+        "id": 2,
+        "name": "CelesG",
+        "role": "admin",
+        "email": "celesG@xxx.com",
+        "image": "register.png"
+      },
+      {
+        "id": 3,
+        "name": "RamonB",
+        "role": "admin",
+        "email": "RamonBritez@xxx.com",
+        "image": "register.png"
+      },
+      {
+        "id": 4,
+        "name": "JonBalles",
+        "role": "user",
+        "email": "jon@xxx.com",
+        "image": "register.png"
+      }
+]

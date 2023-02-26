@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("partials/head")  %> 
+
+<body>
+
+<%- include("partials/header")  %> 
+
+
+<main class="home">
+    
+        
+    <div class="home-info">
+        <div class=" animate__animated animate__flipInX"><i class="fa-solid fa-truck-fast"></i><span>Envios a todo el país</span> </div>
+        <div class=" animate__animated animate__flipInX" id="center"><i class="fa-solid fa-wallet"></i><span>Multiples metodos de pago</span></div>
+        <div class=" animate__animated animate__flipInX"><i class="fa-solid fa-hand-holding-dollar"></i><span>Suscribite y obtene descuentos!</span></div>
+    </div>
+
+    <%- include("partials/carrusel")  %> 
+  
+    <%- include("partials/filtersCategory")  %> 
+
+    <section class="ofertas">
+        <h2>Ofertas</h2>
+    
+        <%- include("./partials/tarjetasDescuento")  %> 
+
+   </section>
+
+    <section class="publicidad">
+        <img src="/image/animalPark/2.png" alt="publi">
+    </section>
+
+    <section class="productosDestacados">
+        <h2>PRODUCTOS DESTACADOS</h2>
+    
+        <%- include("partials/tarjetas")  %> 
+
+
+    </section>
+    
+    <section class="publicidad">
+        <img src="/image/animalPark/1.png" alt="publi">
+    </section>
+
+    <section class="filter" id="pets">
+        <h2>Que tipo de mascotas tenes?</h2>
+        <%- include("partials/filterPets")  %> 
+    </section>
+
+    <section class="vende-humo">
+        <div class="texto">
+            <h2>Nuestro compromiso</h2>
+            <p>Nuestro objetivo es acercarnos a las personas cuyos ideales y principios por los animales, sean los mismos que los nuestros. </br>
+                Nuestro amor por la ecologia y los animales, nos llevan a un punto de reflexion donde la union por estos seres tan hermosos que acompañan nuestros dias o simplemente admiramos, nos invite a cuidarlos, protegerlos y por que no mimarlos tambien.</br>
+                Si sos amante de los animalitos como nosotros, unite a nuestra comunidad y seguinos en nuestras redes sociales. Ayudanos a crear un mundo mejor para ellos
+            </p>
+        </div>
+        <div class="imagen">
+            <img src="/image/animalPark/mascotas-amor.jpg" alt="">
+        </div>
+
+
+    </section>
+
+    <div id="suscribe">
+        
+        <h2>Obtene descuentos y promos suscribiendote</h2>
+        <div>
+            <input type="email" placeholder="Ingresa tu mail">
+            <a class="btn" href="">Suscribite</a>
+        </div>
+    </div>
+
+</main>
+
+
+<%- include("partials/footer")  %> 
+
+
+
+</body>
+
+</html>

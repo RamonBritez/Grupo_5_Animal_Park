@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head') %>
+<body>
+	
+	<%- include('../partials/header') %>
+
+
+	<main class="form-create">
+
+		<div class="login__menu">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="products-title">Formulario de edicion de productos</h2>
+				</div>
+			</div>
+			
+			<div class="login__menu-form">
+				<form action="/products/update/<%= id %>?_method=put" method="post" enctype="multipart/form-data">
+					<div class="form-container">
+						
+						<div class="input">
+							<label for="name" class="form-label">Nombre del producto:</label>
+							<input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : name %>" class="form-input">
+							<small class="text-error"><%= locals.errors && errors.name ? errors.name.msg : null%></small>
+						</div>
+						
+						<div class="input">
+							<label for="brand" class="form-label">Nombre del producto:</label>
+							<input type="text" id="brand" name="brand" value="<%= locals.old && old.brand ? old.brand : brand %>" class="form-input">
+							<small class="text-error"><%= locals.errors && errors.brand ? errors.brand.msg : null%></small>
+						</div>
+						
+						<div class="input">
+							<label for="price" class="form-label">Precio del producto:</label>
+							<input type="text" id="price" name="price" value="<%= price %>" class="form-input">
+							<small class="text-error"><%= locals.errors && errors.price ? errors.price.msg : null%></small>
+						</div>
+						
+						<div class="input">
+							<label for="discount" class="form-label">Descuento:</label>
+							<input type="text" id="discount" name="discount" value="<%= discount %>" class="form-input">
+							<small class="text-error"><%= locals.errors && errors.discount ? errors.discount.msg : null%></small>
+						</div>
+						
+						<div class="input">
+							<label for="weight" class="form-label">Peso:</label>
+							<input type="text" id="weight" name="weight" value="<%= weight %>" class="form-input">
+							<small class="text-error"><%= locals.errors && errors.weight ? errors.weight.msg : null%></small>
+						</div>
+						
+						
+						<div class="selectores">
+							<label for="pet" class="form-label">Animal:</label>
+							<select name="pet" id="pet" class="form-input">
+								<option value="">Elegí</option>
+								<option value="gatos" <%- pet === "gatos" && "selected" %>>Gatos</option>
+								<option value="perros" <%- pet === "perros" && "selected" %>>Perros</option>
+								<option value="peces" <%- pet === "peces" && "selected" %>>Peces</option>
+								<option value="aves" <%- pet === "aves" && "selected" %>>Aves</option>
+								<option value="reptiles" <%- pet === "reptiles" && "selected" %>>Reptiles</option>
+								<option value="roedores" <%- pet === "roedores" && "selected" %>>Roedores</option>
+							</select>
+						</div>
+							
+							
+							<div class="selectores">
+								<label for="category" class="form-label">Categoria:</label>
+								<select name="category" id="category" class="form-input">
+									<option value="">Elegí</option>
+									<option value="alimentos" <%- category === "alimentos" && "selected" %>>Alimentos</option>
+									<option value="accesorios" <%- category === "accesorios" && "selected" %>>Accesorios</option>
+									<option value="juguetes" <%- category === "juguetes" && "selected" %>>Juguetes</option>
+									<option value="vestimenta" <%- category === "vestimenta" && "selected" %>>Vestimenta</option>
+									<option value="higiene/prevencion" <%- category === "higiene/prevencion" && "selected" %>>Higiene/Prevencion</option>
+									<option value="camas/cuchas" <%- category === "camas/cuchas" && "selected" %>>Camas/Cuchas</option>
+							</select>
+						</div>
+						
+						<div class="input">
+							<label for="image" class="form-label">imagen</label>
+							<input type="file" name="image" id="image" accept="image/*">
+							<small class="text-error"><%= locals.errors && errors.image? errors.image.msg : null%></small>
+						</div>
+
+						<div class="description">
+							<label for="description" class="form-label">Descripción:</label>
+							<textarea name="description" id="description" class="form-input"><%= description %></textarea>
+							<small class="text-error"><%= locals.errors && errors.description? errors.description.msg : null%></small>
+						</div>
+						
+						<div class="save-product">
+							<button type="submit" class="btn">Guardar producto</button>
+						</div>
+					</div>
+				</form>
+			</div>
+	
+		</div>
+	
+	</main>
+
+
+	<%- include('../partials/footer') %>
+
+</body>	
+</html>

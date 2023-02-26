@@ -419,11 +419,14 @@ main.carrito div.producto div.desktop section{
     display: block;
    
   }
-main.carrito div.producto div.desktop section article{
+main.carrito div.producto div.desktop section article.productCard img{
+width: 100px;
+}
+main.carrito div.producto div.desktop section article.productCard{
     display: flex;
     flex-direction: column;
-   
   }
+
 
 main.carrito section.lista div.metodo{
   flex-direction: row;

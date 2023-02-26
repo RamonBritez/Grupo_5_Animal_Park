@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("../partials/head")  %> 
+
+<body>
+
+    <header class="forms">
+        <a href="/"><img src="/image/animalPark/logo_cuadrado_fondo_blanco-mod.png" alt="Home"></a>
+    </header>
+    <main>
+        <div class="login__menu">
+            <div class="login__menu-icon">
+                <p><i class="fa-solid fa-circle-user"></i> Iniciar sesión</p>
+            </div>
+            <div class="login__menu-form">
+                <form action="/login" method="post">
+                    
+                    <label for="email">Tu e-mail
+                    <input type="email" name="email" placeholder="Ej: jose@email.com" id="email">
+                    <span class="error">El email ingresado es incorrecto</span>
+                    </label>
+
+                    <label for="password">contraseña
+                    <input type="password" name="contraseña" placeholder="Ingrese su contraseña" id="password">
+                    <span class="error">La contraseña ingresada es incorrecta</span>
+                    </label>
+                    
+                </form>
+                <div class="opciones">
+                    <label for="terminos">
+                        <input type="checkbox" name="checkbox" id="terminos">Recordar mi usuario
+                    </label>
+                    <a href="#"><i class="fa-solid fa-play"></i>¿Necesitas ayuda?</a>
+                </div>
+                <div class="iniciar-sesion">
+                    <button type="submit">Ingresar</button>
+                </div>
+                <div class="google-facebook">
+                    <button>Iniciar sesión con Google</button>
+                    <button> Iniciar sesión con Facebook</button>
+                </div>
+                <div class="crear-cuenta">
+                    <p>¿eres nuevo en Animal Park?</p>
+                    <a href="/register" class="btn">Crear Cuenta</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include("../partials/footer")  %> 
+ 
+
+</body>
+
+</html>

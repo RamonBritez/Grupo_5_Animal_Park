@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head")  %> 
+
+<body class="detail">
+
+    <%- include("../partials/header")  %>
+
+    <main class="detail">
+       
+    <section class="detail-product">
+
+        <section class="producto">
+            <h1><%- product.name  %></h1>
+            <div class="containerBox">
+                <article class="showProduct">
+                    <div class="imageContainer">
+                        <img src="/image/products/<%- product.image %>" alt="Foto">
+                    </div>
+                    <div class="altImg">
+                        <img src="/image/products/<%- product.image %>" alt="Foto">
+                        <img src="/image/products/<%- product.image %>" alt="Foto">
+                        <img src="/image/products/<%- product.image %>" alt="Foto">
+                    </div>
+                </article>
+            </div>
+            <div class="info-product">
+                <h2 class="title"><%- product.name %></h2>
+                <h2 class="price">$<%- product.price %></h2>
+                <% if (product.discount > 0) { %>
+                    <span>Descuento del <%- product.discount %>%</span>
+                    <span>$<%- product.price - (product.price * product.discount / 100) %></span>
+                <% } %>
+
+                
+                <form action="/products/edit/<%- product.id %>">
+                    <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
+                </form>
+
+                <form action="/products/delete/<%- product.id %>?_method=delete" method="post">
+                    <button type="submit" class="btn">Borrar</button>
+                 </form>
+            </div>
+        </section>
+
+        <section class="compra">
+            <div class="metodo-pago">
+                <div class="cajaEnvio">
+                <h2>Metodos de envio</h2>
+                <div class="options">
+                    <input type="radio" name="envio" value="Correo Argentino" checked>Correo Argentino
+                    <input type="radio" name="envio" value="Andreani"> Andreani
+                    <input type="radio" name="envio" value="Retirar en sucursal"> Retirar en sucursal
+                </div>
+                 </div>
+                <div class="cajaPago">
+                    <div class="tipoDePago">
+                        <h2>Metodos de pagos</h2>
+                        <div>
+                            <input type="radio" name="pago" value="Debito" checked>Debito
+                            <input type="radio" name="pago" value="Credito"> Credito
+                            <input type="radio" name="pago" value="Efectivo"> Efectivo
+                        </div>
+                    </div>
+                    <img src="/image/pagos.png" alt="pagos">
+                </div>
+                
+                <div class="cantidad">
+                    <h2>Cantidad</h2>
+                    <div>
+                    <button><i class="fa-solid fa-circle-minus"></i></button>
+                    <span> 05 </span>
+                    <button><i class="fa-solid fa-circle-plus"></i></button>
+                    </div>
+                </div>
+                <div class="total">
+                    <h2>Total</h2>
+                    <span class="totalFinal">$$$$$$ </span>
+                </div>
+            </div>
+            <div class="acciones">
+                <li><a href="/carrito" class="btn">COMPRAR</a></li>
+                <li><a href="/error" class="btn">FAVORITOS</a></li>
+            </div> 
+            
+
+             
+            </section>
+    </section>
+
+    <section class="container-description"> 
+            <h5>Descripción</h5>
+            <h6><%- product.description %></h6>
+            <h5>Marca</h5>
+            <h6><%- product.brand %> </h6>
+            <h5>Peso</h5>
+            <h6><%- product.weight %> </h6>    
+    </section>
+
+    <section>
+        <div class="container-social">
+            <h1>Comparti este producto</h1>
+           <div class="container-buttons-social">
+            <a class="comparte" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a class="comparte" href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a class="comparte" href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a class="comparte" href="#"><i class="fa-brands fa-square-instagram"></i></a>
+           </div> 
+    </section>
+      
+    <h5>Productos del mismo vendedor</h5>
+        <section class="interes">
+           <%- include("../partials/tarjetas")  %> 
+        </section>
+
+
+    <h5>Productos que te pueden interesar</h5>
+        <section class="interes">
+            <%- include("../partials/tarjetas")  %> 
+        </section>
+
+    </main>
+
+    <%- include("../partials/footer")  %> 
+    
+</body>
+
+</html>

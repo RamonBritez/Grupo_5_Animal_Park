@@ -13,28 +13,6 @@
 }
 
 
-
-
-/* HEADER */
-
-header {
-  background: linear-gradient(var(--verdePrueba4), var(--verdePrueba3));;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  padding: 10px;
-}
-
-
-
-header a img {
-  width: 65px;
-  box-shadow: 0 3px rgba(0, 0, 0, 0.2);
-}
-
-/* FIN HEADER */
-
 /* CUERPO */
 
 main {
@@ -86,6 +64,10 @@ main div.login__menu div.login__menu-form form input {
   text-align: center;
   border: 1px black solid;
   border-radius: 10px;
+}
+
+div.login__menu{
+  font-size: 15px;
 }
 
 main div.login__menu div.login__menu-form form input:hover{
