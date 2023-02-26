@@ -90,6 +90,29 @@ body {
   font-size: 12px;
 }
 
+table tbody tr td{
+  border-top: 1px black solid;
+}
+
+.lista{
+  width: 100%;
+  max-width: 1024px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+.btn-list{
+  display: inline-flex;
+  justify-content: center;
+}
+
+td{
+  text-align: center;
+}
+
+
+
 
 
 

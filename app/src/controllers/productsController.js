@@ -16,6 +16,13 @@ const controller = {
 			toThousand,
 			oferta
 		})
+	},
+
+ 	listAdmin: (req, res) => {
+		res.render("products/products-list", {
+			products,
+			toThousand,
+		})
 	}, 
 
 	// Detail - Detail from one product

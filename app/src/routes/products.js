@@ -9,6 +9,7 @@ const productValidator = require('../validations/productValidator');
 
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', productsController.index); 
+router.get('/list', productsController.listAdmin); 
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', productsController.create); 
