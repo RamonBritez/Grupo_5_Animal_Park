@@ -16,6 +16,13 @@ const controller = {
 			toThousand,
 			oferta
 		})
+	},
+
+ 	listAdmin: (req, res) => {
+		res.render("products/products-list", {
+			products,
+			toThousand,
+		})
 	}, 
 
 	// Detail - Detail from one product
@@ -51,15 +58,6 @@ const controller = {
 		  });
 		}
 	
-		if (!req.file) {
-		  errors.errors.push({
-			value: "",
-			msg: "El producto debe tener una imagen",
-			param: "image",
-			location: "file",
-		  });
-		}
-	
 		if (errors.isEmpty()) {
 		  const products = readJSON("productsDB.json");
 		  const { name, brand, price, category, pet,description, discount, weight} = req.body;
@@ -74,7 +72,7 @@ const controller = {
 			weight,
 			description: description.trim(),
 			pet,
-			image: req.file.filename,
+			image:req.file ? req.file.filename : 'default.jpg'
 		  };
 	
 		  products.push(newProduct);
@@ -123,7 +121,7 @@ const controller = {
 		}
 	
 		if (errors.isEmpty()) {
-		  const { name, price, category, description, discount, weight} = req.body;
+		  const { name, brand, price, category, pet ,description, discount, weight} = req.body;
 		  const products = readJSON("productsDB.json");
 	
 		  const productsModify = products.map((product) => {
@@ -131,9 +129,11 @@ const controller = {
 			  let productModify = {
 				...product,
 				name: name.trim(),
+				brand,
 				price: +price,
 				discount: +discount,
 				category,
+				pet,
 				weight,
 				description: description.trim(),
 				image: req.file ? req.file.filename : product.image,
@@ -177,7 +177,7 @@ const controller = {
 		let newProductsArray = products.filter(product => product.id !== productId);
 
 
-		writeJson(newProductsArray);
+		writeJSON("productsDB.json", newProductsArray);
 
 		res.redirect('/products');
 	}

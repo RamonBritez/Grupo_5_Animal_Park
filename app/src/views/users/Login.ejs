@@ -14,35 +14,44 @@
                 <p><i class="fa-solid fa-circle-user"></i> Iniciar sesión</p>
             </div>
             <div class="login__menu-form">
-                <form action="/login" method="post">
-                    
-                    <label for="email">Tu e-mail
-                    <input type="email" name="email" placeholder="Ej: jose@email.com" id="email">
-                    <span class="error">El email ingresado es incorrecto</span>
-                    </label>
+                <form action="/users/login" method="post">
+                    <div>
+                     <label for="email">Tu e-mail
+                        <input class="campo" type="email" name="email" placeholder="Ej: jose@email.com" id="email">
+                     <% if (locals.errors && errors.email) { %>
+                         <small class="text-error"><%= errors.email.msg %> </small>
+                     <% } %>
+                     </label>
+                    </div>
+                    <div>
+                        <label for="password">contraseña
+                        <input class="campo" type="password" name="password" placeholder="Ingrese su contraseña" id="password">
+                        <% if (locals.errors && errors.password) { %>
+                         <small class="text-error"><%= errors.password.msg %> </small>
+                        <% } %>
+                        </label>
+                    </div>
 
-                    <label for="password">contraseña
-                    <input type="password" name="contraseña" placeholder="Ingrese su contraseña" id="password">
-                    <span class="error">La contraseña ingresada es incorrecta</span>
-                    </label>
+                    <% if (locals.errorMsg ) { %>
+                        <small class="text-danger"><%= errorMsg %> </small>
+                <% } %>
                     
-                </form>
-                <div class="opciones">
-                    <label for="terminos">
-                        <input type="checkbox" name="checkbox" id="terminos">Recordar mi usuario
-                    </label>
-                    <a href="#"><i class="fa-solid fa-play"></i>¿Necesitas ayuda?</a>
-                </div>
+
+                <input type="checkbox" name="recordar" id="check">
+                <label for="recordar">Recordar</label>
+                
                 <div class="iniciar-sesion">
                     <button type="submit">Ingresar</button>
                 </div>
+            </form>
                 <div class="google-facebook">
                     <button>Iniciar sesión con Google</button>
                     <button> Iniciar sesión con Facebook</button>
                 </div>
                 <div class="crear-cuenta">
                     <p>¿eres nuevo en Animal Park?</p>
-                    <a href="/register" class="btn">Crear Cuenta</a>
+                    <button><a href="/users/register" >Crear Cuenta</a></button>
+
                 </div>
             </div>
         </div>

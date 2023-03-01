@@ -5,20 +5,22 @@
   <body>
   
   <%- include("../partials/header")  %> 
-    <main>
-      <div class="titulo">
-        <h1>Carrito de compras:</h1>
-      </div>
+  <main class="carrito">
+    <div class="producto">
       <section class="lista">
+        <div class="titulo">
+          <h2>Carrito de compras:</h2>
+        </div>
         <article class="producto">
           <img src="/image/producto.jpg" alt="plato para perro" />
           <div class="datos">
-            <h2>Plato sasha</h2>
-            <p class="descripcion">
-              Plato negro con diseño de huellitas blancas, tamaño:20x15
-            </p>
+            <a href="#"><h3>Plato sasha</h3></a>
             <p class="precio">$840</p>
           </div>
+          <a href="detalleProducto" class="btn detalleProducto"
+            >Ver detalles</a
+          >
+
           <div class="boton">
             <button><i class="fa-solid fa-circle-minus"></i></button>
             <span> 05 </span>
@@ -27,14 +29,14 @@
           </div>
         </article>
         <article class="producto">
-          <img src="/image/CamaMichi.jpg" />
+          <img src="/image/CamaMichi.jpg" alt="cama iglu" />
           <div class="datos">
-            <h2>Cama Nina</h2>
-            <p class="descripcion">
-              Cama para gatos tipo iglu, Tamaño: 50x50, color:gris
-            </p>
+            <a href="#"><h3>Cama Nina</h3></a>
             <p class="precio">$2500</p>
           </div>
+          <a href="detalleProducto" class="btn detalleProducto"
+            >Ver detalles</a
+          >
           <div class="boton">
             <button><i class="fa-solid fa-circle-minus"></i></button>
             <span> 05 </span>
@@ -42,47 +44,152 @@
             <button><i class="fa-solid fa-trash"></i></button>
           </div>
         </article>
-      </section>
-      <section class="envios">
+        <article class="producto">
+          <img src="/image/CamaMichi.jpg" alt="cama iglu" />
+          <div class="datos">
+            <a href="#"><h3>Whiskas</h3></a>
+            <p class="precio">$7.600</p>
+          </div>
+          <a href="detalleProducto" class="btn detalleProducto"
+            >Ver detalles</a
+          >
+
+          <div class="boton">
+            <button><i class="fa-solid fa-circle-minus"></i></button>
+            <span> 01 </span>
+            <button><i class="fa-solid fa-circle-plus"></i></button>
+            <button><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </article>
+
         <div class="envio">
           <h2>Metodos de envio:</h2>
           <i class="fa-solid fa-truck"></i>
         </div>
         <div class="metodo">
-          <a href="https://www.correoargentino.com.ar/">Correo Argentino</a>
-          <a href="https://www.andreani.com/">andreani</a>
-          <button>Retiro en sucursales</button>
+          <div class="boton-envio btn">
+            <a href="https://www.correoargentino.com.ar/">Correo Argentino</a>
+            <i class="fa-solid fa-gifts"></i>
+          </div>
+          <div class="boton-envio btn">
+            <a href="https://www.andreani.com/">Andreani</a>
+            <i class="fa-solid fa-a"></i>
+          </div>
+          <div class="boton-envio btn">
+            <a href="#"> Retiro en sucursales</a>
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
         </div>
-      </section>
-
-      <section class="descuento">
         <div class="cupon">
           <input type="text" placeholder="Ingresa tu cupón" />
           <i class="fa-solid fa-tag"></i>
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-      </section>
 
-      <section class="precio">
-        <ul>
-          <div>
-            <li>Total sin envio</li>
-            <li>$3.340</li>
+        <div class="precio">
+          <ul>
+            <div>
+              <li>Total sin envio</li>
+              <li>$10.940</li>
+            </div>
+            <div>
+              <li>Envio</li>
+              <li>$660</li>
+            </div>
+            <div>
+              <li>Total con envio</li>
+              <li>$11.600</li>
+            </div>
+          </ul>
+        </div>
+
+        <div class="comprar">
+          <button class="btn">
+            <i class="fa-solid fa-money-check-dollar"> Pagar</i>
+          </button>
+          <button class="btn">
+            <i class="fa-solid fa-cart-shopping">Agregar al carrito</i>
+          </button>
+        </div>
+      </section>
+      <div class="desktop">
+        <section class="ofertas">
+          <h3 class="titulo">Tambien podrias necesitar:</h3>
+          <article class="productCard">
+            <div class="imageContainer">
+              <img src="image/whiskas.png" alt="productoDestacado-2" />
+            </div>
+            <a href="#" class="nombre"><h3>Whiska</h3></a>
+            <p>$9.560</p>
+            <a href="detalleProducto" class="btn">Ver detalle</a>
+          </article>
+          <article class="productCard">
+            <div class="imageContainer">
+              <img src="image/whiskas.png" alt="productoDestacado-2" />
+            </div>
+            <a href="#" class="nombre"><h3>Whiska</h3></a>
+            <p>$9.560</p>
+            <a href="detalleProducto" class="btn">Ver detalle</a>
+          </article>
+          <article class="productCard">
+            <div class="imageContainer">
+              <img src="image/whiskas.png" alt="productoDestacado-3" />
+            </div>
+            <a href="#" class="nombre"><h3>Whiskass</h3></a>
+            <p>$8.560</p>
+            <a href="detalleProducto" class="btn">Ver detalle</a>
+          </article>
+          <article class="productCard">
+            <div class="imageContainer">
+              <img src="image/whiskas.png" alt="productoDestacado-2" />
+            </div>
+            <a href="#" class="nombre"><h3>Whiskaas</h3></a>
+            <p>$7.560</p>
+            <a href="detalleProducto" class="btn">ver detalle </a>
+          </article>
+
+          <div class="relacionados">
+            <h3 class="titulo">Otras personas tambien compraron:</h3>
+
+            <article class="productCard">
+              <div class="imageContainer">
+                <img src="image/whiskas.png" alt="productoDestacado-2" />
+              </div>
+              <a href="#" class="nombre"><h3>Whiska</h3></a>
+              <p>$9.560</p>
+              <a href="detalleProducto" class="btn">Ver detalle</a>
+            </article>
+            <article class="productCard">
+              <div class="imageContainer">
+                <img src="image/whiskas.png" alt="productoDestacado-3" />
+              </div>
+              <a href="#" class="nombre"><h3>Whiskass</h3></a>
+              <p>$8.560</p>
+              <a href="detalleProducto" class="btn">Ver detalle</a>
+            </article>
+            <article class="productCard">
+              <div class="imageContainer">
+                <img src="image/whiskas.png" alt="productoDestacado-2" />
+              </div>
+              <a href="#" class="nombre"><h3>Whiskaas</h3></a>
+              <p>$7.560</p>
+              <a href="detalleProducto" class="btn">ver detalle </a>
+            </article>
+            <article class="productCard">
+              <div class="imageContainer">
+                <img src="image/whiskas.png" alt="productoDestacado-2" />
+              </div>
+              <a href="#" class="nombre"><h3>Whiskaas</h3></a>
+              <p>$7.560</p>
+              <a href="detalleProducto" class="btn">ver detalle </a>
+            </article>
           </div>
-          <div>
-            <li>Envio</li>
-            <li>$540</li>
-          </div>
-          <div>
-            <li>Total con envio</li>
-            <li>$3.900</li>
-          </div>
-        </ul>
-      </section> <div class="comprar">
-      <button><i class="fa-solid fa-money-check-dollar"> Pagar</i></button>
-      <button><i class="fa-solid fa-cart-shopping">Seguir agregando productos</i>
-      </button></div>
-    </main>
+
+         
+        </section>
+      </div>
+    </div> 
+  </main>
     <%- include("../partials/footer")  %> 
 
   </body>

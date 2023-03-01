@@ -27,5 +27,4 @@ module.exports = [
     
     check("weight")
         .isInt({min:0,max:50}).withMessage("El limite es de 50kg")
-    
 ];

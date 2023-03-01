@@ -100,9 +100,6 @@ form.register__container-form div.form-element input::placeholder {
 
 form.register__container-form div.form-terms {
   align-self: flex-start;
-  display: flex;
-  align-items: center;
-  gap: 5px;
 }
 
 form.register__container-form div.form-terms input {
@@ -117,6 +114,7 @@ form.register__container-form div.form-terms a {
   color: #0000ee;
   font-size: 14px;
   text-decoration: underline;
+
 }
 
 form.register__container-form button.form-submit {

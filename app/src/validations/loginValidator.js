@@ -1,5 +1,7 @@
 const { check, body } = require("express-validator");
-const { users } = require("../database");
+const { readJSON} = require("../database");
+
+let users = readJSON("usersDB.json");
 
 module.exports = [
     check("email")
@@ -16,15 +18,15 @@ module.exports = [
     })
     .withMessage("Email no registrado"),
 
-    check('pass')
+    check('password')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña'),
 
-    body("pass")
+    body("password")
     .custom((value, { req }) => {
         let user = users.find(user => user.email === req.body.email);
 
-        return user.pass === value;
+        return user.password === value;
     })
     .withMessage("Contraseña inválida")
 ]

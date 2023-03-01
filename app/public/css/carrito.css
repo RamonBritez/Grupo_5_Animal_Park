@@ -1,167 +1,436 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 
-h1,h2
- {margin: 5px;}
+   
 
+*{
+  box-sizing: border-box;
+}
+a{
+  color:black;
+}
 
+h2 {
+  margin: 4px;
+  text-shadow: 0px 3px 3px rgb(212, 248, 111);
+  font-size: 1.6rem;
+}
 
-main {
+h3 {
+  font-size: 1rem;
+}
+h3.titulo{
+  text-shadow: 0px 3px 3px rgb(212, 248, 111); 
+  margin:5px;
+  font-size:1.3rem;
+} 
+img {
+  width: 50px;
+  height: 50px;
+}
+
+main.carrito {
   padding: 7px;
   font-size: 10px;
   border-radius: 10px;
-}
-main h1{
-  font-size: 1.7rem;
+  background-image: url(/img/sepiaMArron2.jpeg);
+  background-position: center;
+  background-size: cover;
+  margin-right: 5px;
 }
 
-main > section.lista {
+main.carrito  div section.lista {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-main section article {
-  background: linear-gradient(var(--verdePrueba4), var(--verdePrueba3));
-  box-shadow: 0px 3px 5px var(--verdePrueba2);
-  border-radius: 10px;
+main.carrito section div.envio {
+  font-size: 18px;
   display: flex;
-  padding: 10px;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
-main section article img {
-  height: 40px;
-  width: 40px;
-}
-main > section article div p.descripcion {
-  display: none;
-}
-main > section article div.boton button {
-  width: 23px;
-  height: 23px;
-  border: none;
-  border-radius: 50%;
-}
-main > section.lista article.producto div.boton {
+
+main.carrito  div.metodo div.boton-envio a {
+  font-size: 15px;
   display: flex;
-  gap: 7px;
+  align-items: center;
+  background-color: #03a600;
+  color: antiquewhite;
+  justify-content: center;
+  gap: 5px;
+  text-decoration: none;
+  margin: 5px 3px 5px;
+  border-radius: 15px;
 }
-main i{
-  color:#035e02e5
-}
-main > section.lista article.producto div.boton span {
-  font-size: 23px;
-  text-align: center;
-}
-main > section.lista article.producto div.datos {
+main.carrito  div.metodo{
   display: flex;
   flex-direction: column;
 }
+main.carrito div.metodo div.boton-envio{
+  border: none;
+  font-size: 15px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: #03a600;
+  color: antiquewhite;
+  justify-content: center;
+  gap: 9px;
+  margin: 5px 3px 5px;
+  border-radius: 15px;
+}
+main.carrito div.metodo div.boton-envio i {
+  color: antiquewhite;
+  border: 1px solid antiquewhite;
+  padding: 5px;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 50%;
+}
 
-main > section.lista article.producto div.datos h2 {
-  font-size: 16px;}
-  main>section.lista article.producto div.datos p.precio{
-    font-size: 12px;
-  }
-
-  main>section.envios div.envio{
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:5px;
-  }
-  main>section.envios div.metodo a{
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    background-color: #03A600;
-    color: antiquewhite;
-    justify-content: center;
-    gap:5px;
-    text-decoration: none;
-    margin: 5px 3px 5px;
-    border-radius: 15px;
-     }
-  main>section.envios div.metodo button{
-    width:98.3%;
-    border: none;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    background-color: #03A600;
-    color: antiquewhite;
-    justify-content: center;
-    gap:5px;
-    margin: 5px 3px 5px;
-    border-radius: 15px;
-     }
-   
-main>section.descuento div.cupon{
+main.carrito  div.cupon {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 15px;
-  margin-top: 15px;
-  margin-bottom: 8px;
-font-size: 25px;
+  font-size: 25px;
 }
-main>section.descuento div.cupon input{
+main.carrito  div.cupon input {
   border-color: var(--verdePrueba1);
-
+  padding-left: 10px;
 }
- main>section.precio{
+main.carrito div.precio {
   display: flex;
   text-align: center;
   flex-direction: column;
   background-color: none;
-align-items: center;
-width: 100%;
-
-
-} 
-main>section.precio ul{
-  width: 98%;
+  align-items: center;
+  width: 100%;
 }
-main>section.precio ul div{
+
+main.carrito div.precio ul {
+  width: 100%;
+}
+main.carrito div.precio ul div {
   display: flex;
   list-style: none;
   width: 100%;
   justify-content: center;
-padding-left: 50px;
+  text-align: center;
 }
 
-main>section.precio ul div li{
-font-size: 16px;
-text-align: start;
-width: 50%;
- }
-main> div.comprar{
-  gap: 2px; 
+main.carrito div.precio ul div li {
+  font-size: 16px;
+  text-align: center;
+  width: 50%;
+}
+main.carrito div.comprar {
+  gap: 2px;
   display: flex;
   text-align: center;
   box-sizing: border-box;
   justify-content: space-between;
   flex-direction: column;
-  }
-main>div.comprar button{
+}
+main.carrito  div.comprar button {
   background-color: var(--verdePrueba5);
   gap: 1.5px;
 }
-main>div.comprar button i{
+main.carrito div.comprar button i {
   color: whitesmoke;
 }
 
-@media (min-width: 768px){
+main.carrito div.producto section article {
+  background: linear-gradient(var(--verdePrueba4), var(--verdePrueba3));
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  border-style: inset;
+  display: flex;
+  gap:10px;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  main section article img {
-    height: 150px;
-    width: 180px;
+
+main.carrito section.envios div.metodo div.boton-envio{
+  align-items: center;
+}
+
+  main.carrito div.producto div.desktop section.ofertas{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px;
   }
+  
+main.carrito div section.ofertas  article.productCard{
+  width:45%;
+  height: 45%;
+  gap:10px;
+flex-direction: column;
+}
+
+main.carrito div section article a.detalleProducto{
+  display: none;
+
+}
+main.carrito article.productCard a.nombre{
+  flex-grow: 1;
+}
+
+main.carrito div section article div.boton button {
+  width: 23px;
+  height: 23px;
+  border: none;  
+  border-radius: 50%;
+}
+main.carrito section.lista article.producto div.boton {
+  display: flex;
+  gap: 5px;
+}
+
+main.carrito i {
+  color: #035e02e5;
+  border-radius:50%;
+}
+main.carrito  section.lista article.producto div.boton span {
+  font-size: 16px;
+  text-align: center;
+}
+main.carrito section article div.datos{
+  display: flex;
+  flex-direction: column;
+  flex-grow:1;
+} 
+main.carrito section.ofertas i{
+  color: #035e02e5;
+  font-size:20px;
+  border-radius:50%;
+}
+
+main.carrito  section.lista article.producto div.datos p.precio {
+  font-size: 12px;
+}
+
+main.carrito div.producto div.desktop section.ofertas div.relacionados{
+display: none;
+}
 
 
+footer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  margin: 0;
+}
+
+footer div.boton-arriba {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div.boton-arriba a {
+  height: 20px;
+  width: 40px;
+  border-radius: 5px;
+  background-color: var(--verdePrueba2);
+  border: 2px var(--verdePrueba1) solid;
+  border-radius: 5px;
+  text-align: center;
+}
+
+footer div.boton-arriba a:hover {
+  box-shadow: 0 0 10px var(--amarillo);
+  transform: scale(1.2);
+}
+
+footer nav {
+  display: flex;
+  width: 100%;
+  padding: 0 5px;
+}
+
+footer nav nav.interaccion {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px;
+}
+
+footer nav nav.interaccion div.info-footer {
+  flex-direction: column;
+  text-align: center;
+}
+
+footer nav nav.interaccion h4 {
+  font-size: 20px;
+
+  margin-top: 5px 0;
+  margin-bottom: 5px 0;
+}
+
+footer nav nav.interaccion ul {
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+footer nav nav.interaccion ul li {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+footer nav nav.interaccion ul.red-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div.info-footer ul li i {
+  padding: 0 5px;
+  font-size: 30px;
+  display: flex;
+}
+
+footer div.info-footer ul li i p {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+footer div#logo {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0;
+}
+
+footer div#logo a img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
 }
 
 
 
 
+
+@media (min-width: 481px) {
+  main.carrito{
+    padding: 10px;
+  }
+  h3 {
+    font-size: 1.4rem;
+  } 
+
+  h2, h3.titulo{
+    font-size: 2rem;
+    margin-top: 5px;
+  text-shadow: 0px 3px 3px rgb(212, 248, 111);
+  text-align: center;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+  img {
+    width: 55px;
+  }
+  article{
+    justify-content:center;
+  }
+
+ main.carrito div.producto section.lista div.cupon i{
+  font-size:26px;
+ }
+ main.carrito div.cupon input {
+  border-color: var(--verdePrueba1);
+  padding-left: 10px;
+  font-size: 18px;       }  
+
+main.carrito div.producto div.desktop section.ofertas div.relacionados{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: inherit;
+  gap: 15px;
+  justify-content: center;
+
+  }
+  main.carrito div section.ofertas  article.productCard{
+    height: auto;
+
+  }
+  main.carrito div section article div.botton{
+    justify-content: space-around;
+  }
+main.carrito div.producto section.lista div.precio ul li{
+  font-size: 20px;
+}
+
+}
+
+ @media (min-width: 768px) {
+
+  main.carrito{
+  margin:5px;
+  padding: 5px;
+  box-sizing: border-box;
+ }
+h3{
+  font-size: 1.5rem;
+  width: 100%;
+}
+h3.titulo{
+  font-size: 1rem;
+}
+  main.carrito div.producto{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+main.carrito div.producto section{
+    flex-grow: 1;
+  }
+  main.carrito div.producto section.lista div.boton-envio i {
+    color: antiquewhite;
+    border: 1px solid antiquewhite;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 1s;
+     
+  }
+  main.carrito div.producto section.lista div.boton-envio:hover i {
+rotate:360deg;
+  }
+
+  main.carrito div.producto div.desktop{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+main.carrito div.producto div.desktop section{
+    display: block;
+   
+  }
+main.carrito div.producto div.desktop section article.productCard img{
+width: 100px;
+}
+main.carrito div.producto div.desktop section article.productCard{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+main.carrito section.lista div.metodo{
+  flex-direction: row;
+}
+
+
+}

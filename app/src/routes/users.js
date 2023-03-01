@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { login, register, processRegister, processLogin, logout } = require("../controllers/userController");
+const { login, register, processRegister, processLogin, logout } = require("../controllers/userController.js");
 const uploadAvatar = require("../middlewares/uploadAvatar");
 const registerValidator = require("../validations/registerValidator");
 const loginValidator = require("../validations/loginValidator");
