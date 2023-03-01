@@ -7,10 +7,11 @@
   <%- include("../partials/header")  %> 
   <main class="carrito">
     <div class="producto">
-      <section class="lista">
-        <div class="titulo">
+      <section class="listas">
+   <div class="listaProductos"> <div class="titulo">
           <h2>Carrito de compras:</h2>
         </div>
+        
         <article class="producto">
           <img src="/image/producto.jpg" alt="plato para perro" />
           <div class="datos">
@@ -18,7 +19,7 @@
             <p class="precio">$840</p>
           </div>
           <a href="detalleProducto" class="btn detalleProducto"
-            >Ver detalles</a
+            >comprar</a
           >
 
           <div class="boton">
@@ -35,7 +36,7 @@
             <p class="precio">$2500</p>
           </div>
           <a href="detalleProducto" class="btn detalleProducto"
-            >Ver detalles</a
+            >comprars</a
           >
           <div class="boton">
             <button><i class="fa-solid fa-circle-minus"></i></button>
@@ -51,7 +52,7 @@
             <p class="precio">$7.600</p>
           </div>
           <a href="detalleProducto" class="btn detalleProducto"
-            >Ver detalles</a
+            >comprar</a
           >
 
           <div class="boton">
@@ -61,10 +62,10 @@
             <button><i class="fa-solid fa-trash"></i></button>
           </div>
         </article>
-
+      </div>
+      <div class="gestion">
         <div class="envio">
-          <h2>Metodos de envio:</h2>
-          <i class="fa-solid fa-truck"></i>
+          <h2>Metodos de envio:<i class="fa-solid fa-truck"></i></h2>
         </div>
         <div class="metodo">
           <div class="boton-envio btn">
@@ -105,47 +106,48 @@
 
         <div class="comprar">
           <button class="btn">
-            <i class="fa-solid fa-money-check-dollar"> Pagar</i>
+            <i class="fa-solid fa-money-check-dollar"> Seguir Comprando</i>
           </button>
           <button class="btn">
             <i class="fa-solid fa-cart-shopping">Agregar al carrito</i>
           </button>
-        </div>
+        </div></div>
       </section>
       <div class="desktop">
         <section class="ofertas">
           <h3 class="titulo">Tambien podrias necesitar:</h3>
           <article class="productCard">
+
             <div class="imageContainer">
               <img src="image/whiskas.png" alt="productoDestacado-2" />
             </div>
-            <a href="#" class="nombre"><h3>Whiska</h3></a>
+            <a href="#" class="nombre"><h3>whiskas</h3></a>
             <p>$9.560</p>
-            <a href="detalleProducto" class="btn">Ver detalle</a>
+            <a href="detalleProducto" class="btn">comprar</a>
           </article>
           <article class="productCard">
             <div class="imageContainer">
               <img src="image/whiskas.png" alt="productoDestacado-2" />
             </div>
-            <a href="#" class="nombre"><h3>Whiska</h3></a>
+            <a href="#" class="nombre"><h3>Whiskas</h3></a>
             <p>$9.560</p>
-            <a href="detalleProducto" class="btn">Ver detalle</a>
+            <a href="detalleProducto" class="btn">comprar</a>
           </article>
           <article class="productCard">
             <div class="imageContainer">
               <img src="image/whiskas.png" alt="productoDestacado-3" />
             </div>
-            <a href="#" class="nombre"><h3>Whiskass</h3></a>
+            <a href="#" class="nombre"><h3>Whiskas</h3></a>
             <p>$8.560</p>
-            <a href="detalleProducto" class="btn">Ver detalle</a>
+            <a href="detalleProducto" class="btn">comprar</a>
           </article>
           <article class="productCard">
             <div class="imageContainer">
               <img src="image/whiskas.png" alt="productoDestacado-2" />
             </div>
-            <a href="#" class="nombre"><h3>Whiskaas</h3></a>
+            <a href="#" class="nombre"><h3>Whiskas</h3></a>
             <p>$7.560</p>
-            <a href="detalleProducto" class="btn">ver detalle </a>
+            <a href="detalleProducto" class="btn">comprar </a>
           </article>
 
           <div class="relacionados">
@@ -155,17 +157,25 @@
               <div class="imageContainer">
                 <img src="image/whiskas.png" alt="productoDestacado-2" />
               </div>
-              <a href="#" class="nombre"><h3>Whiska</h3></a>
+              <a href="#" class="nombre"><h3>whiskas</h3></a>
               <p>$9.560</p>
-              <a href="detalleProducto" class="btn">Ver detalle</a>
+              <a href="detalleProducto" class="btn">comprar</a>
             </article>
             <article class="productCard">
               <div class="imageContainer">
                 <img src="image/whiskas.png" alt="productoDestacado-3" />
               </div>
-              <a href="#" class="nombre"><h3>Whiskass</h3></a>
+              <a href="#" class="nombre"><h3>Whiskas</h3></a>
               <p>$8.560</p>
-              <a href="detalleProducto" class="btn">Ver detalle</a>
+              <a href="detalleProducto" class="btn">comprar</a>
+            </article>
+            <article class="productCard">
+              <div class="imageContainer">
+                <img src="image/whiskas.png" alt="productoDestacado-2" />
+              </div>
+              <a href="#" class="nombre"><h3>Whiskas</h3></a>
+              <p>$7.560</p>
+              <a href="detalleProducto" class="btn">comprar </a>
             </article>
             <article class="productCard">
               <div class="imageContainer">
@@ -173,15 +183,7 @@
               </div>
               <a href="#" class="nombre"><h3>Whiskaas</h3></a>
               <p>$7.560</p>
-              <a href="detalleProducto" class="btn">ver detalle </a>
-            </article>
-            <article class="productCard">
-              <div class="imageContainer">
-                <img src="image/whiskas.png" alt="productoDestacado-2" />
-              </div>
-              <a href="#" class="nombre"><h3>Whiskaas</h3></a>
-              <p>$7.560</p>
-              <a href="detalleProducto" class="btn">ver detalle </a>
+              <a href="detalleProducto" class="btn">comprar </a>
             </article>
           </div>
 

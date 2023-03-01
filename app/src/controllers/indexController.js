@@ -53,7 +53,10 @@ module.exports = {
         res.render("users/register")
     },
     carrito: (req, res) => {
-        res.render("products/carrito")
+        let oferta = products.filter(product => product.discount > 0);
+        res.render("products/carrito", {
+          oferta
+        })
     },
     admin: (req, res) => {
         res.render("users/admin")

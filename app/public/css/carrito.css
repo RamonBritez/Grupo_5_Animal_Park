@@ -1,29 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 
    
-
-*{
-  box-sizing: border-box;
-}
-a{
+main.carrito a{
   color:black;
 }
 
-h2 {
+main.carrito h2 {
   margin: 4px;
   text-shadow: 0px 3px 3px rgb(212, 248, 111);
   font-size: 1.6rem;
 }
 
-h3 {
+main.carrito h3 {
   font-size: 1rem;
 }
-h3.titulo{
+main.carrito h3.titulo{
   text-shadow: 0px 3px 3px rgb(212, 248, 111); 
   margin:5px;
   font-size:1.3rem;
 } 
-img {
+main.carrito img {
   width: 50px;
   height: 50px;
 }
@@ -38,7 +34,7 @@ main.carrito {
   margin-right: 5px;
 }
 
-main.carrito  div section.lista {
+main.carrito  div section.listas {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -189,7 +185,7 @@ main.carrito div section article div.boton button {
   border: none;  
   border-radius: 50%;
 }
-main.carrito section.lista article.producto div.boton {
+main.carrito section.listas article.producto div.boton {
   display: flex;
   gap: 5px;
 }
@@ -198,7 +194,7 @@ main.carrito i {
   color: #035e02e5;
   border-radius:50%;
 }
-main.carrito  section.lista article.producto div.boton span {
+main.carrito  section.listas article.producto div.boton span {
   font-size: 16px;
   text-align: center;
 }
@@ -213,7 +209,7 @@ main.carrito section.ofertas i{
   border-radius:50%;
 }
 
-main.carrito  section.lista article.producto div.datos p.precio {
+main.carrito  section.listas article.producto div.datos p.precio {
   font-size: 12px;
 }
 
@@ -221,133 +217,32 @@ main.carrito div.producto div.desktop section.ofertas div.relacionados{
 display: none;
 }
 
-
-footer {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(var(--verdePrueba2), var(--verdePrueba1));
-  justify-content: center;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  flex-direction: column;
-  margin: 0;
-}
-
-footer div.boton-arriba {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer div.boton-arriba a {
-  height: 20px;
-  width: 40px;
-  border-radius: 5px;
-  background-color: var(--verdePrueba2);
-  border: 2px var(--verdePrueba1) solid;
-  border-radius: 5px;
-  text-align: center;
-}
-
-footer div.boton-arriba a:hover {
-  box-shadow: 0 0 10px var(--amarillo);
-  transform: scale(1.2);
-}
-
-footer nav {
-  display: flex;
-  width: 100%;
-  padding: 0 5px;
-}
-
-footer nav nav.interaccion {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 5px;
-}
-
-footer nav nav.interaccion div.info-footer {
-  flex-direction: column;
-  text-align: center;
-}
-
-footer nav nav.interaccion h4 {
-  font-size: 20px;
-
-  margin-top: 5px 0;
-  margin-bottom: 5px 0;
-}
-
-footer nav nav.interaccion ul {
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-footer nav nav.interaccion ul li {
-  margin-top: 5px;
-  font-size: 16px;
-}
-
-footer nav nav.interaccion ul.red-social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer div.info-footer ul li i {
-  padding: 0 5px;
-  font-size: 30px;
-  display: flex;
-}
-
-footer div.info-footer ul li i p {
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-}
-
-footer div#logo {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 0;
-}
-
-footer div#logo a img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 5px;
-}
-
-
-
-
-
 @media (min-width: 481px) {
   main.carrito{
     padding: 10px;
   }
-  h3 {
+  main.carrito h3 {
     font-size: 1.4rem;
   } 
 
-  h2, h3.titulo{
-    font-size: 2rem;
+  main.carrito h2, h3.titulo{
     margin-top: 5px;
   text-shadow: 0px 3px 3px rgb(212, 248, 111);
   text-align: center;
+ width:100%;
   }
   
-  p {
+  main.carrito p {
     font-size: 0.9rem;
   }
-  img {
+  main.carrito img {
     width: 55px;
   }
-  article{
+  main.carrito article{
     justify-content:center;
   }
 
- main.carrito div.producto section.lista div.cupon i{
+ main.carrito div.producto section.listas div.cupon i{
   font-size:26px;
  }
  main.carrito div.cupon input {
@@ -370,7 +265,7 @@ main.carrito div.producto div.desktop section.ofertas div.relacionados{
   main.carrito div section article div.botton{
     justify-content: space-around;
   }
-main.carrito div.producto section.lista div.precio ul li{
+main.carrito div.producto section.listas div.precio ul li{
   font-size: 20px;
 }
 
@@ -379,44 +274,64 @@ main.carrito div.producto section.lista div.precio ul li{
  @media (min-width: 768px) {
 
   main.carrito{
-  margin:5px;
-  padding: 5px;
+  padding: 10px;
   box-sizing: border-box;
  }
-h3{
+ main.carrito h3{
   font-size: 1.5rem;
   width: 100%;
 }
-h3.titulo{
+main.carrito h3.titulo{
   font-size: 1rem;
+  width: 100%;
 }
   main.carrito div.producto{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
 }
-main.carrito div.producto section{
+main.carrito div.producto section.listas{
+  width:100%;
+    flex-direction: row;
+    gap:5px;
+  }
+  
+  main.carrito div.producto div.listaProductos{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
     flex-grow: 1;
   }
-  main.carrito div.producto section.lista div.boton-envio i {
+  
+  main.carrito div.producto div.gestion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    width: 40%;
+  }
+  main.carrito div.metodo div.boton-envio.btn {
+    gap: 1px;
+}
+main.carrito div.metodo div.boton-envio.btn a{
+  font-size: 0.7rem;
+}
+  main.carrito div.producto section.listas div.boton-envio i {
     color: antiquewhite;
     border: 1px solid antiquewhite;
     padding: 5px;
     border-radius: 50%;
     transition: all 1s;
-     
   }
-  main.carrito div.producto section.lista div.boton-envio:hover i {
+  main.carrito div.producto section.listas div.boton-envio:hover i {
 rotate:360deg;
   }
-
   main.carrito div.producto div.desktop{
     display: flex;
     flex-direction: column;
-    width: 45%;
   }
 main.carrito div.producto div.desktop section{
-    display: block;
+    display:flex;
    
   }
 main.carrito div.producto div.desktop section article.productCard img{
@@ -428,7 +343,7 @@ main.carrito div.producto div.desktop section article.productCard{
   }
 
 
-main.carrito section.lista div.metodo{
+main.carrito section.listas div.metodo{
   flex-direction: row;
 }
 
