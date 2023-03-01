@@ -17,12 +17,14 @@ app.use(express.json());
 const indexRouter = require("./routes");
 const products = require("./routes/products");
 const admin  = require("./routes/admin");
+const userRouter = require("./routes/user");
 
 
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", products);
 app.use("/admin", admin);
+app.use("/users", userRouter);
 
 
 
