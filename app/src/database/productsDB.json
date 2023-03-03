@@ -228,66 +228,6 @@
       "image": "1676934573105_products_.webp"
    },
    {
-      "id": 20,
-      "name": "nadaa2222",
-      "brand": "pekass",
-      "price": 1234,
-      "discount": 0,
-      "category": "alimentos",
-      "weight": "15",
-      "description": "nada para test 1 -.......",
-      "pet": "perros",
-      "image": "1677108246662_products_.jpg"
-   },
-   {
-      "id": 21,
-      "name": "hola",
-      "brand": "pedigree",
-      "price": 1400,
-      "discount": 0,
-      "category": "alimentos",
-      "weight": "34",
-      "description": "asdasfasfasfasfasfasfasfasfasf",
-      "pet": "perros",
-      "image": "1677109687979_products_.jpeg"
-   },
-   {
-      "id": 22,
-      "name": "dibujin",
-      "brand": "dibujin",
-      "price": 1212,
-      "discount": 15,
-      "category": "alimentos",
-      "weight": "12",
-      "description": "dfgjsdfgjfgjrfgjsfgjfgsdjdfgjdfg",
-      "pet": "gatos",
-      "image": "1677109712302_products_.jpg"
-   },
-   {
-      "id": 24,
-      "name": "nada",
-      "brand": "nadaa",
-      "price": 1400,
-      "discount": 0,
-      "category": "camas/cuchas",
-      "weight": "12",
-      "description": "nada para test parte 8092",
-      "pet": "perros",
-      "image": "1677422972549_products_.jpeg"
-   },
-   {
-      "id": 25,
-      "name": "Zoomarlo",
-      "brand": "nadaa",
-      "price": 1234,
-      "discount": 0,
-      "category": "camas/cuchas",
-      "weight": "12",
-      "description": "ASDASFASFASFASFASFASF",
-      "pet": "perros",
-      "image": "1677423067541_products_.png"
-   },
-   {
       "id": 26,
       "name": "asdasd",
       "brand": "asdasdasd",
