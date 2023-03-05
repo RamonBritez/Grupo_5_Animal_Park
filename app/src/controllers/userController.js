@@ -66,12 +66,7 @@ module.exports = {
              email,
              password:  bcrypt.hashSync(password, 12),
              avatar: req.file ? req.file.filename : "avatar_default.jpeg",
-             rol: "USER",
-             tel: "",
-             address: "",
-             postal_code: "",
-             province: "",
-             city: ""
+             rol: "USER"
             };
      
             users.push(newUser);
@@ -94,5 +89,12 @@ module.exports = {
         }
 
         res.redirect("/");
+    },
+
+    edit:(req, res) =>{
+        res.render('users/edit',{
+            session: req.session
+        })
     }
+
 }

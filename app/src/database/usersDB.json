@@ -61,5 +61,19 @@
       "postal_code": "",
       "province": "",
       "city": ""
+   },
+   {
+      "id": 7,
+      "userName": "Jon",
+      "apellido": "Balles",
+      "email": "jon@gmail.com",
+      "password": "$2a$12$irYdKP2o.gDv1chC/dqDaOxOlVgAbh1xe3EdQYpdUGi0.e8SybOna",
+      "avatar": "11111111111111.jpg",
+      "rol": "USER",
+      "tel": "",
+      "address": "",
+      "postal_code": "",
+      "province": "",
+      "city": ""
    }
 ]

@@ -14,7 +14,8 @@ module.exports = {
         let oferta = products.filter(product => product.discount > 0);
         res.render("home", {
             products,
-            oferta
+            oferta,
+            session: req.session
         })
     },
 
@@ -35,28 +36,19 @@ module.exports = {
 		res.render(`products/results`, {
 			keywords,
 			listProduct,
+            session: req.session
 		})
 	},
 	
-
-
-
-    login: (req, res) => {
-        res.render("users/Login")
-    },
-    
     error: (req, res) => {
-        res.render("error")
+        res.render("error",{
+        session: req.session
+    })
     },
 
-    register: (req, res) => {
-        res.render("users/register")
-    },
     carrito: (req, res) => {
-        res.render("products/carrito")
-    },
-    admin: (req, res) => {
-        res.render("users/admin")
-    },
-
+        res.render("products/carrito",{
+        session: req.session
+        })
+    }
 }

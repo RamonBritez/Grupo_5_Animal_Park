@@ -27,4 +27,6 @@ router.put('/update/:id', upload.uploadImageProduct.single('image'), productVali
 router.delete('/delete/:id', destroy); 
 
 
+
+
 module.exports = router;

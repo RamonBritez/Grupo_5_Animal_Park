@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { login, register, processRegister, processLogin, logout } = require("../controllers/userController.js");
+const { login, register, processRegister, processLogin, logout, edit } = require("../controllers/userController.js");
 const uploadAvatar = require("../middlewares/uploadAvatar");
 const registerValidator = require("../validations/registerValidator");
 const loginValidator = require("../validations/loginValidator");
-const { route } = require(".");
+
 
 /* GET - Login Form */
 router.get("/login", login); 
@@ -18,5 +18,7 @@ router.post("/register", uploadAvatar.single("avatar"), registerValidator, proce
 
 /* GET - User logout */
 router.get("/logout", logout)
+
+router.get("/edit", edit)
 
 module.exports = router;
