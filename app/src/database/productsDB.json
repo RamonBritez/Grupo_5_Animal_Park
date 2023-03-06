@@ -262,5 +262,29 @@
       "description": "asdasdfasdgasdgsdgdasdasd",
       "pet": "perros",
       "image": "default.jpg"
+   },
+   {
+      "id": 29,
+      "name": "Disfraz de Gallina",
+      "brand": "manualidad",
+      "price": 1500,
+      "discount": 0,
+      "category": "vestimenta",
+      "weight": "10",
+      "description": "Decora a tu tortuga con este maravilloso atuendo",
+      "pet": "reptiles",
+      "image": "1678135385598_products_.jpg"
+   },
+   {
+      "id": 30,
+      "name": "Ropa tortuga pinchos",
+      "brand": "manualidad",
+      "price": 1500,
+      "discount": 0,
+      "category": "vestimenta",
+      "weight": "0",
+      "description": "Decora a tu tortuga con este maravilloso atuendo",
+      "pet": "reptiles",
+      "image": "1678135351435_products_.jpg"
    }
 ]

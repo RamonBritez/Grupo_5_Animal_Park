@@ -7,7 +7,7 @@ module.exports = [
 
     check("name")
         .notEmpty().withMessage("El nombre es obligatorio").bail()
-        .isLength({ min: 3, max: 20 }).withMessage("El nombre debe tener entre 3 y 20 caracteres"),
+        .isLength({ min: 3, max: 25 }).withMessage("El nombre debe tener entre 3 y 20 caracteres"),
 
     check("category")
         .notEmpty().withMessage("Debes indicar la categoría"),
@@ -17,7 +17,7 @@ module.exports = [
 
     check("description")
         .notEmpty().withMessage("La descripción es obligatoria").bail()
-        .isLength({ min: 20}).withMessage("La descripción debe tener mínimo 20 caracteres"),
+        .isLength({ min: 10}).withMessage("La descripción debe tener mínimo 10 caracteres"),
     
     check("price")
         .isInt({min:1}).withMessage("Debes indicar un precio"),

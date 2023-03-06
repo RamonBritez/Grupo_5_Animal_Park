@@ -77,7 +77,9 @@ const controller = {
 	
 		  writeJSON("productsDB.json", products);
 	
-		  return res.redirect("/products");
+		  return res.redirect("/products",{
+			session: req.session
+		  });
 		} else {
 		  if (req.file) {
 			fs.existsSync(`./public/image/products/${req.file.filename}`) &&
@@ -87,7 +89,8 @@ const controller = {
 		  return res.render("products/products-create", {
 			errors: errors.mapped(),
 			old: req.body,
-			products
+			products,
+			session: req.session
 		  });
 		}
 	  },

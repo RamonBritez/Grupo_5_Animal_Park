@@ -22,16 +22,20 @@ module.exports = {
     search: (req, res) => {
 		let { keywords } = req.query
         let text = keywords.toLowerCase()
-		//let results = products.filter(product => product.name.toLowerCase() === keywords.toLowerCase())
         let listProduct = []
+       
 
-        let results = products.forEach(product => {
-			let busqueda = product.name.toLowerCase()
-			if(busqueda.indexOf(text) !== -1){
-				listProduct.push(product)
-				
-			}
+        products.forEach(product => {
+		let porNombre = product.name.toLowerCase()
+        let porPet = product.pet.toLowerCase()
+        let porCategory = product.category.toLowerCase()
+
+		if(porNombre.indexOf(text) !== -1 || porPet.indexOf(text) !== -1 || porCategory.indexOf(text) !== -1){
+		listProduct.push(product)
+		}
+
 		})
+
 
 		res.render(`products/results`, {
 			keywords,
