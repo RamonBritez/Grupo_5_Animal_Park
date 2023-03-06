@@ -47,8 +47,16 @@ module.exports = {
     },
 
     carrito: (req, res) => {
+        let oferta = products.filter(product => product.discount > 0);
         res.render("products/carrito",{
-        session: req.session
+        session: req.session,
+        oferta
         })
-    }
+    },
+        
+  
+    admin: (req, res) => {
+        res.render("users/admin")
+    },
+
 }
