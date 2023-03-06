@@ -1,14 +1,14 @@
 [
    {
       "id": 1,
-      "name": "Nutrique Gato Adulto",
+      "name": "la prueba",
       "brand": "Voraz",
-      "price": "3697",
-      "discount": "10",
+      "price": 9999,
+      "discount": 10,
       "category": "alimentos",
-      "description": "+/ Años",
+      "description": "No se, estaba probando las validaciones y el tema de mantener la session",
       "pet": "gatos",
-      "weight": "2kg",
+      "weight": "10",
       "image": "1676164813110_products_.png"
    },
    {
@@ -265,14 +265,26 @@
    },
    {
       "id": 29,
-      "name": "nada",
-      "brand": "pedigree",
-      "price": 1234,
+      "name": "Disfraz de Gallina",
+      "brand": "manualidad",
+      "price": 1500,
       "discount": 0,
-      "category": "camas/cuchas",
-      "weight": "12",
-      "description": "nada para test ...............",
-      "pet": "perros",
-      "image": "1678139313752_products_.jpeg"
+      "category": "vestimenta",
+      "weight": "10",
+      "description": "Decora a tu tortuga con este maravilloso atuendo",
+      "pet": "reptiles",
+      "image": "1678135385598_products_.jpg"
+   },
+   {
+      "id": 30,
+      "name": "Ropa tortuga pinchos",
+      "brand": "manualidad",
+      "price": 1500,
+      "discount": 0,
+      "category": "vestimenta",
+      "weight": "0",
+      "description": "Decora a tu tortuga con este maravilloso atuendo",
+      "pet": "reptiles",
+      "image": "1678135351435_products_.jpg"
    }
 ]

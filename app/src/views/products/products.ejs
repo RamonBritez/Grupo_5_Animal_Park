@@ -11,10 +11,14 @@
 
     <section class="ofertas">
         <h2>Ofertas</h2>
-    
         <%- include("../partials/tarjetasDescuento")  %> 
-
    </section>
+
+   <%- include("../partials/filtersCategory")  %> 
+   <section class="filter" id="pets">
+    <h2>Que tipo de mascotas tenes?</h2>
+    <%- include("../partials/filterPets")  %> 
+    </section>
 
    <section class="ofertas">
     <h2>Todos los productos</h2>

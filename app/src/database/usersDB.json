@@ -3,36 +3,71 @@
       "id": 0,
       "name": "RocioV",
       "rol": "admin",
-      "email": "RocioV@xxx.com",
-      "image": "register.png"
+      "email": "RocioV@mail.com",
+      "avatar": "avatar_default.jpeg",
+      "userName": "Jon",
+      "apellido": "Balles",
+      "tel": "1157388422",
+      "address": "Manaos 225",
+      "postal_code": "1456",
+      "province": "Miami",
+      "city": "Vice City"
    },
    {
       "id": 1,
       "name": "NicoF",
       "rol": "admin",
-      "email": "NicoF@xxx.com",
-      "image": "register.png"
+      "email": "jon@mail.com",
+      "avatar": "avatar_default.jpeg",
+      "userName": "Jon",
+      "apellido": "Balles",
+      "tel": "1157388422",
+      "address": "Manaos 225",
+      "postal_code": "1456",
+      "province": "Miami",
+      "city": "Vice City"
    },
    {
       "id": 2,
       "name": "CelesG",
       "rol": "admin",
-      "email": "celesG@xxx.com",
-      "image": "register.png"
+      "email": "jon@mail.com",
+      "avatar": "avatar_default.jpeg",
+      "userName": "Jon",
+      "apellido": "Balles",
+      "tel": "1157388422",
+      "address": "Manaos 225",
+      "postal_code": "1456",
+      "province": "Miami",
+      "city": "Vice City"
    },
    {
       "id": 3,
       "name": "RamonB",
       "rol": "admin",
-      "email": "RamonBritez@xxx.com",
-      "image": "register.png"
+      "email": "jon@mail.com",
+      "avatar": "avatar_default.jpeg",
+      "userName": "Jon",
+      "apellido": "Balles",
+      "tel": "1157388422",
+      "address": "Manaos 225",
+      "postal_code": "1456",
+      "province": "Miami",
+      "city": "Vice City"
    },
    {
       "id": 4,
       "name": "JonBalles",
       "rol": "user",
-      "email": "jon@xxx.com",
-      "image": "register.png"
+      "email": "jon@mail.com",
+      "avatar": "avatar_default.jpeg",
+      "userName": "Jon",
+      "apellido": "Balles",
+      "tel": "1157388422",
+      "address": "Manaos 225",
+      "postal_code": "1456",
+      "province": "Miami",
+      "city": "Vice City"
    },
    {
       "id": 5,
@@ -61,5 +96,28 @@
       "postal_code": "",
       "province": "",
       "city": ""
+   },
+   {
+      "id": 7,
+      "userName": "Jon",
+      "apellido": "Balles",
+      "email": "jon@gmail.com",
+      "password": "$2a$12$irYdKP2o.gDv1chC/dqDaOxOlVgAbh1xe3EdQYpdUGi0.e8SybOna",
+      "avatar": "11111111111111.jpg",
+      "rol": "ADMIN",
+      "tel": "",
+      "address": "",
+      "postal_code": "",
+      "province": "",
+      "city": ""
+   },
+   {
+      "id": 8,
+      "userName": "cosme",
+      "apellido": "fulanito",
+      "email": "fulanito@mail.com",
+      "password": "$2a$12$gUS.I3HqDz.xyPedCz3BweIk/RaXudOoIzlmrk5n7V33eOq9JQZdC",
+      "avatar": "avatar_default.jpeg",
+      "rol": "USER"
    }
 ]

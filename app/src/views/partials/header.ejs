@@ -4,16 +4,12 @@
 
     <div class="busqueda">
         <form action="/search" method="get" class="busqueda">
-         <input type="search" placeholder="Buscar productos" name="keywords">
+         <input type="search" placeholder="Buscador por nombre, categoria o mascotas" name="keywords">
             <button type="submit">
              <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </form>
     </div>
-  
-
-
-
 
    
         <div class="burger-menu btn" id="burger-menu" >
@@ -41,19 +37,39 @@
 <nav class="botonera">
     <ul class="listaSuperior">
             <li><a class="btn" href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <% if (typeof session.user != 'undefined') { %>
+                <li><a class="btn" href="/users/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+                <li><a href="/users/edit/<%- session.user.id %>"><img class="avatar btn" src="/image/users/<%= session.user.avatar %>" alt="avatar"></a></li>
+            <% }else {%>
             <li><a class="btn" href="/users/login"><i class="fa-solid fa-user"></i></a></li>
             <li><a class="btn" href="/error"><i class="fa-solid fa-circle-question"></i></a></li>
+            <% } %>
         </ul>
     </nav>
     </section>
 
     <nav class="navegacion">
         <ul>
-            <li class="btn"><a href="/users/register">Registrarme</a></li>
-            <li class="btn"><a href="/products/create">Vender</a></li>
+           
+            
+        <% if (typeof session.user != 'undefined') { %>
             <li class="btn"><a href="/error">Proveedores</a></li>
             <li class="btn"><a href="/products">Productos</a></li>
             <li class="btn"><a href="#pets">mascotas</a></li>
+            <% if (session.user.rol == "ADMIN") { %>
+                <li class="btn"><a href="/products/create">Vender</a></li>
+                <li class="btn"><a href="/admin/products-list">Lista de productos</a></li>
+                <li class="btn"><a href="/admin/admin-list">users</a></li>
+            <% } %>
+            
+            <% } else {%>
+                <li class="btn"><a href="/users/register">Registrarme</a></li>
+                <li class="btn"><a href="/products">Productos</a></li>
+                <li class="btn"><a href="#pets">mascotas</a></li>
+        <% } %>
+            
+            
+          
         </ul>
     </nav>
 

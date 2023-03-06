@@ -14,16 +14,12 @@ const controller = {
 		res.render("products/products", {
 			products,
 			toThousand,
-			oferta
+			oferta,
+            session: req.session
 		})
 	},
 
- 	listAdmin: (req, res) => {
-		res.render("products/products-list", {
-			products,
-			toThousand,
-		})
-	}, 
+ 
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
@@ -34,7 +30,8 @@ const controller = {
 		res.render("products/detail", {
 			product,
 			products,
-			toThousand
+			toThousand,
+            session: req.session
 		})
 	},
 
@@ -42,6 +39,7 @@ const controller = {
 	create: (req, res) => {
 		res.render("products/products-create", {
 			products: readJSON("productsDB.json"),
+            session: req.session
 		})
 	},
 	
@@ -79,7 +77,9 @@ const controller = {
 	
 		  writeJSON("productsDB.json", products);
 	
-		  return res.redirect("/products");
+		  return res.redirect("/products",{
+			session: req.session
+		  });
 		} else {
 		  if (req.file) {
 			fs.existsSync(`./public/image/products/${req.file.filename}`) &&
@@ -89,7 +89,8 @@ const controller = {
 		  return res.render("products/products-create", {
 			errors: errors.mapped(),
 			old: req.body,
-			products
+			products,
+			session: req.session
 		  });
 		}
 	  },
@@ -103,6 +104,7 @@ const controller = {
 
 		res.render('products/product-edit-form', {
 			...productToEdit,
+            session: req.session
 		})
 	},
 	
@@ -166,6 +168,7 @@ const controller = {
 			...product,
 			errors: errors.mapped(),
 			old: req.body,
+			session: req.session
 		  });
 		}
 	  },

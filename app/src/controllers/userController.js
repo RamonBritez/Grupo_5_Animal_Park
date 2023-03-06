@@ -1,6 +1,9 @@
 const { validationResult } = require("express-validator");
+const fs = require('fs');
 const { readJSON, writeJSON } = require("../database");
 const bcrypt = require("bcryptjs");
+const session = require("express-session");
+
 
 let users = readJSON("usersDB.json")
 module.exports = {
@@ -43,7 +46,7 @@ module.exports = {
         }
     },
     register: (req, res) => {
-        res.render("users/register", {session: req.session})
+        res.render("users/register")
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
@@ -66,12 +69,7 @@ module.exports = {
              email,
              password:  bcrypt.hashSync(password, 12),
              avatar: req.file ? req.file.filename : "avatar_default.jpeg",
-             rol: "USER",
-             tel: "",
-             address: "",
-             postal_code: "",
-             province: "",
-             city: ""
+             rol: "USER"
             };
      
             users.push(newUser);
@@ -94,5 +92,72 @@ module.exports = {
         }
 
         res.redirect("/");
+    },
+
+    edit:(req, res) =>{
+        let userId = Number(req.session.id)
+        let userToEdit = users.find(user  => user.id === userId);
+        res.render('users/edit',{
+            session: req.session,
+            ...userToEdit
+        })
+    },
+
+    processEdit:(req, res) =>{
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()) {
+            const users = readJSON("usersDB.json");
+            let {userName, apellido,avatar,tel, address,postal_code,province,city} = req.body;
+
+            const userModify = users.map((user) => {
+                if (user.id === req.params.id) {
+                  let userModify = {
+                    ...user,
+                    userName,
+                    apellido,
+                    tel,
+                    address,
+                    postal_code,
+                    province,
+                    city,
+                    avatar: req.file ? req.file.filename : user.avatar,
+                  };
+        
+                  if (req.file) {
+                    fs.existsSync(`./public/image/products/${user.image}`) &&
+                    fs.unlinkSync(`./public/image/products/${user.image}`);
+                  }
+        
+                  return userModify;
+                }
+                return user;
+              });
+
+            writeJSON("usersDB.json", userModify);
+           
+            req.session.save((err) => {
+                res.redirect('/');
+            })
+     
+            } else {
+               
+                const users = readJSON("usersDB.json");
+                let userId = Number(req.params.id)
+                let userToEdit = users.find(user  => user.id === userId);
+                
+                if (req.file) {
+                    fs.existsSync(`./public/image/products/${req.file.filename}`) &&
+                      fs.unlinkSync(`./public/image/products/${req.file.filename}`);
+                  }
+
+                return res.render(`users/edit`, {
+                  ...userToEdit,
+                  errors: errors.mapped(),
+                  old: req.body,
+                  session: req.session
+                });       
+            }
     }
+
 }
