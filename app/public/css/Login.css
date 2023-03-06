@@ -51,14 +51,8 @@ main div.login__menu div.login__menu-form {
   font-size: 90%;
 }
 
-main div.login__menu div.login__menu-form span {
-  display: block;
-  text-align: center;
-  font-size: 10px;
-  color: red;
-}
 
-main div.login__menu div.login__menu-form form input {
+main div.login__menu div.login__menu-form form input.campo {
   height: 30px;
   width: 100%;
   text-align: center;
@@ -74,7 +68,7 @@ main div.login__menu div.login__menu-form form input:hover{
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-main div.login__menu div.login__menu-form div.opciones {
+main div.login__menu div.login__menu-form form div.opciones {
   display: flex;
   flex-direction: column;
   margin: 15px 0px;
@@ -132,12 +126,6 @@ main div.login__menu div.login__menu-form div.google-facebook button:hover{
   background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
 }
 
-
-main div.login__menu div.login__menu-form div.google-facebook button img {
-  height: 50%;
-  width: 5%;
-  margin: 5px;
-}
 
 main div.login__menu div.login__menu-form div.crear-cuenta {
   display: flex;

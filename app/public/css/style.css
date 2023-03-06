@@ -64,6 +64,7 @@ a {
   text-align: center;
   border: 1px black solid;
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .input-file input {
@@ -100,6 +101,7 @@ table tbody tr td{
   box-sizing: border-box;
   margin: 0;
 }
+
 
 
 .btn-list{

@@ -1,37 +1,65 @@
 [
-    {
-        "id": 0,
-        "name": "RocioV",
-        "role": "admin",
-        "email": "RocioV@xxx.com",
-        "image": "register.png"
-      },  
-      {
-        "id": 1,
-        "name": "NicoF",
-        "role": "admin",
-        "email": "NicoF@xxx.com",
-        "image": "register.png"
-      },
-      {
-        "id": 2,
-        "name": "CelesG",
-        "role": "admin",
-        "email": "celesG@xxx.com",
-        "image": "register.png"
-      },
-      {
-        "id": 3,
-        "name": "RamonB",
-        "role": "admin",
-        "email": "RamonBritez@xxx.com",
-        "image": "register.png"
-      },
-      {
-        "id": 4,
-        "name": "JonBalles",
-        "role": "user",
-        "email": "jon@xxx.com",
-        "image": "register.png"
-      }
+   {
+      "id": 0,
+      "name": "RocioV",
+      "rol": "admin",
+      "email": "RocioV@xxx.com",
+      "image": "register.png"
+   },
+   {
+      "id": 1,
+      "name": "NicoF",
+      "rol": "admin",
+      "email": "NicoF@xxx.com",
+      "image": "register.png"
+   },
+   {
+      "id": 2,
+      "name": "CelesG",
+      "rol": "admin",
+      "email": "celesG@xxx.com",
+      "image": "register.png"
+   },
+   {
+      "id": 3,
+      "name": "RamonB",
+      "rol": "admin",
+      "email": "RamonBritez@xxx.com",
+      "image": "register.png"
+   },
+   {
+      "id": 4,
+      "name": "JonBalles",
+      "rol": "user",
+      "email": "jon@xxx.com",
+      "image": "register.png"
+   },
+   {
+      "id": 5,
+      "userName": "test",
+      "apellido": "test",
+      "email": "test@test.com",
+      "password": "$2a$12$7lF/l7O4CYJ2nzsqLtzX/eHDM7wCcFuF3yZJqmF72LDrzgSfNfw/m",
+      "avatar": "1677779950946_avatar_.png",
+      "rol": "USER",
+      "tel": "",
+      "address": "",
+      "postal_code": "",
+      "province": "",
+      "city": ""
+   },
+   {
+      "id": 6,
+      "userName": "test",
+      "apellido": "test",
+      "email": "test3@test.com",
+      "password": "$2a$12$EbXyrMeBbeGwNJHeTYqowO2yFsvdpWFMfurYlMgfviI2Uvpf5b80q",
+      "avatar": "1677884477039_avatar_.png",
+      "rol": "USER",
+      "tel": "",
+      "address": "",
+      "postal_code": "",
+      "province": "",
+      "city": ""
+   }
 ]
