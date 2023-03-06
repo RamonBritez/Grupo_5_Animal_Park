@@ -6,9 +6,7 @@ const { readJSON, writeJSON } = require("../database");
 const products = readJSON("productsDB.json");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-
-const adminDB = path.join(__dirname, '../database/usersDB.json');
-const users = JSON.parse(fs.readFileSync(adminDB, 'utf-8'));
+const users = readJSON("usersDB.json")
 
 
 module.exports ={

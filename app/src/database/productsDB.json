@@ -1,14 +1,14 @@
 [
    {
       "id": 1,
-      "name": "Nutrique Gato Adulto",
+      "name": "la prueba",
       "brand": "Voraz",
-      "price": "3697",
-      "discount": "10",
+      "price": 9999,
+      "discount": 10,
       "category": "alimentos",
-      "description": "+/ Años",
+      "description": "No se, estaba probando las validaciones y el tema de mantener la session",
       "pet": "gatos",
-      "weight": "2kg",
+      "weight": "10",
       "image": "1676164813110_products_.png"
    },
    {

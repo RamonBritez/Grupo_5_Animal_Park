@@ -165,6 +165,7 @@ const controller = {
 			...product,
 			errors: errors.mapped(),
 			old: req.body,
+			session: req.session
 		  });
 		}
 	  },

@@ -13,7 +13,7 @@
               <p class="title">EDITAR PERFIL</p>
             </div>
             
-            <form action="/users/edit" class="register__container-form" method="post" enctype="multipart/form-data" novalidate>
+            <form action="/users/edit/<%= session.user.id %>?_method=put" class="register__container-form" method="post" enctype="multipart/form-data" novalidate>
               <div class="avatar">
                 <img src="/image/users/<%= session.user.avatar %>" alt="avatar">
               </div>
@@ -38,16 +38,42 @@
                   <small class="text-error"><%= errors.apellido.msg %> </small>
               <% } %>
               </div>
-              
+            
               <div class="form-element">
-                <label for="email">Tu email</label>
-                <input type="email" name="email" id="email" placeholder="Ej: cosme@email.com" value="<%= locals.old && old.email %>"/>
-                <% if (locals.errors && errors.email) { %>
-                  <small class="text-error"><%= errors.email.msg %> </small>
+                <label for="tel">Tel</label>
+                <input type="text" name="tel" id="tel" placeholder="Ej: 1125588996" value="<%= locals.old && old.tel %>"/>
+                <% if (locals.errors && errors.tel) { %>
+                  <small class="text-error"><%= errors.tel.msg %> </small>
               <% } %>
               </div>
-            
-              
+              <div class="form-element">
+                <label for="address">Direccion</label>
+                <input type="text" name="address" id="address" placeholder="Ej: Pendorcho 357" value="<%= locals.old && old.address %>"/>
+                <% if (locals.errors && errors.address) { %>
+                  <small class="text-error"><%= errors.address.msg %> </small>
+              <% } %>
+              </div>
+              <div class="form-element">
+                <label for="postal_code">Codigo postal</label>
+                <input type="text" name="postal_code" id="postal_code" placeholder="Ej: Fulanito" value="<%= locals.old && old.postal_code %>"/>
+                <% if (locals.errors && errors.postal_code) { %>
+                  <small class="text-error"><%= errors.postal_code.msg %> </small>
+              <% } %>
+              <div class="form-element">
+                <label for="city">Ciudad</label>
+                <input type="text" name="city" id="city" placeholder="Ej: Fondo de Bikini" value="<%= locals.old && old.city %>"/>
+                <% if (locals.errors && errors.city) { %>
+                  <small class="text-error"><%= errors.city.msg %> </small>
+              <% } %>
+              </div>
+            </div>
+            <div class="form-element">
+              <label for="province">Provincia</label>
+              <input type="text" name="province" id="province" placeholder="Ej: 1555" value="<%= locals.old && old.province %>"/>
+              <% if (locals.errors && errors.province) { %>
+                <small class="text-error"><%= errors.province.msg %> </small>
+            <% } %>
+            </div>
               <button type="submit" class="form-submit">Guardar cambios</button>
             
             </form>
