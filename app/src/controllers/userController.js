@@ -89,7 +89,7 @@ module.exports = {
     },
     logout : (req, res) => {
         req.session.destroy();
-        if(req.cookies.userArtisticaDali){
+        if(req.cookies.userAnimalpark){
             res.cookie("userAnimalPark", "", {maxAge: -1})
         }
 

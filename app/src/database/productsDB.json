@@ -242,7 +242,7 @@
    {
       "id": 27,
       "name": "Zoomarlo",
-      "brand": "nadaa",
+      "brand": "nada1",
       "price": 1234,
       "discount": 0,
       "category": "accesorios",
@@ -253,7 +253,7 @@
    },
    {
       "id": 28,
-      "name": "asdasdas",
+      "name": "asdasd",
       "brand": "pedigree",
       "price": 1234,
       "discount": 0,
@@ -262,5 +262,17 @@
       "description": "asdasdfasdgasdgsdgdasdasd",
       "pet": "perros",
       "image": "default.jpg"
+   },
+   {
+      "id": 29,
+      "name": "nada",
+      "brand": "pedigree",
+      "price": 1234,
+      "discount": 0,
+      "category": "camas/cuchas",
+      "weight": "12",
+      "description": "nada para test ...............",
+      "pet": "perros",
+      "image": "1678139313752_products_.jpeg"
    }
 ]
