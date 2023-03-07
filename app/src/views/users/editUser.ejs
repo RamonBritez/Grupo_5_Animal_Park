@@ -13,20 +13,11 @@
               <p class="title">EDITAR PERFIL</p>
             </div>
             
-            <form action="/users/edit/<%= session.user.id %>?_method=put" class="register__container-form" method="post" enctype="multipart/form-data" novalidate>
-              
-              <div class="avatar">
-                <img src="/image/users/<%= session.user.avatar %>" alt="avatar">
-              </div>
+            <form action="/users/profile/edit?_method=put" class="register__container-form" method="post" enctype="multipart/form-data" novalidate>
                
-                <div class="input-file">
-                    <label for="avatar" >Agregar Avatar</label>
-                    <input type="file" id="avatar" name="avatar" accept="image/*">
-                </div>
-
               <div class="form-element">
                 <label for="userName">Nombre</label>
-                <input type="text" name="userName" id="userName" placeholder="Ej: Cosme" value="<%= locals.old && old.userName %>"/>
+                <input type="text" name="userName" id="userName" value="<%= locals.old ? old.name : user.userName %>"/>
                 <% if (locals.errors && errors.userName) { %>
                   <small class="text-error"><%= errors.userName.msg %> </small>
               <% } %>
@@ -34,35 +25,43 @@
               
               <div class="form-element">
                 <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" id="apellido" placeholder="Ej: Fulanito" value="<%= locals.old && old.apellido %>"/>
+                <input type="text" name="apellido" id="apellido" placeholder="Ej: Fulanito" value="<%= locals.old ? old.apellido : user.apellido %>"/>
                 <% if (locals.errors && errors.apellido) { %>
                   <small class="text-error"><%= errors.apellido.msg %> </small>
+              <% } %>
+              </div>
+              
+              <div class="form-element">
+                <label for="email">Tu email</label>
+                <input type="email" name="email" id="email" placeholder="Ej: cosme@email.com" readonly value="<%= locals.old ? old.email : user.email %>"/>
+                <% if (locals.errors && errors.email) { %>
+                  <small class="text-error"><%= errors.email.msg %> </small>
               <% } %>
               </div>
             
               <div class="form-element">
                 <label for="tel">Tel</label>
-                <input type="text" name="tel" id="tel" placeholder="Ej: 1125588996" value="<%= locals.old && old.tel %>"/>
+                <input type="tel" name="tel" id="tel" value="<%= locals.old ? old.tel : user.tel %>"/>
                 <% if (locals.errors && errors.tel) { %>
                   <small class="text-error"><%= errors.tel.msg %> </small>
               <% } %>
               </div>
               <div class="form-element">
                 <label for="address">Direccion</label>
-                <input type="text" name="address" id="address" placeholder="Ej: Pendorcho 357" value="<%= locals.old && old.address %>"/>
+                <input type="text" name="address" id="address" placeholder="Ej: Pendorcho 357" value="<%= locals.old ? old.address : user.address %>"/>
                 <% if (locals.errors && errors.address) { %>
                   <small class="text-error"><%= errors.address.msg %> </small>
               <% } %>
               </div>
               <div class="form-element">
                 <label for="postal_code">Codigo postal</label>
-                <input type="text" name="postal_code" id="postal_code" placeholder="Ej: Fulanito" value="<%= locals.old && old.postal_code %>"/>
+                <input type="text" name="postal_code" id="postal_code" placeholder="Ej: Fulanito" value="<%= locals.old ? old.postal_code : user.postal_code %>"/>
                 <% if (locals.errors && errors.postal_code) { %>
                   <small class="text-error"><%= errors.postal_code.msg %> </small>
               <% } %>
               <div class="form-element">
                 <label for="city">Ciudad</label>
-                <input type="text" name="city" id="city" placeholder="Ej: Fondo de Bikini" value="<%= locals.old && old.city %>"/>
+                <input type="text" name="city" id="city" placeholder="Ej: Fondo de Bikini" value="<%= locals.old ? old.city : user.city %>"/>
                 <% if (locals.errors && errors.city) { %>
                   <small class="text-error"><%= errors.city.msg %> </small>
               <% } %>
@@ -70,11 +69,15 @@
             </div>
             <div class="form-element">
               <label for="province">Provincia</label>
-              <input type="text" name="province" id="province" placeholder="Ej: 1555" value="<%= locals.old && old.province %>"/>
+              <input type="text" name="province" id="province" placeholder="Ej: 1555" value="<%= locals.old ? old.province : user.province %>"/>
               <% if (locals.errors && errors.province) { %>
                 <small class="text-error"><%= errors.province.msg %> </small>
             <% } %>
             </div>
+            <div class="input-file">
+              <label for="avatar" >Cambiar Avatar</label>
+              <input type="file" id="avatar" name="avatar" accept="image/*">
+          </div>
               <button type="submit" class="form-submit">Guardar cambios</button>
             
             </form>

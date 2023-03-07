@@ -93,69 +93,71 @@ module.exports = {
 
         res.redirect("/");
     },
+    profile: (req, res) => {
+        let userInSessionId = req.session.user.id;
 
-    edit:(req, res) =>{
-        let userId = Number(req.session.id)
-        let userToEdit = users.find(user  => user.id === userId);
-        res.render('users/edit',{
-            session: req.session,
-            ...userToEdit
+        let userInSession = users.find(user => user.id === userInSessionId);
+
+        res.render("users/userProfile", {
+            user: userInSession,
+            session: req.session
         })
     },
 
-    processEdit:(req, res) =>{
+    edit:(req, res) =>{
+        let userId = req.session.user.id;
+        let userToEdit = users.find(user  => user.id === userId);
+        
+        res.render('users/editUser',{
+            session: req.session,
+            user: userToEdit
+        })
+    },
+
+   
+    processEdit: (req, res) => {
         let errors = validationResult(req);
-        
+
         if(errors.isEmpty()) {
-            const users = readJSON("usersDB.json");
-            let {userName, apellido, avatar,tel, address,postal_code,province,city} = req.body;
 
-            const userModify = users.map((user) => {
-                if (user.id === req.params.id) {
-                  let userModify = {
-                    ...user,
-                    userName,
-                    apellido,
-                    tel,
-                    address,
-                    postal_code,
-                    province,
-                    city,
-                    avatar: req.file ? req.file.filename : user.avatar,
-                  };
-        
-                  if (req.file) {
-                    fs.existsSync(`./public/image/products/${user.image}`) &&
-                    fs.unlinkSync(`./public/image/products/${user.image}`);
-                  }
-        
-                  return userModify;
-                }
-                return user;
-              });
+            let userId = req.session.user.id;
+            let user = users.find(user => user.id === userId);
 
-            writeJSON("usersDB.json", userModify);
-           
-                res.redirect('/');
-     
-            } else {
-               
-                const users = readJSON("usersDB.json");
-                let userId = Number(req.params.id)
-                let userToEdit = users.find(user  => user.id === userId);
-                
-                if (req.file) {
-                    fs.existsSync(`./public/image/products/${req.file.filename}`) &&
-                      fs.unlinkSync(`./public/image/products/${req.file.filename}`);
-                  }
+            const {
+                userName,
+                apellido,
+                tel,
+                address,
+                postal_code,
+                province,
+                city
+            } = req.body;
 
-                return res.render(`users/edit`, {
-                  ...userToEdit,
-                  errors: errors.mapped(),
-                  old: req.body,
-                  session: req.session
-                });       
-            }
+            user.userName = userName;
+            user.apellido = apellido;
+            user.tel = tel;
+            user.address = address;
+            user.postal_code = postal_code;
+            user.province = province;
+            user.city = city;
+            user.avatar = req.file ? req.file.filename : user.avatar;
+
+            writeJSON("usersDB.json", users);
+
+            delete user.pass;
+
+            req.session.user = user;
+
+            return res.redirect("/users/profile");
+        } else {
+            const userInSessionId = req.session.user.id;
+            const userInSession = users.find(user => user.id === userInSessionId);
+
+            return res.render("user/editUser", {
+                user: userInSession,
+                session: req.session,
+                errors: errors.mapped(),
+            })
+        }
     }
-
 }
