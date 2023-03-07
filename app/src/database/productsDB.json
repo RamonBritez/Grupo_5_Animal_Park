@@ -249,19 +249,7 @@
       "weight": "12",
       "description": "asdasdaDFDASFawsdfds",
       "pet": "gatos",
-      "image": "default.jpg"
-   },
-   {
-      "id": 28,
-      "name": "asdasd",
-      "brand": "pedigree",
-      "price": 1234,
-      "discount": 0,
-      "category": "vestimenta",
-      "weight": "12",
-      "description": "asdasdfasdgasdgsdgdasdasd",
-      "pet": "perros",
-      "image": "default.jpg"
+      "image": "1678149404250_products_.jpg"
    },
    {
       "id": 29,
@@ -286,5 +274,17 @@
       "description": "Decora a tu tortuga con este maravilloso atuendo",
       "pet": "reptiles",
       "image": "1678135351435_products_.jpg"
+   },
+   {
+      "id": 31,
+      "name": "nada",
+      "brand": "nada1",
+      "price": 123,
+      "discount": 0,
+      "category": "alimentos",
+      "weight": "12",
+      "description": "asdasdasdasd nada para test",
+      "pet": "gatos",
+      "image": "1678139921123_products_.jpeg"
    }
 ]

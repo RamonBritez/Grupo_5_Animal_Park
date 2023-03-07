@@ -108,7 +108,7 @@ module.exports = {
         
         if(errors.isEmpty()) {
             const users = readJSON("usersDB.json");
-            let {userName, apellido,avatar,tel, address,postal_code,province,city} = req.body;
+            let {userName, apellido, avatar,tel, address,postal_code,province,city} = req.body;
 
             const userModify = users.map((user) => {
                 if (user.id === req.params.id) {
@@ -136,9 +136,7 @@ module.exports = {
 
             writeJSON("usersDB.json", userModify);
            
-            req.session.save((err) => {
                 res.redirect('/');
-            })
      
             } else {
                

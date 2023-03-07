@@ -76,7 +76,7 @@
       "email": "test@test.com",
       "password": "$2a$12$7lF/l7O4CYJ2nzsqLtzX/eHDM7wCcFuF3yZJqmF72LDrzgSfNfw/m",
       "avatar": "1677779950946_avatar_.png",
-      "rol": "USER",
+      "rol": "ADMIN",
       "tel": "",
       "address": "",
       "postal_code": "",
