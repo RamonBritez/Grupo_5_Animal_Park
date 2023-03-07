@@ -39,7 +39,7 @@
             <li><a class="btn" href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
             <% if (typeof session.user != 'undefined') { %>
                 <li><a class="btn" href="/users/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
-                <li><a href="/users/edit/<%- session.user.id %>"><img class="avatar btn" src="/image/users/<%= session.user.avatar %>" alt="avatar"></a></li>
+                <li><a href="/users/profile/edit"><div class="avatar"><img class="avatar btn" src="/image/users/<%= session.user.avatar %>" alt="avatar"></div></a></li>
             <% }else {%>
             <li><a class="btn" href="/users/login"><i class="fa-solid fa-user"></i></a></li>
             <li><a class="btn" href="/error"><i class="fa-solid fa-circle-question"></i></a></li>
