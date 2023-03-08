@@ -17,6 +17,9 @@
     "url": "https://github.com/RamonBritez/Grupo_5_Animal_Park/issues"
   },
   "homepage": "https://github.com/RamonBritez/Grupo_5_Animal_Park#readme",
+  "nodemonConfig": {
+    "ignore": "src/database/*productsDB.json"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.3",

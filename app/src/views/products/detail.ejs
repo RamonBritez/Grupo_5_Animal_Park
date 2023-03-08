@@ -15,14 +15,17 @@
             <h1><%- product.name  %></h1>
             <div class="containerBox">
                 <article class="showProduct">
-                    <div class="imageContainer">
-                        <img src="/image/products/<%- product.image %>" alt="Foto">
+                    <div class="mainImage">
+                        <img src="/image/products/<%- product.image[0] %>" alt="Foto">
                     </div>
-                    <div class="altImg">
-                        <img src="/image/products/<%- product.image %>" alt="Foto">
-                        <img src="/image/products/<%- product.image %>" alt="Foto">
-                        <img src="/image/products/<%- product.image %>" alt="Foto">
+                    <div class="miniPics">
+                        <div class="thumbnailImages">
+                            <% product.image.forEach(image => { %>
+                            <img src="/image/products/<%-image%>" alt="Imagen de producto" onclick="myFunction(this);">
+                        <% }) %>
                     </div>
+                </div>
+                    
                 </article>
             </div>
             <div class="info-product">
@@ -123,6 +126,7 @@
     </main>
 
     <%- include("../partials/footer")  %> 
+    <script src="/js/productDetail.js"></script>
     
 </body>
 
