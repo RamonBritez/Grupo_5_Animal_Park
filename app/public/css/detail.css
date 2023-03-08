@@ -113,22 +113,28 @@ main.detail section.compra div.metodo-pago div.cantidad{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    
     margin-bottom: 5px;
+    width: 100%;
 }
 
-main.detail section.compra div.metodo-pago div.cantidad span{
+main.detail section.compra div.metodo-pago div.cantidad .counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 0.5px solid rgba(0, 0, 0, 0.3);
     background-color: white;
     padding: 5px;
     margin: 0 10px;
+    flex-direction: row;
 }
-main.detail section.compra div.metodo-pago div.cantidad button{
+main.detail section.compra .metodo-pago .cantidad .counter button{
     width: 30px;
     height: 30px;
     border: none;
     border-radius: 50%;
     color: var(--verdePrueba1);
+    margin: 0 10px;
 }
 
 main.detail section.compra div.metodo-pago div.total{

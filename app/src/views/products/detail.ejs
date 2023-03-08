@@ -75,16 +75,21 @@
                 </div>
                 
                 <div class="cantidad">
-                    <h2>Cantidad</h2>
-                    <div>
-                    <button><i class="fa-solid fa-circle-minus"></i></button>
-                    <span> 05 </span>
-                    <button><i class="fa-solid fa-circle-plus"></i></button>
+                    <label for="cantidad">Cantidad</label>
+                    <div class="counter">
+                        <button type="button" class="btn-subtract" onclick="subtract();">
+                            -
+                        </button>
+                        <div id="count">1</div>
+                                
+                        <button type="button" id="btn-add" onclick="add();">
+                            +
+                        </button>
                     </div>
                 </div>
                 <div class="total">
                     <h2>Total</h2>
-                    <span class="totalFinal">$$$$$$ </span>
+                    <span class="totalFinal">$<%= product.price - (product.price * product.discount / 100) %></span>
                 </div>
             </div>
             <div class="acciones">
