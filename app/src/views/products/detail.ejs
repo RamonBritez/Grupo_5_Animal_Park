@@ -16,17 +16,16 @@
             <div class="containerBox">
                 <article class="showProduct">
                     <div class="mainImage">
-                        <img src="/image/products/<%- product.image[0] %>" alt="Foto">
+                        <img src="/image/products/<%- product.image[0] %>" alt="Foto" id="expandedImg">
                     </div>
-                    <div class="miniPics">
-                        <div class="thumbnailImages">
-                            <% product.image.forEach(image => { %>
-                            <img src="/image/products/<%-image%>" alt="Imagen de producto" onclick="myFunction(this);">
-                        <% }) %>
-                    </div>
-                </div>
-                    
                 </article>
+                <div class="miniPics">
+                    <% product.image.forEach(image => { %>
+                    <div class="thumbnailImages">
+                        <img src="/image/products/<%-image%>" alt="Imagen de producto" onclick="myFunction(this);">
+                    </div>
+                    <% }) %>
+                </div>
             </div>
             <div class="info-product">
                 <h2 class="title"><%- product.name %></h2>
@@ -35,15 +34,21 @@
                     <span>Descuento del <%- product.discount %>%</span>
                     <span>$<%- product.price - (product.price * product.discount / 100) %></span>
                 <% } %>
-
-                
-                <form action="/products/edit/<%- product.id %>">
-                    <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
-                </form>
-
-                <form action="/products/delete/<%- product.id %>?_method=delete" method="post">
-                    <button type="submit" class="btn">Borrar</button>
-                 </form>
+                    <% if (typeof session.user != 'undefined') { %>
+                        <% if ( session.user.rol == "ADMIN") { %>
+                            <div class="btnAdmin">
+                            <form action="/products/edit/<%- product.id %>">
+                                <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
+                            </form>
+                            
+                            <form action="/products/delete/<%- product.id %>?_method=delete" method="post">
+                                <button type="submit" class="btn">Borrar</button>
+                             </form>
+                        </div>
+                        <% } %>
+                    <% } %>
+              
+      
             </div>
         </section>
 
