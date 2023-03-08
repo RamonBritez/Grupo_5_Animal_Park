@@ -6,6 +6,7 @@ const PORT = 3000;
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const session = require("express-session");
 const cookieParser = require('cookie-parser');
+const isAdmin = require("./middlewares/isAdmin")
 
 
 /* Template engine config */
@@ -31,7 +32,7 @@ const userRouter = require("./routes/users");
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", products);
-app.use("/admin", admin);
+app.use("/admin", isAdmin, admin);
 app.use("/users", userRouter);
 
 
