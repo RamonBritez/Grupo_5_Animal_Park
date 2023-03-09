@@ -29,10 +29,10 @@
             </div>
             <div class="info-product">
                 <h2 class="title"><%- product.name %></h2>
-                <h2 class="price">$<%- product.price %></h2>
+                <h2 id="price"><%- product.price %></h2>
                 <% if (product.discount > 0) { %>
                     <span>Descuento del <%- product.discount %>%</span>
-                    <span>$<%- product.price - (product.price * product.discount / 100) %></span>
+                    <span id="final">$<%- product.price - (product.price * product.discount / 100) %></span>
                 <% } %>
                     <% if (typeof session.user != 'undefined') { %>
                         <% if ( session.user.rol == "ADMIN") { %>
@@ -87,9 +87,9 @@
                         </button>
                     </div>
                 </div>
-                <div class="total">
-                    <h2>Total</h2>
-                    <span class="totalFinal">$<%= product.price - (product.price * product.discount / 100) %></span>
+                <h2>Total</h2>
+                <div id="totalFinal">
+                    <span id="">$<%= product.price - (product.price * product.discount / 100) %></span>
                 </div>
             </div>
             <div class="acciones">
