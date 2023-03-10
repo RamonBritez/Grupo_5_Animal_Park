@@ -15,14 +15,14 @@ router.post("/login", isVisitor, loginValidator, processLogin);
 /* GET - Register form */
 router.get("/register", isVisitor, register); 
 /* POST - Register user data */
-router.post("/register", isVisitor, uploadAvatar.single("avatar"), registerValidator, processRegister);
+router.post("/register", uploadAvatar.single("avatar"),isVisitor, registerValidator, processRegister);
 
 /* GET - User logout */
 router.get("/logout", logout)
 
 /* User Edit */
 router.get("/edit/:id", isLogged, edit)
-router.put("/edit/:id", isLogged, uploadAvatar.single("avatar"), editUserValidator, processEdit)
+router.put("/edit/:id", uploadAvatar.single("avatar"), editUserValidator, isLogged, processEdit)
 
 
 module.exports = router;

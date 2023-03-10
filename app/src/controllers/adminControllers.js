@@ -12,13 +12,21 @@ const users = readJSON("usersDB.json")
 module.exports ={
     index: (req, res) => {
     
-        res.render("users/admin", {
-           users
+        res.render("admin/index", {
+            session: req.session
         })
     },
+    userEdit: (req, res) => {
+        let userId = Number(req.params.id) 
+        let userToEdit = users.find(user => user.id === userId )
+        res.render("admin/userEdit", {
+           ...userToEdit,
+           session: req.session
 
+        })
+    },
     listProduct: (req, res) => {
-		res.render("products/products-list", {
+		res.render("admin/products-list", {
 			products,
 			toThousand,
             session: req.session
@@ -26,11 +34,21 @@ module.exports ={
 	},
     
     listAdmin: (req, res) => {
-        res.render("users/admin-list", {
+        res.render("admin/admin-list", {
             session: req.session,
             users
     })
-    }
+    },
+   
+    destroy : (req, res) => {
+		let userId = Number(req.params.id);
+
+		let newUserArray = users.filter(user => user.id !== userId);
+
+		writeJSON("usersDB.json", newUserArray);
+
+		res.redirect('/');
+	}
 }
 
 

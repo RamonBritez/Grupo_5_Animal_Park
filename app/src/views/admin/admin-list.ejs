@@ -22,8 +22,13 @@
             <td class="data-admin"><%- user.email %></td>
             <td class="data-admin"><%- user.role %></td>
             <td class="img-admin"><img src="/image/users/<%- user.avatar %>" alt="user"></td>
-            <td class="btn"><i class="fa-solid fa-trash-can"></i></td>
-            <td class="btn"><i class="fa-solid fa-pen"></i></td>
+            <td>
+                <form action="/admin/delete/<%- user.id %>?_method=delete" method="post">
+                    <button type="submit" class="btn"><i class="fa-solid fa-trash-can"></i></button>
+                </form>
+            </td>
+            
+            <td><a class="btn" href="/admin/user-edit/<%- user.id %>"><i class="fa-solid fa-pen"></i></a></td>
         </tr>
             <% }) %>
         

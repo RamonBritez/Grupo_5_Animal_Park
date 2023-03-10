@@ -1,19 +1,5 @@
 [
    {
-      "id": 0,
-      "name": "RocioV",
-      "rol": "admin",
-      "email": "RocioV@mail.com",
-      "avatar": "avatar_default.jpeg",
-      "userName": "Jon",
-      "apellido": "Balles",
-      "tel": "1157388422",
-      "address": "Manaos 225",
-      "postal_code": "1456",
-      "province": "Miami",
-      "city": "Vice City"
-   },
-   {
       "id": 1,
       "name": "NicoF",
       "rol": "admin",
@@ -31,34 +17,6 @@
       "id": 2,
       "name": "CelesG",
       "rol": "admin",
-      "email": "jon@mail.com",
-      "avatar": "avatar_default.jpeg",
-      "userName": "Jon",
-      "apellido": "Balles",
-      "tel": "1157388422",
-      "address": "Manaos 225",
-      "postal_code": "1456",
-      "province": "Miami",
-      "city": "Vice City"
-   },
-   {
-      "id": 3,
-      "name": "RamonB",
-      "rol": "admin",
-      "email": "jon@mail.com",
-      "avatar": "avatar_default.jpeg",
-      "userName": "Jon",
-      "apellido": "Balles",
-      "tel": "1157388422",
-      "address": "Manaos 225",
-      "postal_code": "1456",
-      "province": "Miami",
-      "city": "Vice City"
-   },
-   {
-      "id": 4,
-      "name": "JonBalles",
-      "rol": "user",
       "email": "jon@mail.com",
       "avatar": "avatar_default.jpeg",
       "userName": "Jon",
@@ -113,11 +71,30 @@
    },
    {
       "id": 8,
-      "userName": "cosme",
-      "apellido": "fulanito",
-      "email": "fulanito@mail.com",
-      "password": "$2a$12$gUS.I3HqDz.xyPedCz3BweIk/RaXudOoIzlmrk5n7V33eOq9JQZdC",
-      "avatar": "avatar_default.jpeg",
-      "rol": "USER"
+      "userName": "test",
+      "apellido": "test",
+      "email": "test3@test.com",
+      "password": "$2a$12$EbXyrMeBbeGwNJHeTYqowO2yFsvdpWFMfurYlMgfviI2Uvpf5b80q",
+      "avatar": "1677884477039_avatar_.png",
+      "rol": "USER",
+      "tel": "",
+      "address": "",
+      "postal_code": "",
+      "province": "",
+      "city": ""
+   },
+   {
+      "id": 9,
+      "userName": "test",
+      "apellido": "test",
+      "email": "test3@test.com",
+      "password": "$2a$12$EbXyrMeBbeGwNJHeTYqowO2yFsvdpWFMfurYlMgfviI2Uvpf5b80q",
+      "avatar": "1677884477039_avatar_.png",
+      "rol": "USER",
+      "tel": "",
+      "address": "",
+      "postal_code": "",
+      "province": "",
+      "city": ""
    }
 ]

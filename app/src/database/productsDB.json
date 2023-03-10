@@ -266,20 +266,6 @@
       ]
    },
    {
-      "id": 26,
-      "name": "asdasd",
-      "brand": "asdasdasd",
-      "price": 1234,
-      "discount": 0,
-      "category": "alimentos",
-      "weight": "12",
-      "description": "asdasdasfdgsadgaghWERGW",
-      "pet": "peces",
-      "image": [
-         "default.jpg"
-      ]
-   },
-   {
       "id": 27,
       "name": "Zoomarlo",
       "brand": "nadaa",
@@ -289,20 +275,6 @@
       "weight": "12",
       "description": "asdasdaDFDASFawsdfds",
       "pet": "gatos",
-      "image": [
-         "default.jpg"
-      ]
-   },
-   {
-      "id": 28,
-      "name": "asdasdas",
-      "brand": "pedigree",
-      "price": 1234,
-      "discount": 0,
-      "category": "vestimenta",
-      "weight": "12",
-      "description": "asdasdfasdgasdgsdgdasdasd",
-      "pet": "perros",
       "image": [
          "default.jpg"
       ]
@@ -319,20 +291,6 @@
       "pet": "reptiles",
       "image": [
          "1678135385598_products_.jpg"
-      ]
-   },
-   {
-      "id": 30,
-      "name": "Ropa tortuga pinchos",
-      "brand": "manualidad",
-      "price": 1500,
-      "discount": 0,
-      "category": "vestimenta",
-      "weight": "0",
-      "description": "Decora a tu tortuga con este maravilloso atuendo",
-      "pet": "reptiles",
-      "image": [
-         "1678135351435_products_.jpg"
       ]
    },
    {

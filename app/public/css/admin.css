@@ -26,6 +26,13 @@
   
 }
 
+.admin-table .fila-admin .img-admin img{
+    width: 80px;
+    height: 90px;
+    object-fit: cover;
+}
+
 .admin-table .fila-admin i{
     font-size: 20px;
+    padding: 10px;
 }

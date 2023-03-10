@@ -13,7 +13,7 @@ router.get('/', index);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', isAdmin, create); 
-router.post('/', isAdmin, upload.uploadImageProduct.array('image'), productValidator, store); 
+router.post('/', upload.uploadImageProduct.array('image'), isAdmin, productValidator, store); 
 
 
 /*** GET ONE PRODUCT ***/ 
@@ -21,7 +21,7 @@ router.get('/detail/:id/', detail);
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id', isAdmin, edit); 
-router.put('/update/:id', isAdmin, upload.uploadImageProduct.array('image'), productValidator, update); 
+router.put('/update/:id',  upload.uploadImageProduct.array('image'), isAdmin, productValidator, update); 
 
 
 /*** DELETE ONE PRODUCT***/ 
