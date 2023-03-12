@@ -18,9 +18,9 @@
        
             <% users.forEach(user => { %>
         <tr class="fila-admin">
-            <td class="data-admin"><%- user.name %></td>
+            <td class="data-admin"><%- user.userName %></td>
             <td class="data-admin"><%- user.email %></td>
-            <td class="data-admin"><%- user.role %></td>
+            <td class="data-admin"><%- user.rol %></td>
             <td class="img-admin"><img src="/image/users/<%- user.avatar %>" alt="user"></td>
             <td>
                 <form action="/admin/delete/<%- user.id %>?_method=delete" method="post">

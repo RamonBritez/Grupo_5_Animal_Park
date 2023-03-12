@@ -5,10 +5,10 @@
 
 <body > 
     <%- include('../partials/header')  %>
-<main>
-    <section class="lista">
+<main class="admin-main">
+    <section>
       <h2>Todos los productos</h2>
-            <table class="tabla">
+            <table class="admin-table">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -24,14 +24,14 @@
                 <tbody>
 
         <% products.forEach(({image, name, price, discount, category, pet, brand, id})=> { %>
-            <tr>
+            <tr class="fila-admin">
                 <th scope="row"><%= id %></th>
-                <td><%= name.slice(0,9) %></td>
-                <td><%= price %></td>
-                <td><%= discount %></td>              
-                <td><%= category.slice(0,3) %></td>
-                <td><%= pet.slice(0,5) %></td>
-                <td><%= brand.slice(0,5)%></td>
+                <td class="data-admin"><%= name.slice(0,9) %></td>
+                <td class="data-admin"><%= price %></td>
+                <td class="data-admin"><%= discount %></td>              
+                <td class="data-admin"><%= category.slice(0,3) %></td>
+                <td class="data-admin"><%= pet.slice(0,5) %></td>
+                <td class="data-admin"><%= brand.slice(0,5)%></td>
                 
                 <td>
                     <div class="btn-list">
