@@ -3,13 +3,15 @@
       "id": 1,
       "name": "la prueba",
       "brand": "Voraz",
-      "price": 9999,
+      "price": 100,
       "discount": 10,
       "category": "alimentos",
       "description": "No se, estaba probando las validaciones y el tema de mantener la session",
       "pet": "gatos",
       "weight": "10",
-      "image": "1676164813110_products_.png"
+      "image": [
+         "1676164813110_products_.png"
+      ]
    },
    {
       "id": 2,
@@ -21,19 +23,23 @@
       "description": "Control de peso",
       "pet": "gatos",
       "weight": "2kg",
-      "image": "1676165016569_products_.png"
+      "image": [
+         "1676165016569_products_.png"
+      ]
    },
    {
       "id": 3,
       "name": "Nutrique Gato Adulto Healthy",
       "brand": "Voraz",
-      "price": "10463",
+      "price": "22",
       "discount": "15",
       "category": "alimentos",
       "description": "Healthy M.",
       "pet": "gatos",
       "weight": "7,5kg",
-      "image": "1676165257611_products_.png"
+      "image": [
+         "1676165257611_products_.png"
+      ]
    },
    {
       "id": 4,
@@ -45,7 +51,9 @@
       "description": "Urinary Care",
       "pet": "gatos",
       "weight": "2kg",
-      "image": "1676165325047_products_.png"
+      "image": [
+         "1676165325047_products_.png"
+      ]
    },
    {
       "id": 5,
@@ -57,7 +65,9 @@
       "description": "Gato bebé y gato cachorro",
       "pet": "gatos",
       "weight": "7,5kg",
-      "image": "1676165377177_products_.png"
+      "image": [
+         "1676165377177_products_.png"
+      ]
    },
    {
       "id": 6,
@@ -69,7 +79,9 @@
       "description": "Kitten cachorro",
       "pet": "gatos",
       "weight": "350gr",
-      "image": "1676165429489_products_.png"
+      "image": [
+         "1676165429489_products_.png"
+      ]
    },
    {
       "id": 7,
@@ -81,7 +93,9 @@
       "description": "Buzo Vestido Ambar ",
       "pet": "perros",
       "weight": "",
-      "image": "1676166281180_products_.PNG"
+      "image": [
+         "1676166281180_products_.PNG"
+      ]
    },
    {
       "id": 8,
@@ -93,7 +107,9 @@
       "description": "Raza Mediana",
       "pet": "perros",
       "weight": "1kg",
-      "image": "1676166390464_products_.png"
+      "image": [
+         "1676166390464_products_.png"
+      ]
    },
    {
       "id": 9,
@@ -105,7 +121,9 @@
       "description": "Raza pequeña y mini",
       "pet": "perros",
       "weight": "7,5kg",
-      "image": "1676166482766_products_.png"
+      "image": [
+         "1676166482766_products_.png"
+      ]
    },
    {
       "id": 10,
@@ -117,7 +135,9 @@
       "description": "Ricos en vitaminas para todo tipo de roedores",
       "pet": "roedores",
       "weight": "100gr",
-      "image": "1676166605412_products_.png"
+      "image": [
+         "1676166605412_products_.png"
+      ]
    },
    {
       "id": 11,
@@ -129,7 +149,9 @@
       "description": "Alimento completo para tortugas acuáticas y complemento para terrestres",
       "pet": "peces",
       "weight": "100gr",
-      "image": "1676166732128_products_.webp"
+      "image": [
+         "1676166732128_products_.webp"
+      ]
    },
    {
       "id": 12,
@@ -141,7 +163,9 @@
       "description": "Pulguicida para gatos mas de 4kg",
       "pet": "gatos",
       "weight": "100gr",
-      "image": "1676166988307_products_.jpg"
+      "image": [
+         "1676166988307_products_.jpg"
+      ]
    },
    {
       "id": 13,
@@ -153,7 +177,9 @@
       "description": "Alimento completo balanceado para peces tropicales",
       "pet": "peces",
       "weight": "100gr",
-      "image": "1676168189895_products_.webp"
+      "image": [
+         "1676168189895_products_.webp"
+      ]
    },
    {
       "id": 14,
@@ -165,7 +191,9 @@
       "description": "Mazorca de maíz premium",
       "pet": "roedores",
       "weight": "300gr",
-      "image": "1676239983247_products_.jfif"
+      "image": [
+         "1676239983247_products_.jfif"
+      ]
    },
    {
       "id": 15,
@@ -177,7 +205,9 @@
       "weight": "7",
       "description": "Sieger katze gato urinario",
       "pet": "gatos",
-      "image": "1676923640818_products_.png"
+      "image": [
+         "1676923640818_products_.png"
+      ]
    },
    {
       "id": 16,
@@ -189,7 +219,9 @@
       "weight": "20",
       "description": "Perro adulto +7 años",
       "pet": "perros",
-      "image": "1676933887692_products_.png"
+      "image": [
+         "1676933887692_products_.png"
+      ]
    },
    {
       "id": 17,
@@ -201,7 +233,9 @@
       "weight": "21",
       "description": "Alimento para Perros Voraz Carne 21 kilos.",
       "pet": "perros",
-      "image": "1677013187826_products_.jpg"
+      "image": [
+         "1677013187826_products_.jpg"
+      ]
    },
    {
       "id": 18,
@@ -213,7 +247,9 @@
       "weight": "50",
       "description": "Azul de mitelino 50ml",
       "pet": "peces",
-      "image": "1676934665503_products_.png"
+      "image": [
+         "1676934665503_products_.png"
+      ]
    },
    {
       "id": 19,
@@ -225,19 +261,9 @@
       "weight": "10",
       "description": "para gato adulto sabor pescado",
       "pet": "gatos",
-      "image": "1676934573105_products_.webp"
-   },
-   {
-      "id": 26,
-      "name": "asdasd",
-      "brand": "asdasdasd",
-      "price": 1234,
-      "discount": 0,
-      "category": "alimentos",
-      "weight": "12",
-      "description": "asdasdasfdgsadgaghWERGW",
-      "pet": "peces",
-      "image": "default.jpg"
+      "image": [
+         "1676934573105_products_.webp"
+      ]
    },
    {
       "id": 27,
@@ -249,7 +275,9 @@
       "weight": "12",
       "description": "asdasdaDFDASFawsdfds",
       "pet": "gatos",
-      "image": "1678149404250_products_.jpg"
+      "image": [
+         "default.jpg"
+      ]
    },
    {
       "id": 29,
@@ -261,30 +289,24 @@
       "weight": "10",
       "description": "Decora a tu tortuga con este maravilloso atuendo",
       "pet": "reptiles",
-      "image": "1678135385598_products_.jpg"
-   },
-   {
-      "id": 30,
-      "name": "Ropa tortuga pinchos",
-      "brand": "manualidad",
-      "price": 1500,
-      "discount": 0,
-      "category": "vestimenta",
-      "weight": "0",
-      "description": "Decora a tu tortuga con este maravilloso atuendo",
-      "pet": "reptiles",
-      "image": "1678135351435_products_.jpg"
+      "image": [
+         "1678135385598_products_.jpg"
+      ]
    },
    {
       "id": 31,
-      "name": "nada",
-      "brand": "nada1",
-      "price": 123,
-      "discount": 0,
-      "category": "alimentos",
+      "name": "test multiple",
+      "brand": "varias img",
+      "price": 8500,
+      "discount": 99,
+      "category": "vestimenta",
       "weight": "12",
-      "description": "asdasdasdasd nada para test",
-      "pet": "gatos",
-      "image": "1678139921123_products_.jpeg"
+      "description": "Varias imagenes de prueba para test",
+      "pet": "reptiles",
+      "image": [
+         "1678300734493_products_.jpg",
+         "1678300734517_products_.jpg",
+         "1678300734550_products_.jpg"
+      ]
    }
 ]

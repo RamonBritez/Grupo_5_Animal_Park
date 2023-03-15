@@ -36,8 +36,14 @@ module.exports = {
             }
 
             res.locals.user = req.session.user;
+            res.redirect("/")
 
-            res.redirect("/");
+          /*  if(req.session.user.rol !== "ADMIN"){
+                res.redirect("/");
+            }else {
+                res.redirect("/admin")
+            }*/
+            
         }  else {
             return res.render("users/login", {
                 errors: errors.mapped(),
@@ -69,7 +75,13 @@ module.exports = {
              email,
              password:  bcrypt.hashSync(password, 12),
              avatar: req.file ? req.file.filename : "avatar_default.jpeg",
-             rol: "USER"
+             rol: "USER",
+             tel: "",
+             address: "",
+             postal_code:"",
+             province:"",
+             city:""
+
             };
      
             users.push(newUser);

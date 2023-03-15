@@ -46,7 +46,7 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 		const errors = validationResult(req);
-	
+		
 		if(req.fileValidatorError){
 		  errors.errors.push({
 			value: "",
@@ -55,11 +55,13 @@ const controller = {
 			location: "file",
 		  });
 		}
-	
+
+		const files = req.files.map(file => file.filename)
+
 		if (errors.isEmpty()) {
 		  const products = readJSON("productsDB.json");
-		  const { name, brand, price, category, pet,description, discount, weight} = req.body;
-	
+		  const { name, brand, price, category, pet,description, discount, weight } = req.body;
+		  
 		  const newProduct = {
 			id: products.length ? products[products.length - 1].id + 1 : 1,
 			name: name.trim(),
@@ -70,16 +72,14 @@ const controller = {
 			weight,
 			description: description.trim(),
 			pet,
-			image:req.file ? req.file.filename : 'default.jpg'
+			image: files.length > 0 ? files : ['default.jpg']
 		  };
 	
 		  products.push(newProduct);
 	
 		  writeJSON("productsDB.json", products);
-	
-		  return res.redirect("/products",{
-			session: req.session
-		  });
+		  
+		  return res.redirect("/products");
 		} else {
 		  if (req.file) {
 			fs.existsSync(`./public/image/products/${req.file.filename}`) &&
@@ -121,6 +121,7 @@ const controller = {
 			location: "file",
 		  });
 		}
+		const files = req.files.map(file => file.filename)
 	
 		if (errors.isEmpty()) {
 		  const { name, brand, price, category, pet ,description, discount, weight} = req.body;
@@ -138,7 +139,7 @@ const controller = {
 				pet,
 				weight,
 				description: description.trim(),
-				image: req.file ? req.file.filename : product.image,
+				image: files.length > 0 ? files : [product.image],
 			  };
 	
 			  if (req.file) {
@@ -178,7 +179,6 @@ const controller = {
 		let productId = Number(req.params.id);
 
 		let newProductsArray = products.filter(product => product.id !== productId);
-
 
 		writeJSON("productsDB.json", newProductsArray);
 

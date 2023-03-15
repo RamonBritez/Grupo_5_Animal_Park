@@ -15,32 +15,40 @@
             <h1><%- product.name  %></h1>
             <div class="containerBox">
                 <article class="showProduct">
-                    <div class="imageContainer">
-                        <img src="/image/products/<%- product.image %>" alt="Foto">
-                    </div>
-                    <div class="altImg">
-                        <img src="/image/products/<%- product.image %>" alt="Foto">
-                        <img src="/image/products/<%- product.image %>" alt="Foto">
-                        <img src="/image/products/<%- product.image %>" alt="Foto">
+                    <div class="mainImage">
+                        <img src="/image/products/<%- product.image[0] %>" alt="Foto" id="expandedImg">
                     </div>
                 </article>
+                <div class="miniPics">
+                    <% product.image.forEach(image => { %>
+                    <div class="thumbnailImages">
+                        <img src="/image/products/<%-image%>" alt="Imagen de producto" onclick="myFunction(this);">
+                    </div>
+                    <% }) %>
+                </div>
             </div>
             <div class="info-product">
                 <h2 class="title"><%- product.name %></h2>
-                <h2 class="price">$<%- product.price %></h2>
+                <h2 id="price"><%- product.price %></h2>
                 <% if (product.discount > 0) { %>
                     <span>Descuento del <%- product.discount %>%</span>
-                    <span>$<%- product.price - (product.price * product.discount / 100) %></span>
+                    <span id="final">$<%- product.price - (product.price * product.discount / 100) %></span>
                 <% } %>
-
-                
-                <form action="/products/edit/<%- product.id %>">
-                    <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
-                </form>
-
-                <form action="/products/delete/<%- product.id %>?_method=delete" method="post">
-                    <button type="submit" class="btn">Borrar</button>
-                 </form>
+                    <% if (typeof session.user != 'undefined') { %>
+                        <% if ( session.user.rol == "ADMIN") { %>
+                            <div class="btnAdmin">
+                            <form action="/products/edit/<%- product.id %>">
+                                <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
+                            </form>
+                            
+                            <form action="/products/delete/<%- product.id %>?_method=delete" method="post">
+                                <button type="submit" class="btn">Borrar</button>
+                             </form>
+                        </div>
+                        <% } %>
+                    <% } %>
+              
+      
             </div>
         </section>
 
@@ -67,16 +75,21 @@
                 </div>
                 
                 <div class="cantidad">
-                    <h2>Cantidad</h2>
-                    <div>
-                    <button><i class="fa-solid fa-circle-minus"></i></button>
-                    <span> 05 </span>
-                    <button><i class="fa-solid fa-circle-plus"></i></button>
+                    <label for="cantidad">Cantidad</label>
+                    <div class="counter">
+                        <button type="button" class="btn-subtract" onclick="subtract();">
+                            -
+                        </button>
+                        <div id="count">1</div>
+                                
+                        <button type="button" id="btn-add" onclick="add();">
+                            +
+                        </button>
                     </div>
                 </div>
-                <div class="total">
-                    <h2>Total</h2>
-                    <span class="totalFinal">$$$$$$ </span>
+                <h2>Total</h2>
+                <div id="totalFinal">
+                    <span id="">$<%= product.price - (product.price * product.discount / 100) %></span>
                 </div>
             </div>
             <div class="acciones">
@@ -123,6 +136,7 @@
     </main>
 
     <%- include("../partials/footer")  %> 
+    <script src="/js/productDetail.js"></script>
     
 </body>
 
