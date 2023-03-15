@@ -252,18 +252,6 @@
       "image": "default.jpg"
    },
    {
-      "id": 28,
-      "name": "asdasdas",
-      "brand": "pedigree",
-      "price": 1234,
-      "discount": 0,
-      "category": "vestimenta",
-      "weight": "12",
-      "description": "asdasdfasdgasdgsdgdasdasd",
-      "pet": "perros",
-      "image": "default.jpg"
-   },
-   {
       "id": 29,
       "name": "Disfraz de Gallina",
       "brand": "manualidad",

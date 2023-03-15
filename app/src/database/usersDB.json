@@ -106,5 +106,37 @@
       "password": "$2a$12$gUS.I3HqDz.xyPedCz3BweIk/RaXudOoIzlmrk5n7V33eOq9JQZdC",
       "avatar": "avatar_default.jpeg",
       "rol": "USER"
+   },
+   {
+      "id": 9,
+      "userName": "test2",
+      "apellido": "test",
+      "email": "test2@test.com",
+      "password": "$2a$12$HUOowsmzTtbCwcspOL/gOuwj/0lkl/MMRsiS4vfYGL/IZ23FhzUR.",
+      "avatar": "1678226536477_avatar_.jpeg",
+      "rol": "USER"
+   },
+   {
+      "id": 10,
+      "userName": "test",
+      "apellido": "test",
+      "email": "test2@test.com",
+      "password": "$2a$12$JAyRoiHUbXRle2nJMWRnjeya79myeVuE99fkhO/DYzSEDj39zTmdC",
+      "avatar": "1678226623032_avatar_.jpeg",
+      "rol": "USER"
+   },
+   {
+      "id": 11,
+      "userName": "user",
+      "apellido": "user",
+      "email": "user@user.com",
+      "password": "$2a$12$cVDcggNMfdGgSBBHyxnuXeRuiQgLDsgr0wG4LSzeWkHcUNXIH6Qlq",
+      "avatar": "1678319690041_avatar_.jpeg",
+      "rol": "USER",
+      "tel": "1122334455",
+      "address": "noruega 1",
+      "postal_code": "1635",
+      "province": "Buenos Aires",
+      "city": "Presidente Derqui"
    }
 ]
