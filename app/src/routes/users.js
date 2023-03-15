@@ -25,8 +25,8 @@ router.get("/logout", logout)
 router.get("/profile", userInSessionCheck, profile);
 
 /* User Edit */
-router.get("/edit/:id", isLogged, edit)
-router.put("/edit/:id", uploadAvatar.single("avatar"), editUserValidator, isLogged, processEdit)
+router.get("/profile/edit", isLogged, edit)
+router.put("/profile/edit", uploadAvatar.single("avatar"), editUserValidator, isLogged, processEdit)
 
 
 module.exports = router;
