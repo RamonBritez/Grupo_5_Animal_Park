@@ -37,6 +37,9 @@ main.detail section.producto {
     border-radius: 5px;
 }
 
+.miniPics{
+    display:  none;
+}
 
 main.detail section.producto div.containerBox {
     display: flex;
@@ -49,7 +52,7 @@ main.detail section.producto div.containerBox {
     
 }
 
-main.detail article.showProduct div.imageContainer{
+main.detail article.showProduct div.mainImage{
     background: linear-gradient( rgb(192, 242, 200), white);
     width: 250px;
     height: 300px;
@@ -60,15 +63,15 @@ main.detail article.showProduct div.imageContainer{
 
 }
 
-main.detail article.showProduct div.imageContainer img{
+main.detail article.showProduct div.mainImage img{
     width: 200px;
     height: 250px;
     margin: 10px;
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: scale-down;
 }
 
-main.detail article.showProduct div.altImg{
+main.detail article.showProduct div.thumbnailImages{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,9 +79,10 @@ main.detail article.showProduct div.altImg{
     margin: 5px 5px 0;
 }
 
-main.detail article.showProduct div.altImg img{
-    width: 75px;
+main.detail article.showProduct div.thumbnailImages img{
+    width: 80px;
     height: 90px;
+    object-fit:  scale-down;
     background: linear-gradient( rgb(192, 242, 200), white);
 }
 
@@ -109,22 +113,28 @@ main.detail section.compra div.metodo-pago div.cantidad{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    
     margin-bottom: 5px;
+    width: 100%;
 }
 
-main.detail section.compra div.metodo-pago div.cantidad span{
+main.detail section.compra div.metodo-pago div.cantidad .counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 0.5px solid rgba(0, 0, 0, 0.3);
     background-color: white;
     padding: 5px;
     margin: 0 10px;
+    flex-direction: row;
 }
-main.detail section.compra div.metodo-pago div.cantidad button{
+main.detail section.compra .metodo-pago .cantidad .counter button{
     width: 30px;
     height: 30px;
     border: none;
     border-radius: 50%;
     color: var(--verdePrueba1);
+    margin: 0 10px;
 }
 
 main.detail section.compra div.metodo-pago div.total{
@@ -155,6 +165,14 @@ main.detail section.producto div.info-product{
     justify-content: center;
     flex-direction: column;
     max-width: 300px;
+}
+
+main.detail section.producto div.info-product .btnAdmin{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin: 10px 0;
 }
 
 main.detail section.producto div.info-product h2{
@@ -294,6 +312,8 @@ main.detail section div.productsContainer { /*recomend y venta*/
 /* Tablet */
 
 @media (min-width: 768px){
+
+    /* Detalles de producto */
     main.detail section.detail-product{
         display: flex;
         flex-direction: row;
@@ -304,9 +324,50 @@ main.detail section div.productsContainer { /*recomend y venta*/
     main.detail section.producto{
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
+        width: 100vw;
         max-width: 420px;
         background-color: rgba(255, 255, 255, 0.5);
+
+    }
+    main.detail section.producto div.containerBox{
+        width: 100%;
+    }
+
+    /* Imagen principal*/
+    main.detail section.producto .mainImage{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Imagenes alternativas*/
+    main.detail section.producto .miniPics{
+        display: block;
+        flex-direction: row;
+        justify-content: space-around;
+       
+        padding: 10px;
+        height: 100%;
+       
+    }
+    main.detail section.producto .thumbnailImages{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 20px 0;
+        width: 100px;
+        height: 100px;
+        border-radius: 25%;
+        
+    }
+
+    main.detail section.producto .thumbnailImages img{
+        width: 90%;
+        height: 100%;
+        
+        object-fit: scale-down;
+        background: linear-gradient( rgb(192, 242, 200), white);
+     
 
     }
     main.detail section.compra {
