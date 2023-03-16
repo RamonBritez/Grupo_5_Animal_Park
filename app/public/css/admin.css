@@ -75,7 +75,7 @@ margin: 20px 0;
 
     .admin-main{
         background-image: url(/image/animalPark/BG-burgerMenu.jpg);
-        background-size: 80%;
+        background-size: 100%;
         background-repeat:repeat-y;
         background-position: center;
     }
