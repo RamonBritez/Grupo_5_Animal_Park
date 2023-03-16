@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head")  %> 
-<body>
-    <%- include("../partials/header")  %> 
+  <%- include("../partials/head") %>
+  <body>
+    <%- include("../partials/header") %>
     <main class="admin-main">
-    
-        <table class="admin-table">
+      <table class="admin-table">
         <tr class="fila-admin">
-            <th class="title-admin">Nombre de usuario</th>
-            <th class="title-admin">Email</th>
-            <th class="title-admin">Rol</th>
-            <th class="title-admin">image</th>
-            <th class="title-admin">Borrar user</th>
-            <th class="title-admin">Editar user</th>
+          <th class="title-admin">Nombre de usuario</th>
+          <th class="title-admin">Email</th>
+          <th class="title-admin">Rol</th>
+          <th class="title-admin">image</th>
+          <th class="title-admin">Borrar user</th>
+          <th class="title-admin">Editar user</th>
         </tr>
-       
-       
-            <% users.forEach(user => { %>
-        <tr class="fila-admin">
-            <td class="data-admin"><%- user.name %></td>
-            <td class="data-admin"><%- user.email %></td>
-            <td class="data-admin"><%- user.role %></td>
-            <td class="img-admin"><img src="/image/users/<%- user.avatar %>" alt="user"></td>
-            <td class="btn"><i class="fa-solid fa-trash-can"></i></td>
-            <td class="btn"><i class="fa-solid fa-pen"></i></td>
-        </tr>
-            <% }) %>
-        
 
-    </table>
-</main>
-    <%- include("../partials/footer")  %> 
-</body>
+        <% users.forEach(user => { %>
+        <tr class="fila-admin">
+          <td class="data-admin"><%- user.name %></td>
+          <td class="data-admin"><%- user.email %></td>
+          <td class="data-admin"><%- user.role %></td>
+          <td class="img-admin">
+            <img src="/image/users/<%- user.avatar %>" alt="user" />
+          </td>
+          <td class="btn" onclick="document.getElementById('user-<%- user.id%>').classList.add('activeModal')"><i class="fa-solid fa-trash-can"></i></td>
+          <td class="btn"><i class="fa-solid fa-pen"></i></td>
+          <td class="adminModal" id="user-<%- user.id%>">
+            <form action="/users/" method="post" class="admin-deleteModal">
+              <label>Estas seguro de eliminar a este usuario?</label>
+              <label>ID: <%- user.id%>?</label>
+              <label>Nombre: <%- user.userName%>?</label>
+              <label>Apellido: <%- user.apellido%>?</label>
+              <label>Email: <%- user.email%>?</label>
+              <label>Rol: <%- user.rol%>?</label>
+              <p class="btn" onclick="document.getElementById('user-<%- user.id%>').classList.remove('activeModal')">CANCELAR</p>
+              <button class="btn" type="submit">ELIMINAR</button>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+      </table>
+    </main>
+    <%- include("../partials/footer") %>
+  </body>
 </html>

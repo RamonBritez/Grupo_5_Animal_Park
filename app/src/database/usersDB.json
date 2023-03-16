@@ -119,5 +119,14 @@
       "password": "$2a$12$gUS.I3HqDz.xyPedCz3BweIk/RaXudOoIzlmrk5n7V33eOq9JQZdC",
       "avatar": "avatar_default.jpeg",
       "rol": "USER"
+   },
+   {
+      "id": 9,
+      "userName": "Nicolas",
+      "apellido": "Filippelli",
+      "email": "nico@fili.com",
+      "password": "$2a$12$jWrP.aGQrSJQWUJ5grBKNuFbXYNObgXUjoUcBslkEhaCWHPyLuDdu",
+      "avatar": "avatar_default.jpeg",
+      "rol": "ADMIN"
    }
 ]
