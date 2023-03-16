@@ -35,6 +35,14 @@ app.use("/products", products);
 app.use("/admin", isAdmin, admin);
 app.use("/users", userRouter);
 
+
+
+app.use((req,res,next) => {
+  res.status(404).render("error", {
+    session: req.session
+})
+})
+
 app.listen(PORT, () => {
   console.log(`
     server listen in port ${PORT}
