@@ -31,11 +31,14 @@ margin: 20px 0;
 }
 
 .adminModal.activeModal {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .admin-deleteModal {
     display: flex;
+    position: fixed;
     flex-direction: column;
     margin: 15% auto;
     padding: 20px;
