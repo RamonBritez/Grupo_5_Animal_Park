@@ -6,7 +6,7 @@ module.exports = {
       if (!req.session.user) {
         return res.redirect("/users/login");
       } else {
-        return res.redirect("/users/edit/" + req.session.user.id);
+        return res.redirect("/");
       }
     }
   },

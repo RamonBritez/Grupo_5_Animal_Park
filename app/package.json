@@ -16,9 +16,13 @@
   "bugs": {
     "url": "https://github.com/RamonBritez/Grupo_5_Animal_Park/issues"
   },
+  "nodemonConfig": {
+    "ignore": "src/database/*.json"
+  },
   "homepage": "https://github.com/RamonBritez/Grupo_5_Animal_Park#readme",
   "nodemonConfig": {
-    "ignore": "src/database/*productsDB.json"
+   
+    "ignore": ["src/database/*productsDB.json","src/database/*usersDB.json"]
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
