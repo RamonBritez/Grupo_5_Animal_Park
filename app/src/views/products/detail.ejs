@@ -29,9 +29,9 @@
             </div>
             <div class="info-product">
                 <h2 class="title"><%- product.name %></h2>
-                <h2 id="price"><%- product.price %></h2>
+                <span>$<span id="price"><%- product.price %></span></span>
                 <% if (product.discount > 0) { %>
-                    <span>Descuento del <%- product.discount %>%</span>
+                    <span>Descuento del <span id="discount"><%- product.discount %></span>%</span>
                     <span id="final">$<%- product.price - (product.price * product.discount / 100) %></span>
                 <% } %>
                     <% if (typeof session.user != 'undefined') { %>
@@ -53,7 +53,7 @@
         </section>
 
         <section class="compra">
-            <div class="metodo-pago">
+            <article class="metodo-pago">
                 <div class="cajaEnvio">
                 <h2>Metodos de envio</h2>
                 <div class="options">
@@ -71,9 +71,9 @@
                             <input type="radio" name="pago" value="Efectivo"> Efectivo
                         </div>
                     </div>
-                    <img src="/image/pagos.png" alt="pagos">
+                    
                 </div>
-                
+                <img src="/image/pagos.png" alt="pagos">
                 <div class="cantidad">
                     <label for="cantidad">Cantidad</label>
                     <div class="counter">
@@ -91,7 +91,7 @@
                 <div id="totalFinal">
                     <span id="">$<%= product.price - (product.price * product.discount / 100) %></span>
                 </div>
-            </div>
+            </article>
             <div class="acciones">
                 <li><a href="/carrito" class="btn">COMPRAR</a></li>
                 <li><a href="/error" class="btn">FAVORITOS</a></li>

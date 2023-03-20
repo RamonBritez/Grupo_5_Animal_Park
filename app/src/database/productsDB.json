@@ -28,20 +28,6 @@
       ]
    },
    {
-      "id": 3,
-      "name": "Nutrique Gato Adulto Healthy",
-      "brand": "Voraz",
-      "price": "22",
-      "discount": "15",
-      "category": "alimentos",
-      "description": "Healthy M.",
-      "pet": "gatos",
-      "weight": "7,5kg",
-      "image": [
-         "1676165257611_products_.png"
-      ]
-   },
-   {
       "id": 4,
       "name": "Nutrique Gato Adulto Urinary Care",
       "brand": "Voraz",

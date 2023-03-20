@@ -37,8 +37,27 @@ main.detail section.producto {
     border-radius: 5px;
 }
 
+/* Mini img */
+
 .miniPics{
-    display:  none;
+    display:  flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.miniPics div{
+width: 60px;
+height: 60px;
+margin: 0 10px;
+background: linear-gradient( rgb(192, 242, 200), white);
+border-radius: 15px;
+}
+
+.miniPics div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: scale-down;
 }
 
 main.detail section.producto div.containerBox {
@@ -49,6 +68,7 @@ main.detail section.producto div.containerBox {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     background-color: var(--amarillo);
     border-radius: 10px;
+    flex-direction: column;
     
 }
 
@@ -67,7 +87,7 @@ main.detail article.showProduct div.mainImage img{
     width: 200px;
     height: 250px;
     margin: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
     object-fit: scale-down;
 }
 
@@ -92,24 +112,33 @@ main.detail section.compra {
     align-items: center;
     flex-direction: column;
     margin: 10px 0;
-    border: 1px black solid;
-
+    border: 1px var(--verdePrueba1) solid;
+    border-radius: 15px;
+    background-color: var(--amarillo);
 }
-main.detail section.compra div.metodo-pago{
+
+main.detail section.compra .metodo-pago img{
+    width:85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+}
+
+main.detail section.compra .metodo-pago{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     flex-direction: column;
     margin: 10px 0;
-    
 }
 
-main.detail section.compra div.metodo-pago div.cajaPago img, .cajaEnvio, .tipoDePago{
+main.detail section.compra .metodo-pago div.cajaPago, .cajaEnvio, .tipoDePago{
     display: none;
 }
 
-main.detail section.compra div.metodo-pago div.cantidad{
+main.detail section.compra .metodo-pago div.cantidad{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,7 +147,7 @@ main.detail section.compra div.metodo-pago div.cantidad{
     width: 100%;
 }
 
-main.detail section.compra div.metodo-pago div.cantidad .counter{
+main.detail section.compra .metodo-pago div.cantidad .counter{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,14 +166,14 @@ main.detail section.compra .metodo-pago .cantidad .counter button{
     margin: 0 10px;
 }
 
-main.detail section.compra div.metodo-pago div.total{
+main.detail section.compra .metodo-pago div.total{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     margin-top: 10px;
 }
-main.detail section.compra div.metodo-pago div.total span.totalFinal{
+main.detail section.compra .metodo-pago div.total span.totalFinal{
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
@@ -156,7 +185,6 @@ main.detail section.compra div.acciones {
     width: 100%;
     justify-content: space-around;
     display: flex;
-    margin: 0 20px;
 }
 
 main.detail section.producto div.info-product{
@@ -197,7 +225,9 @@ main.detail section.container-description{
     align-items: center;
     padding: 1rem 1rem;
     box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
-    margin-bottom: 50px;
+    margin: 30px 0;
+    border-radius: 15px;
+    background-color: var(--amarillo);
 } 
 
 
@@ -216,6 +246,8 @@ main.detail section div.container-social {
     padding: 15px 5px;
     box-shadow: 1px 1px 1px 1px rgb(113, 112, 112);
     justify-content: space-evenly;
+    background-color: var(--amarillo);
+    border-radius: 15px;
     
     }   
   
@@ -341,20 +373,17 @@ main.detail section div.productsContainer { /*recomend y venta*/
     }
 
     /* Imagenes alternativas*/
-    main.detail section.producto .miniPics{
-        display: block;
+    .miniPics{
         flex-direction: row;
-        justify-content: space-around;
-       
         padding: 10px;
         height: 100%;
-       
     }
+
     main.detail section.producto .thumbnailImages{
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin: 20px 0;
+        margin: 20px 10px;
         width: 100px;
         height: 100px;
         border-radius: 25%;
@@ -379,42 +408,36 @@ main.detail section div.productsContainer { /*recomend y venta*/
         align-items: center;
         justify-content: center;
         min-width: 320px;
-        padding: 10px;
-        background-color: rgba(255, 255, 255, 0.5);   
+     
     }
-    main.detail section.compra div.metodo-pago{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    main.detail section.compra div.metodo-pago .cajaPago, .cajaEnvio{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    main.detail section.compra div.metodo-pago div.cajaPago img{
-        width:85%;
+    main.detail section.compra .metodo-pago{
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 5px;
+        width: 100%;
     }
+    main.detail section.compra .metodo-pago .cajaPago, .cajaEnvio{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+   
 
-    main.detail section.compra div.metodo-pago .cajaPago .tipoDePago{
+    main.detail section.compra .metodo-pago .cajaPago .tipoDePago{
         flex-direction: column;
     }
-    main.detail section.compra div.metodo-pago .cajaPago .tipoDePago div{
+    main.detail section.compra .metodo-pago .cajaPago .tipoDePago div{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
 
     }
-    main.detail section.compra div.metodo-pago h2{
+    main.detail section.compra .metodo-pago h2{
         margin-top: 5px;
         margin-bottom: 10px;
     }
-    main.detail section.compra div.metodo-pago div.options{
+    main.detail section.compra .metodo-pago div.options{
         display: flex;
         flex-direction: row;
         text-align: center;
@@ -422,15 +445,15 @@ main.detail section div.productsContainer { /*recomend y venta*/
         padding: 0 10px;
         justify-content: space-around;
     }
-    main.detail section.compra div.metodo-pago div.options input{
+    main.detail section.compra .metodo-pago div.options input{
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
-        margin: 0 5px;
+        padding: 0 5px;
     }
     
-    main.detail section.compra div.metodo-pago div.tipoDePago{
+    main.detail section.compra .metodo-pago div.tipoDePago{
         display: flex;
         flex-direction: row;
         text-align: center;
@@ -438,12 +461,12 @@ main.detail section div.productsContainer { /*recomend y venta*/
         padding: 0 10px;
         justify-content: space-around;
     }
-    main.detail section.compra div.metodo-pago div.tipoDePago input{
+    main.detail section.compra .metodo-pago div.tipoDePago input{
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
-        margin: 0 5px;
+        padding: 0 5px;
     }
   
    

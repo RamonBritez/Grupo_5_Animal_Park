@@ -4,7 +4,7 @@
 <body>
     <%- include("../partials/header")  %> 
 <main class="admin-main">
-    <h1>Bienvenido <%= session.user.userName %> </h1>
+    <h1>Bienvenido <%= session.user.name %> </h1>
     <img class="avatar" src="image\users\<%= session.user.avatar %>" alt="">
     <ul class="admin-options">
         <li><a href="/" class="btn">Home</a></li>
