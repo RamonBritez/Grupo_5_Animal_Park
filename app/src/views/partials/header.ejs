@@ -24,8 +24,18 @@
             <ul class="menu">
                 <li> <a href="/"> <i class="fa-solid fa-paw"></i> Home <i class="fa-solid fa-paw"></i></a></li>
                 <li> <a href="/products"><i class="fa-solid fa-paw"></i> Productos <i class="fa-solid fa-paw"></i> </a></li>
-                <li> <a href="/carrito"><i class="fa-solid fa-paw"></i> Carrito <i class="fa-solid fa-paw"></i></a></li>
-                <li> <a href="/error"><i class="fa-solid fa-paw"></i> Contáctenos <i class="fa-solid fa-paw"></i> </a></li>
+                <% if (typeof session.user != "undefined" ) { %>
+                    <% if (session.user.rol === "ADMIN") { %>
+                        <li> <a href="/admin"> <i class="fa-solid fa-paw"></i> Administrar <i class="fa-solid fa-paw"></i></a></li>
+                    <% } else {%>
+                        <li> <a href="/carrito"><i class="fa-solid fa-paw"></i> Carrito <i class="fa-solid fa-paw"></i></a></li>
+                    <% } %>
+                    <li> <a href="/users/profile"> <i class="fa-solid fa-paw"></i> Mis datos <i class="fa-solid fa-paw"></i></a></li>
+                    <li> <a href="/users/logout"><i class="fa-solid fa-paw"></i> Salir <i class="fa-solid fa-paw"></i> </a></li>
+                <% } else {%>
+                <li> <a href="/#sobreNosotros"><i class="fa-solid fa-paw"></i> Sobre nosotros <i class="fa-solid fa-paw"></i></a></li>
+                <li> <a href="/users/login"><i class="fa-solid fa-paw"></i> Ingresar <i class="fa-solid fa-paw"></i> </a></li>
+                <% } %>
             </ul>
 
             
@@ -65,23 +75,22 @@
            
             
         <% if (typeof session.user != 'undefined') { %>
-            <li class="btn"><a href="/error">Proveedores</a></li>
-            <li class="btn"><a href="/products">Productos</a></li>
-            <li class="btn"><a href="#pets">mascotas</a></li>
+            
             <% if (session.user.rol == "ADMIN") { %>
                 <li class="btn"><a href="/products/create">Vender</a></li>
                 <li class="btn"><a href="/admin/products-list">Lista de productos</a></li>
-                <li class="btn"><a href="/admin/admin-list">users</a></li>
+                <li class="btn"><a href="/admin/admin-list">Lista de usuarios</a></li>
+            <% } else {%>
+                <li class="btn"><a href="/error">Proveedores</a></li>
+                <li class="btn"><a href="/products">Productos</a></li>
+                <li class="btn"><a href="#pets">mascotas</a></li>
             <% } %>
-            
             <% } else {%>
                 <li class="btn"><a href="/users/register">Registrarme</a></li>
                 <li class="btn"><a href="/products">Productos</a></li>
                 <li class="btn"><a href="#pets">mascotas</a></li>
         <% } %>
             
-            
-          
         </ul>
     </nav>
 

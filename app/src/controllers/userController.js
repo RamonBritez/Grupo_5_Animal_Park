@@ -165,7 +165,7 @@ module.exports = {
             const userInSessionId = req.session.user.id;
             const userInSession = users.find(user => user.id === userInSessionId);
 
-            return res.render("user/editUser", {
+            return res.render("users/editUser", {
                 user: userInSession,
                 session: req.session,
                 errors: errors.mapped(),

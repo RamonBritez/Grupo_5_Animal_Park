@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { readJSON, writeJSON } = require("../database");
+const { validationResult } = require("express-validator");
 
 
 const products = readJSON("productsDB.json");
@@ -25,6 +26,52 @@ module.exports ={
            session: req.session
 
         })
+    },
+    processEdit:(req, res) =>{
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()) {
+
+            let userId = req.params.id;
+            let user = users.find(user => user.id === userId);
+
+            const {
+                userName,
+                apellido,
+                tel,
+                address,
+                postal_code,
+                province,
+                city
+            } = req.body;
+
+            user.userName = userName;
+            user.apellido = apellido;
+            user.tel = tel;
+            user.address = address;
+            user.postal_code = postal_code;
+            user.province = province;
+            user.city = city;
+            user.avatar = req.file ? req.file.filename : user.avatar;
+
+            writeJSON("usersDB.json", users);
+
+            delete user.pass;
+
+            req.session.user = user;
+
+            return res.redirect("/users/profile");
+        } else {
+            const userInSessionId = req.session.user.id;
+            const userInSession = users.find(user => user.id === userInSessionId);
+
+            return res.render("admin/userEdit", {
+                user: userInSession,
+                session: req.session,
+                errors: errors.mapped(),
+            })
+        }
+
     },
     listProduct: (req, res) => {
 		res.render("admin/products-list", {

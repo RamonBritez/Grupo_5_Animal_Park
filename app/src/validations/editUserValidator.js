@@ -10,30 +10,6 @@ module.exports = [
 
     check("apellido")
     .notEmpty()
-    .withMessage("El apellido es obligatorio"),
-  
-    check("tel")
-    .notEmpty()
-    .withMessage("Dato para envio requerido").bail()    
-    .isLength({
-        min: 8,
-    })
-    .withMessage('Ingrese un contacto para envios'),
-   
-    check("address")
-    .notEmpty()
-    .withMessage("Dato para envio requerido"),
-
-    check("postal_code")
-    .notEmpty()
-    .withMessage("Dato para envio requerido"),
-
-    check("province")
-    .notEmpty()
-    .withMessage("Dato para envio requerido"),
-
-    check("city")
-    .notEmpty()
-    .withMessage("Dato para envio requerido")
+    .withMessage("El apellido es obligatorio")
 
 ]
