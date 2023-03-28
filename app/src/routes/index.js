@@ -10,6 +10,7 @@ router.get("/error", controller.error);
 
 
 router.get("/carrito", isLogged, controller.carrito);
+router.post("/carrito/:id", isLogged, controller.comprar)
 
 router.get('/search', controller.search); 
 

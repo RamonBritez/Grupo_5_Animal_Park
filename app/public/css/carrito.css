@@ -180,7 +180,16 @@ main.carrito section.listas article.producto div.boton {
   display: flex;
   gap: 5px;
 }
+main.carrito div.producto section.listas div.listaProductos article.producto div.datos div.precio-descuento{
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  gap:20px;
+}
+main.carrito div.producto section.listas div.listaProductos article.producto div.datos div.precio-descuento p.descuento{
+  font-size: 12px;
 
+}
 main.carrito i {
   color: #035e02e5;
   border-radius: 50%;
@@ -224,8 +233,9 @@ main.carrito div.producto div.desktop section.ofertas div.relacionados {
     width: 100%;
   }
 
-  main.carrito p {
-    font-size: 0.9rem;
+  main.carrito p
+   {
+    font-size: 1.5rem;
   }
   main.carrito img {
     width: 55px;

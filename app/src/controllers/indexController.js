@@ -43,7 +43,9 @@ module.exports = {
             session: req.session
 		})
 	},
-	
+	 admin: (req, res) => {
+        res.render("users/admin")
+    },
     error: (req, res) => {
         res.render("error",{
         session: req.session
@@ -52,15 +54,28 @@ module.exports = {
 
     carrito: (req, res) => {
         let oferta = products.filter(product => product.discount > 0);
-        res.render("products/carrito",{
-        session: req.session,
-        oferta
-        })
-    },
+        let carrito = [ ]
         
-  
-    admin: (req, res) => {
-        res.render("users/admin")
-    },
-
+        req.session.user.carrito.forEach(idproducto=>{
+            let productoEncontrado=products.find(producto=>{
+                return producto.id==idproducto
+            })
+            carrito.push(productoEncontrado)
+        })
+        res.render("products/carrito",{
+            session: req.session,
+               oferta,carrito
+      
+        })
+    }, 
+    comprar:(req,res)=>{
+    let productoGuardado=req.params.id;
+   req.session.user.carrito.push(Number(productoGuardado))
+   res.redirect("/carrito")
+},
+   /*  borrarProducto:(req,res)=>{
+        let id=req.body.id;
+        let borrar=producto.filter(producto=>{
+         })
+    } */
 }
