@@ -16,13 +16,25 @@ let counter = 1
 let $count = document.getElementById('count');
 let final = Number(document.getElementById("price").firstChild.data)
 let total = document.getElementById("totalFinal")
-  console.log(final)
+let descuento = undefined
+
+if(document.getElementById("discount")){
+   descuento = Number(document.getElementById("discount").firstChild.data)
+}
+
+
+  console.log(descuento)
 
   function add () {
     if(counter <= 10) {
         counter = counter + 1
         $count.innerHTML = `<p>${counter}</p>`
-        total.innerHTML= `<span>$${final * counter}</span>`
+        if(descuento != undefined){
+          total.innerHTML= `<span>$${(final - (final * descuento / 100) ) * counter }</span>`
+        }else{
+          total.innerHTML= `<span>$${(final * counter) }</span>`
+        }
+       
     }
 // 
   }
@@ -31,7 +43,10 @@ let total = document.getElementById("totalFinal")
     if(counter > 0) {
         counter = counter - 1
         $count.innerHTML = `<p>${counter}</p>`
-        total.innerHTML= `<span>$${((1 + counter) * final) - final}</span>`
-        
+        if(descuento!= undefined){
+          total.innerHTML= `<span>$${((1 + counter) * (final - (final * descuento / 100))) - (final - (final * descuento / 100))}</span>`
+        }else{
+          total.innerHTML= `<span>$${((1 + counter) * final) - final}</span>`
+        }
     }
   }

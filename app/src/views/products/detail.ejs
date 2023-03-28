@@ -30,6 +30,7 @@
               </div>
               <% }) %>
             </div>
+<<<<<<< HEAD
           </div>
           <div class="info-product">
             <h2 class="title"><%- product.name %></h2>
@@ -55,12 +56,37 @@
               >
                 <button type="submit" class="btn">Borrar</button>
               </form>
+=======
+            <div class="info-product">
+                <h2 class="title"><%- product.name %></h2>
+                <span>$<span id="price"><%- product.price %></span></span>
+                <% if (product.discount > 0) { %>
+                    <span>Descuento del <span id="discount"><%- product.discount %></span>%</span>
+                    <span id="final">$<%- product.price - (product.price * product.discount / 100) %></span>
+                <% } %>
+                    <% if (typeof session.user != 'undefined') { %>
+                        <% if ( session.user.rol == "ADMIN") { %>
+                            <div class="btnAdmin">
+                            <form action="/products/edit/<%- product.id %>">
+                                <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
+                            </form>
+                            
+                            <form action="/products/delete/<%- product.id %>?_method=delete" method="post">
+                                <button type="submit" class="btn">Borrar</button>
+                             </form>
+                        </div>
+                        <% } %>
+                    <% } %>
+              
+      
+>>>>>>> 639c6be8dd3426da69060143e2644cf8d3f15b9d
             </div>
             <% } %> <% } %>
           </div>
         </section>
 
         <section class="compra">
+<<<<<<< HEAD
           <div class="metodo-pago">
             <div class="cajaEnvio">
               <h2>Metodos de envio</h2>
@@ -92,6 +118,52 @@
               </div>
               <img src="/image/pagos.png" alt="pagos" />
             </div>
+=======
+            <article class="metodo-pago">
+                <div class="cajaEnvio">
+                <h2>Metodos de envio</h2>
+                <div class="options">
+                    <input type="radio" name="envio" value="Correo Argentino" checked>Correo Argentino
+                    <input type="radio" name="envio" value="Andreani"> Andreani
+                    <input type="radio" name="envio" value="Retirar en sucursal"> Retirar en sucursal
+                </div>
+                 </div>
+                <div class="cajaPago">
+                    <div class="tipoDePago">
+                        <h2>Metodos de pagos</h2>
+                        <div>
+                            <input type="radio" name="pago" value="Debito" checked>Debito
+                            <input type="radio" name="pago" value="Credito"> Credito
+                            <input type="radio" name="pago" value="Efectivo"> Efectivo
+                        </div>
+                    </div>
+                    
+                </div>
+                <img src="/image/pagos.png" alt="pagos">
+                <div class="cantidad">
+                    <label for="cantidad">Cantidad</label>
+                    <div class="counter">
+                        <button type="button" class="btn-subtract" onclick="subtract();">
+                            -
+                        </button>
+                        <div id="count">1</div>
+                                
+                        <button type="button" id="btn-add" onclick="add();">
+                            +
+                        </button>
+                    </div>
+                </div>
+                <h2>Total</h2>
+                <div id="totalFinal">
+                    <span id="">$<%= product.price - (product.price * product.discount / 100) %></span>
+                </div>
+            </article>
+            <div class="acciones">
+                <li><a href="/carrito" class="btn">COMPRAR</a></li>
+                <li><a href="/error" class="btn">FAVORITOS</a></li>
+            </div> 
+            
+>>>>>>> 639c6be8dd3426da69060143e2644cf8d3f15b9d
 
             <div class="cantidad">
               <label for="cantidad">Cantidad</label>
