@@ -1,32 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include("../partials/head") %>
 
-<%- include("../partials/head")  %> 
-
-<body class="detail">
-
-    <%- include("../partials/header")  %>
+  <body class="detail">
+    <%- include("../partials/header") %>
 
     <main class="detail">
-       
-    <section class="detail-product">
-
+      <section class="detail-product">
         <section class="producto">
-            <h1><%- product.name  %></h1>
-            <div class="containerBox">
-                <article class="showProduct">
-                    <div class="mainImage">
-                        <img src="/image/products/<%- product.image[0] %>" alt="Foto" id="expandedImg">
-                    </div>
-                </article>
-                <div class="miniPics">
-                    <% product.image.forEach(image => { %>
-                    <div class="thumbnailImages">
-                        <img src="/image/products/<%-image%>" alt="Imagen de producto" onclick="myFunction(this);">
-                    </div>
-                    <% }) %>
-                </div>
+          <h1><%- product.name %></h1>
+          <div class="containerBox">
+            <article class="showProduct">
+              <div class="mainImage">
+                <img
+                  src="/image/products/<%- product.image[0] %>"
+                  alt="Foto"
+                  id="expandedImg"
+                />
+              </div>
+            </article>
+            <div class="miniPics">
+              <% product.image.forEach(image => { %>
+              <div class="thumbnailImages">
+                <img
+                  src="/image/products/<%-image%>"
+                  alt="Imagen de producto"
+                  onclick="myFunction(this);"
+                />
+              </div>
+              <% }) %>
             </div>
+<<<<<<< HEAD
+          </div>
+          <div class="info-product">
+            <h2 class="title"><%- product.name %></h2>
+            <h2 id="price"><%- product.price %></h2>
+            <% if (product.discount > 0) { %>
+            <span>Descuento del <%- product.discount %>%</span>
+            <span id="final"
+              >$<%- product.price - (product.price * product.discount / 100)
+              %></span
+            >
+            <% } %> <% if (typeof session.user != 'undefined') { %> <% if (
+            session.user.rol == "ADMIN") { %>
+            <div class="btnAdmin">
+              <form action="/products/edit/<%- product.id %>">
+                <button class="btn">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+              </form>
+
+              <form
+                action="/products/delete/<%- product.id %>?_method=delete"
+                method="post"
+              >
+                <button type="submit" class="btn">Borrar</button>
+              </form>
+=======
             <div class="info-product">
                 <h2 class="title"><%- product.name %></h2>
                 <span>$<span id="price"><%- product.price %></span></span>
@@ -49,10 +79,46 @@
                     <% } %>
               
       
+>>>>>>> 639c6be8dd3426da69060143e2644cf8d3f15b9d
             </div>
+            <% } %> <% } %>
+          </div>
         </section>
 
         <section class="compra">
+<<<<<<< HEAD
+          <div class="metodo-pago">
+            <div class="cajaEnvio">
+              <h2>Metodos de envio</h2>
+              <div class="options">
+                <input
+                  type="radio"
+                  name="envio"
+                  value="Correo Argentino"
+                  checked
+                />Correo Argentino
+                <input type="radio" name="envio" value="Andreani" /> Andreani
+                <input type="radio" name="envio" value="Retirar en sucursal" />
+                Retirar en sucursal
+              </div>
+            </div>
+            <div class="cajaPago">
+              <div class="tipoDePago">
+                <h2>Metodos de pagos</h2>
+                <div>
+                  <input
+                    type="radio"
+                    name="pago"
+                    value="Debito"
+                    checked
+                  />Debito
+                  <input type="radio" name="pago" value="Credito" /> Credito
+                  <input type="radio" name="pago" value="Efectivo" /> Efectivo
+                </div>
+              </div>
+              <img src="/image/pagos.png" alt="pagos" />
+            </div>
+=======
             <article class="metodo-pago">
                 <div class="cajaEnvio">
                 <h2>Metodos de envio</h2>
@@ -97,47 +163,78 @@
                 <li><a href="/error" class="btn">FAVORITOS</a></li>
             </div> 
             
+>>>>>>> 639c6be8dd3426da69060143e2644cf8d3f15b9d
 
-             
-            </section>
-    </section>
+            <div class="cantidad">
+              <label for="cantidad">Cantidad</label>
+              <div class="counter">
+                <button
+                  type="button"
+                  class="btn-subtract"
+                  onclick="subtract();"
+                >
+                  -
+                </button>
+                <div id="count">1</div>
 
-    <section class="container-description"> 
-            <h5>Descripción</h5>
-            <h6><%- product.description %></h6>
-            <h5>Marca</h5>
-            <h6><%- product.brand %> </h6>
-            <h5>Peso</h5>
-            <h6><%- product.weight %> </h6>    
-    </section>
+                <button type="button" id="btn-add" onclick="add();">+</button>
+              </div>
+            </div>
+            <h2>Total</h2>
+            <div id="totalFinal">
+              <span id=""
+                >$<%= product.price - (product.price * product.discount / 100)
+                %></span>
+            </div>
+          </div>
+          <div class="acciones">
+            <li>
+              <form action="/carrito/<%- product.id %>" method="post">
+                <button type="submit" class="btn">COMPRAR</button>
+              </form>
+            </li>
+            <li><a href="/error" class="btn">FAVORITOS</a></li>
+          </div>
+        </section>
+      </section>
 
-    <section>
+      <section class="container-description">
+        <h5>Descripción</h5>
+        <h6><%- product.description %></h6>
+        <h5>Marca</h5>
+        <h6><%- product.brand %></h6>
+        <h5>Peso</h5>
+        <h6><%- product.weight %></h6>
+      </section>
+
+      <section>
         <div class="container-social">
-            <h1>Comparti este producto</h1>
-           <div class="container-buttons-social">
-            <a class="comparte" href="#"><i class="fa-brands fa-whatsapp"></i></a>
-            <a class="comparte" href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a class="comparte" href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a class="comparte" href="#"><i class="fa-brands fa-square-instagram"></i></a>
-           </div> 
-    </section>
-      
-    <h5>Productos del mismo vendedor</h5>
-        <section class="interes">
-           <%- include("../partials/tarjetas")  %> 
-        </section>
+          <h1>Comparti este producto</h1>
+          <div class="container-buttons-social">
+            <a class="comparte" href="#"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a class="comparte" href="#"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a class="comparte" href="#"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a class="comparte" href="#"
+              ><i class="fa-brands fa-square-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </section>
 
+      <h5>Productos del mismo vendedor</h5>
+      <section class="interes"><%- include("../partials/tarjetas") %></section>
 
-    <h5>Productos que te pueden interesar</h5>
-        <section class="interes">
-            <%- include("../partials/tarjetas")  %> 
-        </section>
-
+      <h5>Productos que te pueden interesar</h5>
+      <section class="interes"><%- include("../partials/tarjetas") %></section>
     </main>
 
-    <%- include("../partials/footer")  %> 
+    <%- include("../partials/footer") %>
     <script src="/js/productDetail.js"></script>
-    
-</body>
-
+  </body>
 </html>

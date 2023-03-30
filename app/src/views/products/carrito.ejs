@@ -12,13 +12,15 @@
               <h2>Carrito de compras:</h2>
             </div>
 
-            <article class="producto">
-              <img src="/image/producto.jpg" alt="plato para perro" />
+            <% carrito.forEach(producto => { %>
+                <article class="producto">
+              <img src="/image/products/<%-producto.image%>" alt="plato para perro" />
               <div class="datos">
-                <a href="#"><h3>Plato sasha</h3></a>
-                <p class="precio">$840</p>
+                <a href="#"><h3><%- producto.name %></h3></a>
+              <div class="precio-descuento"> <p class="precio">$<%-producto.price %></p>
+                <p class="descuento"><%-producto.discount %>%</p></div>
+                <a href="detalleProducto" class="btn detalleProducto">comprar</a>
               </div>
-              <a href="detalleProducto" class="btn detalleProducto">comprar</a>
 
               <div class="boton">
                 <button><i class="fa-solid fa-circle-minus"></i></button>
@@ -27,35 +29,9 @@
                 <button><i class="fa-solid fa-trash"></i></button>
               </div>
             </article>
-            <article class="producto">
-              <img src="/image/CamaMichi.jpg" alt="cama iglu" />
-              <div class="datos">
-                <a href="#"><h3>Cama Nina</h3></a>
-                <p class="precio">$2500</p>
-              </div>
-              <a href="detalleProducto" class="btn detalleProducto">comprars</a>
-              <div class="boton">
-                <button><i class="fa-solid fa-circle-minus"></i></button>
-                <span> 05 </span>
-                <button><i class="fa-solid fa-circle-plus"></i></button>
-                <button><i class="fa-solid fa-trash"></i></button>
-              </div>
-            </article>
-            <article class="producto">
-              <img src="/image/CamaMichi.jpg" alt="cama iglu" />
-              <div class="datos">
-                <a href="#"><h3>Whiskas</h3></a>
-                <p class="precio">$7.600</p>
-              </div>
-              <a href="detalleProducto" class="btn detalleProducto">comprar</a>
-
-              <div class="boton">
-                <button><i class="fa-solid fa-circle-minus"></i></button>
-                <span> 01 </span>
-                <button><i class="fa-solid fa-circle-plus"></i></button>
-                <button><i class="fa-solid fa-trash"></i></button>
-              </div>
-            </article>
+            <% }) %>
+         
+            
           </div>
           <div class="gestion">
             <div class="envio">
