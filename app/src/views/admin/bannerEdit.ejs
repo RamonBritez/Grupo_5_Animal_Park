@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("../partials/head")  %> 
+</head>
+<body>
+    <%- include("../partials/header")  %> 
+
+
+    <h1 align="center">Editar banners</h1>
+    <br>
+
+    <%- include("../partials/carrusel")  %> 
+
+   <p align="center">Sugerimos que las imagenes tengan un tamaño aproximado de 1200*500</p>
+   <br>
+   <p align="center">Funciona de a una imagen por vez. Cargue la imagen y presione el boton de guardar para proceder con la siguiente imagen</p>
+   <br>
+    
+    <form action="banner-edit/1" method="POST" class="bannerForm" enctype="multipart/form-data">
+        <label for="img1">Primera imagen</label>
+        <div class="bannerEdit"><img src="/image/carrousel/1.jpg" alt=""></div>
+        <input type="file" name="img" id="1">
+        <br>
+        <button type="submit" class="btn">Guardar imagen</button>
+    </form>
+<br>
+    <form action="banner-edit/2"  method="POST" class="bannerForm" enctype="multipart/form-data">
+        <label for="img2">Segunda imagen</label>
+        <div class="bannerEdit"><img src="/image/carrousel/2.jpg" alt=""></div>
+        <input type="file" name="img" id="2">
+        <br>
+        <button type="submit" class="btn">Guardar imagen</button>
+    </form>
+<br>
+    <form action="banner-edit/3"  method="POST"  class="bannerForm" enctype="multipart/form-data">
+        <label for="img3">Tercera imagen</label>
+        <div class="bannerEdit"><img src="/image/carrousel/3.jpg" alt=""></div>
+        <input type="file" name="img" id="3">
+        <br>
+        <button type="submit" class="btn">Guardar imagen</button>
+    </form>
+
+    <div><a class="btn" href="/admin">Pagina Admin</a></div>
+
+    <%- include("../partials/footer")  %> 
+</body>
+</html>

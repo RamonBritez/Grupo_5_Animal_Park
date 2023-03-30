@@ -96,7 +96,18 @@ module.exports ={
 		writeJSON("usersDB.json", newUserArray);
 
 		res.redirect('/');
-	}
+	},
+
+    bannerEdit: (req, res) =>{
+        res.render("admin/bannerEdit", {
+            session: req.session
+        })
+    },
+
+    bannerProcess: (req, res) =>{
+        
+        res.redirect("/admin/banner-edit")
+    }
 }
 
 
