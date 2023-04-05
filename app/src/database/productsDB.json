@@ -294,5 +294,103 @@
          "1678300734517_products_.jpg",
          "1678300734550_products_.jpg"
       ]
+   },
+   {
+      "id": 33,
+      "name": "asdasdas",
+      "brand": "dfsfsdf",
+      "price": 333,
+      "discount": 30,
+      "category": "juguetes",
+      "weight": "12",
+      "description": "dxcsdfsafdgdfsdf",
+      "pet": "aves",
+      "image": [
+         "default.jpg"
+      ]
+   },
+   {
+      "id": 34,
+      "name": "ropa tortugas",
+      "brand": "manualidad",
+      "price": 12334,
+      "discount": 99,
+      "category": "vestimenta",
+      "weight": "10",
+      "description": "dfsdfsdfsdf",
+      "pet": "gatos",
+      "image": [
+         "default.jpg"
+      ]
+   },
+   {
+      "id": 35,
+      "name": "ropa tortugas",
+      "brand": "manualidad",
+      "price": 12334,
+      "discount": 99,
+      "category": "vestimenta",
+      "weight": "10",
+      "description": "dfsdfsdfsdf",
+      "pet": "gatos",
+      "image": [
+         "default.jpg"
+      ]
+   },
+   {
+      "id": 36,
+      "name": "ropa tortugas",
+      "brand": "manualidad",
+      "price": 12334,
+      "discount": 99,
+      "category": "vestimenta",
+      "weight": "10",
+      "description": "dfsdfsdfsdf",
+      "pet": "gatos",
+      "image": [
+         "default.jpg"
+      ]
+   },
+   {
+      "id": 38,
+      "name": "ropa tortugas",
+      "brand": "manualidad",
+      "price": 12334,
+      "discount": 99,
+      "category": "vestimenta",
+      "weight": "10",
+      "description": "dfsdfsdfsdf",
+      "pet": "gatos",
+      "image": [
+         "default.jpg"
+      ]
+   },
+   {
+      "id": 39,
+      "name": "ropa tortugas",
+      "brand": "manualidad",
+      "price": 12334,
+      "discount": 99,
+      "category": "vestimenta",
+      "weight": "10",
+      "description": "dfsdfsdfsdf",
+      "pet": "gatos",
+      "image": [
+         "default.jpg"
+      ]
+   },
+   {
+      "id": 40,
+      "name": "ropa tortugas",
+      "brand": "manualidad",
+      "price": 12334,
+      "discount": 99,
+      "category": "vestimenta",
+      "weight": "10",
+      "description": "dfsdfsdfsdf",
+      "pet": "gatos",
+      "image": [
+         "default.jpg"
+      ]
    }
 ]
