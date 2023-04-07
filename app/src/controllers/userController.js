@@ -22,13 +22,14 @@ module.exports = {
                 name: user.userName,
                 avatar: user.avatar,
                 rol: user.rol,
+                email: user.email,
                 carrito: []
             }
 
             let tiempoDecookies = new Date(Date.now() + 60000);
-
+            //Modifique res.cookie "userAnimalPark" a "AnimalPark" y agregue en la session el email(linea 25)
             if(req.body.recordar){
-                res.cookie("userAnimalPark", 
+                res.cookie("AnimalPark", 
                 req.session.user,
                 {
                     expires: tiempoDecookies,

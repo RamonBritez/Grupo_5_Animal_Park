@@ -7,6 +7,7 @@ const methodOverride = require("method-override"); // Pasar poder usar los méto
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const { isAdmin } = require("./middlewares/userCheck");
+const cookieCheck = require("./middlewares/cookieCheck"); //Reqiero el cookieCheck
 
 /* Template engine config */
 app.set("view engine", "ejs");
@@ -35,7 +36,7 @@ app.use("/products", products);
 app.use("/admin", isAdmin, admin);
 app.use("/users", userRouter);
 
-
+app.use(cookieCheck);// Uso el cookieCheck
 
 app.use((req,res,next) => {
   res.status(404).render("error", {

@@ -33,6 +33,11 @@ main nav.filter div:hover{
     border: var(--verdePrueba1) 3px solid;
 }
 
+.filter div:active{
+    transition-duration: 0.1s;
+    transform: scale(0.9);
+}
+
 main nav.filter div.filter a{
     display: flex;
     flex-direction: column;

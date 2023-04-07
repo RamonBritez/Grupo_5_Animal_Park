@@ -35,6 +35,15 @@ margin: 20px 0;
     justify-content: center;
     align-items: center;
 }
+@keyframes Zoom {
+    from {
+        transform: scale(0);
+      }
+  
+      to {
+          transform: scale(1);
+      }
+}
 
 .admin-deleteModal {
     display: flex;
@@ -47,6 +56,9 @@ margin: 20px 0;
     max-width: 500px;
     gap: 10px;
     background-color: #fefefe;
+    animation-name: Zoom;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
 .admin-table{
