@@ -15,6 +15,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+DROP DATABASE IF EXISTS animalpark_db;
+CREATE DATABASE animalpark_db;
+USE animalpark_db;
 --
 -- Table structure for table `adresses`
 --
@@ -126,6 +129,10 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `total_price` double(7,2) DEFAULT NULL,
+  `total_item` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `orders_FK` (`user_id`),
   CONSTRAINT `orders_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
@@ -208,6 +215,8 @@ CREATE TABLE `products` (
   `pet_id` int(11) unsigned DEFAULT NULL,
   `active` tinyint(1) unsigned NOT NULL DEFAULT 0,
   `brand_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `products_FK` (`pet_id`),
   KEY `products_FK_1` (`subcategory_id`),
@@ -292,6 +301,8 @@ CREATE TABLE `users` (
   `rol_id` int(11) NOT NULL,
   `address_id` int(11) unsigned DEFAULT NULL,
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `users_FK` (`rol_id`),
   KEY `users_FK_1` (`address_id`),
@@ -322,4 +333,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-07 16:43:45
+-- Dump completed on 2023-04-11 23:22:09
