@@ -21,8 +21,9 @@ app.use(
     resave: false,
     saveUninitialized: true,
   })
-);
+  );
 app.use(cookieParser());
+app.use(cookieCheck);// Uso el cookieCheck
 
 /* Routers */
 const indexRouter = require("./routes");
@@ -35,8 +36,6 @@ app.use("/", indexRouter);
 app.use("/products", products);
 app.use("/admin", isAdmin, admin);
 app.use("/users", userRouter);
-
-app.use(cookieCheck);// Uso el cookieCheck
 
 app.use((req,res,next) => {
   res.status(404).render("error", {
