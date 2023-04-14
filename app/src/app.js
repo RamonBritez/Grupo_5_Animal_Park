@@ -23,6 +23,7 @@ app.use(
   })
 );
 app.use(cookieParser());
+app.use(cookieCheck);// Uso el cookieCheck
 
 /* Routers */
 const indexRouter = require("./routes");
@@ -36,7 +37,11 @@ app.use("/products", products);
 app.use("/admin", isAdmin, admin);
 app.use("/users", userRouter);
 
-app.use(cookieCheck);// Uso el cookieCheck
+/* let db = require("./database/models")
+
+app.get("/pruebaModel", (req, res) => {
+  db.Product.findAll().then(products => res.json(products))
+}) */
 
 app.use((req,res,next) => {
   res.status(404).render("error", {
