@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require("express-validator");
-const { readJSON, writeJSON } = require("../database");
+const { readJSON, writeJSON } = require("../old_database");
 
 const products = readJSON("productsDB.json");
 
