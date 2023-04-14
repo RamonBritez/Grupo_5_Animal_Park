@@ -37,10 +37,12 @@ module.exports=(sequelize, dataTypes)=>{
         },
     }
     let config={
+    tableName:"users",
         timestamps:true,
         createdAt:"created_at",
         updatedAt:"updated_at",
-        deletedAt:false
+        deletedAt:false,
+
     }
     const User=sequelize.define(alias,cols,config)
     return User
