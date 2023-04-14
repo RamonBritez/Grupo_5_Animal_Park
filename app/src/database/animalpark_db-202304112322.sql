@@ -298,7 +298,7 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `pass` varchar(100) NOT NULL,
   `avatar` varchar(100) NOT NULL,
-  `rol_id` int(11) NOT NULL,
+  `rol_id` int(11) DEFAULT 1 NOT NULL,
   `address_id` int(11) unsigned DEFAULT NULL,
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` datetime DEFAULT NULL,
