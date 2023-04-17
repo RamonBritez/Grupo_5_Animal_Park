@@ -3,6 +3,7 @@ const fs = require('fs');
 const { readJSON, writeJSON } = require("../old_database");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
+let {User, address, Role} = require("../database/models")
 
 
 let users = readJSON("usersDB.json")
@@ -15,80 +16,60 @@ module.exports = {
 
         if (errors.isEmpty()) {
 
-            let user = users.find(user => user.email === req.body.email);
+            User.findOne({
+                where: {
+                    email: req.body.email
+                },
 
-            req.session.user = {
-                id: user.id,
-                name: user.userName,
-                avatar: user.avatar,
-                rol: user.rol,
-                email: user.email,
-                carrito: []
-            }
-
-            let tiempoDecookies = new Date(Date.now() + 60000);
-            //Modifique res.cookie "userAnimalPark" a "AnimalPark" y agregue en la session el email(linea 25)
-            if(req.body.recordar){
-                res.cookie("AnimalPark", 
-                req.session.user,
-                {
-                    expires: tiempoDecookies,
-                    httpOnly: true                 
-                })
-            }
-
-            res.locals.user = req.session.user;
-            res.redirect("/")
-
-          /*  if(req.session.user.rol !== "ADMIN"){
-                res.redirect("/");
-            }else {
-                res.redirect("/admin")
-            }*/
-            
-        }  else {
-            return res.render("users/login", {
-                errors: errors.mapped(),
-                session: req.session
             })
-        }
+            .then((user) =>{
+                req.session.user = {
+                    id: user.id,
+                    name: user.userName,
+                    avatar: user.avatar,
+                    rol: user.rol,
+                    email: user.email,
+                }
+    
+                let tiempoDecookies = new Date(Date.now() + 60000);
+                if(req.body.recordar){
+                    res.cookie("AnimalPark", 
+                    req.session.user,
+                    {
+                        expires: tiempoDecookies,
+                        httpOnly: true                 
+                    })
+                } 
+                
+                res.locals.user = req.session.user;
+                res.redirect("/") 
+                });
+            }else {
+                return res.render("users/login", {
+                    errors: errors.mapped(),
+                    session: req.session
+                })
+                }
     },
+
     register: (req, res) => {
         res.render("users/register")
     },
+
     processRegister: (req, res) => {
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
-            let lastId = 0;
-
-            users.forEach(user => {
-             if(user.id > lastId) {
-                 lastId = user.id;
-             }
-            });
             
             let {userName, apellido, email, password} = req.body;
 
-            let newUser = {
-             id: lastId + 1,
-             userName,
-             apellido,
-             email,
-             password:  bcrypt.hashSync(password, 12),
-             avatar: req.file ? req.file.filename : "avatar_default.jpeg",
-             rol: "USER",
-             tel: "",
-             address: "",
-             postal_code:"",
-             province:"",
-             city:""
+            User.create({
+                userName,
+                apellido,
+                email,
+                password
+            })
 
-            };
-     
-            users.push(newUser);
-     
-            writeJSON("usersDB.json", users);
      
             res.redirect('/users/login');
             } else {
