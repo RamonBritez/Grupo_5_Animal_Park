@@ -17,13 +17,12 @@
     "url": "https://github.com/RamonBritez/Grupo_5_Animal_Park/issues"
   },
   "nodemonConfig": {
-    "ignore": "src/database/*.json"
+    "ignore": [
+      "src/database/*productsDB.json",
+      "src/database/*usersDB.json"
+    ]
   },
   "homepage": "https://github.com/RamonBritez/Grupo_5_Animal_Park#readme",
-  "nodemonConfig": {
-   
-    "ignore": ["src/database/*productsDB.json","src/database/*usersDB.json"]
-  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.3",
@@ -36,7 +35,9 @@
     "http-errors": "~1.6.3",
     "method-override": "^3.0.0",
     "morgan": "~1.9.1",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.31.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

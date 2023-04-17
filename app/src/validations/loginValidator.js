@@ -1,5 +1,5 @@
 const { check, body } = require("express-validator");
-const { readJSON} = require("../database");
+const { readJSON} = require("../old_database");
 const bcrypt = require("bcryptjs");
 
 let users = readJSON("usersDB.json");

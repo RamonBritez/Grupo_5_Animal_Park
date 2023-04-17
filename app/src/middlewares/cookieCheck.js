@@ -1,4 +1,4 @@
-const { readJSON } = require("../database");
+const { readJSON } = require("../old_database");
 let users = readJSON("usersDB.json")
 
 module.exports = (req, res, next) =>{

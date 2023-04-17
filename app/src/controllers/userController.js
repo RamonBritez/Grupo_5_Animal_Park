@@ -1,6 +1,6 @@
 const { validationResult } = require("express-validator");
 const fs = require('fs');
-const { readJSON, writeJSON } = require("../database");
+const { readJSON, writeJSON } = require("../old_database");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
 
