@@ -23,6 +23,7 @@ app.use(
   })
 );
 app.use(cookieParser());
+app.use(cookieCheck);
 
 /* Routers */
 const indexRouter = require("./routes");

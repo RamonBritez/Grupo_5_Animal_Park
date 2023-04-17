@@ -23,7 +23,6 @@ module.exports = {
                 avatar: user.avatar,
                 rol: user.rol,
                 email: user.email,
-                carrito: []
             }
 
             let tiempoDecookies = new Date(Date.now() + 60000);
