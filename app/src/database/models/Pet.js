@@ -20,7 +20,12 @@ module.exports = (sequelize, dataTypes) => {
     };
   
     const Pet = sequelize.define(alias, cols, config);
-  
+    Pet.associate = (models) => {
+      Pet.hasMany(models.Product, {
+        as: "products",
+        foreignKey: "pet_id",
+      });
+    };
     return Pet;
   };
   

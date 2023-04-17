@@ -25,5 +25,16 @@ module.exports = (sequelize, dataTypes) => {
     timestamps: false,
   };
   const Cart = sequelize.define(alias, cols, config);
-  return Cart
+
+  Cart.associate = (models) => {
+    Cart.belongsTo(models.Order, {
+      as: "user",
+      foreignKey: "user_id",
+    });
+    Cart.belongsTo(models.Product, {
+      as: "products",
+      foreignKey: "order_id",
+    });
+  };
+  return Cart;
 };

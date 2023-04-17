@@ -23,12 +23,19 @@ module.exports = (sequelize, dataTypes) => {
     };
   
     let config = {
-      tableName: "addresses",
+      tableName: "adresses",
       timestamps: false
     };
   
     const Address = sequelize.define(alias, cols, config);
   
+    Address.associate = (models) => {
+      Address.belongsTo(models.User, {
+        as: "user",
+  
+        foreignKey: "user_id",
+      });
+    }
     return Address;
   };
   

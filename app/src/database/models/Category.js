@@ -17,5 +17,11 @@ let config={
     tableName:"roles"
 }
 const Category = sequelize.define(alias, cols, config);
+Category.associate = (models) => {
+  Category.hasMany(models.Subcategory, {
+    as: "subcategories",
+    foreignKey: "category_id",
+  });
+};
 return Category
 }

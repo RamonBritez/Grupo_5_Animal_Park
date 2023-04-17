@@ -20,6 +20,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER(11),
       allowNull: false,
     },
+    active: {
+      type: dataTypes.TINYINT(3).UNSIGNED,
+      allowNull: false,
+    },
   };
 
   let config = {
@@ -31,6 +35,17 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const Order = sequelize.define(alias, cols, config);
+
+  Order.associate = (models) => {
+    Order.belongsTo(models.User, {
+      as: "user",
+      foreignKey: "user_id",
+    });
+    Order.hasMany(models.Cart, {
+      as: "cart",
+      foreignKey: "order_id",
+    });
+  };
 
   return Order;
 };
