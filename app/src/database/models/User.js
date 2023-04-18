@@ -30,10 +30,7 @@ module.exports = (sequelize, dataTypes) => {
     rol_id: {
       type: dataTypes.INTEGER(11),
       allowNull: false,
-    },
-    address_id: {
-      type: dataTypes.INTEGER(11).UNSIGNED,
-    },
+    }
   };
   let config = {
     tableName: "users",
