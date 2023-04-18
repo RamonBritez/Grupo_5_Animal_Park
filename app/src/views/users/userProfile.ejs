@@ -20,10 +20,10 @@
             </div>
             <div class="userProfile_box">
                 <h3 class="userProfile_title">Datos de contacto</h3>
-                <p class="userProfile_item">Dirección: <%= address.address ? address : "------" %></p>
-                <p class="userProfile_item">Código postal: <%= user.postal_code ? user.postal_code : "------" %></p>
-                <p class="userProfile_item">Provincia: <%= user.province ? user.province : "------" %></p>
-                <p class="userProfile_item">Localidad: <%= user.city ? user.city : "------" %></p>
+                <p class="userProfile_item">Dirección: <%= address.address ? address.address : "------" %></p>
+                <p class="userProfile_item">Código postal: <%= address.postal_code ? address.postal_code: "------" %></p>
+                <p class="userProfile_item">Provincia: <%= address.province ? address.province : "------" %></p>
+                <p class="userProfile_item">Localidad: <%= address.city ? address.city : "------" %></p>
             </div>
             <a href="/users/profile/edit" class="btn">EDITAR DATOS</a>
         </div> 

@@ -62,13 +62,6 @@ module.exports = {
         if(errors.isEmpty()) {
             
 
-/* password:  bcrypt.hashSync(password, 12),avatar: req.file ? req.file.filename : "avatar_default.jpeg",
-rol: "USER",
-tel: "",
-address: "",
-postal_code:"",
-province:"",
-city:"" */
             let {userName, apellido, email, password} = req.body;
            
             User.create({
@@ -108,19 +101,15 @@ city:"" */
             id: userInSessionId
         },
         include: [{
-            association: 'address'
-          }],
-          include: [{
-            association: 'user_rol'
+            association: 'address',
           }]
         })
         .then((user) => {
-            console.log(user)
-/*             res.render("users/userProfile", {
+            res.render("users/userProfile", {
                 user,
-                address: user.address[0],
+                address: user.address,
                 session: req.session
-            }) */
+            })
         })
 
     },
@@ -134,13 +123,13 @@ city:"" */
             },
             include: [{
                 association: 'address',
-                association: "user_rol" ,
             }]
         })
         .then((user) => {
             res.render('users/editUser',{
                 session: req.session,
-                user
+                user,
+                address: user.address
             })
         })
 
@@ -175,7 +164,8 @@ city:"" */
                 User.update({
                     first_name: userName,
                     last_name: apellido,
-                    phone: tel,
+                    tel: tel,
+                    avatar: req.file ? req.file.filename : User.avatar,
                     },{
                     where: {
                         id: userId

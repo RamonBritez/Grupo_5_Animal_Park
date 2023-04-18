@@ -30,6 +30,9 @@ module.exports = (sequelize, dataTypes) => {
     rol_id: {
       type: dataTypes.INTEGER(11),
       allowNull: false,
+    },
+    tel:{
+      type: dataTypes.STRING(50)
     }
   };
   let config = {
