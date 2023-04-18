@@ -292,7 +292,7 @@ CREATE TABLE
       CONSTRAINT `products_FK` FOREIGN KEY (`pet_id`) REFERENCES `pets` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
       CONSTRAINT `products_FK_1` FOREIGN KEY (`subcategory_id`) REFERENCES `subcategory` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
       CONSTRAINT `products_FK_2` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-  ) ENGINE = InnoDB AUTO_INCREMENT = 2 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+  ) ENGINE = InnoDB AUTO_INCREMENT = 29 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -308,17 +308,395 @@ INSERT INTO
 VALUES
   (
     1,
-    'Cofler Blockazo',
-    'Un chocolate Cofler con mani de 1kg',
-    3499.99,
-    50,
+    'la prueba',
+    'No se, estaba probando las validaciones y el tema de mantener la session',
+    100.00,
+    10,
+    10.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    2,
+    'Nutrique Gato Adulto Castrado',
+    'Control de peso',
+    4105.00,
+    0,
+    2.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    3,
+    'Nutrique Gato Adulto Urinary Care',
+    'Urinary Care',
+    3689.00,
+    0,
+    2.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    4,
+    'Nutrique Gato Bebé',
+    'Gato bebé y gato cachorro',
+    11398.00,
+    25,
+    7.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    5,
+    'Nutrique Gato Kitten',
+    'Kitten cachorro',
+    782.00,
+    0,
+    350.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    6,
+    'Ropa Para Perros',
+    'Buzo Vestido Ambar ',
+    1500.00,
+    10,
+    0.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    7,
+    'Nutrique Cachorro',
+    'Raza Mediana',
+    1394.00,
+    5,
     1.0,
     NULL,
     NULL,
     1,
     NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    8,
+    'Nutrique Perro Adulto',
+    'Raza pequeña y mini',
+    7420.00,
+    0,
+    7.0,
     NULL,
-    NULL
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    9,
+    'Alfalfa en cubos',
+    'Ricos en vitaminas para todo tipo de roedores',
+    700.00,
+    5,
+    100.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    10,
+    'Shulet Tortugin',
+    'Alimento completo para tortugas acuáticas y complemento para terrestres',
+    350.00,
+    0,
+    100.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    11,
+    'Hectopar',
+    'Pulguicida para gatos mas de 4kg',
+    500.00,
+    0,
+    100.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    12,
+    'Shulet Tropical',
+    'Alimento completo balanceado para peces tropicales',
+    870.00,
+    0,
+    100.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    13,
+    'Zoomarlo',
+    'Mazorca de maíz premium',
+    1400.00,
+    0,
+    300.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    14,
+    'Sieger',
+    'Sieger katze gato urinario',
+    3800.00,
+    0,
+    7.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    15,
+    'Complete',
+    'Perro adulto +7 años',
+    9600.00,
+    0,
+    20.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    16,
+    'Alimento',
+    'Alimento para Perros Voraz Carne 21 kilos.',
+    5200.00,
+    10,
+    21.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    17,
+    'Bonacqua',
+    'Azul de mitelino 50ml',
+    1300.00,
+    0,
+    50.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    18,
+    'Alimento Whiskas',
+    'para gato adulto sabor pescado',
+    5040.00,
+    15,
+    10.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    19,
+    'Zoomarlo',
+    'asdasdaDFDASFawsdfds',
+    1234.00,
+    0,
+    12.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    20,
+    'Disfraz de Gallina',
+    'Decora a tu tortuga con este maravilloso atuendo',
+    1500.00,
+    0,
+    10.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    21,
+    'test multiple',
+    'Varias imagenes de prueba para test',
+    8500.00,
+    99,
+    12.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    22,
+    'asdasdas',
+    'dxcsdfsafdgdfsdf',
+    333.00,
+    30,
+    12.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    23,
+    'ropa tortugas',
+    'dfsdfsdfsdf',
+    12334.00,
+    99,
+    10.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    24,
+    'ropa tortugas',
+    'dfsdfsdfsdf',
+    12334.00,
+    99,
+    10.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    25,
+    'ropa tortugas',
+    'dfsdfsdfsdf',
+    12334.00,
+    99,
+    10.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    26,
+    'ropa tortugas',
+    'dfsdfsdfsdf',
+    12334.00,
+    99,
+    10.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    27,
+    'ropa tortugas',
+    'dfsdfsdfsdf',
+    12334.00,
+    99,
+    10.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
+  ),
+  (
+    28,
+    'ropa tortugas',
+    'dfsdfsdfsdf',
+    12334.00,
+    99,
+    10.0,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    '2023-04-17 23:52:48',
+    '2023-04-17 23:52:48'
   );
 
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
@@ -353,7 +731,8 @@ LOCK TABLES `roles` WRITE;
 INSERT INTO
   `roles`
 VALUES
-  (0, 'User');
+  (0, 'User'),
+  (1, 'Admin');
 
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 
@@ -402,19 +781,20 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE
   `users` (
+    `id` int (11) unsigned NOT NULL AUTO_INCREMENT,
     `first_name` varchar(20) NOT NULL,
     `last_name` varchar(20) NOT NULL,
     `email` varchar(50) NOT NULL,
     `pass` varchar(100) NOT NULL,
     `avatar` varchar(100) NOT NULL,
     `rol_id` int (11) NOT NULL DEFAULT 1,
-    `id` int (11) unsigned NOT NULL AUTO_INCREMENT,
+    `tel` int (11) unsigned DEFAULT NULL,
     `created_at` datetime DEFAULT NULL,
     `updated_at` datetime DEFAULT NULL,
     PRIMARY KEY (`id`),
     KEY `users_FK` (`rol_id`),
     CONSTRAINT `users_FK` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-  ) ENGINE = InnoDB AUTO_INCREMENT = 2 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+  ) ENGINE = InnoDB AUTO_INCREMENT = 11 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
 
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -424,6 +804,130 @@ CREATE TABLE
 LOCK TABLES `users` WRITE;
 
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+
+INSERT INTO
+  `users`
+VALUES
+  (
+    1,
+    'Jon',
+    'Balles',
+    'jon@mail.com',
+    '',
+    'avatar_default.jpeg',
+    1,
+    NULL,
+    '2023-04-18 00:02:00',
+    '2023-04-18 00:02:00'
+  ),
+  (
+    2,
+    'Jon',
+    'Balles',
+    'jon@mail.com',
+    '',
+    'avatar_default.jpeg',
+    1,
+    NULL,
+    '2023-04-18 00:02:00',
+    '2023-04-18 00:02:00'
+  ),
+  (
+    3,
+    'Ramón',
+    'Brietz Sanabria',
+    'test@test.com',
+    '$2a$12$7lF/l7O4CYJ2nzsqLtzX/eHDM7wCcFuF3yZJqmF72LDrzgSfNfw/m',
+    '1678210261666_avatar_.jpg',
+    1,
+    NULL,
+    '2023-04-18 00:02:00',
+    '2023-04-18 00:02:00'
+  ),
+  (
+    4,
+    'Jon',
+    'Balles',
+    'jon@gmail.com',
+    '$2a$12$irYdKP2o.gDv1chC/dqDaOxOlVgAbh1xe3EdQYpdUGi0.e8SybOna',
+    '11111111111111.jpg',
+    1,
+    NULL,
+    '2023-04-18 00:02:00',
+    '2023-04-18 00:02:00'
+  ),
+  (
+    5,
+    'test',
+    'test',
+    'test3@test.com',
+    '$2a$12$EbXyrMeBbeGwNJHeTYqowO2yFsvdpWFMfurYlMgfviI2Uvpf5b80q',
+    '1677884477039_avatar_.png',
+    0,
+    NULL,
+    '2023-04-18 00:02:00',
+    '2023-04-18 00:02:00'
+  ),
+  (
+    6,
+    'test',
+    'test',
+    'test3@test.com',
+    '$2a$12$EbXyrMeBbeGwNJHeTYqowO2yFsvdpWFMfurYlMgfviI2Uvpf5b80q',
+    '1677884477039_avatar_.png',
+    0,
+    NULL,
+    '2023-04-18 00:02:00',
+    '2023-04-18 00:02:00'
+  ),
+  (
+    7,
+    'testeando',
+    'Registro',
+    'testeo@mail.com',
+    '$2a$12$zyvgfFjvvwTfSNcoIjugN.QM2JWyh8xLHePx1/CWcAHK9lNrHmqCi',
+    'avatar_default.jpeg',
+    0,
+    NULL,
+    '2023-04-18 00:02:00',
+    '2023-04-18 00:02:00'
+  ),
+  (
+    8,
+    'Nico',
+    'Fili',
+    'nico@fili.com',
+    '$2a$12$dgX2HtrUhUHkagioparHjezIvbUAJ..IWqYortUsP3V3uUDuCms/G',
+    'avatar_default.jpeg',
+    1,
+    NULL,
+    '2023-04-18 00:02:00',
+    '2023-04-18 00:02:00'
+  ),
+  (
+    9,
+    'Cosme',
+    'Fulanito',
+    'prueba@user.com',
+    '$2a$12$KowLlmiL0detU4zCTy/RXet/xm/vsyHWYaO8iZZMQkpiaeC9xiV4y',
+    'avatar_default.jpeg',
+    0,
+    NULL,
+    '2023-04-18 00:02:00',
+    '2023-04-18 00:02:00'
+  ),
+  (
+    10,
+    'Admin',
+    'Fulanito',
+    'prueba@admin.com',
+    '$2a$12$9O9GmhqPlC3iySUx5EM3Ku1.8QKhXUYazyYdBCN9KgyiHRJzvsLnO',
+    'avatar_default.jpeg',
+    1,
+    NULL,
+    '2023-04-18 00:02:00',
+    '2023-04-18 00:02:00'
+  );
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
@@ -448,4 +952,4 @@ UNLOCK TABLES;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-17 14:06:15
+-- Dump completed on 2023-04-17 21:02:23
