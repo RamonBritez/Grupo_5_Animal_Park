@@ -29,11 +29,11 @@ module.exports = (sequelize, dataTypes) => {
   Cart.associate = (models) => {
     Cart.belongsTo(models.Order, {
       as: "user",
-      foreignKey: "user_id",
+      foreignKey: "order_id",
     });
     Cart.belongsTo(models.Product, {
       as: "products",
-      foreignKey: "order_id",
+      foreignKey: "product_id",
     });
   };
   return Cart;
