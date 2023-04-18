@@ -8,9 +8,12 @@ const products = JSON.parse(fs.readFileSync(productsDB, 'utf-8'));
 
 module.exports = {
 
+
+
     
     
     index: (req, res) => {
+        
         let oferta = products.filter(product => product.discount > 0);
         res.render("home", {
             products,
