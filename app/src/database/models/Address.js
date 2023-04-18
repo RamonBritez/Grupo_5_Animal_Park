@@ -20,6 +20,10 @@ module.exports = (sequelize, dataTypes) => {
       city: {
         type: dataTypes.STRING(50),
       },
+      user_id: {
+        type: dataTypes.INTEGER(11).UNSIGNED,
+        allowNull: false
+      }
     };
   
     let config = {

@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
     rol_id: {
       type: dataTypes.INTEGER(11),
       allowNull: false,
-    },
+    }
   };
   let config = {
     tableName: "users",
@@ -52,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
       as: "orders",
       foreignKey: "user_id",
     });
-    User.hasMany(models.Address, {
+    User.hasOne(models.Address, {
       as: "address",
       foreignKey: "user_id",
     });

@@ -111,14 +111,16 @@ city:"" */
             association: 'address'
           }],
           include: [{
-            association: 'address'
+            association: 'user_rol'
           }]
         })
         .then((user) => {
-            res.render("users/userProfile", {
+            console.log(user)
+/*             res.render("users/userProfile", {
                 user,
+                address: user.address[0],
                 session: req.session
-            })
+            }) */
         })
 
     },
@@ -173,8 +175,7 @@ city:"" */
                 User.update({
                     first_name: userName,
                     last_name: apellido,
-                    //tel: tel,
-                    //address_id: address.id
+                    phone: tel,
                     },{
                     where: {
                         id: userId
