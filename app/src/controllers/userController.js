@@ -3,7 +3,9 @@ const fs = require('fs');
 const { readJSON, writeJSON } = require("../old_database");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
-let {User, Address} = require("../database/models")
+let {User, Address} = require("../database/models");
+const { where } = require("sequelize");
+const { error } = require("console");
 
 
 let users = readJSON("usersDB.json")
@@ -64,13 +66,14 @@ module.exports = {
 
             let {userName, apellido, email, password} = req.body;
            
+
             User.create({
                 first_name: userName,
                 last_name:apellido,
                 email,
                 pass:  bcrypt.hashSync(password, 12),
                 avatar: req.file ? req.file.filename : "avatar_default.jpeg",
-                rol_id: 0
+                rol_id: 0,
             })
             .then(() => {
                 res.redirect('/users/login');
@@ -152,29 +155,30 @@ module.exports = {
             } = req.body;
 
             let userId = req.session.user.id;
-
-            Address.create({
-                address,
-                postal_code,
-                province,
-                city,
-                user_id: userId
-            })
-            .then((address) => {
-                User.update({
-                    first_name: userName,
-                    last_name: apellido,
-                    tel: tel,
-                    avatar: req.file ? req.file.filename : User.avatar,
-                    },{
-                    where: {
-                        id: userId
-                    },
+            
+                Address.create({
+                    address,
+                    postal_code,
+                    province,
+                    city,
+                    user_id: userId
                 })
                 .then(() => {
-                    return res.redirect("/users/profile");
+                    User.update({
+                        first_name: userName,
+                        last_name: apellido,
+                        tel: tel,
+                        avatar: req.file ? req.file.filename : User.avatar,
+                        },{
+                        where: {
+                            id: userId
+                        },
+                    })
+                    .then(() => {
+                        return res.redirect("/users/profile");
+                    })
                 })
-            })
+            
         } else {
             return res.render("users/editUser", {
                 user: userInSession,

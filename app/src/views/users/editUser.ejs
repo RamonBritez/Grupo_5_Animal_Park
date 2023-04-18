@@ -48,20 +48,20 @@
               </div>
               <div class="form-element">
                 <label for="address">Direccion</label>
-                <input type="text" name="address" id="address" placeholder="Ej: Pendorcho 357" value="<%= address.address %>"/>
+                <input type="text" name="address" id="address" placeholder="Ej: Pendorcho 357" value="<%= address ? address.address : '' %>"/>
                 <% if (locals.errors && errors.address) { %>
                   <small class="text-error"><%= errors.address.msg %> </small>
               <% } %>
               </div>
               <div class="form-element">
                 <label for="postal_code">Codigo postal</label>
-                <input type="text" name="postal_code" id="postal_code" placeholder="Ej: Fulanito" value="<%= address.postal_code %>"/>
+                <input type="text" name="postal_code" id="postal_code" placeholder="Ej: Fulanito" value="<%= address ? address.postal_code : '' %>"/>
                 <% if (locals.errors && errors.postal_code) { %>
                   <small class="text-error"><%= errors.postal_code.msg %> </small>
               <% } %>
               <div class="form-element">
                 <label for="city">Ciudad</label>
-                <input type="text" name="city" id="city" placeholder="Ej: Fondo de Bikini" value="<%= address.city %>"/>
+                <input type="text" name="city" id="city" placeholder="Ej: Fondo de Bikini" value="<%= address ? address.city : '' %>"/>
                 <% if (locals.errors && errors.city) { %>
                   <small class="text-error"><%= errors.city.msg %> </small>
               <% } %>
@@ -69,7 +69,7 @@
             </div>
             <div class="form-element">
               <label for="province">Provincia</label>
-              <input type="text" name="province" id="province" placeholder="Ej: 1555" value="<%= address.province %>"/>
+              <input type="text" name="province" id="province" placeholder="Ej: 1555" value="<%= address ? address.province : '' %>"/>
               <% if (locals.errors && errors.province) { %>
                 <small class="text-error"><%= errors.province.msg %> </small>
             <% } %>
