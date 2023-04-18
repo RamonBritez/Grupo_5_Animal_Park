@@ -3,7 +3,7 @@ const fs = require('fs');
 const { readJSON, writeJSON } = require("../old_database");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
-let {User, address, Role} = require("../database/models")
+let {User, Address} = require("../database/models")
 
 
 let users = readJSON("usersDB.json")
@@ -25,9 +25,9 @@ module.exports = {
             .then((user) =>{
                 req.session.user = {
                     id: user.id,
-                    name: user.userName,
+                    name: user.first_name,
                     avatar: user.avatar,
-                    rol: user.rol,
+                    rol: user.rol_id,
                     email: user.email,
                 }
     
@@ -40,11 +40,11 @@ module.exports = {
                         httpOnly: true                 
                     })
                 } 
-                
                 res.locals.user = req.session.user;
-                res.redirect("/") 
+                res.redirect('/')
                 });
             }else {
+                console.log(req.session.user)
                 return res.render("users/login", {
                     errors: errors.mapped(),
                     session: req.session
@@ -61,17 +61,29 @@ module.exports = {
 
         if(errors.isEmpty()) {
             
+
+/* password:  bcrypt.hashSync(password, 12),avatar: req.file ? req.file.filename : "avatar_default.jpeg",
+rol: "USER",
+tel: "",
+address: "",
+postal_code:"",
+province:"",
+city:"" */
             let {userName, apellido, email, password} = req.body;
-
+           
             User.create({
-                userName,
-                apellido,
+                first_name: userName,
+                last_name:apellido,
                 email,
-                password
+                pass:  bcrypt.hashSync(password, 12),
+                avatar: req.file ? req.file.filename : "avatar_default.jpeg",
+                rol_id: 0
             })
+            .then(() => {
+                res.redirect('/users/login');
+            })
+            .catch((error) => console.log(error))
 
-     
-            res.redirect('/users/login');
             } else {
             res.render("users/register", {
                 errors: errors.mapped(),
@@ -91,22 +103,46 @@ module.exports = {
     profile: (req, res) => {
         let userInSessionId = req.session.user.id;
 
-        let userInSession = users.find(user => user.id === userInSessionId);
-
-        res.render("users/userProfile", {
-            user: userInSession,
-            session: req.session
+        User.findOne({
+            where: {
+            id: userInSessionId
+        },
+        include: [{
+            association: 'address'
+          }],
+          include: [{
+            association: 'address'
+          }]
         })
+        .then((user) => {
+            res.render("users/userProfile", {
+                user,
+                session: req.session
+            })
+        })
+
     },
 
     edit:(req, res) =>{
         let userId = req.session.user.id;
-        let userToEdit = users.find(user  => user.id === userId);
         
-        res.render('users/editUser',{
-            session: req.session,
-            user: userToEdit
+        User.findOne({
+            where: {
+                id: userId
+            },
+            include: [{
+                association: 'address',
+                association: "user_rol" ,
+            }]
         })
+        .then((user) => {
+            res.render('users/editUser',{
+                session: req.session,
+                user
+            })
+        })
+
+
     },
 
    
@@ -114,10 +150,6 @@ module.exports = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
-
-            let userId = req.session.user.id;
-            let user = users.find(user => user.id === userId);
-
             const {
                 userName,
                 apellido,
@@ -128,26 +160,31 @@ module.exports = {
                 city
             } = req.body;
 
-            user.userName = userName;
-            user.apellido = apellido;
-            user.tel = tel;
-            user.address = address;
-            user.postal_code = postal_code;
-            user.province = province;
-            user.city = city;
-            user.avatar = req.file ? req.file.filename : user.avatar;
+            let userId = req.session.user.id;
 
-            writeJSON("usersDB.json", users);
-
-            delete user.pass;
-
-            req.session.user = user;
-
-            return res.redirect("/users/profile");
+            Address.create({
+                address,
+                postal_code,
+                province,
+                city,
+                user_id: userId
+            })
+            .then((address) => {
+                User.update({
+                    first_name: userName,
+                    last_name: apellido,
+                    //tel: tel,
+                    //address_id: address.id
+                    },{
+                    where: {
+                        id: userId
+                    },
+                })
+                .then(() => {
+                    return res.redirect("/users/profile");
+                })
+            })
         } else {
-            const userInSessionId = req.session.user.id;
-            const userInSession = users.find(user => user.id === userInSessionId);
-
             return res.render("users/editUser", {
                 user: userInSession,
                 session: req.session,
