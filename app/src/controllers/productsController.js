@@ -187,16 +187,19 @@ const controller = {
 		}
 	  },
 
-	// Delete - Delete one product from DB
-	destroy : (req, res) => {
-		let productId = Number(req.params.id);
+// Delete - Delete one product from DB
+destroy: async (req, res) => {
+    let productId = Number(req.params.id);
+    await db.Product.destroy({
+      where: {
+        id: productId,
+      },
+    });
 
-		let newProductsArray = products.filter(product => product.id !== productId);
+    res.redirect("/products");
 
-		writeJSON("productsDB.json", newProductsArray);
+    res.redirect("/products");
 
-		res.redirect('/products');
-	}
-};
+}}
 
 module.exports = controller;

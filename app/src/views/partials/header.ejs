@@ -25,7 +25,7 @@
                 <li> <a href="/"> <i class="fa-solid fa-paw"></i> Home <i class="fa-solid fa-paw"></i></a></li>
                 <li> <a href="/products"><i class="fa-solid fa-paw"></i> Productos <i class="fa-solid fa-paw"></i> </a></li>
                 <% if (typeof session.user != "undefined" ) { %>
-                    <% if (session.user.rol === "ADMIN") { %>
+                    <% if (session.user.rol_id === 1) { %>
                         <li> <a href="/admin"> <i class="fa-solid fa-paw"></i> Administrar <i class="fa-solid fa-paw"></i></a></li>
                     <% } else {%>
                         <li> <a href="/carrito"><i class="fa-solid fa-paw"></i> Carrito <i class="fa-solid fa-paw"></i></a></li>
@@ -55,7 +55,7 @@
                         <div class="menu-user">
                             <a href="/users/profile">Mis datos</a>
                             <a href="/users/logout">Cerrar sesión</a>
-                            <% if (session.user.rol === "ADMIN") { %>
+                            <% if (session.user.rol_id === 1) { %>
                                 <a href="/admin">ADMIN</a>
                             <% } %>
                         </div>
@@ -76,7 +76,7 @@
             
         <% if (typeof session.user != 'undefined') { %>
             
-            <% if (session.user.rol == "ADMIN") { %>
+            <% if (session.user.rol_id === 1) { %>
                 <li class="btn"><a href="/products/create">Vender</a></li>
                 <li class="btn"><a href="/admin/products-list">Lista de productos</a></li>
                 <li class="btn"><a href="/admin/admin-list">Lista de usuarios</a></li>
