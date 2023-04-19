@@ -27,7 +27,9 @@ const controller = {
   // Detail - Detail from one product
   detail: async (req, res) => {
     let productId = req.params.id;
-    let products = await db.Product.findAll()
+    let products = await db.Product.findAll({
+      include: [{ association: "images" }],
+    })
     let product = products.find((product) => product.id == productId);
     res.render("products/detail", {
       product,

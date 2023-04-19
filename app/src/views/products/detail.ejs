@@ -13,22 +13,24 @@
             <article class="showProduct">
               <div class="mainImage">
                 <img
-                  src="/image/products/<%- product.image[0] %>"
+                  src="/image/products/<%- product.images[0].image %>"
                   alt="Foto"
                   id="expandedImg"
                 />
               </div>
             </article>
             <div class="miniPics">
-              <% product.image.forEach(image => { %>
-              <div class="thumbnailImages">
-                <img
-                  src="/image/products/<%-image%>"
-                  alt="Imagen de producto"
-                  onclick="myFunction(this);"
-                />
-              </div>
-              <% }) %>
+              <% if (product.images.lengt > 0) { %>
+                <% product.images.forEach(image => { %>
+                  <div class="thumbnailImages">
+                    <img
+                      src="/image/products/<%-image%>"
+                      alt="Imagen de producto"
+                      onclick="myFunction(this);"
+                    />
+                  </div>
+                  <% }) %>
+              <% } %>
             </div>
             <div class="info-product">
                 <h2 class="title"><%- product.name %></h2>
@@ -38,7 +40,7 @@
                     <span id="final">$<%- product.price - (product.price * product.discount / 100) %></span>
                 <% } %>
                     <% if (typeof session.user != 'undefined') { %>
-                        <% if ( session.user.rol == "ADMIN") { %>
+                        <% if ( session.user.rol == 1) { %>
                             <div class="btnAdmin">
                             <form action="/products/edit/<%- product.id %>">
                                 <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
