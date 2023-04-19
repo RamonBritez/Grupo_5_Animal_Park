@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsDB = path.join(__dirname, '../old_database/productsDB.json');
-
-const products = JSON.parse(fs.readFileSync(productsDB, 'utf-8'));
+const { Op } = require("sequelize")
+const {Product, Category, Sequelize} = require("../database/models")
+//const productsDB = path.join(__dirname, '../old_database/productsDB.json');
+//const products = JSON.parse(fs.readFileSync(productsDB, 'utf-8'));
 
 
 module.exports = {
@@ -14,37 +15,80 @@ module.exports = {
     
     index: (req, res) => {
         
-        let oferta = products.filter(product => product.discount > 0);
+       /* let oferta = products.filter(product => product.discount > 0);
         res.render("home", {
             products,
             oferta,
             session: req.session
+        })*/
+        Product.findAll({
+           include: [ {
+            association: "images"
+           }]
         })
+        .then(products =>
+            {
+                let oferta = products.filter(product => product.discount > 0);
+                
+                
+                res.render("home", {
+                    products,
+                    oferta,
+                    session: req.session
+                })
+            } )
+       .catch(error => console.log(error))
     },
 
     search: (req, res) => {
-		let { keywords } = req.query
+        let { keywords } = req.query
         let text = keywords.toLowerCase()
-        let listProduct = []
-       
-
-        products.forEach(product => {
-		let porNombre = product.name.toLowerCase()
-        let porPet = product.pet.toLowerCase()
-        let porCategory = product.category.toLowerCase()
-
-		if(porNombre.indexOf(text) !== -1 || porPet.indexOf(text) !== -1 || porCategory.indexOf(text) !== -1){
-		listProduct.push(product)
-		}
-
-		})
-
-
-		res.render(`products/results`, {
-			keywords,
-			listProduct,
-            session: req.session
-		})
+       /*
+       search: (req, res) => {
+        let busqueda = req.query.search.toLowerCase()
+        Auto.findAll({
+            where: {
+                [Op.or]: [
+                    { marca: {[Op.substring]: busqueda}},
+                    { modelo: {[Op.substring]: busqueda}},
+                    { color: {[Op.substring]: busqueda}}
+                ]
+            },
+        })
+        .then(autos => {
+            res.render('search',{
+                autos,
+                busqueda,
+            })
+        })
+        .catch(errors => console.log(errors))    }
+       */
+        Product.findAll({
+            include: [ {
+                association: "images"
+               }],
+           /* include: [
+                {
+                  association: "pet",
+                },
+            ],*/
+            where: {
+                [Op.or]: [
+                    { name: { [Op.like]: `%${text}%` } },
+                    { description: { [Op.like]: `%${text}%` } },
+                  //  { pet: { [Op.like]: `%${text}%` } }
+                ]
+            },
+          
+        })
+        .then(products =>{
+            res.render(`products/results`, {
+                keywords,
+                products,
+                session: req.session
+            })
+        })
+		
 	},
 	 admin: (req, res) => {
         res.render("users/admin")
