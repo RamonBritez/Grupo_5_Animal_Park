@@ -1,84 +1,94 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const productsDB = path.join(__dirname, '../old_database/productsDB.json');
+const productsDB = path.join(__dirname, "../old_database/productsDB.json");
+const db = require("../database/models");
 
-const products = JSON.parse(fs.readFileSync(productsDB, 'utf-8'));
-
+const products = JSON.parse(fs.readFileSync(productsDB, "utf-8"));
 
 module.exports = {
+  index: (req, res) => {
+    db.Product.findAll({
+      include: [
+        {
+          association: "images",
+        },
+      ],
+    }).then((products) => {
+      let oferta = products.filter((product) => product.discount > 0);
+      res.render("home", {
+        products,
+        oferta,
+        session: req.session,
+      });
+    });
+  },
 
+  search: (req, res) => {
+    let { keywords } = req.query;
+    let text = keywords.toLowerCase();
+    let listProduct = [];
 
+    products.forEach((product) => {
+      let porNombre = product.name.toLowerCase();
+      let porPet = product.pet.toLowerCase();
+      let porCategory = product.category.toLowerCase();
 
-    
-    
-    index: (req, res) => {
-        
-        let oferta = products.filter(product => product.discount > 0);
-        res.render("home", {
-            products,
-            oferta,
-            session: req.session
-        })
-    },
+      if (
+        porNombre.indexOf(text) !== -1 ||
+        porPet.indexOf(text) !== -1 ||
+        porCategory.indexOf(text) !== -1
+      ) {
+        listProduct.push(product);
+      }
+    });
 
-    search: (req, res) => {
-		let { keywords } = req.query
-        let text = keywords.toLowerCase()
-        let listProduct = []
-       
+    res.render(`products/results`, {
+      keywords,
+      listProduct,
+      session: req.session,
+    });
+  },
+  admin: (req, res) => {
+    res.render("users/admin");
+  },
+  error: (req, res) => {
+    res.render("error", {
+      session: req.session,
+    });
+  },
 
-        products.forEach(product => {
-		let porNombre = product.name.toLowerCase()
-        let porPet = product.pet.toLowerCase()
-        let porCategory = product.category.toLowerCase()
+  carrito: async (req, res) => {
+    let products = await db.Product().findAll({
+      include: [
+        {
+          association: "images",
+        },
+      ],
+    });
+    let oferta = products.filter((product) => product.discount > 0);
+    let carrito = [];
 
-		if(porNombre.indexOf(text) !== -1 || porPet.indexOf(text) !== -1 || porCategory.indexOf(text) !== -1){
-		listProduct.push(product)
-		}
-
-		})
-
-
-		res.render(`products/results`, {
-			keywords,
-			listProduct,
-            session: req.session
-		})
-	},
-	 admin: (req, res) => {
-        res.render("users/admin")
-    },
-    error: (req, res) => {
-        res.render("error",{
-        session: req.session
-    })
-    },
-
-    carrito: (req, res) => {
-        let oferta = products.filter(product => product.discount > 0);
-        let carrito = [ ]
-        
-        req.session.user.carrito.forEach(idproducto=>{
-            let productoEncontrado=products.find(producto=>{
-                return producto.id==idproducto
-            })
-            carrito.push(productoEncontrado)
-        })
-        res.render("products/carrito",{
-            session: req.session,
-               oferta,carrito
-      
-        })
-    }, 
-    comprar:(req,res)=>{
-    let productoGuardado=req.params.id;
-   req.session.user.carrito.push(Number(productoGuardado))
-   res.redirect("/carrito")
-},
-   /*  borrarProducto:(req,res)=>{
+    req.session.user.carrito.forEach((idproducto) => {
+      let productoEncontrado = products.find((producto) => {
+        return producto.id == idproducto;
+      });
+      carrito.push(productoEncontrado);
+    });
+    res.render("products/carrito", {
+      session: req.session,
+      oferta,
+      carrito,
+    });
+  },
+  comprar: (req, res) => {
+    let productoGuardado = req.params.id;
+    req.session.user.carrito.push(Number(productoGuardado));
+    res.redirect("/carrito");
+  },
+  /*  borrarProducto:(req,res)=>{
         let id=req.body.id;
         let borrar=producto.filter(producto=>{
          })
     } */
-}
+};
