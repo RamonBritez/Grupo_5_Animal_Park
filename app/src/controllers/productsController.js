@@ -125,7 +125,7 @@ const controller = {
   // Update - Method to update
   update: (req, res) => {
     const errors = validationResult(req);
-
+/*Cambio de prueba */
     if (req.fileValidatorError) {
       errors.errors.push({
         value: "",
