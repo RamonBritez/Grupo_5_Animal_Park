@@ -23,12 +23,12 @@ const controller = {
       session: req.session,
     });
   },
-
+ 
   // Detail - Detail from one product
-  detail: (req, res) => {
+  detail: async (req, res) => {
     let productId = req.params.id;
+    let products = await db.Product.findAll()
     let product = products.find((product) => product.id == productId);
-    v;
     res.render("products/detail", {
       product,
       products,
