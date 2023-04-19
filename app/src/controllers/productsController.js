@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require("express-validator");
 const { readJSON, writeJSON } = require("../old_database");
+const db = require('../database/models');
 
 const products = readJSON("productsDB.json");
 
@@ -36,15 +37,16 @@ const controller = {
 	},
 
 	// Create - Form to create
-	create: (req, res) => {
+	create: async (req, res) => {
+		let products = await db.Product.findAll()
 		res.render("products/products-create", {
-			products: readJSON("productsDB.json"),
+			products,
             session: req.session
 		})
 	},
 	
 	// Create -  Method to store
-	store: (req, res) => {
+	store: async (req, res) => {
 		const errors = validationResult(req);
 		
 		if(req.fileValidatorError){
@@ -56,28 +58,39 @@ const controller = {
 		  });
 		}
 
-		const files = req.files.map(file => file.filename)
+		
 
 		if (errors.isEmpty()) {
-		  const products = readJSON("productsDB.json");
+/* 		  const products = readJSON("productsDB.json"); */
 		  const { name, brand, price, category, pet,description, discount, weight } = req.body;
 		  
 		  const newProduct = {
-			id: products.length ? products[products.length - 1].id + 1 : 1,
 			name: name.trim(),
-			brand: brand,
+			description: description.trim(),
 			price: +price ,
 			discount: +discount,
-			category,
-			weight,
-			description: description.trim(),
-			pet,
-			image: files.length > 0 ? files : ['default.jpg']
+			weight: +weight,
+			category_id: +category,
+			pet_id: +pet,
+			active: 1,
+			brand_id: +brand,
+			/* image: files.length > 0 ? files : ['default.jpg'] */
 		  };
-	
-		  products.push(newProduct);
-	
-		  writeJSON("productsDB.json", products);
+
+		  const createdProduct = await db.Product.create(newProduct)
+
+		  const files = req.files.map(file => {
+			  return {
+				  image: file.filename,
+				  product_id: createdProduct.id
+				}
+			})
+			const imageList = files.length > 0 ? files : [{
+				image: 'default.jpg',
+				product_id: createdProduct.id
+			}]
+
+		  await db.ProductImage.bulkCreate(imageList)
 		  
 		  return res.redirect("/products");
 		} else {
