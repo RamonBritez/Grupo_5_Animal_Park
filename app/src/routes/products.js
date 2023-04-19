@@ -21,11 +21,11 @@ router.get('/detail/:id/', detail);
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id', isAdmin, edit); 
-router.put('/update/:id',  upload.uploadImageProduct.array('image'), isAdmin, productValidator, update); 
+//router.put('/update/:id',  upload.uploadImageProduct.array('image'), isAdmin, productValidator, update); 
 
 
 /*** DELETE ONE PRODUCT***/ 
-router.delete('/delete/:id', isAdmin, destroy); 
+//router.delete('/delete/:id', isAdmin, destroy); 
 
 
 

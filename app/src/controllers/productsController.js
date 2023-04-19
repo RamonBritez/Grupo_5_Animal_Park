@@ -110,72 +110,9 @@ const controller = {
 	
 	
 	// Update - Method to update
-	update: (req, res) => {
-		const errors = validationResult(req);
-	
-		if(req.fileValidatorError){
-		  errors.errors.push({
-			value: "",
-			msg: req.fileValidatorError,
-			param: "image",
-			location: "file",
-		  });
-		}
-		const files = req.files.map(file => file.filename)
-	
-		if (errors.isEmpty()) {
-		  const { name, brand, price, category, pet ,description, discount, weight} = req.body;
-		  const products = readJSON("productsDB.json");
-	
-		  const productsModify = products.map((product) => {
-			if (product.id === +req.params.id) {
-			  let productModify = {
-				...product,
-				name: name.trim(),
-				brand,
-				price: +price,
-				discount: +discount,
-				category,
-				pet,
-				weight,
-				description: description.trim(),
-				image: files.length > 0 ? files : [product.image],
-			  };
-	
-			  if (req.file) {
-				fs.existsSync(`./public/image/products/${product.image}`) &&
-				  fs.unlinkSync(`./public/image/products/${product.image}`);
-			  }
-	
-			  return productModify;
-			}
-			return product;
-		  });
-	
-		  writeJSON("productsDB.json", productsModify);
-	
-		  return res.redirect("/products");
-		} else {
-		  const products = readJSON("productsDB.json");
-	
-		  const product = products.find((product) => product.id === +req.params.id);
-	
-		  if (req.file) {
-			fs.existsSync(`./public/image/products/${req.file.filename}`) &&
-			  fs.unlinkSync(`./public/image/products/${req.file.filename}`);
-		  }
-	
-		  return res.render("products/product-edit-form", {
-			...product,
-			errors: errors.mapped(),
-			old: req.body,
-			session: req.session
-		  });
-		}
-	  },
 
 	// Delete - Delete one product from DB
-	destroy : (req, res) => {
+/* 	destroy: (req, res) => {
 		let productId = Number(req.params.id);
 
 		let newProductsArray = products.filter(product => product.id !== productId);
@@ -183,7 +120,7 @@ const controller = {
 		writeJSON("productsDB.json", newProductsArray);
 
 		res.redirect('/products');
-	}
+	} */
 };
 
 module.exports = controller;
