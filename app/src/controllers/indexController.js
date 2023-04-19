@@ -1,10 +1,5 @@
-const fs = require("fs");
-const path = require("path");
-
-const productsDB = path.join(__dirname, "../old_database/productsDB.json");
 const db = require("../database/models");
 
-const products = JSON.parse(fs.readFileSync(productsDB, "utf-8"));
 
 module.exports = {
   index: (req, res) => {
@@ -27,27 +22,31 @@ module.exports = {
   search: (req, res) => {
     let { keywords } = req.query;
     let text = keywords.toLowerCase();
-    let listProduct = [];
+    db.Product.findAll({
+        include: [ {
+            association: "images"
+           }],
+       /* include: [
+            {
+              association: "pet",
+            },
+        ],*/
+        where: {
+            [Op.or]: [
+                { name: { [Op.like]: `%${text}%` } },
+                { description: { [Op.like]: `%${text}%` } },
+              //  { pet: { [Op.like]: `%${text}%` } }
+            ]
+        },
 
-    products.forEach((product) => {
-      let porNombre = product.name.toLowerCase();
-      let porPet = product.pet.toLowerCase();
-      let porCategory = product.category.toLowerCase();
-
-      if (
-        porNombre.indexOf(text) !== -1 ||
-        porPet.indexOf(text) !== -1 ||
-        porCategory.indexOf(text) !== -1
-      ) {
-        listProduct.push(product);
-      }
-    });
-
-    res.render(`products/results`, {
-      keywords,
-      listProduct,
-      session: req.session,
-    });
+    })
+    .then(products =>{
+        res.render(`products/results`, {
+            keywords,
+            products,
+            session: req.session
+        })
+    })
   },
   admin: (req, res) => {
     res.render("users/admin");
@@ -86,9 +85,5 @@ module.exports = {
     req.session.user.carrito.push(Number(productoGuardado));
     res.redirect("/carrito");
   },
-  /*  borrarProducto:(req,res)=>{
-        let id=req.body.id;
-        let borrar=producto.filter(producto=>{
-         })
-    } */
+
 };
