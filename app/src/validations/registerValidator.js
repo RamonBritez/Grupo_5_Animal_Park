@@ -1,7 +1,5 @@
 const { check, body } = require("express-validator");
-const { readJSON} = require("../old_database");
 
-let users = readJSON("usersDB.json");
 
 module.exports = [
     check("userName")
@@ -19,10 +17,20 @@ module.exports = [
     .withMessage("Email inválido"),
 
     body("email")
-    .custom((value) => {
-        let user = users.find(user => user.email === value);
-
-        return user === undefined;
+    .custom( (value, { req }) => {
+        return User.findOne({
+            where: {
+                email: req.body.email,
+            }
+        })
+        .then((user) => {
+           
+            if(user.email === value) {
+              return user === undefined;
+            }
+        
+        })
+        .catch(() => Promise.reject("Email ya registrado"))
     })
     .withMessage("Email ya registrado"),
 
