@@ -19,6 +19,10 @@
 -- Table structure for table `adresses`
 --
 
+CREATE DATABASE IF NOT EXISTS animalpark_db;
+
+USE animalpark_db;
+
 DROP TABLE IF EXISTS `adresses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
