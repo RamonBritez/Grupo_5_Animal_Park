@@ -14,7 +14,7 @@
 
             <% carrito.forEach(producto => { %>
                 <article class="producto">
-              <img src="/image/products/<%-producto.image%>" alt="plato para perro" />
+              <img src="/image/products/<%-producto.images[0].image%>" alt="plato para perro" />
               <div class="datos">
                 <a href="#"><h3><%- producto.name %></h3></a>
               <div class="precio-descuento"> <p class="precio">$<%-producto.price %></p>

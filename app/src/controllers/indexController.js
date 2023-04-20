@@ -11,6 +11,7 @@ module.exports = {
       ],
     }).then((products) => {
       let oferta = products.filter((product) => product.discount > 0);
+
       res.render("home", {
         products,
         oferta,
@@ -23,30 +24,35 @@ module.exports = {
     let { keywords } = req.query;
     let text = keywords.toLowerCase();
     db.Product.findAll({
-        include: [ {
-            association: "images"
-           }],
-       /* include: [
-            {
-              association: "pet",
-            },
-        ],*/
-        where: {
-            [Op.or]: [
-                { name: { [Op.like]: `%${text}%` } },
-                { description: { [Op.like]: `%${text}%` } },
-              //  { pet: { [Op.like]: `%${text}%` } }
-            ]
+      include: [
+        {
+          association: "images",
         },
-
-    })
-    .then(products =>{
-        res.render(`products/results`, {
-            keywords,
-            products,
-            session: req.session
-        })
-    })
+        {
+          association: "pet",
+        },
+        {
+          association: "category",
+        },
+      ],
+      /* include: [
+            
+        ],*/
+      where: {
+        [Op.or]: [
+          { name: { [Op.like]: `%${text}%` } },
+          { description: { [Op.like]: `%${text}%` } },
+          { "$pet.pet$": { [Op.like]: `%${text}%` } },
+          { "$category.name$": { [Op.like]: `%${text}%` } },
+        ],
+      },
+    }).then((products) => {
+      res.render(`products/results`, {
+        keywords,
+        products,
+        session: req.session,
+      });
+    });
   },
   admin: (req, res) => {
     res.render("users/admin");
@@ -85,5 +91,4 @@ module.exports = {
     req.session.user.carrito.push(Number(productoGuardado));
     res.redirect("/carrito");
   },
-
 };

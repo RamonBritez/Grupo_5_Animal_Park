@@ -28,9 +28,9 @@
               <td class="data-admin"><%= name.slice(0,9) %></td>
               <td class="data-admin"><%= price %></td>
               <td class="data-admin"><%= discount %></td>
-              <td class="data-admin"><%= category.slice(0,3) %></td>
-              <td class="data-admin"><%= pet.slice(0,5) %></td>
-              <td class="data-admin"><%= brand.slice(0,5)%></td>
+              <td class="data-admin"><%= category.name %></td>
+              <td class="data-admin"><%= pet.pet %></td>
+              <td class="data-admin"><%= brand.brand%></td>
 
               <td>
                 <div class="btn-list">
@@ -59,9 +59,9 @@
                   <label>Nombre: <%- name %></label>
                   <label>Precio: $<%- price %></label>
                   <label>Descuento: <%- discount%>%</label>
-                  <label>Categoria: <%- category%></label>
-                  <label>Mascota: <%- pet%></label>
-                  <label>Marca: <%- brand%></label>
+                  <label>Categoria: <%- category.name %></label>
+                  <label>Mascota: <%- pet.pet%></label>
+                  <label>Marca: <%- brand.brand%></label>
                   <p
                     class="btn"
                     onclick="document.getElementById('product-<%- id%>').classList.remove('activeModal')"

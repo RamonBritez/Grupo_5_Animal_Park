@@ -13,22 +13,24 @@
             <article class="showProduct">
               <div class="mainImage">
                 <img
-                  src="/image/products/<%- product.image[0] %>"
+                  src="/image/products/<%- product.images[0].image %>"
                   alt="Foto"
                   id="expandedImg"
                 />
               </div>
             </article>
             <div class="miniPics">
-              <% product.image.forEach(image => { %>
-              <div class="thumbnailImages">
-                <img
-                  src="/image/products/<%-image%>"
-                  alt="Imagen de producto"
-                  onclick="myFunction(this);"
-                />
-              </div>
-              <% }) %>
+              <% if (product.images.length > 0) { %>
+                <% product.images.forEach(image => { %>
+                  <div class="thumbnailImages">
+                    <img
+                      src="/image/products/<%-image.image %>"
+                      alt="Imagen de producto"
+                      onclick="myFunction(this);"
+                    />
+                  </div>
+                  <% }) %>
+              <% } %>
             </div>
             <div class="info-product">
                 <h2 class="title"><%- product.name %></h2>
@@ -38,7 +40,7 @@
                     <span id="final">$<%- product.price - (product.price * product.discount / 100) %></span>
                 <% } %>
                     <% if (typeof session.user != 'undefined') { %>
-                        <% if ( session.user.rol == "ADMIN") { %>
+                        <% if ( session.user.rol == 1) { %>
                             <div class="btnAdmin">
                             <form action="/products/edit/<%- product.id %>">
                                 <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
@@ -55,9 +57,9 @@
                             <label>Nombre: <%= product.name %></label>
                             <label>Precio: $<%= product.price %></label>
                             <label>Descuento: <%= product.discount%>%</label>
-                            <label>Categoria: <%= product.category%></label>
-                            <label>Mascota: <%= product.pet%></label>
-                            <label>Marca: <%= product.brand%></label>
+                            <label>Categoria: <%= product.category.name %></label>
+                            <label>Mascota: <%= product.pet.pet %></label>
+                            <label>Marca: <%= product.brand.brand %></label>
                             <button class="btn"
                               onclick="document.getElementById('delete').classList.remove('activeModal')"
                             >CANCELAR</button>
@@ -132,7 +134,7 @@
         <h5>Descripción</h5>
         <h6><%- product.description %></h6>
         <h5>Marca</h5>
-        <h6><%- product.brand %></h6>
+        <h6><%- product.brand.brand %></h6>
         <h5>Peso</h5>
         <h6><%- product.weight %></h6>
       </section>

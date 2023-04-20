@@ -8,6 +8,7 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const { isAdmin } = require("./middlewares/userCheck");
 const cookieCheck = require("./middlewares/cookieCheck"); //Reqiero el cookieCheck
+const db = require("./database/models");
 
 /* Template engine config */
 app.set("view engine", "ejs");
@@ -21,9 +22,9 @@ app.use(
     resave: false,
     saveUninitialized: true,
   })
-  );
+);
 app.use(cookieParser());
-app.use(cookieCheck);// Uso el cookieCheck
+app.use(cookieCheck); // Uso el cookieCheck
 
 /* Routers */
 const indexRouter = require("./routes");
@@ -37,17 +38,11 @@ app.use("/products", products);
 app.use("/admin", isAdmin, admin);
 app.use("/users", userRouter);
 
-/* let db = require("./database/models")
-
-app.get("/pruebaModel", (req, res) => {
-  db.Product.findAll().then(products => res.json(products))
-}) */
-
-app.use((req,res,next) => {
+app.use((req, res, next) => {
   res.status(404).render("error", {
-    session: req.session
-})
-})
+    session: req.session,
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`

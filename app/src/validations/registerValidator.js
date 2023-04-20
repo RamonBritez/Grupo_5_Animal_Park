@@ -1,5 +1,5 @@
 const { check, body } = require("express-validator");
-
+const { User } = require("../database/models");
 
 module.exports = [
     check("userName")
@@ -20,17 +20,13 @@ module.exports = [
     .custom( (value, { req }) => {
         return User.findOne({
             where: {
-                email: req.body.email,
+                email: value
             }
         })
-        .then((user) => {
-           
-            if(user.email === value) {
-              return user === undefined;
-            }
-        
+        .then(user => {
+            if(user) return Promise.reject("Email ya registrado")
         })
-        .catch(() => Promise.reject("Email ya registrado"))
+        .catch(error => console.log(error))
     })
     .withMessage("Email ya registrado"),
 

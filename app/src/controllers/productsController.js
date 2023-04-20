@@ -1,11 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
-const { readJSON, writeJSON } = require("../old_database");
 const db = require("../database/models/index");
 const { Op } = require("sequelize");
-
-const products = readJSON("productsDB.json");
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -23,12 +20,21 @@ const controller = {
       session: req.session,
     });
   },
- 
+
   // Detail - Detail from one product
   detail: async (req, res) => {
     let productId = req.params.id;
-    let products = await db.Product.findAll()
-    let product = products.find((product) => product.id == productId);
+    let products = await db.Product.findAll({
+      include: [{ association: "images" }],
+    });
+    let product = await db.Product.findByPk(productId, {
+      include: [
+        { association: "images" },
+        { association: "category" },
+        { association: "brand" },
+        { association: "pet" },
+      ],
+    });
     res.render("products/detail", {
       product,
       products,
@@ -36,17 +42,18 @@ const controller = {
       session: req.session,
     });
   },
-//a
+
   // Create - Form to create
-  create: (req, res) => {
+  create: async (req, res) => {
+    let products = await db.Product.findAll();
     res.render("products/products-create", {
-      products: readJSON("productsDB.json"),
+      products,
       session: req.session,
     });
   },
 
   // Create -  Method to store
-  store: (req, res) => {
+  store: async (req, res) => {
     const errors = validationResult(req);
 
     if (req.fileValidatorError) {
@@ -58,10 +65,8 @@ const controller = {
       });
     }
 
-    const files = req.files.map((file) => file.filename);
-
     if (errors.isEmpty()) {
-      const products = readJSON("productsDB.json");
+      /* 		  const products = readJSON("productsDB.json"); */
       const {
         name,
         brand,
@@ -74,21 +79,37 @@ const controller = {
       } = req.body;
 
       const newProduct = {
-        id: products.length ? products[products.length - 1].id + 1 : 1,
         name: name.trim(),
-        brand: brand,
+        description: description.trim(),
         price: +price,
         discount: +discount,
-        category,
-        weight,
-        description: description.trim(),
-        pet,
-        image: files.length > 0 ? files : ["default.jpg"],
+        weight: +weight,
+        category_id: +category,
+        pet_id: +pet,
+        active: 1,
+        brand_id: +brand,
+        /* image: files.length > 0 ? files : ['default.jpg'] */
       };
 
-      products.push(newProduct);
+      const createdProduct = await db.Product.create(newProduct);
 
-      writeJSON("productsDB.json", products);
+      const files = req.files.map((file) => {
+        return {
+          image: file.filename,
+          product_id: createdProduct.id,
+        };
+      });
+      const imageList =
+        files.length > 0
+          ? files
+          : [
+              {
+                image: "default.jpg",
+                product_id: createdProduct.id,
+              },
+            ];
+
+      await db.ProductImage.bulkCreate(imageList);
 
       return res.redirect("/products");
     } else {
@@ -107,22 +128,23 @@ const controller = {
   },
 
   // Update - Form to edit
-  edit: (req, res) => {
-    products: readJSON("productsDB.json");
-    let productId = Number(req.params.id);
+  edit: async (req, res) => {
+    let idProduct = Number(req.params.id);
 
-    let productToEdit = products.find((product) => product.id === productId);
+    let product = await db.Product.findByPk(idProduct, {
+      include: { all: true },
+    });
 
     res.render("products/product-edit-form", {
-      ...productToEdit,
+      idProduct,
+      product,
       session: req.session,
     });
   },
 
   // Update - Method to update
-  update: (req, res) => {
+  update: async (req, res) => {
     const errors = validationResult(req);
-
     if (req.fileValidatorError) {
       errors.errors.push({
         value: "",
@@ -132,52 +154,40 @@ const controller = {
       });
     }
     const files = req.files.map((file) => file.filename);
-
+    let idProduct = req.params.id;
     if (errors.isEmpty()) {
-      const {
+      let {
         name,
-        brand,
-        price,
-        category,
-        pet,
         description,
+        price,
         discount,
         weight,
+        category_id,
+        pet_id,
+        brand_id,
       } = req.body;
-      const products = readJSON("productsDB.json");
 
-      const productsModify = products.map((product) => {
-        if (product.id === +req.params.id) {
-          let productModify = {
-            ...product,
-            name: name.trim(),
-            brand,
-            price: +price,
-            discount: +discount,
-            category,
-            pet,
-            weight,
-            description: description.trim(),
-            image: files.length > 0 ? files : [product.image],
-          };
-
-          if (req.file) {
-            fs.existsSync(`./public/image/products/${product.image}`) &&
-              fs.unlinkSync(`./public/image/products/${product.image}`);
-          }
-
-          return productModify;
+      await db.Product.update(
+        {
+          name,
+          description,
+          price,
+          discount,
+          weight,
+          category_id,
+          pet_id,
+          brand_id,
+          active: 1,
+        },
+        {
+          where: {
+            id: idProduct,
+          },
         }
-        return product;
-      });
-
-      writeJSON("productsDB.json", productsModify);
-
+      );
       return res.redirect("/products");
     } else {
-      const products = readJSON("productsDB.json");
-
-      const product = products.find((product) => product.id === +req.params.id);
+      const product = db.Product.findByPk(idProduct);
 
       if (req.file) {
         fs.existsSync(`./public/image/products/${req.file.filename}`) &&

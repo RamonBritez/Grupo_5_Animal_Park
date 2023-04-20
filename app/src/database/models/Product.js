@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.DECIMAL(4, 1).UNSIGNED,
       defaultValue: 0.0,
     },
-    subcategory_id: {
+    category_id: {
       type: dataTypes.INTEGER(11).UNSIGNED,
     },
     pet_id: {
@@ -62,9 +62,9 @@ module.exports = (sequelize, dataTypes) => {
       as: "pet",
       foreignKey: "pet_id",
     });
-    Product.belongsTo(models.Subcategory, {
-        as: "subcategory",
-        foreignKey: "subcategory_id",
+    Product.belongsTo(models.Category, {
+        as: "category",
+        foreignKey: "category_id",
       });
     Product.belongsTo(models.Brand, {
         as: "brand",
