@@ -1,6 +1,4 @@
 const { validationResult } = require("express-validator");
-const fs = require('fs');
-const { readJSON, writeJSON } = require("../old_database");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
 let {User, Address} = require("../database/models");
@@ -8,7 +6,7 @@ const { where } = require("sequelize");
 const { error } = require("console");
 
 
-let users = readJSON("usersDB.json")
+
 module.exports = {
     login: (req, res) => {
         res.render("users/login", { session: req.session })

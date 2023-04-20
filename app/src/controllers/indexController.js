@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const {Op} = require ("sequelize");
 
 
 module.exports = {
@@ -11,6 +12,7 @@ module.exports = {
       ],
     }).then((products) => {
       let oferta = products.filter((product) => product.discount > 0);
+     
       res.render("home", {
         products,
         oferta,
