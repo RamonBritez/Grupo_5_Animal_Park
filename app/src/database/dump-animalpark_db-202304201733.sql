@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
 -- Host: localhost    Database: animalpark_db
 -- ------------------------------------------------------
@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -19,13 +19,9 @@
 -- Table structure for table `adresses`
 --
 
-CREATE DATABASE IF NOT EXISTS animalpark_db;
-
-USE animalpark_db;
-
 DROP TABLE IF EXISTS `adresses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `adresses` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `address` varchar(100) DEFAULT NULL,
@@ -56,7 +52,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `brands`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `brands` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `brand` varchar(100) NOT NULL,
@@ -80,7 +76,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cart` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` int(11) unsigned NOT NULL,
@@ -109,7 +105,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -133,7 +129,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned NOT NULL,
@@ -164,7 +160,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pets` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `pet` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -188,7 +184,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_images`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product_images` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `image` varchar(100) NOT NULL,
@@ -196,7 +192,7 @@ CREATE TABLE `product_images` (
   PRIMARY KEY (`id`),
   KEY `product_images_FK` (`product_id`),
   CONSTRAINT `product_images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -205,6 +201,7 @@ CREATE TABLE `product_images` (
 
 LOCK TABLES `product_images` WRITE;
 /*!40000 ALTER TABLE `product_images` DISABLE KEYS */;
+INSERT INTO `product_images` VALUES (6,'1676164813110_products_.png',1),(7,'1676165016569_products_.png',2),(8,'1676165325047_products_.png',3),(9,'1676165377177_products_.png',4),(10,'1676165429489_products_.png',5),(11,'1676166281180_products_.PNG',6),(12,'1676166390464_products_.png',7),(13,'1676166482766_products_.png',8),(14,'1676166605412_products_.png',9),(15,'1676166732128_products_.webp',10),(16,'1676166988307_products_.jpg',11),(17,'1676168189895_products_.webp',12),(18,'1676239983247_products_.jfif',13),(19,'1676923640818_products_.png',14),(20,'1676933887692_products_.png',15),(21,'1677013187826_products_.jpg',16),(22,'1676934665503_products_.png',17),(23,'1676934573105_products_.webp',18),(24,'default.jpg',19),(25,'1678135385598_products_.jpg',20),(26,'1678300734493_products_.jpg',21),(27,'1678300734517_products_.jpg',21),(28,'1678300734550_products_.jpg',21),(29,'default.jpg',22),(30,'default.jpg',23),(31,'default.jpg',24),(32,'default.jpg',25),(33,'default.jpg',26),(34,'default.jpg',27),(35,'default.jpg',28);
 /*!40000 ALTER TABLE `product_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,7 +211,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -235,7 +232,7 @@ CREATE TABLE `products` (
   CONSTRAINT `products_FK` FOREIGN KEY (`pet_id`) REFERENCES `pets` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `products_FK_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `products_FK_2` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,6 +241,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'la prueba','No se, estaba probando las validaciones y el tema de mantener la session',100.00,10,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(2,'Nutrique Gato Adulto Castrado','Control de peso',4105.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(3,'Nutrique Gato Adulto Urinary Care','Urinary Care',3689.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(4,'Nutrique Gato Bebé','Gato bebé y gato cachorro',11398.00,25,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(5,'Nutrique Gato Kitten','Kitten cachorro',782.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(6,'Ropa Para Perros','Buzo Vestido Ambar ',1500.00,10,0.0,2,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(7,'Nutrique Cachorro','Raza Mediana',1394.00,5,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(8,'Nutrique Perro Adulto','Raza pequeña y mini',7420.00,0,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(9,'Alfalfa en cubos','Ricos en vitaminas para todo tipo de roedores',700.00,5,0.0,1,3,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(10,'Shulet Tortugin','Alimento completo para tortugas acuáticas y complemento para terrestres',350.00,0,0.0,1,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(11,'Hectopar','Pulguicida para gatos mas de 4kg',500.00,0,0.0,5,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(12,'Shulet Tropical','Alimento completo balanceado para peces tropicales',870.00,0,0.0,1,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(13,'Zoomarlo','Mazorca de maíz premium',1400.00,0,0.0,1,3,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(14,'Sieger','Sieger katze gato urinario',3800.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(15,'Complete','Perro adulto +7 años',9600.00,0,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(16,'Alimento','Alimento para Perros Voraz Carne 21 kilos.',5200.00,10,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(17,'Bonacqua','Azul de mitelino 50ml',1300.00,0,0.0,5,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(18,'Alimento Whiskas','para gato adulto sabor pescado',5040.00,15,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(19,'Zoomarlo','asdasdaDFDASFawsdfds',1234.00,0,0.0,2,2,1,2,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(20,'Disfraz de Gallina','Decora a tu tortuga con este maravilloso atuendo',1500.00,0,0.0,4,5,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(21,'test multiple','Varias imagenes de prueba para test',8500.00,99,0.0,4,5,1,4,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(22,'asdasdas','dxcsdfsafdgdfsdf',333.00,30,0.0,3,6,1,5,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(23,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(24,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(25,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(26,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(27,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(28,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,7 +251,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rol` varchar(20) NOT NULL,
@@ -272,12 +270,38 @@ INSERT INTO `roles` VALUES (0,'User'),(1,'Admin');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `subcategory`
+--
+
+DROP TABLE IF EXISTS `subcategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `subcategory` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `categories_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `subcategory_FK` (`categories_id`),
+  CONSTRAINT `subcategory_FK` FOREIGN KEY (`categories_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `subcategory`
+--
+
+LOCK TABLES `subcategory` WRITE;
+/*!40000 ALTER TABLE `subcategory` DISABLE KEYS */;
+/*!40000 ALTER TABLE `subcategory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `first_name` varchar(20) NOT NULL,
@@ -318,4 +342,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-20 17:02:36
+-- Dump completed on 2023-04-20 17:33:06

@@ -2,12 +2,12 @@
    {
       "id": 1,
       "name": "la prueba",
-      "brand": "Voraz",
+      "brand": 1,
       "price": 100,
       "discount": 10,
-      "category": "alimentos",
+      "category": 1,
       "description": "No se, estaba probando las validaciones y el tema de mantener la session",
-      "pet": "gatos",
+      "pet": 2,
       "weight": "10",
       "image": [
          "1676164813110_products_.png"
@@ -16,12 +16,12 @@
    {
       "id": 2,
       "name": "Nutrique Gato Adulto Castrado",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "4105",
       "discount": "0",
-      "category": "alimentos",
+      "category": 1,
       "description": "Control de peso",
-      "pet": "gatos",
+      "pet": 2,
       "weight": "2kg",
       "image": [
          "1676165016569_products_.png"
@@ -30,12 +30,12 @@
    {
       "id": 4,
       "name": "Nutrique Gato Adulto Urinary Care",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "3689",
       "discount": "0",
-      "category": "alimentos",
+      "category": 1,
       "description": "Urinary Care",
-      "pet": "gatos",
+      "pet": 2,
       "weight": "2kg",
       "image": [
          "1676165325047_products_.png"
@@ -44,12 +44,12 @@
    {
       "id": 5,
       "name": "Nutrique Gato Bebé",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "11398",
       "discount": "25",
-      "category": "alimentos",
+      "category": 1,
       "description": "Gato bebé y gato cachorro",
-      "pet": "gatos",
+      "pet": 2,
       "weight": "7,5kg",
       "image": [
          "1676165377177_products_.png"
@@ -58,12 +58,12 @@
    {
       "id": 6,
       "name": "Nutrique Gato Kitten",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "782",
       "discount": "0",
-      "category": "alimentos",
+      "category": 1,
       "description": "Kitten cachorro",
-      "pet": "gatos",
+      "pet": 2,
       "weight": "350gr",
       "image": [
          "1676165429489_products_.png"
@@ -72,12 +72,12 @@
    {
       "id": 7,
       "name": "Ropa Para Perros",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "1500",
       "discount": "10",
-      "category": "accesorios",
+      "category": 2,
       "description": "Buzo Vestido Ambar ",
-      "pet": "perros",
+      "pet": 1,
       "weight": "",
       "image": [
          "1676166281180_products_.PNG"
@@ -86,12 +86,12 @@
    {
       "id": 8,
       "name": "Nutrique Cachorro",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "1394",
       "discount": "5",
-      "category": "alimentos",
+      "category": 1,
       "description": "Raza Mediana",
-      "pet": "perros",
+      "pet": 1,
       "weight": "1kg",
       "image": [
          "1676166390464_products_.png"
@@ -100,12 +100,12 @@
    {
       "id": 9,
       "name": "Nutrique Perro Adulto",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "7420",
       "discount": "0",
-      "category": "alimentos",
+      "category": 1,
       "description": "Raza pequeña y mini",
-      "pet": "perros",
+      "pet": 1,
       "weight": "7,5kg",
       "image": [
          "1676166482766_products_.png"
@@ -114,12 +114,12 @@
    {
       "id": 10,
       "name": "Alfalfa en cubos",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "700",
       "discount": "5",
-      "category": "alimentos",
+      "category": 1,
       "description": "Ricos en vitaminas para todo tipo de roedores",
-      "pet": "roedores",
+      "pet": 3,
       "weight": "100gr",
       "image": [
          "1676166605412_products_.png"
@@ -128,12 +128,12 @@
    {
       "id": 11,
       "name": "Shulet Tortugin",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "350",
       "discount": "0",
-      "category": "alimentos",
+      "category": 1,
       "description": "Alimento completo para tortugas acuáticas y complemento para terrestres",
-      "pet": "peces",
+      "pet": 4,
       "weight": "100gr",
       "image": [
          "1676166732128_products_.webp"
@@ -142,12 +142,12 @@
    {
       "id": 12,
       "name": "Hectopar",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "500",
       "discount": "0",
-      "category": "higiene/prevencion",
+      "category": 5,
       "description": "Pulguicida para gatos mas de 4kg",
-      "pet": "gatos",
+      "pet": 2,
       "weight": "100gr",
       "image": [
          "1676166988307_products_.jpg"
@@ -156,12 +156,12 @@
    {
       "id": 13,
       "name": "Shulet Tropical",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "870",
       "discount": "0",
-      "category": "alimentos",
+      "category": 1,
       "description": "Alimento completo balanceado para peces tropicales",
-      "pet": "peces",
+      "pet": 4,
       "weight": "100gr",
       "image": [
          "1676168189895_products_.webp"
@@ -170,12 +170,12 @@
    {
       "id": 14,
       "name": "Zoomarlo",
-      "brand": "Voraz",
+      "brand": 1,
       "price": "1400",
       "discount": "0",
-      "category": "alimentos",
+      "category": 1,
       "description": "Mazorca de maíz premium",
-      "pet": "roedores",
+      "pet": 3,
       "weight": "300gr",
       "image": [
          "1676239983247_products_.jfif"
@@ -184,13 +184,13 @@
    {
       "id": 15,
       "name": "Sieger",
-      "brand": "Voraz",
+      "brand": 1,
       "price": 3800,
       "discount": 0,
-      "category": "alimentos",
+      "category": 1,
       "weight": "7",
       "description": "Sieger katze gato urinario",
-      "pet": "gatos",
+      "pet": 2,
       "image": [
          "1676923640818_products_.png"
       ]
@@ -198,13 +198,13 @@
    {
       "id": 16,
       "name": "Complete",
-      "brand": "Voraz",
+      "brand": 1,
       "price": 9600,
       "discount": 0,
-      "category": "alimentos",
+      "category": 1,
       "weight": "20",
       "description": "Perro adulto +7 años",
-      "pet": "perros",
+      "pet": 1,
       "image": [
          "1676933887692_products_.png"
       ]
@@ -212,13 +212,13 @@
    {
       "id": 17,
       "name": "Alimento",
-      "brand": "Voraz",
+      "brand": 1,
       "price": 5200,
       "discount": 10,
-      "category": "alimentos",
+      "category": 1,
       "weight": "21",
       "description": "Alimento para Perros Voraz Carne 21 kilos.",
-      "pet": "perros",
+      "pet": 1,
       "image": [
          "1677013187826_products_.jpg"
       ]
@@ -226,13 +226,13 @@
    {
       "id": 18,
       "name": "Bonacqua",
-      "brand": "Voraz",
+      "brand": 1,
       "price": 1300,
       "discount": 0,
-      "category": "higiene/prevencion",
+      "category": 5,
       "weight": "50",
       "description": "Azul de mitelino 50ml",
-      "pet": "peces",
+      "pet": 4,
       "image": [
          "1676934665503_products_.png"
       ]
@@ -240,13 +240,13 @@
    {
       "id": 19,
       "name": "Alimento Whiskas",
-      "brand": "Voraz",
+      "brand": 1,
       "price": 5040,
       "discount": 15,
-      "category": "alimentos",
+      "category": 1,
       "weight": "10",
       "description": "para gato adulto sabor pescado",
-      "pet": "gatos",
+      "pet": 2,
       "image": [
          "1676934573105_products_.webp"
       ]
@@ -254,13 +254,13 @@
    {
       "id": 27,
       "name": "Zoomarlo",
-      "brand": "nada1",
+      "brand": 2,
       "price": 1234,
       "discount": 0,
-      "category": "accesorios",
+      "category": 2,
       "weight": "12",
       "description": "asdasdaDFDASFawsdfds",
-      "pet": "gatos",
+      "pet": 2,
       "image": [
          "default.jpg"
       ]
@@ -268,13 +268,13 @@
    {
       "id": 29,
       "name": "Disfraz de Gallina",
-      "brand": "manualidad",
+      "brand": 3,
       "price": 1500,
       "discount": 0,
-      "category": "vestimenta",
+      "category": 4,
       "weight": "10",
       "description": "Decora a tu tortuga con este maravilloso atuendo",
-      "pet": "reptiles",
+      "pet": 5,
       "image": [
          "1678135385598_products_.jpg"
       ]
@@ -282,13 +282,13 @@
    {
       "id": 31,
       "name": "test multiple",
-      "brand": "varias img",
+      "brand": 4,
       "price": 8500,
       "discount": 99,
-      "category": "vestimenta",
+      "category": 4,
       "weight": "12",
       "description": "Varias imagenes de prueba para test",
-      "pet": "reptiles",
+      "pet": 5,
       "image": [
          "1678300734493_products_.jpg",
          "1678300734517_products_.jpg",
@@ -298,13 +298,13 @@
    {
       "id": 33,
       "name": "asdasdas",
-      "brand": "dfsfsdf",
+      "brand": 5,
       "price": 333,
       "discount": 30,
-      "category": "juguetes",
+      "category": 3,
       "weight": "12",
       "description": "dxcsdfsafdgdfsdf",
-      "pet": "aves",
+      "pet": 6,
       "image": [
          "default.jpg"
       ]
@@ -312,13 +312,13 @@
    {
       "id": 34,
       "name": "ropa tortugas",
-      "brand": "manualidad",
+      "brand": 3,
       "price": 12334,
       "discount": 99,
-      "category": "vestimenta",
+      "category": 4,
       "weight": "10",
       "description": "dfsdfsdfsdf",
-      "pet": "gatos",
+      "pet": 2,
       "image": [
          "default.jpg"
       ]
@@ -326,13 +326,13 @@
    {
       "id": 35,
       "name": "ropa tortugas",
-      "brand": "manualidad",
+      "brand": 3,
       "price": 12334,
       "discount": 99,
-      "category": "vestimenta",
+      "category": 4,
       "weight": "10",
       "description": "dfsdfsdfsdf",
-      "pet": "gatos",
+      "pet": 2,
       "image": [
          "default.jpg"
       ]
@@ -340,13 +340,13 @@
    {
       "id": 36,
       "name": "ropa tortugas",
-      "brand": "manualidad",
+      "brand": 3,
       "price": 12334,
       "discount": 99,
-      "category": "vestimenta",
+      "category": 4,
       "weight": "10",
       "description": "dfsdfsdfsdf",
-      "pet": "gatos",
+      "pet": 2,
       "image": [
          "default.jpg"
       ]
@@ -354,13 +354,13 @@
    {
       "id": 38,
       "name": "ropa tortugas",
-      "brand": "manualidad",
+      "brand": 3,
       "price": 12334,
       "discount": 99,
-      "category": "vestimenta",
+      "category": 4,
       "weight": "10",
       "description": "dfsdfsdfsdf",
-      "pet": "gatos",
+      "pet": 2,
       "image": [
          "default.jpg"
       ]
@@ -368,13 +368,13 @@
    {
       "id": 39,
       "name": "ropa tortugas",
-      "brand": "manualidad",
+      "brand": 3,
       "price": 12334,
       "discount": 99,
-      "category": "vestimenta",
+      "category": 4,
       "weight": "10",
       "description": "dfsdfsdfsdf",
-      "pet": "gatos",
+      "pet": 2,
       "image": [
          "default.jpg"
       ]
@@ -382,13 +382,13 @@
    {
       "id": 40,
       "name": "ropa tortugas",
-      "brand": "manualidad",
+      "brand": 3,
       "price": 12334,
       "discount": 99,
-      "category": "vestimenta",
+      "category": 4,
       "weight": "10",
       "description": "dfsdfsdfsdf",
-      "pet": "gatos",
+      "pet": 2,
       "image": [
          "default.jpg"
       ]
