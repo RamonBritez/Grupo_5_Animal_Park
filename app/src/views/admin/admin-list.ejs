@@ -15,9 +15,9 @@
 
         <% users.forEach(user => { %>
         <tr class="fila-admin">
-          <td class="data-admin"><%- user.userName %></td>
+          <td class="data-admin"><%- user.first_name + " " + user.last_name %></td>
           <td class="data-admin"><%- user.email %></td>
-          <td class="data-admin"><%- user.rol %></td>
+          <td class="data-admin"><%- user.role.rol %></td>
           <td class="img-admin">
             <img src="/image/users/<%- user.avatar %>" alt="user" />
           </td>

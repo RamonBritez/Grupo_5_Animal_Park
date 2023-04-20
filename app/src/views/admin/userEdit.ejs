@@ -10,7 +10,7 @@
         <div class="register__container">
         
             <div class="register__container-formTitle">
-              <p class="title">EDITAR PERFIL DE <%= userName %></p>
+              <p class="title">EDITAR PERFIL DE <%= first_name %></p>
             </div>
             
             <form action="/admin/edit/<%= id %>?_method=put" class="register__container-form" method="post" enctype="multipart/form-data" novalidate>
@@ -25,7 +25,7 @@
 
               <div class="form-element">
                 <label for="userName">Nombre</label>
-                <input type="text" name="userName" id="userName" placeholder="Ej: Cosme" value="<%= userName %>"/>
+                <input type="text" name="userName" id="userName" placeholder="Ej: Cosme" value="<%= first_name %>"/>
                 <% if (locals.errors && errors.userName) { %>
                   <small class="text-error"><%= errors.userName.msg %> </small>
               <% } %>
@@ -33,7 +33,7 @@
               
               <div class="form-element">
                 <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" id="apellido" placeholder="Ej: Fulanito" value="<%= apellido %>"/>
+                <input type="text" name="apellido" id="apellido" placeholder="Ej: Fulanito" value="<%= last_name%>"/>
                 <% if (locals.errors && errors.apellido) { %>
                   <small class="text-error"><%= errors.apellido.msg %> </small>
               <% } %>

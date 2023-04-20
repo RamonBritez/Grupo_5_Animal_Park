@@ -12,7 +12,9 @@ module.exports = {
   },
   userEdit: async (req, res) => {
     let userId = Number(req.params.id);
-    let userToEdit = await db.User.findByPk(userId);
+    let userToEdit = await db.User.findByPk(userId, {
+      include: {all: true}
+    });
     res.render("admin/userEdit", {
       ...userToEdit,
       session: req.session,
@@ -79,7 +81,7 @@ module.exports = {
   },
 
   listAdmin: async (req, res) => {
-    let users = await db.User.findAll();
+    let users = await db.User.findAll({include: {all: true}});
     res.render("admin/admin-list", {
       session: req.session,
       users,
