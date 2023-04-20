@@ -1,11 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
-const { readJSON, writeJSON } = require("../old_database");
 const db = require("../database/models/index");
 const { Op } = require("sequelize");
-
-const products = readJSON("productsDB.json");
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 

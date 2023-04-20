@@ -1,6 +1,3 @@
-const { readJSON } = require("../old_database");
-let users = readJSON("usersDB.json")
-
 module.exports = (req, res, next) =>{
     if(req.cookies.userAnimalPark){
         req.session.user = req.cookies.userAnimalPark;
