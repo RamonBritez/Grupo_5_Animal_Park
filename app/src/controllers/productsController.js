@@ -132,13 +132,14 @@ const controller = {
 
   // Update - Form to edit
   edit: async (req, res) => {
-    let productId = Number(req.params.id);
+    let idProduct = Number(req.params.id);
 
-    let product = await db.Product.findByPk(productId, {
+    let product = await db.Product.findByPk(idProduct, {
       include: { all: true },
     });
 
     res.render("products/product-edit-form", {
+      idProduct,
       product,
       session: req.session,
     });
@@ -156,52 +157,40 @@ const controller = {
       });
     }
     const files = req.files.map((file) => file.filename);
-
+    let idProduct = req.params.id;
     if (errors.isEmpty()) {
-      const {
+      let {
         name,
-        brand,
-        price,
-        category,
-        pet,
         description,
+        price,
         discount,
         weight,
+        category_id,
+        pet_id,
+        brand_id,
       } = req.body;
-      const products = readJSON("productsDB.json");
 
-      const productsModify = products.map((product) => {
-        if (product.id === +req.params.id) {
-          let productModify = {
-            ...product,
-            name: name.trim(),
-            brand,
-            price: +price,
-            discount: +discount,
-            category,
-            pet,
-            weight,
-            description: description.trim(),
-            image: files.length > 0 ? files : [product.image],
-          };
-
-          if (req.file) {
-            fs.existsSync(`./public/image/products/${product.image}`) &&
-              fs.unlinkSync(`./public/image/products/${product.image}`);
-          }
-
-          return productModify;
+      await db.Product.update(
+        {
+          name,
+          description,
+          price,
+          discount,
+          weight,
+          category_id,
+          pet_id,
+          brand_id,
+          active: 1,
+        },
+        {
+          where: {
+            id: idProduct,
+          },
         }
-        return product;
-      });
-
-      writeJSON("productsDB.json", productsModify);
-
+      );
       return res.redirect("/products");
     } else {
-      const products = readJSON("productsDB.json");
-
-      const product = products.find((product) => product.id === +req.params.id);
+      const product = db.Product.findByPk(idProduct);
 
       if (req.file) {
         fs.existsSync(`./public/image/products/${req.file.filename}`) &&
