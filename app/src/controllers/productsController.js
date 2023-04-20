@@ -23,14 +23,21 @@ const controller = {
       session: req.session,
     });
   },
- 
+
   // Detail - Detail from one product
   detail: async (req, res) => {
     let productId = req.params.id;
     let products = await db.Product.findAll({
       include: [{ association: "images" }],
-    })
-    let product = products.find((product) => product.id == productId);
+    });
+    let product = await db.Product.findByPk(productId, {
+      include: [
+        { association: "images" },
+        { association: "category" },
+        { association: "brand" },
+        { association: "pet" },
+      ],
+    });
     res.render("products/detail", {
       product,
       products,
@@ -39,93 +46,106 @@ const controller = {
     });
   },
 
-	// Create - Form to create
-	create: async (req, res) => {
-		let products = await db.Product.findAll()
-		res.render("products/products-create", {
-			products,
-            session: req.session
-		})
-	},
-	
-	// Create -  Method to store
-	store: async (req, res) => {
-		const errors = validationResult(req);
-		
-		if(req.fileValidatorError){
-		  errors.errors.push({
-			value: "",
-			msg: req.fileValidatorError,
-			param: "image",
-			location: "file",
-		  });
-		}
+  // Create - Form to create
+  create: async (req, res) => {
+    let products = await db.Product.findAll();
+    res.render("products/products-create", {
+      products,
+      session: req.session,
+    });
+  },
 
-		
+  // Create -  Method to store
+  store: async (req, res) => {
+    const errors = validationResult(req);
 
-		if (errors.isEmpty()) {
-/* 		  const products = readJSON("productsDB.json"); */
-		  const { name, brand, price, category, pet,description, discount, weight } = req.body;
-		  
-		  const newProduct = {
-			name: name.trim(),
-			description: description.trim(),
-			price: +price ,
-			discount: +discount,
-			weight: +weight,
-			category_id: +category,
-			pet_id: +pet,
-			active: 1,
-			brand_id: +brand,
-			/* image: files.length > 0 ? files : ['default.jpg'] */
-		  };
+    if (req.fileValidatorError) {
+      errors.errors.push({
+        value: "",
+        msg: req.fileValidatorError,
+        param: "image",
+        location: "file",
+      });
+    }
 
-		  const createdProduct = await db.Product.create(newProduct)
+    if (errors.isEmpty()) {
+      /* 		  const products = readJSON("productsDB.json"); */
+      const {
+        name,
+        brand,
+        price,
+        category,
+        pet,
+        description,
+        discount,
+        weight,
+      } = req.body;
 
-		  const files = req.files.map(file => {
-			  return {
-				  image: file.filename,
-				  product_id: createdProduct.id
-				}
-			})
-			const imageList = files.length > 0 ? files : [{
-				image: 'default.jpg',
-				product_id: createdProduct.id
-			}]
+      const newProduct = {
+        name: name.trim(),
+        description: description.trim(),
+        price: +price,
+        discount: +discount,
+        weight: +weight,
+        category_id: +category,
+        pet_id: +pet,
+        active: 1,
+        brand_id: +brand,
+        /* image: files.length > 0 ? files : ['default.jpg'] */
+      };
 
-		  await db.ProductImage.bulkCreate(imageList)
-		  
-		  return res.redirect("/products");
-		} else {
-		  if (req.file) {
-			fs.existsSync(`./public/image/products/${req.file.filename}`) &&
-			  fs.unlinkSync(`./public/image/products/${req.file.filename}`);
-		  }
-	
-		  return res.render("products/products-create", {
-			errors: errors.mapped(),
-			old: req.body,
-			products,
-			session: req.session
-		  });
-		}
-	  },
+      const createdProduct = await db.Product.create(newProduct);
+
+      const files = req.files.map((file) => {
+        return {
+          image: file.filename,
+          product_id: createdProduct.id,
+        };
+      });
+      const imageList =
+        files.length > 0
+          ? files
+          : [
+              {
+                image: "default.jpg",
+                product_id: createdProduct.id,
+              },
+            ];
+
+      await db.ProductImage.bulkCreate(imageList);
+
+      return res.redirect("/products");
+    } else {
+      if (req.file) {
+        fs.existsSync(`./public/image/products/${req.file.filename}`) &&
+          fs.unlinkSync(`./public/image/products/${req.file.filename}`);
+      }
+
+      return res.render("products/products-create", {
+        errors: errors.mapped(),
+        old: req.body,
+        products,
+        session: req.session,
+      });
+    }
+  },
 
   // Update - Form to edit
-  edit: (req, res) => {
-    products: readJSON("productsDB.json");
+  edit: async (req, res) => {
     let productId = Number(req.params.id);
 
-    let productToEdit = products.find((product) => product.id === productId);
+    let product = await db.Product.findByPk(productId, {
+      include: { all: true },
+    });
 
     res.render("products/product-edit-form", {
-      ...productToEdit,
+      product,
       session: req.session,
     });
   },
 
   // Update - Method to update
-  update: (req, res) => {
+  update: async (req, res) => {
     const errors = validationResult(req);
     if (req.fileValidatorError) {
       errors.errors.push({
@@ -197,8 +217,8 @@ const controller = {
     }
   },
 
-// Delete - Delete one product from DB
-destroy: async (req, res) => {
+  // Delete - Delete one product from DB
+  destroy: async (req, res) => {
     let productId = Number(req.params.id);
     await db.Product.destroy({
       where: {

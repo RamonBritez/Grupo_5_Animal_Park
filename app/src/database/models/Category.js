@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
     }
 let config={
     timestamps:false,
-    tableName:"roles"
+    tableName:"category"
 }
 const Category = sequelize.define(alias, cols, config);
 Category.associate = (models) => {

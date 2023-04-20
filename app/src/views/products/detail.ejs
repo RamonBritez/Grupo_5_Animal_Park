@@ -20,11 +20,11 @@
               </div>
             </article>
             <div class="miniPics">
-              <% if (product.images.lengt > 0) { %>
+              <% if (product.images.length > 0) { %>
                 <% product.images.forEach(image => { %>
                   <div class="thumbnailImages">
                     <img
-                      src="/image/products/<%-image%>"
+                      src="/image/products/<%-image.image %>"
                       alt="Imagen de producto"
                       onclick="myFunction(this);"
                     />
@@ -57,9 +57,9 @@
                             <label>Nombre: <%= product.name %></label>
                             <label>Precio: $<%= product.price %></label>
                             <label>Descuento: <%= product.discount%>%</label>
-                            <label>Categoria: <%= product.category%></label>
-                            <label>Mascota: <%= product.pet%></label>
-                            <label>Marca: <%= product.brand%></label>
+                            <label>Categoria: <%= product.category.name %></label>
+                            <label>Mascota: <%= product.pet.pet %></label>
+                            <label>Marca: <%= product.brand.brand %></label>
                             <button class="btn"
                               onclick="document.getElementById('delete').classList.remove('activeModal')"
                             >CANCELAR</button>
@@ -134,7 +134,7 @@
         <h5>Descripción</h5>
         <h6><%- product.description %></h6>
         <h5>Marca</h5>
-        <h6><%- product.brand %></h6>
+        <h6><%- product.brand.brand %></h6>
         <h5>Peso</h5>
         <h6><%- product.weight %></h6>
       </section>

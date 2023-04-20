@@ -17,36 +17,36 @@
 			</div>
 			
 			<div class="login__menu-form">
-				<form action="/products/update/<%= id %>?_method=put" method="post" enctype="multipart/form-data">
+				<form action="/products/update/<%= product.id %>?_method=put" method="post" enctype="multipart/form-data">
 					<div class="form-container">
 						
 						
 						<div class="input">
 							<label for="name" class="form-label">Nombre del producto:</label>
-							<input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : name %>" class="form-input">
+							<input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : product.name %>" class="form-input">
 							<small class="text-error"><%= locals.errors && errors.name ? errors.name.msg : null%></small>
 						</div>
 						
 						<div class="input">
 							<label for="brand" class="form-label">Marca del producto:</label>
-							<input type="text" id="brand" name="brand" value="<%= locals.old && old.brand ? old.brand : brand %>" class="form-input">
+							<input type="text" id="brand" name="brand" value="<%= locals.old && old.brand ? old.brand : product.brand.brand %>" class="form-input">
 							<small class="text-error"><%= locals.errors && errors.brand ? errors.brand.msg : null%></small>
 						</div>
 						<div class="input">
 							<label for="price" class="form-label">Precio del producto:</label>
-							<input type="text" id="price" name="price" value="<%= price %>" class="form-input">
+							<input type="text" id="price" name="price" value="<%= product.price %>" class="form-input">
 							<small class="text-error"><%= locals.errors && errors.price ? errors.price.msg : null%></small>
 						</div>
 						
 						<div class="input">
 							<label for="discount" class="form-label">Descuento:</label>
-							<input type="text" id="discount" name="discount" value="<%= discount %>" class="form-input">
+							<input type="text" id="discount" name="discount" value="<%= product.discount %>" class="form-input">
 							<small class="text-error"><%= locals.errors && errors.discount ? errors.discount.msg : null%></small>
 						</div>
 						
 						<div class="input">
 							<label for="weight" class="form-label">Peso:</label>
-							<input type="text" id="weight" name="weight" value="<%= weight %>" class="form-input">
+							<input type="text" id="weight" name="weight" value="<%= product.weight %>" class="form-input">
 							<small class="text-error"><%= locals.errors && errors.weight ? errors.weight.msg : null%></small>
 						</div>
 						
@@ -55,12 +55,12 @@
 							<label for="pet" class="form-label">Animal:</label>
 							<select name="pet" id="pet" class="form-input">
 								<option value="">Elegí</option>
-								<option value="gatos" <%- pet === "gatos" && "selected" %>>Gatos</option>
-								<option value="perros" <%- pet === "perros" && "selected" %>>Perros</option>
-								<option value="peces" <%- pet === "peces" && "selected" %>>Peces</option>
-								<option value="aves" <%- pet === "aves" && "selected" %>>Aves</option>
-								<option value="reptiles" <%- pet === "reptiles" && "selected" %>>Reptiles</option>
-								<option value="roedores" <%- pet === "roedores" && "selected" %>>Roedores</option>
+								<option value="2" <%- product.pet_id === "gatos" && "selected" %>>Gatos</option>
+								<option value="1" <%- product.pet_id === "perros" && "selected" %>>Perros</option>
+								<option value="4" <%- product.pet_id === "peces" && "selected" %>>Peces</option>
+								<option value="6" <%- product.pet_id === "aves" && "selected" %>>Aves</option>
+								<option value="5" <%- product.pet_id === "reptiles" && "selected" %>>Reptiles</option>
+								<option value="3" <%- product.pet_id === "roedores" && "selected" %>>Roedores</option>
 							</select>
 						</div>
 							
@@ -69,12 +69,12 @@
 								<label for="category" class="form-label">Categoria:</label>
 								<select name="category" id="category" class="form-input">
 									<option value="">Elegí</option>
-									<option value="alimentos" <%- category === "alimentos" && "selected" %>>Alimentos</option>
-									<option value="accesorios" <%- category === "accesorios" && "selected" %>>Accesorios</option>
-									<option value="juguetes" <%- category === "juguetes" && "selected" %>>Juguetes</option>
-									<option value="vestimenta" <%- category === "vestimenta" && "selected" %>>Vestimenta</option>
-									<option value="higiene/prevencion" <%- category === "higiene/prevencion" && "selected" %>>Higiene/Prevencion</option>
-									<option value="camas/cuchas" <%- category === "camas/cuchas" && "selected" %>>Camas/Cuchas</option>
+									<option value="1" <%- product.category_id === "alimentos" && "selected" %>>Alimentos</option>
+									<option value="2" <%- product.category_id === "accesorios" && "selected" %>>Accesorios</option>
+									<option value="3" <%- product.category_id === "juguetes" && "selected" %>>Juguetes</option>
+									<option value="4" <%- product.category_id === "vestimenta" && "selected" %>>Vestimenta</option>
+									<option value="5" <%- product.category_id === "higiene/prevencion" && "selected" %>>Higiene/Prevencion</option>
+									<option value="6" <%- product.category_id === "camas/cuchas" && "selected" %>>Camas/Cuchas</option>
 							</select>
 						</div>
 						
@@ -86,7 +86,7 @@
 
 						<div class="description">
 							<label for="description" class="form-label">Descripción:</label>
-							<textarea name="description" id="description" class="form-input"><%= description %></textarea>
+							<textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
 							<small class="text-error"><%= locals.errors && errors.description? errors.description.msg : null%></small>
 						</div>
 						
