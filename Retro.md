@@ -86,3 +86,19 @@ Empezar a hacer:
 Hemos estado creando un E-commerce totalmente funcional y vamos mas alla de las tareas que nos dan. Mejorando el proyecto constanmente nos deberia hacer sentir orgullosos del buen trabajo que hacemos
 
 </div>
+<h1 align='center'> Sprint 6 </h1>
+<div align="center">
+
+empezar a hacer:
+ 
+ trabajar con ramas en git permitiendonos asi explorar el mundo de la programacion
+dejar de hacer:
+ 
+ hacer mas:
+ reuniones por meet donde podamos hablar mejor.
+testeo individuales donde podamos sugerir cambios y modificaciones a nuestro gran proyecto
+seguir haciendo:
+mantener nuestro flujo de trabajo comprometiendonos cada dia mas con el proyecto y con nuestras tareas
+hacer menos:
+confiarnos en nuestros tiempos ya que por un motivo u otro puede fallar perdjudicando asi al equipo.
+</div>
