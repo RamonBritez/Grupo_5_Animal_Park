@@ -20,6 +20,10 @@ module.exports = {
                 where: {
                     email: req.body.email
                 },
+                include: {
+                    all: true,
+                    nested: true
+                }
 
             })
             .then((user) =>{
@@ -29,6 +33,7 @@ module.exports = {
                     avatar: user.avatar,
                     rol: user.rol_id,
                     email: user.email,
+                    carrito: user.orders
                 }
     
                 let tiempoDecookies = new Date(Date.now() + 60000);
