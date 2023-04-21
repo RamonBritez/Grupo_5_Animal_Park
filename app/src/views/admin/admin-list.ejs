@@ -43,10 +43,10 @@
             >
               <label>Estas seguro de eliminar a este usuario?</label>
               <label>ID: <%- user.id%></label>
-              <label>Nombre: <%- user.userName%></label>
-              <label>Apellido: <%- user.apellido%></label>
+              <label>Nombre: <%- user.first_name%></label>
+              <label>Apellido: <%- user.last_name%></label>
               <label>Email: <%- user.email%></label>
-              <label>Rol: <%- user.rol%></label>
+              <label>Rol: <%- user.role.rol%></label>
               <p
                 class="btn"
                 onclick="document.getElementById('user-<%- user.id%>').classList.remove('activeModal')"

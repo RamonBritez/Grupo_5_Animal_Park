@@ -64,7 +64,7 @@ module.exports = {
   },
 
   carrito: async (req, res) => {
-    let products = await db.Product().findAll({
+    let products = await db.Product.findAll({
       include: [
         {
           association: "images",

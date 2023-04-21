@@ -16,7 +16,7 @@ module.exports = {
       include: {all: true}
     });
     res.render("admin/userEdit", {
-      ...userToEdit,
+      user: userToEdit,
       session: req.session,
     });
   },

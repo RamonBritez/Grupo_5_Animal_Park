@@ -130,6 +130,7 @@ const controller = {
   // Update - Form to edit
   edit: async (req, res) => {
     let idProduct = Number(req.params.id);
+    console.log(idProduct)
 
     let product = await db.Product.findByPk(idProduct, {
       include: { all: true },
@@ -155,6 +156,7 @@ const controller = {
     }
     const files = req.files.map((file) => file.filename);
     let idProduct = req.params.id;
+    console.log(idProduct)
     if (errors.isEmpty()) {
       let {
         name,
@@ -195,7 +197,8 @@ const controller = {
       }
 
       return res.render("products/product-edit-form", {
-        ...product,
+        product,
+        idProduct,
         errors: errors.mapped(),
         old: req.body,
         session: req.session,

@@ -3,7 +3,7 @@ const { check } = require("express-validator");
 module.exports = [
     check("brand")
         .notEmpty().withMessage("Indica la marca que buscas").bail()
-        .isNumeric().withMessage("No es un numero"),
+        .isInt().withMessage("No es un numero"),
 
     check("name")
         .notEmpty().withMessage("El nombre es obligatorio").bail()
