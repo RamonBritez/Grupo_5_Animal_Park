@@ -10,7 +10,7 @@ module.exports = {
         },
       ],
     }).then((products) => {
-      let oferta = products.filter((product) => product.discount > 0);
+      let oferta = products.filter((product) => product.discount >= 10);
 
       res.render("home", {
         products,

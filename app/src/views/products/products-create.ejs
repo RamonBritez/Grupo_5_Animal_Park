@@ -17,7 +17,7 @@
 			</div>
 			
 			<div class="login__menu-form">
-				<form action="/products" method="post" enctype="multipart/form-data" novalidate>
+				<form action="/admin/productCreate" method="post" enctype="multipart/form-data" novalidate>
 					<div class="form-container">
 						
 						
@@ -26,13 +26,30 @@
 							<input type="text" id="name" name="name" placeholder="Ej: Comida para gatos" class="form-input <%= locals.errors && errors.name ? 'is-invalid' : null%>"  value="<%= locals.old && locals.old.name ? locals.old.name : null %>">
 							<small class="text-error"><%= locals.errors && errors.name ? errors.name.msg : null%></small>
 						</div>
-
+						<!--
 						<div class="input">
 							<label for="brand" class="form-label">Marca del producto:</label>
 							<input type="number" id="brand" name="brand" placeholder="Ej: Pedigree" class="form-input <%= locals.errors && errors.brand ? 'is-invalid' : null%>"  value="<%= locals.old && locals.old.brand ? locals.old.brand : null %>">
 							<small class="text-error"><%= locals.errors && errors.brand ? errors.brand.msg : null%></small>
 						</div>
-						
+						-->
+						<div class="selectores">
+							<label for="brand" class="form-label">Marca:</label>
+							<select name="brand" id="brand" class="form-input">
+								<option selected hidden>Elegí</option>
+								<% brands.forEach(brand => { %>
+									<option 
+									value="<%- brand.id %>" 
+									<%- locals.old && old.brand == brand.id ?
+									 "selected" : brand.id == product.brand_id ?
+									  `selected` : ""  %>>
+									<%- brand.brand %>
+								</option>
+								<% }) %>
+							</select>
+							<small class="text-error"><%= locals.errors && errors.brand ? errors.brand.msg : null%></small>
+						</div>
+
 						<div class="input">
 							<label for="price" class="form-label">Precio del producto:</label>
 							<input type="number" id="price" name="price" placeholder="Ej: 5678" class="form-input" value="<%= locals.old && locals.old.price ? locals.old.price : null %>">
@@ -51,7 +68,7 @@
 							<small class="text-error"><%= locals.errors && errors.weight ? errors.weight.msg : null%></small>
 						</div>
 						
-						
+						<!--
 						<div class="selectores">
 							<label for="pet" class="form-label">Animal:</label>
 							<select name="pet" id="pet" class="form-input">
@@ -78,7 +95,40 @@
 									<option value="6"<%= (locals.old && old.category && old.category === 6) && 'selected'%>>Camas/Cuchas</option>
 							</select>
 						</div>
+					-->
+					<div class="selectores">
+						<label for="pet" class="form-label">Animal:</label>
+						<select name="pet" id="pet" class="form-input">
+							<option selected hidden>Elegí</option>
+							<% pets.forEach(pet => { %>
+								<option 
+								value="<%- pet.id %>" 
+								<%- locals.old && old.pet == pet.id ?
+								 "selected" : pet.id == product.pet_id ?
+								  `selected` : ""  %>>
+								<%- pet.pet %>
+							</option>
+							<% }) %>
+						</select>
+						<small class="text-error"><%= locals.errors && errors.pet ? errors.pet.msg : null%></small>
+					</div>
 						
+					<div class="selectores">
+							<label for="category" class="form-label">Categoria:</label>
+							<select name="category" id="category" class="form-input">
+								<option selected hidden>Elegí</option>
+								<% categories.forEach(category => { %>
+									<option 
+									value="<%- category.id %>" 
+									<%- locals.old && old.category == category.id ?
+									 "selected" : category.id == product.category_id ?
+									  `selected` : ""  %>>
+									<%- category.name %>
+								</option>
+								<% }) %>
+						</select>
+						<small class="text-error"><%= locals.errors && errors.category ? errors.category.msg : null%></small>
+					</div>
 						<div class="input-file">
 							<label for="image">Agregar imagen del producto</label>
 							<input type="file" id="image" name="image" multiple accept="image/*">

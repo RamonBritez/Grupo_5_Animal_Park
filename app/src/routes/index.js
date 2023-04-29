@@ -6,7 +6,7 @@ const {isLogged} = require("../middlewares/userCheck")
 router.get("/", controller.index); 
 
 
-router.get("/error", controller.error);
+//router.get("/error", controller.error);
 
 
 router.get("/carrito", isLogged, controller.carrito);

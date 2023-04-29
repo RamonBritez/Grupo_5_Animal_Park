@@ -20,7 +20,7 @@
               </div>
             </article>
             <div class="miniPics">
-              <% if (product.images.length > 0) { %>
+              <% if (product.images.length > 1) { %>
                 <% product.images.forEach(image => { %>
                   <div class="thumbnailImages">
                     <img
@@ -42,7 +42,7 @@
                     <% if (typeof session.user != 'undefined') { %>
                         <% if ( session.user.rol == 1) { %>
                             <div class="btnAdmin">
-                            <form action="/products/edit/<%- product.id %>">
+                            <form action="/admin/productEdit/<%- product.id %>">
                                 <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
                             </form>
                             
@@ -64,7 +64,7 @@
                               onclick="document.getElementById('delete').classList.remove('activeModal')"
                             >CANCELAR</button>
                             <form
-                            action="/products/delete/<%= product.id %>?_method=delete"
+                            action="/admin/productDelete/<%= product.id %>?_method=delete"
                             method="post"
                             align="center"
                           
