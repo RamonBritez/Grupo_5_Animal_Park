@@ -35,19 +35,24 @@ Si sos amante de los animalitos como nosotros, unite a nuestra comunidad y segui
 <h2 align='center'>Integrantes del equipo</h2>
 
 **Jonatan Ballestero - Estudiante FullStack** - 
-jonatan.a.ballestero@gmail.com
+jonatan.a.ballestero@gmail.com *-*
+https://www.linkedin.com/in/jonballes/
 
 **Ramon Britez - Estudiante FullStack**
-rbritez966@gmail.com
+rbritez966@gmail.com *-*
+https://www.linkedin.com/in/ramon-britez-sanabria-08020323a/
 
 **Nico Filippelli - Estudiante FullStack**
-nicolasfilippelli22@gmail.com
+nicolasfilippelli22@gmail.com *-*
+https://www.linkedin.com/in/nicolas-filippelli/
 
 **Rocio Vazquez - Estudiante FullStack**
-Rosbelg15@gmail.com
+Rosbelg15@gmail.com *-*
+https://www.linkedin.com/in/rocío-vázquez/
 
 **Celeste Gonzalez - Estudiante FullStack**
-milenniacode@gmail.com
+milenniacode@gmail.com *-*
+https://www.linkedin.com/in/mar%C3%ADa-celeste-gonz%C3%A1lez-87585b265/
 
 
 <h2 align='center'>TABLERO DE TRABAJO</h2>
