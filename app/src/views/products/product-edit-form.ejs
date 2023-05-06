@@ -17,7 +17,7 @@
 			</div>
 			
 			<div class="login__menu-form">
-				<form action="/products/update/<%= idProduct %>?_method=put" method="post" enctype="multipart/form-data">
+				<form method="post" action="/admin/productUpdate/<%= product.id %>?_method=put" enctype="multipart/form-data">
 					<div class="form-container">
 						
 						
@@ -27,14 +27,26 @@
 							<small class="text-error"><%= locals.errors && errors.name ? errors.name.msg : null%></small>
 						</div>
 						
-						<div class="input">
-							<label for="brand" class="form-label">Marca del producto:</label>
-							<input type="text" id="brand" name="brand" value="<%= locals.old && old.brand ? old.brand : product.brand.brand %>" class="form-input">
+						<div class="selectores">
+							<label for="brand" class="form-label">Animal:</label>
+							<select name="brand" id="brand" class="form-input">
+								<option selected hidden>Elegí</option>
+								<% brands.forEach(brand => { %>
+									<option 
+									value="<%- brand.id %>" 
+									<%- locals.old && old.brand == brand.id ?
+									 "selected" : brand.id == product.brand_id ?
+									  `selected` : ""  %>>
+									<%- brand.brand %>
+								</option>
+								<% }) %>
+							</select>
 							<small class="text-error"><%= locals.errors && errors.brand ? errors.brand.msg : null%></small>
 						</div>
+						
 						<div class="input">
 							<label for="price" class="form-label">Precio del producto:</label>
-							<input type="text" id="price" name="price" value="<%= product.price %>" class="form-input">
+							<input type="number" id="price" name="price" value="<%= product.price %>" class="form-input">
 							<small class="text-error"><%= locals.errors && errors.price ? errors.price.msg : null%></small>
 						</div>
 						
@@ -50,32 +62,38 @@
 							<small class="text-error"><%= locals.errors && errors.weight ? errors.weight.msg : null%></small>
 						</div>
 						
-						
 						<div class="selectores">
 							<label for="pet" class="form-label">Animal:</label>
 							<select name="pet" id="pet" class="form-input">
-								<option value="">Elegí</option>
-								<option value="2" <%- product.pet_id === "gatos" && "selected" %>>Gatos</option>
-								<option value="1" <%- product.pet_id === "perros" && "selected" %>>Perros</option>
-								<option value="4" <%- product.pet_id === "peces" && "selected" %>>Peces</option>
-								<option value="6" <%- product.pet_id === "aves" && "selected" %>>Aves</option>
-								<option value="5" <%- product.pet_id === "reptiles" && "selected" %>>Reptiles</option>
-								<option value="3" <%- product.pet_id === "roedores" && "selected" %>>Roedores</option>
+								<option selected hidden>Elegí</option>
+								<% pets.forEach(pet => { %>
+									<option 
+									value="<%- pet.id %>" 
+									<%- locals.old && old.pet == pet.id ?
+									 "selected" : pet.id == product.pet_id ?
+									  `selected` : ""  %>>
+									<%- pet.pet %>
+								</option>
+								<% }) %>
 							</select>
+							<small class="text-error"><%= locals.errors && errors.pet ? errors.pet.msg : null%></small>
 						</div>
 							
-							
-							<div class="selectores">
+						<div class="selectores">
 								<label for="category" class="form-label">Categoria:</label>
 								<select name="category" id="category" class="form-input">
-									<option value="">Elegí</option>
-									<option value="1" <%- product.category_id === "alimentos" && "selected" %>>Alimentos</option>
-									<option value="2" <%- product.category_id === "accesorios" && "selected" %>>Accesorios</option>
-									<option value="3" <%- product.category_id === "juguetes" && "selected" %>>Juguetes</option>
-									<option value="4" <%- product.category_id === "vestimenta" && "selected" %>>Vestimenta</option>
-									<option value="5" <%- product.category_id === "higiene/prevencion" && "selected" %>>Higiene/Prevencion</option>
-									<option value="6" <%- product.category_id === "camas/cuchas" && "selected" %>>Camas/Cuchas</option>
+									<option selected hidden>Elegí</option>
+									<% categories.forEach(category => { %>
+									    <option 
+                            			value="<%- category.id %>" 
+                            			<%- locals.old && old.category == category.id ?
+                             			"selected" : category.id == product.category_id ?
+                              			`selected` : ""  %>>
+                            			<%- category.name %>
+                        			</option>
+									<% }) %>
 							</select>
+							<small class="text-error"><%= locals.errors && errors.category ? errors.category.msg : null%></small>
 						</div>
 						
 						<div class="input-file">

@@ -10,12 +10,12 @@
         <div class="register__container">
         
             <div class="register__container-formTitle">
-              <p class="title">EDITAR PERFIL DE <%= first_name %></p>
+              <p class="title">EDITAR PERFIL DE <%= user.first_name %></p>
             </div>
             
-            <form action="/admin/edit/<%= id %>?_method=put" class="register__container-form" method="post" enctype="multipart/form-data" novalidate>
+            <form action="/admin/edit/<%= user.id %>?_method=put" class="register__container-form" method="post" enctype="multipart/form-data" novalidate>
               <div class="avatar">
-                <img src="/image/users/<%= avatar %>" alt="avatar">
+                <img src="/image/users/<%= user.avatar %>" alt="avatar">
               </div>
                
                 <div class="input-file">
@@ -25,7 +25,7 @@
 
               <div class="form-element">
                 <label for="userName">Nombre</label>
-                <input type="text" name="userName" id="userName" placeholder="Ej: Cosme" value="<%= first_name %>"/>
+                <input type="text" name="userName" id="userName" placeholder="Ej: Cosme" value="<%= user.first_name %>"/>
                 <% if (locals.errors && errors.userName) { %>
                   <small class="text-error"><%= errors.userName.msg %> </small>
               <% } %>
@@ -33,7 +33,7 @@
               
               <div class="form-element">
                 <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" id="apellido" placeholder="Ej: Fulanito" value="<%= last_name%>"/>
+                <input type="text" name="apellido" id="apellido" placeholder="Ej: Fulanito" value="<%= user.last_name%>"/>
                 <% if (locals.errors && errors.apellido) { %>
                   <small class="text-error"><%= errors.apellido.msg %> </small>
               <% } %>
@@ -76,7 +76,7 @@
             </div>
             <div class="form-element">
                 <label for="rol">Rol</label>
-                <input type="text" name="rol" id="rol" value="<%= rol %>"/>
+                <input type="text" name="rol" id="rol" value="<%= user.role.rol %>"/>
               </div>
               <button type="submit" class="form-submit">Guardar cambios</button>
             

@@ -4,15 +4,6 @@ const { User } = require("../database/models");
 
 
 module.exports = [
-    check("email")
-    .notEmpty()
-    .withMessage("El email es obligatorio").bail()
-    .isEmail()
-    .withMessage("Email inválido"),
-
-    check('password')
-    .notEmpty()
-    .withMessage('Debes escribir tu contraseña'),
 
     body("password")
     .custom((value, { req }) => {
