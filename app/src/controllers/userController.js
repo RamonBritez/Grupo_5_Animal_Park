@@ -183,11 +183,38 @@ module.exports = {
                 })
             
         } else {
-            return res.render("users/editUser", {
-                user: userInSession,
-                session: req.session,
-                errors: errors.mapped(),
+            let userId = req.session.user.id;
+        
+            User.findOne({
+                where: {
+                    id: userId
+                },
+                include: [{
+                    association: 'address',
+                }]
+            })
+            .then((user) => {
+                return res.render("users/editUser", {
+                    user,
+                    address: user.Address,
+                    session: req.session,
+                    errors: errors.mapped(),
+                })
             })
         }
-    }
+    },
+
+    destroyUser: (req, res) => {
+        let userInSessionId = req.session.user.id
+        req.session.destroy();
+        if (req.cookies.userAnimalpark){
+          res.cookie('AnimalPark','',{maxAge:-1});
+        }
+        User.destroy({
+          where:{
+            id : userInSessionId
+          }
+        })
+        return res.redirect('/') 
+      },
 }

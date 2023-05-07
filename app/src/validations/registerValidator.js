@@ -2,17 +2,33 @@ const { check, body } = require("express-validator");
 const { User } = require("../database/models");
 
 module.exports = [
-    check("userName")
-    .notEmpty()
-    .withMessage("El nombre es obligatorio")
-    .isAlpha()
-    .withMessage("Ingrese solamente caracteres alfabeticos"),
+    body("userName")
+        .notEmpty().withMessage('El nombre es obligatorio')
+        .custom((value, { req }) => {
+            if (value !== "") {
+                let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
+                if (!regExAlpha.test(value)) {
+                    return false
+                }
+                return true
+            }
+            return true
+        })
+        .withMessage("Ingrese solamente caracteres alfabeticos"),
 
-    check("apellido")
-    .notEmpty()
-    .withMessage("El apellido es obligatorio")
-    .isAlpha()
-    .withMessage("Ingrese solamente caracteres alfabeticos"),
+    body("apellido")
+        .notEmpty().withMessage('El apellido es obligatorio')
+        .custom((value, { req }) => {
+            if (value !== "") {
+                let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
+                if (!regExAlpha.test(value)) {
+                    return false
+                }
+                return true
+            }
+            return true
+        })
+        .withMessage("Ingrese solamente caracteres alfabeticos"),
 
     check("email")
     .notEmpty()

@@ -26,7 +26,10 @@
                 <p class="userProfile_item">Provincia: <%= address ? address.province : "------" %></p>
             </div>
             <a href="/users/profile/edit" class="btn">EDITAR DATOS</a>
-            <a href="#" class="btn">BORRAR USUARIO</a>
+            
+            <form class="btnEvil" action="/users/profile/delete/?_method=DELETE" method="POST">
+                <button type="submit">Eliminar perfil</button>
+            </form>  
         </div> 
     </main>
 <%- include('../partials/footer')%>

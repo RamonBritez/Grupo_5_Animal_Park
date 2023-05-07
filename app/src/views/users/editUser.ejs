@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <%- include("../partials/head")  %> 
+    <script src="/js/editUser.js"></script>
 <body>
     <%- include("../partials/header")  %> 
     <main class="userEdit">
@@ -13,73 +14,66 @@
               <p class="title">EDITAR PERFIL</p>
             </div>
             
-            <form action="/users/profile/edit?_method=put" class="register__container-form" method="post" enctype="multipart/form-data" novalidate>
+            <form action="/users/profile/edit?_method=put" class="register__container-form" id="formEdit" method="post" enctype="multipart/form-data" novalidate>
                
               <div class="form-element">
                 <label for="userName">Nombre</label>
                 <input type="text" name="userName" id="userName" value="<%= user.first_name %>"/>
-                <% if (locals.errors && errors.userName) { %>
-                  <small class="text-error"><%= errors.userName.msg %> </small>
-              <% } %>
+                  <span class="text-error" id="userNameErrors"><%= (locals.errors && errors.userName) ? errors.userName.msg : '' %> </span>
+
               </div>
               
               <div class="form-element">
                 <label for="apellido">Apellido</label>
                 <input type="text" name="apellido" id="apellido" placeholder="Ej: Fulanito" value="<%= user.last_name %>"/>
-                <% if (locals.errors && errors.apellido) { %>
-                  <small class="text-error"><%= errors.apellido.msg %> </small>
-              <% } %>
+                  <span class="text-error" id="apellidoErrors"><%= (locals.errors && errors.apellido) ? errors.apellido.msg : '' %> </span>
               </div>
               
               <div class="form-element">
                 <label for="email">Tu email</label>
                 <input type="email" name="email" id="email" placeholder="Ej: cosme@email.com" readonly value="<%= user.email %>"/>
-                <% if (locals.errors && errors.email) { %>
-                  <small class="text-error"><%= errors.email.msg %> </small>
-              <% } %>
+                  <span class="text-error" id="emailErrors"><%= (locals.errors && errors.email) ? errors.email.msg : '' %> </span>
+
               </div>
             
               <div class="form-element">
                 <label for="tel">Tel</label>
                 <input type="tel" name="tel" id="tel" value="<%= user.tel %>"/>
-                <% if (locals.errors && errors.tel) { %>
-                  <small class="text-error"><%= errors.tel.msg %> </small>
-              <% } %>
+                  <span class="text-error" id="telErrors"><%= (locals.errors && errors.tel) ? errors.tel.msg : '' %> </span>
+
               </div>
               <div class="form-element">
                 <label for="address">Direccion</label>
-                <input type="text" name="address" id="address" placeholder="Ej: Pendorcho 357" value="<%= address ? address.address : '' %>"/>
-                <% if (locals.errors && errors.address) { %>
-                  <small class="text-error"><%= errors.address.msg %> </small>
-              <% } %>
+                <input type="text" name="address" id="" placeholder="Ej: Pendorcho 357" value="<%= address ? address.address : '' %>"/>
+                  <span class="text-error" id=""><%= (locals.errors && errors.address) ? errors.address.msg : '' %> </span>
+
               </div>
               <div class="form-element">
                 <label for="postal_code">Codigo postal</label>
-                <input type="text" name="postal_code" id="postal_code" placeholder="Ej: Fulanito" value="<%= address ? address.postal_code : '' %>"/>
-                <% if (locals.errors && errors.postal_code) { %>
-                  <small class="text-error"><%= errors.postal_code.msg %> </small>
-              <% } %>
+                <input type="text" name="postal_code" id="" placeholder="Ej: Fulanito" value="<%= address ? address.postal_code : '' %>"/>
+                  <span class="text-error" id=""><%= (locals.errors && errors.addressPostal_code) ? errors.postal_code.msg : '' %> </span>
+
               <div class="form-element">
                 <label for="city">Ciudad</label>
                 <input type="text" name="city" id="city" placeholder="Ej: Fondo de Bikini" value="<%= address ? address.city : '' %>"/>
-                <% if (locals.errors && errors.city) { %>
-                  <small class="text-error"><%= errors.city.msg %> </small>
-              <% } %>
+                  <span class="text-error" id="cityErrors"><%= (locals.errors && errors.city) ? errors.city.msg : '' %> </span>
+
               </div>
             </div>
             <div class="form-element">
               <label for="province">Provincia</label>
               <input type="text" name="province" id="province" placeholder="Ej: 1555" value="<%= address ? address.province : '' %>"/>
-              <% if (locals.errors && errors.province) { %>
-                <small class="text-error"><%= errors.province.msg %> </small>
-            <% } %>
+                <span class="text-error" id="provinceErrors"><%= (locals.errors && errors.province) ? errors.province.msg : '' %> </span>
+
             </div>
             <div class="input-file">
               <label for="avatar" >Cambiar Avatar</label>
               <input type="file" id="avatar" name="avatar" accept="image/*">
-          </div>
-              <button type="submit" class="form-submit">Guardar cambios</button>
+            </div>
+            <span class="text-error" id="avatarErrors"><%= (locals.errors && errors.avatar) ? errors.avatar.msg : '' %> </span>
             
+              <button type="submit" class="form-submit">Guardar cambios</button>
+              <span class="text-error" id="submitErrors"></span>
             </form>
 
 

@@ -46,8 +46,7 @@ a {
   box-shadow: 0 0 10px var(--amarillo);
   background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
   border: var(--verdePrueba1) 3px solid;
-  color: var(--verdePrueba1);
-  
+  color: var(--verdePrueba1);  
 }
 
 
