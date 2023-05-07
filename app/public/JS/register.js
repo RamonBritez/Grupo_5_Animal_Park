@@ -152,7 +152,6 @@ let $inputUserName = qs('#userName'),
         if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
             $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
             $file.value = '';
-            $imgPreview.innerHTML = '';
             return false;
         }
     })
