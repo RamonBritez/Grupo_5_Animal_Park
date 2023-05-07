@@ -8,6 +8,15 @@ const storage = multer.diskStorage({
     filename: (req, file, callback) => {
         callback(null, `${Date.now()}_avatar_${path.extname(file.originalname)}`)
     }
-});
+})
 
-module.exports = multer({storage});
+const fileFilter = function(req, file,callback) {
+    if(!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)){
+        req.fileValidationError = "Sólo imágenes (.jpg, .jpeg, .png, .gif)";
+        return callback(null,false,req.fileValidationError);
+    }
+    callback(null,true);
+}
+
+
+module.exports = multer({storage, fileFilter});

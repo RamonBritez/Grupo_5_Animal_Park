@@ -12,3 +12,4 @@ router.get('/detail/:id/', detail);
 
 
 module.exports = router;
+

@@ -4,11 +4,15 @@ const { User } = require("../database/models");
 module.exports = [
     check("userName")
     .notEmpty()
-    .withMessage("El nombre es obligatorio"),
+    .withMessage("El nombre es obligatorio")
+    .isAlpha()
+    .withMessage("Ingrese solamente caracteres alfabeticos"),
 
     check("apellido")
     .notEmpty()
-    .withMessage("El apellido es obligatorio"),
+    .withMessage("El apellido es obligatorio")
+    .isAlpha()
+    .withMessage("Ingrese solamente caracteres alfabeticos"),
 
     check("email")
     .notEmpty()
@@ -30,19 +34,21 @@ module.exports = [
     })
     .withMessage("Email ya registrado"),
 
-    check('password')
-    .notEmpty()
-    .withMessage('Debes escribir tu contraseña').bail()
+    check('password').notEmpty().withMessage('La contraseña es obligatoria').bail()
     .isLength({
         min: 6,
+        max: 12,
     })
-    .withMessage('La contraseña debe tener como mínimo 6'),
+    .withMessage('Debe ingresar una contraseña de 6 a 12 caracteres'),
 
     body('repeatPassword')
+    .notEmpty()
+    .withMessage('Debes reingresar la contraseña').bail()
     .custom((value, {req}) => value !== req.body.password ? false : true)
     .withMessage('Las contraseñas no coinciden'),
 
-    check('terms')
+    check('checkTerms')
     .isString('on')
-    .withMessage('Debes aceptar los términos y condiciones')
+    .withMessage('Debes aceptar los términos y condiciones'),
+
 ]
