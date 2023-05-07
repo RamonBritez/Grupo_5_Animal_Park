@@ -26,7 +26,32 @@
                 <p class="userProfile_item">Provincia: <%= address ? address.province : "------" %></p>
             </div>
             <a href="/users/profile/edit" class="btn">EDITAR DATOS</a>
-            <a href="#" class="btn">BORRAR USUARIO</a>
+            <button
+            class="btn"
+            onclick="document.getElementById('user-<%- user.id%>').classList.add('activeModal')"
+          >
+            ELIMINAR CUENTA
+          </button>
+          <div class="adminModal" id="user-<%- user.id%>">
+            <form
+              action="/user/profile/delete/<%- user.id %>?_method=delete"
+              method="post"
+              class="admin-deleteModal"
+            >
+              <label>Estas seguro de eliminar a este usuario?</label>
+              <label>Nombre: <%- user.first_name%></label>
+              <label>Apellido: <%- user.last_name%></label>
+              <label>Email: <%- user.email%></label>
+              <p
+                align="center"
+                class="btn"
+                onclick="document.getElementById('user-<%- user.id%>').classList.remove('activeModal')"
+              >
+                CANCELAR
+              </p>
+              <button class="btn" type="submit">ELIMINAR</button>
+            </form>
+          </div>
         </div> 
     </main>
 <%- include('../partials/footer')%>
