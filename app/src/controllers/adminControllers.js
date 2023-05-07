@@ -94,7 +94,7 @@ module.exports = {
       },
     });
 
-    res.redirect("/");
+    res.redirect("/admin/admin-list");
   },
 //Edicion de productos
   create: async (req, res) => {
