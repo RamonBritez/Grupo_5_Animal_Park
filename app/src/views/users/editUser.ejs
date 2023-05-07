@@ -40,7 +40,6 @@
                 <label for="tel">Tel</label>
                 <input type="tel" name="tel" id="tel" value="<%= user.tel %>"/>
                   <span class="text-error" id="telErrors"><%= (locals.errors && errors.tel) ? errors.tel.msg : '' %> </span>
-
               </div>
               <div class="form-element">
                 <label for="address">Direccion</label>
@@ -71,9 +70,9 @@
               <input type="file" id="avatar" name="avatar" accept="image/*">
             </div>
             <span class="text-error" id="avatarErrors"><%= (locals.errors && errors.avatar) ? errors.avatar.msg : '' %> </span>
-            
+
               <button type="submit" class="form-submit">Guardar cambios</button>
-              <span class="text-error" id="submitErrors"></span>
+              <span class="text-error" id="submitErrors"> </span>
             </form>
 
 

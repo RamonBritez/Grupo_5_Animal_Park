@@ -30,14 +30,13 @@ module.exports = [
         })
         .withMessage("Ingrese solamente caracteres alfabeticos"),
 
-    check("email")
+
+    body("email")
     .notEmpty()
     .withMessage("El email es obligatorio").bail()
     .isEmail()
-    .withMessage("Email inválido"),
-
-    body("email")
-    .custom( (value, { req }) => {
+    .withMessage("Email inválido")
+    .custom(value => {
         return User.findOne({
             where: {
                 email: value
@@ -47,8 +46,7 @@ module.exports = [
             if(user) return Promise.reject("Email ya registrado")
         })
         .catch(error => console.log(error))
-    })
-    .withMessage("Email ya registrado"),
+    }).withMessage("Email ya registrado"),
 
     check('password').notEmpty().withMessage('La contraseña es obligatoria').bail()
     .isLength({

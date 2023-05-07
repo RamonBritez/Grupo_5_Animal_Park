@@ -75,6 +75,8 @@ let $inputUserName = qs('#userName'),
     
     $inputTel.addEventListener('blur', () => {
         switch (true) {
+            case !$inputEmail.value == '':
+                break;
             case !regExTel.test($inputTel.value):
                 $telErrors.innerText = 'Debe ingresar un telefono válido';
                 $inputTel.classList.add('is-invalid')
@@ -92,7 +94,7 @@ let $inputUserName = qs('#userName'),
     $form.addEventListener("submit", (event) => {
        event.preventDefault();
 
-        if($inputUserName && $inputApellido && $inputEmail && $inputTel === "") {
+        if($inputUserName && $inputApellido && $inputEmail === "") {
            element.classList.add("is-invalid")
         }
 
@@ -100,7 +102,7 @@ let $inputUserName = qs('#userName'),
        let errores = elementosConErrores.length > 0; 
 
        if(errores) {
-           submitErrors.innerText = "Hay errores en el formulario"
+           submitErrors.innerText = "Los campos señalados son obligatorios"
        } else {
            $form.submit()
        }

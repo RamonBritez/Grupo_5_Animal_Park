@@ -18,6 +18,7 @@ module.exports = (sequelize, dataTypes) => {
     email: {
       type: dataTypes.STRING(50),
       allowNull: false,
+      unique: true,
     },
     avatar: {
       type: dataTypes.STRING(100),

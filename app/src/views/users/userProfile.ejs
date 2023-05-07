@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head')%>
+
 <body>
 <%- include('../partials/header')%>
 <div class="userMancha">
@@ -27,11 +28,26 @@
             </div>
             <a href="/users/profile/edit" class="btn">EDITAR DATOS</a>
             
-            <form class="btnEvil" action="/users/profile/delete/?_method=DELETE" method="POST">
-                <button type="submit">Eliminar perfil</button>
-            </form>  
+            <button type="button" class="btnEvil" onclick="openModal()">Eiminar perfil</button>
+            
+
+                <!-- Agrega el modal -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <p>¿Estás seguro de que deseas eliminar tu perfil?</p>
+                    <div class="button-container">
+                        <form action="/users/profile/delete/?_method=delete" method="post" class="formDeleteUser">
+                            <button class="btnEvil" type="submit" onclick="confirmAction()">Confirmar</button>
+                        </form>
+                        <button class="btn cancel-button" onclick="closeModal()">Cancelar</button>
+                    </div>
+                    </div>
+                </div>   
+
         </div> 
     </main>
 <%- include('../partials/footer')%>
+<script src="/JS/profile.js"></script>
 </body>
 </html>

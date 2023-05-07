@@ -31,6 +31,10 @@
     text-transform: uppercase;
 }
 
+.btnEvil button:hover{
+    background-color: transparent;
+}
+
 .btnEvil:hover {
     box-shadow: 0 0 10px rgb(206, 159, 150);
     border: red 3px solid;

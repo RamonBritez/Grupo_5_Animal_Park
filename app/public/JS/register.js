@@ -22,6 +22,7 @@ let $inputUserName = qs('#userName'),
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
+
     $inputUserName.addEventListener("blur", () => {
         switch (true) {
             case !$inputUserName.value.trim():
@@ -75,6 +76,7 @@ let $inputUserName = qs('#userName'),
                 break;
         }
     })
+
 
     $inputPassword.addEventListener('blur', () => {
         switch (true) {
@@ -139,7 +141,7 @@ let $inputUserName = qs('#userName'),
        let errores = elementosConErrores.length > 0; 
 
        if(errores) {
-           submitErrors.innerText = "Hay errores en el formulario"
+           submitErrors.innerText = "Los campos señalados son obligatorios"
        } else {
            $form.submit()
        }

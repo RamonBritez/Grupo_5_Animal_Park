@@ -64,7 +64,7 @@
             <input type="checkbox" name="checkTerms" id="checkTerms" />
             <label for="terms">Acepto los <a href="#" target="_blank">terminos y condiciones</a> </label>
             <br>
-              <span class="text-error" id="checkTermsErrors"><%= (locals.errors && errors.terms) ? errors.terms.msg : '' %> </span>
+              <span class="text-error" id="checkTermsErrors"><%= (locals.errors && errors.checkTerms) ? errors.checkTerms.msg : '' %> </span>
           </div>
 
           <button type="submit" class="form-submit">Registrar</button>
