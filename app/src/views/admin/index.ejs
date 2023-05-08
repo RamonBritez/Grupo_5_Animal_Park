@@ -9,12 +9,41 @@
     <ul class="admin-options">
         <li><a href="/" class="btn">Home</a></li>
         <li><a href="/products/create" class="btn">Vender</a></li>
-        <li><a href="/admin/products-list" class="btn">Lista de productos</a></li>
-        <li><a href="/admin/admin-list" class="btn">Lista de usuarios</a></li>
+        <li><a href="/admin/products-list" class="btn">Listar productos</a></li>
+        <li><a href="/admin/admin-list" class="btn">Listar usuarios</a></li>
         <li><a href="/admin/banner-edit" class="btn">Edicion de banner</a></li>
+        <li><button onclick="document.getElementById('addBrand').classList.add('activeModal')"
+            class="btn">Agregar marca</button></li>
         <li><a href="/users/logout" class="btn">Salir</a></li>
     </ul>
+
+
+    <div class="adminModal" id="addBrand">
+        <form
+          action="/admin/addBrand/"
+          method="post"
+          class="admin-deleteModal"
+          id="form"
+        >
+          <label for="brand">Nombre de la marca a agregar</label>
+          <input type="text" name="brand" id="brand" class="fomr-input">
+          <span class="text-error" id="brandError"></span>
+          <p
+            align="center"
+            class="btn"
+            onclick="document.getElementById('addBrand').classList.remove('activeModal')"
+          >
+            CANCELAR
+          </p>
+          <span class="text-error" id="submitError"></span>
+          <button class="btn" type="submit">Agregar</button>
+        </form>
+      </div>
+
+
+
 </main>
     <%- include("../partials/footer")  %> 
+    <script src="/js/addBrand.js"></script>
 </body>
 </html>

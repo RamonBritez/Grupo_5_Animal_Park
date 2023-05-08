@@ -15,12 +15,12 @@ window.addEventListener("load", () => {
     let $discountError = qs("#discountError")
     let $submitError = qs("#submitError")
     let $form = qs('#form')
-    let regExAlpha = /^[a-zA-Z0-9\sñáéíóúü ]{3,25}$/
-    let regExdescription = /^[a-zA-Z0-9\sñáéíóúü ]{10,350}$/
+    let regExAlpha = /^[a-zA-Z0-9\sñáéíóúü ]{3,25}$/ // Ex Reg acepta entre 3 y 25 caracteres alfanumericos
+    let regExdescription = /^[a-zA-Z0-9\sñáéíóúü ]{10,350}$/ // Ex Reg acepta entre 10 y 350 caracteres alfanumericos
     //let regExPrecio = /^[0-9]{1,8}([.][0-9]{2})?$/
-    let regExPrecio2 = /^[1-9]\d{0,7}(\.\d{1,2})?$/
-    let regExDiscount = /^[0-9]{1,2}$/
-    let regExweight = /^(\d{1,2}(\.\d{1,2})?|100(\.0{1,2})?)$/
+    let regExPrecio2 = /^[1-9]\d{0,7}(\.\d{1,2})?$/ //Precio acepta hasta 7 cifras y dos decimales
+    let regExDiscount = /^[0-9]{1,2}$/ // Descuento acepta rango entre 0 y 99
+    let regExweight = /^(\d{1,2}(\.\d{1,2})?|100(\.0{1,2})?)$/ // Peso acepta 0 a 100 y hasta dos decimales
 
     $name.addEventListener("blur", () => {
         switch (true){

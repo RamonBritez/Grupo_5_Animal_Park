@@ -13,6 +13,8 @@ const {index,
     edit,
     update,
     productDestroy,
+    addBrand,
+    deleteBrand,
 } = require("../controllers/adminControllers");
 const router = express.Router();
 
@@ -42,7 +44,8 @@ router.get('/productCreate', isAdmin, create);
 router.post('/productCreate', upload.uploadImageProduct.array('image'), isAdmin, productValidator, store); 
 router.get('/productEdit/:id', isAdmin, edit); 
 router.put('/productUpdate/:id',  upload.uploadImageProduct.array('image'), isAdmin, productValidator, update); 
-router.delete('/productDelete/:id', isAdmin, productDestroy); 
+router.delete('/productDelete/:id', isAdmin, productDestroy);
+router.post('/addBrand/', isAdmin, addBrand)
 
 //Manipulacion de banners
 router.get("/banner-edit", isAdmin, bannerEdit)
