@@ -4,6 +4,8 @@ const session = require("express-session");
 let {User, Address} = require("../database/models");
 const { where } = require("sequelize");
 const { error } = require("console");
+const path = require("path");
+const fs = require('fs');
 
 
 
@@ -168,17 +170,25 @@ module.exports = {
                     user_id: userId
                 })
                 .then(() => {
-                    User.update({
-                        first_name: userName,
-                        last_name: apellido,
-                        tel: tel,
-                        avatar: req.file ? req.file.filename : User.avatar,
-                        },{
-                        where: {
-                            id: userId
-                        },
+                    let oldAvatarPath; 
+                    User.findByPk(userId)
+                    .then(user => {
+                        // tenemos la imagen anterior
+                        oldAvatarPath = user.avatar ? path.join(__dirname, '..','..', 'public', 'image','users', user.avatar) : '';
+                
+                        // Actualizamos los datos
+                        user.first_name = userName;
+                        user.last_name = apellido;
+                        user.tel = tel;
+                        user.avatar = req.file ? req.file.filename : user.avatar;
+                        return user.save();
                     })
                     .then(() => {
+                        // Elimina la imagen anterior si es que lo cambia
+                        if (oldAvatarPath && fs.existsSync(oldAvatarPath)) {
+                            fs.unlinkSync(oldAvatarPath);
+                        }
+                
                         return res.redirect("/users/profile");
                     })
                 })
