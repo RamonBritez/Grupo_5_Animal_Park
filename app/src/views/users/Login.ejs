@@ -15,22 +15,22 @@
             </div>
             <div class="login__menu-form">
                 <form action="/users/login" method="post">
-                   <ul class="errores" id="errores-login">
+                  <!--  <ul class="errores" id="errores-login"> -->
                    </ul>
                     <div>
                      <label for="email">Tu e-mail
                         <input class="campo" type="email" name="email" placeholder="Ej: jose@email.com" id="email">
-                     <% if (locals.errors && errors.email) { %>
-                         <small class="text-error"><%= errors.email.msg %> </small>
-                     <% } %>
+                    
+                         <small class="text-error" id="errorEmail"><%=locals.errors && errors.email ? errors.email.msg : "" %> </small>
+                     
                      </label>
                     </div>
                     <div>
                         <label for="password">contraseña
                         <input class="campo" type="password" name="password" placeholder="Ingrese su contraseña" id="password">
-                        <% if (locals.errors && errors.password) { %>
-                         <small class="text-error"><%= errors.password.msg %> </small>
-                        <% } %>
+                      
+                         <small class="text-error" id="errorPassword"><%=locals.errors && errors.password ? errors.password.msg : "" %> </small>
+                       
                         </label>
                     </div>
 
