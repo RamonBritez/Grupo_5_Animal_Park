@@ -43,9 +43,12 @@ module.exports = [
             }
         })
         .then(user => {
-            if(user) return Promise.reject("Email ya registrado")
+            if(user) {return Promise.reject("Email ya registrado")}
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error);
+            return Promise.reject("Error en la validación del email");
+        });
     }).withMessage("Email ya registrado"),
 
     check('password').notEmpty().withMessage('La contraseña es obligatoria').bail()

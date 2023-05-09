@@ -159,6 +159,7 @@ module.exports = {
 
             let userId = req.session.user.id;
             
+            
                 Address.upsert({
                     address,
                     postal_code,
