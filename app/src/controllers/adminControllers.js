@@ -115,6 +115,18 @@ module.exports = {
     })
 
   },
+  addBrand: async (req, res) =>{
+    const {
+      brand
+    } = req.body
+
+  const newBrand = {
+    brand:brand
+  } 
+
+    await db.Brand.create(newBrand);
+    return res.redirect("/admin");
+  },
   store: async (req, res) => {
     const errors = validationResult(req);
 
