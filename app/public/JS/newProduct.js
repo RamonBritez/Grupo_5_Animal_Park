@@ -88,26 +88,25 @@ window.addEventListener("load", () => {
     })
 
     form.addEventListener("submit", event => {
-        let errores = false;
-        event.preventDefault()
+        let errores = [];
         if (productName.value.length < 5) {
-            errores = true
+            errores.push("error")
         }
         if (!regExPrecio2.test(productPrice.value)) {
-            errores = true
+            errores.push("error")
         }
         if (!regExDiscount.test(productDiscount.value)) {
-            errores = true
+            errores.push("error")
         }
         if (!regExWeight.test(productWeight.value)) {
-            errores = true
+            errores.push("error")
         }
         if (!regExPrecio2.test(productDescription.value)) {
-            errores = true
+            errores.push("error")
         }
 
-        if(!errores) {
-            form.submit()
+        if(errores.length > 0) {
+            event.preventDefault()
         }
     })
 })
