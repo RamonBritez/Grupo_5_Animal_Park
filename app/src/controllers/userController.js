@@ -185,7 +185,7 @@ module.exports = {
                     })
                     .then(() => {
                         // Elimina la imagen anterior si es que lo cambia
-                        if (oldAvatarPath && fs.existsSync(oldAvatarPath)) {
+                        if (oldAvatarPath && req.file && fs.existsSync(oldAvatarPath)) {
                             fs.unlinkSync(oldAvatarPath);
                         }
                 
