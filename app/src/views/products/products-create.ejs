@@ -17,7 +17,7 @@
 			</div>
 			
 			<div class="login__menu-form">
-				<form action="/admin/productCreate" method="post" enctype="multipart/form-data" novalidate>
+				<form action="/admin/productCreate" method="post" enctype="multipart/form-data" novalidate id="newProductForm">
 					<div class="form-container">
 						
 						
@@ -47,7 +47,7 @@
 								</option>
 								<% }) %>
 							</select>
-							<small class="text-error"><%= locals.errors && errors.brand ? errors.brand.msg : null%></small>
+							<small class="text-error" id="error-brand"><%= locals.errors && errors.brand ? errors.brand.msg : "" %></small>
 						</div>
 
 						<div class="input">
@@ -110,7 +110,7 @@
 							</option>
 							<% }) %>
 						</select>
-						<small class="text-error"><%= locals.errors && errors.pet ? errors.pet.msg : null%></small>
+						<small class="text-error" id="error-pet"><%= locals.errors && errors.pet ? errors.pet.msg : "" %></small>
 					</div>
 						
 					<div class="selectores">
@@ -127,12 +127,12 @@
 								</option>
 								<% }) %>
 						</select>
-						<small class="text-error"><%= locals.errors && errors.category ? errors.category.msg : null%></small>
+						<small class="text-error" id="error-category"><%= locals.errors && errors.category ? errors.category.msg : "" %></small>
 					</div>
 						<div class="input-file">
 							<label for="image">Agregar imagen del producto</label>
 							<input type="file" id="image" name="image" multiple accept="image/*">
-							<small class="text-error"><%= locals.errors && errors.image? errors.image.msg : null%></small>
+							<small class="text-error" id="error-image"><%= locals.errors && errors.image? errors.image.msg : ""%></small>
 						</div>
 
 						<div class="description">
