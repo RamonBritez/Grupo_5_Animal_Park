@@ -77,7 +77,7 @@ module.exports = {
                 last_name:apellido,
                 email,
                 pass:  bcrypt.hashSync(password, 12),
-                avatar: req.file ? req.file.filename : "avatar_default.jpeg",
+                avatar: req.file ? req.file.filename : 'avatar_default.jpg',
                 rol_id: 0,
             })
             .then(() => {
@@ -170,11 +170,13 @@ module.exports = {
                     user_id: userId
                 })
                 .then(() => {
-                    let oldAvatarPath; 
+                    let oldAvatarPath;
+                    let avatarDefault = path.join(__dirname, '..','..', 'public', 'image','users', 'avatar_default.jpg');
                     User.findByPk(userId)
                     .then(user => {
-                        // tenemos la imagen anterior
+                        // tenemos la imagen anterior y si es distinto al default
                         oldAvatarPath = user.avatar ? path.join(__dirname, '..','..', 'public', 'image','users', user.avatar) : '';
+                        const avatarDefault = oldAvatarPath && !fs.existsSync(oldAvatarPath);
                 
                         // Actualizamos los datos
                         user.first_name = userName;
@@ -185,7 +187,7 @@ module.exports = {
                     })
                     .then(() => {
                         // Elimina la imagen anterior si es que lo cambia
-                        if (oldAvatarPath && req.file && fs.existsSync(oldAvatarPath)) {
+                        if (oldAvatarPath != avatarDefault && req.file && fs.existsSync(oldAvatarPath)) {
                             fs.unlinkSync(oldAvatarPath);
                         }
                 
@@ -216,14 +218,14 @@ module.exports = {
     },
 
     destroyUser: (req, res) => {
-        let userInSessionId = req.session.user.id
+        let userId = req.session.user.id
         req.session.destroy();
         if (req.cookies.userAnimalpark){
           res.cookie('AnimalPark','',{maxAge:-1});
         }
         User.destroy({
           where:{
-            id : userInSessionId
+            id : userId
           }
         })
         return res.redirect('/') 
