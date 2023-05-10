@@ -38,7 +38,7 @@
             
               <div class="form-element">
                 <label for="tel">Tel</label>
-                <input type="tel" name="tel" id="tel" value="<%= user.tel %>"/>
+                <input type="number" name="tel" id="tel" value="<%= user.tel %>"/>
                   <span class="text-error" id="telErrors"><%= (locals.errors && errors.tel) ? errors.tel.msg : '' %> </span>
               </div>
               <div class="form-element">

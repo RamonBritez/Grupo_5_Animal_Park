@@ -95,7 +95,6 @@ let $inputUserName = qs('#userName'),
                 break;
         }
     })
-
     $inputRepeatPassword.addEventListener('blur', () => {
         switch (true) {
             case !$inputRepeatPassword.value.trim():
