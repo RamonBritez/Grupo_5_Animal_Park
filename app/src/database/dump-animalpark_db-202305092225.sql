@@ -42,7 +42,7 @@ CREATE TABLE `adresses` (
 
 LOCK TABLES `adresses` WRITE;
 /*!40000 ALTER TABLE `adresses` DISABLE KEYS */;
-INSERT INTO `adresses` VALUES (1,'Prueeba 123','1824','Buenos Aires','Monte Chingolo',8),(2,'Calle Falsa 123','1234','Buenos Aires','Buenos Aires',10),(48,'','','','',67),(51,'','','','',68);
+INSERT INTO `adresses` VALUES (1,'Prueeba 123','1824','Buenos Aires','Monte Chingolo',8),(48,'','','','',67),(51,'','','','',68);
 /*!40000 ALTER TABLE `adresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -317,7 +317,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `users_un` (`email`),
   KEY `users_FK` (`rol_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -326,7 +326,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Jon','Balles','jon@mail.com','','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(3,'Ramón','Brietz Sanabria','test@test.com','$2a$12$7lF/l7O4CYJ2nzsqLtzX/eHDM7wCcFuF3yZJqmF72LDrzgSfNfw/m','1678210261666_avatar_.jpg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(4,'Jon','Balles','jon@gmail.com','$2a$12$irYdKP2o.gDv1chC/dqDaOxOlVgAbh1xe3EdQYpdUGi0.e8SybOna','11111111111111.jpg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(7,'testeando','Registro','testeo@mail.com','$2a$12$zyvgfFjvvwTfSNcoIjugN.QM2JWyh8xLHePx1/CWcAHK9lNrHmqCi','avatar_default.jpeg',0,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(8,'Nico','Fili','nico@fili.com','$2a$12$dgX2HtrUhUHkagioparHjezIvbUAJ..IWqYortUsP3V3uUDuCms/G','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(9,'Cosme','Fulanito','prueba@user.com','$2a$12$KowLlmiL0detU4zCTy/RXet/xm/vsyHWYaO8iZZMQkpiaeC9xiV4y','avatar_default.jpeg',0,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(10,'Admin','Fulanito','prueba@admin.com','$2a$12$9O9GmhqPlC3iySUx5EM3Ku1.8QKhXUYazyYdBCN9KgyiHRJzvsLnO','1682001320303_avatar_.png',1,'0','2023-04-18 00:02:00','2023-04-20 14:35:21'),(11,'ro','Belen','Rocio@belen.com','$2a$12$Unp1jKOojGqGh2iLy.AIIOg6Tk4VFiFmvoLZ8uuxs6X5orJvqluk2','avatar_default.jpeg',1,NULL,'2023-04-19 18:31:30','2023-04-19 18:31:30'),(13,'ramon','Britez','jjjjjjj@jjjj.com','$2a$12$m/1BY4VQmctKKIqAihwaveDZAoXTEUsxrbLYENRAZsBBtnfZdXtz2','avatar_default.jpeg',0,NULL,'2023-05-06 17:55:40','2023-05-06 17:55:40'),(54,'Dile mama guevo','Mama wewoooo','mama@wewo.com','$2a$12$OAJohoR6yQyQ2USCkEhTBeNRU31nGPGMyHOOpATelZHd/pvaWbo86','avatar_default.jpeg',0,NULL,'2023-05-07 19:47:39','2023-05-07 19:47:39'),(67,'ramon','britez','test2@test.com','$2a$12$1kLZwuLI2r/MvM6dyZndx.6q1OcATH6g7qWVU1K5sv/e3xIG2Q4hW','1683676614124_avatar_.jpg',0,'0','2023-05-09 23:56:42','2023-05-10 00:02:29'),(68,'ramon','britez','test343@test.com','$2a$12$VN1YlEfn6C6P/5SPzaY/eubm8jvvdB5JXt8xvbtT3bFILUIhMoM/u','1683677262471_avatar_.jpeg',0,'','2023-05-10 00:04:28','2023-05-10 00:11:30');
+INSERT INTO `users` VALUES (1,'Jon','Balles','jon@mail.com','','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(3,'Ramón','Brietz Sanabria','test@test.com','$2a$12$7lF/l7O4CYJ2nzsqLtzX/eHDM7wCcFuF3yZJqmF72LDrzgSfNfw/m','1678210261666_avatar_.jpg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(4,'Jon','Balles','jon@gmail.com','$2a$12$irYdKP2o.gDv1chC/dqDaOxOlVgAbh1xe3EdQYpdUGi0.e8SybOna','11111111111111.jpg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(7,'testeando','Registro','testeo@mail.com','$2a$12$zyvgfFjvvwTfSNcoIjugN.QM2JWyh8xLHePx1/CWcAHK9lNrHmqCi','avatar_default.jpeg',0,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(8,'Nico','Fili','nico@fili.com','$2a$12$dgX2HtrUhUHkagioparHjezIvbUAJ..IWqYortUsP3V3uUDuCms/G','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(11,'ro','Belen','Rocio@belen.com','$2a$12$Unp1jKOojGqGh2iLy.AIIOg6Tk4VFiFmvoLZ8uuxs6X5orJvqluk2','avatar_default.jpeg',1,NULL,'2023-04-19 18:31:30','2023-04-19 18:31:30'),(13,'ramon','Britez','jjjjjjj@jjjj.com','$2a$12$m/1BY4VQmctKKIqAihwaveDZAoXTEUsxrbLYENRAZsBBtnfZdXtz2','avatar_default.jpeg',0,NULL,'2023-05-06 17:55:40','2023-05-06 17:55:40'),(54,'Dile mama guevo','Mama wewoooo','mama@wewo.com','$2a$12$OAJohoR6yQyQ2USCkEhTBeNRU31nGPGMyHOOpATelZHd/pvaWbo86','avatar_default.jpeg',0,NULL,'2023-05-07 19:47:39','2023-05-07 19:47:39'),(67,'ramon','britez','test2@test.com','$2a$12$1kLZwuLI2r/MvM6dyZndx.6q1OcATH6g7qWVU1K5sv/e3xIG2Q4hW','1683676614124_avatar_.jpg',0,'0','2023-05-09 23:56:42','2023-05-10 00:02:29'),(68,'ramon','britez','test343@test.com','$2a$12$VN1YlEfn6C6P/5SPzaY/eubm8jvvdB5JXt8xvbtT3bFILUIhMoM/u','1683677262471_avatar_.jpeg',0,'','2023-05-10 00:04:28','2023-05-10 00:11:30'),(69,'Cosme','Fulanito','prueba@user.com','$2a$12$i21pQc0WSaGBknO9wrIBZe4WsLfqtBmIAWBTV8Cz8YKv/0YtDS5ii','avatar_default.jpeg',0,NULL,'2023-05-10 01:22:29','2023-05-10 01:22:29'),(70,'Cosme','Fulanito','prueba@admin.com','$2a$12$0EjMPElUraw.XAPWkOQafeVoCkUGzsvAGrYtsULnyBXeAc6l7jeoK','1683681806918_avatar_.png',1,NULL,'2023-05-10 01:23:27','2023-05-10 01:23:27');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -343,4 +343,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-09 21:40:37
+-- Dump completed on 2023-05-09 22:25:49
