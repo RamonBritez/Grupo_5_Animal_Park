@@ -29,9 +29,12 @@ window.addEventListener("load", () => {
     let productDiscount = qs("#discount")
     let productWeight = qs("#weight")
     let productDescription = qs("#description")
-    let productBrand = qsa("select#brand option")
-    let productPet = qsa("select#pet option")
-    let productCategory = qsa("select#category option")
+    let productBrand = qs("#brand")
+    let productBrandOptions = qsa("#brand option")
+    let productPet = qs("#pet")
+    let productPetOptions = qsa("#pet option")
+    let productCategory = qs("#category")
+    let productCategoryOptions = qsa("#category option")
 
     let errorName = qs("#error-name")
     let errorPrice = qs("#error-price")
@@ -84,8 +87,47 @@ window.addEventListener("load", () => {
         errorWeight.innerText = ""
     })
 
+    productBrand.addEventListener("blur", () => {
+        let selected = false;
+        productBrandOptions.forEach(brand => {
+            if (brand.selected && !brand.hidden) {
+                selected = true;
+            }
+        })
+        if (selected) { return errorBrand.innerText = "" } else { return errorBrand.innerText = "Debes elegir una marca" }
+    })
+    productBrand.addEventListener("focus", () => {
+        errorBrand.innerText = ""
+    })
+
+    productPet.addEventListener("blur", () => {
+        let selected = false;
+        productPetOptions.forEach(brand => {
+            if (brand.selected && !brand.hidden) {
+                selected = true;
+            }
+        })
+        if (selected) { return errorPet.innerText = "" } else { return errorPet.innerText = "Debes elegir una marca" }
+    })
+    productPet.addEventListener("focus", () => {
+        errorPet.innerText = ""
+    })
+
+    productCategory.addEventListener("blur", () => {
+        let selected = false;
+        productCategoryOptions.forEach(brand => {
+            if (brand.selected && !brand.hidden) {
+                selected = true;
+            }
+        })
+        if (selected) { return errorCategory.innerText = "" } else { return errorCategory.innerText = "Debes elegir una marca" }
+    })
+    productCategory.addEventListener("focus", () => {
+        errorCategory.innerText = ""
+    })
+
     productDescription.addEventListener("blur", () => {
-        if (!regExPrecio2.test(productDescription.value)) {
+        if (productDescription.value.length < 25) {
             errorDescription.innerText = "La descripcion del producto debe tener mas de 25 caracteres"
         }
     })
@@ -116,12 +158,12 @@ window.addEventListener("load", () => {
             errores = true
             errorWeight.innerText = "Peso no valido"
         }
-        if (!regExPrecio2.test(productDescription.value)) {
+        if (productDescription.value.length < 25) {
             errores = true
             errorDescription.innerText = "La descripcion del producto debe tener mas de 25 caracteres"
         }
 
-        productBrand.forEach(brand => {
+        productBrandOptions.forEach(brand => {
             if (brand.selected && !brand.hidden) {
                 brandSelected = true
             }
@@ -132,7 +174,7 @@ window.addEventListener("load", () => {
             errorBrand.innerText = "Debes elegir una marca"
         }
 
-        productPet.forEach(pet => {
+        productPetOptions.forEach(pet => {
             if (pet.selected && !pet.hidden) {
                 petSelected = true
             }
@@ -142,8 +184,8 @@ window.addEventListener("load", () => {
             errores = true;
             errorPet.innerText = "Debes elegir una mascota"
         }
-        
-        productCategory.forEach(category => {
+
+        productCategoryOptions.forEach(category => {
             if (category.selected && !category.hidden) {
                 categorySelected = true
             }
@@ -154,8 +196,10 @@ window.addEventListener("load", () => {
             errorCategory.innerText = "Debes elegir una categoria"
         }
 
-        if(errores) {
+        if (errores) {
             event.preventDefault()
+        } else {
+            form.submit();
         }
     })
 })
