@@ -8,16 +8,20 @@ window.addEventListener("load", () => {
   let ul = qs("#errores-login");
   let errorEmail = qs("#errorEmail");
   let errorPassword = qs("#errorPassword");
-
+  let errorForm = qs("#errorForm");
   let form = qs("form");
   form.addEventListener("submit", (e) => {
     let errores = [];
-    if (!regExEmail.test(email.value)) {
-      errores.push("el email es invalido");
-    }
+    errorForm.innerText = "";
     if (!regExPass.test(password.value)) {
       errores.push("la contraseña debe tener entre 6 y 12 caracteres");
     }
+    if (email.value.length == 0 && password.value.length == 0){
+    
+      errorForm.innerText = "debes completar el formulario"
+    }
+
+
     if (errores.length > 0) {
       e.preventDefault();
     }
