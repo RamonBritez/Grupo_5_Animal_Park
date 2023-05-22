@@ -33,7 +33,7 @@ CREATE TABLE `adresses` (
   UNIQUE KEY `user_id` (`user_id`),
   KEY `adresses_ibfk_1` (`user_id`),
   CONSTRAINT `adresses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `adresses` (
 
 LOCK TABLES `adresses` WRITE;
 /*!40000 ALTER TABLE `adresses` DISABLE KEYS */;
-INSERT INTO `adresses` VALUES (1,'Prueeba 123','1824','Buenos Aires','Monte Chingolo',8),(2,'Calle Falsa 123','1234','Buenos Aires','Buenos Aires',10);
+INSERT INTO `adresses` VALUES (1,'Prueeba 123','1824','Buenos Aires','Monte Chingolo',8),(48,'','','','',67),(51,'','','','',68);
 /*!40000 ALTER TABLE `adresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,7 +192,7 @@ CREATE TABLE `product_images` (
   PRIMARY KEY (`id`),
   KEY `product_images_FK` (`product_id`),
   CONSTRAINT `product_images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +201,7 @@ CREATE TABLE `product_images` (
 
 LOCK TABLES `product_images` WRITE;
 /*!40000 ALTER TABLE `product_images` DISABLE KEYS */;
-INSERT INTO `product_images` VALUES (6,'1676164813110_products_.png',1),(7,'1676165016569_products_.png',2),(8,'1676165325047_products_.png',3),(9,'1676165377177_products_.png',4),(10,'1676165429489_products_.png',5),(11,'1676166281180_products_.PNG',6),(12,'1676166390464_products_.png',7),(13,'1676166482766_products_.png',8),(14,'1676166605412_products_.png',9),(15,'1676166732128_products_.webp',10),(16,'1676166988307_products_.jpg',11),(17,'1676168189895_products_.webp',12),(20,'1676933887692_products_.png',15),(21,'1677013187826_products_.jpg',16),(22,'1676934665503_products_.png',17),(23,'1676934573105_products_.webp',18),(24,'default.jpg',19),(25,'1678135385598_products_.jpg',20),(26,'1678300734493_products_.jpg',21),(27,'1678300734517_products_.jpg',21),(28,'1678300734550_products_.jpg',21),(35,'default.jpg',28),(37,'default.jpg',30),(38,'1682738975358_products_.jpg',31),(39,'1682738975371_products_.jpg',31),(40,'1682738975375_products_.jpg',31);
+INSERT INTO `product_images` VALUES (6,'1676164813110_products_.png',1),(7,'1676165016569_products_.png',2),(8,'1676165325047_products_.png',3),(9,'1676165377177_products_.png',4),(10,'1676165429489_products_.png',5),(11,'1676166281180_products_.PNG',6),(12,'1676166390464_products_.png',7),(13,'1676166482766_products_.png',8),(14,'1676166605412_products_.png',9),(15,'1676166732128_products_.webp',10),(16,'1676166988307_products_.jpg',11),(17,'1676168189895_products_.webp',12),(18,'1676239983247_products_.jfif',13),(19,'1676923640818_products_.png',14),(20,'1676933887692_products_.png',15),(21,'1677013187826_products_.jpg',16),(22,'1676934665503_products_.png',17),(23,'1676934573105_products_.webp',18),(24,'default.jpg',19),(25,'1678135385598_products_.jpg',20),(26,'1678300734493_products_.jpg',21),(27,'1678300734517_products_.jpg',21),(28,'1678300734550_products_.jpg',21),(29,'default.jpg',22),(30,'default.jpg',23),(31,'default.jpg',24),(32,'default.jpg',25),(33,'default.jpg',26),(34,'default.jpg',27),(35,'default.jpg',28);
 /*!40000 ALTER TABLE `product_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,7 +232,7 @@ CREATE TABLE `products` (
   CONSTRAINT `products_FK` FOREIGN KEY (`pet_id`) REFERENCES `pets` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `products_FK_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `products_FK_2` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,7 +241,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'la prueba','No se, estaba probando las validaciones y el tema de mantener la session',100.00,10,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(2,'Nutrique Gato Adulto Castrado','Control de peso',4105.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(3,'Nutrique Gato Adulto Urinary Care','Urinary Care',3689.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(4,'Nutrique Gato Bebé','Gato bebé y gato cachorro',11398.00,25,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(5,'Nutrique Gato Kitten','Kitten cachorro',782.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(6,'Ropa Para Perros','Buzo Vestido Ambar ',1500.00,10,0.0,2,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(7,'Nutrique Cachorro','Raza Mediana',1394.00,5,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(8,'Nutrique Perro Adulto','Raza pequeña y mini',7420.00,0,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(9,'Alfalfa en cubos','Ricos en vitaminas para todo tipo de roedores',700.00,5,0.0,1,3,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(10,'Shulet Tortugin','Alimento completo para tortugas acuáticas y complemento para terrestres',350.00,0,0.0,1,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(11,'Hectopar','Pulguicida para gatos mas de 4kg',500.00,0,0.0,5,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(12,'Shulet Tropical','Alimento completo balanceado para peces tropicales',870.00,0,0.0,1,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(15,'Complete','Perro adulto +7 años',9600.00,0,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(16,'Alimento','Alimento para Perros Voraz Carne 21 kilos.',5200.00,10,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(17,'Bonacqua','Azul de mitelino 50ml',1300.00,0,0.0,5,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(18,'Alimento Whiskas','para gato adulto sabor pescado',5040.00,15,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(19,'Zoomarlo','asdasdaDFDASFawsdfds',1234.00,0,0.0,2,2,1,2,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(20,'Disfraz de Gallina','Decora a tu tortuga con este maravilloso atuendo',1500.00,0,0.0,4,5,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(21,'test multiple','Varias imagenes de prueba para test',8500.00,99,0.0,4,5,1,4,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(28,'Edito porque si','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-29 17:25:10'),(30,'Test de edicion','holanda',1230.00,0,10.0,1,1,1,5,'2023-04-29 02:47:50','2023-04-29 03:25:15'),(31,'Ropa Erizos','Ropita para tu erizo',2000.00,15,10.0,4,3,1,3,'2023-04-29 03:29:35','2023-04-29 20:36:53');
+INSERT INTO `products` VALUES (1,'la prueba','No se, estaba probando las validaciones y el tema de mantener la session',100.00,10,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(2,'Nutrique Gato Adulto Castrado','Control de peso',4105.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(3,'Nutrique Gato Adulto Urinary Care','Urinary Care',3689.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(4,'Nutrique Gato Bebé','Gato bebé y gato cachorro',11398.00,25,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(5,'Nutrique Gato Kitten','Kitten cachorro',782.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(6,'Ropa Para Perros','Buzo Vestido Ambar ',1500.00,10,0.0,2,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(7,'Nutrique Cachorro','Raza Mediana',1394.00,5,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(8,'Nutrique Perro Adulto','Raza pequeña y mini',7420.00,0,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(9,'Alfalfa en cubos','Ricos en vitaminas para todo tipo de roedores',700.00,5,0.0,1,3,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(10,'Shulet Tortugin','Alimento completo para tortugas acuáticas y complemento para terrestres',350.00,0,0.0,1,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(11,'Hectopar','Pulguicida para gatos mas de 4kg',500.00,0,0.0,5,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(12,'Shulet Tropical','Alimento completo balanceado para peces tropicales',870.00,0,0.0,1,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(13,'Zoomarlo','Mazorca de maíz premium',1400.00,0,0.0,1,3,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(14,'Sieger','Sieger katze gato urinario',3800.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(15,'Complete','Perro adulto +7 años',9600.00,0,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(16,'Alimento','Alimento para Perros Voraz Carne 21 kilos.',5200.00,10,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(17,'Bonacqua','Azul de mitelino 50ml',1300.00,0,0.0,5,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(18,'Alimento Whiskas','para gato adulto sabor pescado',5040.00,15,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(19,'Zoomarlo','asdasdaDFDASFawsdfds',1234.00,0,0.0,2,2,1,2,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(20,'Disfraz de Gallina','Decora a tu tortuga con este maravilloso atuendo',1500.00,0,0.0,4,5,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(21,'test multiple','Varias imagenes de prueba para test',8500.00,99,0.0,4,5,1,4,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(22,'asdasdas','dxcsdfsafdgdfsdf',333.00,30,0.0,3,6,1,5,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(23,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(24,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(25,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(26,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(27,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(28,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -310,13 +310,14 @@ CREATE TABLE `users` (
   `pass` varchar(100) NOT NULL,
   `avatar` varchar(100) NOT NULL,
   `rol_id` int(11) NOT NULL DEFAULT 1,
-  `tel` int(11) unsigned DEFAULT NULL,
+  `tel` varchar(50) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `users_un` (`email`),
   KEY `users_FK` (`rol_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -325,7 +326,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Jon','Balles','jon@mail.com','','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(2,'Jon','Balles','jon@mail.com','','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(3,'Ramón','Brietz Sanabria','test@test.com','$2a$12$7lF/l7O4CYJ2nzsqLtzX/eHDM7wCcFuF3yZJqmF72LDrzgSfNfw/m','1678210261666_avatar_.jpg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(4,'Jon','Balles','jon@gmail.com','$2a$12$irYdKP2o.gDv1chC/dqDaOxOlVgAbh1xe3EdQYpdUGi0.e8SybOna','11111111111111.jpg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(5,'test','test','test3@test.com','$2a$12$EbXyrMeBbeGwNJHeTYqowO2yFsvdpWFMfurYlMgfviI2Uvpf5b80q','1677884477039_avatar_.png',0,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(6,'test','test','test3@test.com','$2a$12$EbXyrMeBbeGwNJHeTYqowO2yFsvdpWFMfurYlMgfviI2Uvpf5b80q','1677884477039_avatar_.png',0,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(7,'testeando','Registro','testeo@mail.com','$2a$12$zyvgfFjvvwTfSNcoIjugN.QM2JWyh8xLHePx1/CWcAHK9lNrHmqCi','avatar_default.jpeg',0,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(8,'Nico','Fili','nico@fili.com','$2a$12$dgX2HtrUhUHkagioparHjezIvbUAJ..IWqYortUsP3V3uUDuCms/G','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(9,'Cosme','Fulanito','prueba@user.com','$2a$12$KowLlmiL0detU4zCTy/RXet/xm/vsyHWYaO8iZZMQkpiaeC9xiV4y','avatar_default.jpeg',0,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(10,'Admin','Fulanito','prueba@admin.com','$2a$12$9O9GmhqPlC3iySUx5EM3Ku1.8QKhXUYazyYdBCN9KgyiHRJzvsLnO','1682001320303_avatar_.png',1,0,'2023-04-18 00:02:00','2023-04-20 14:35:21'),(11,'ro','Belen','Rocio@belen.com','$2a$12$Unp1jKOojGqGh2iLy.AIIOg6Tk4VFiFmvoLZ8uuxs6X5orJvqluk2','avatar_default.jpeg',1,NULL,'2023-04-19 18:31:30','2023-04-19 18:31:30');
+INSERT INTO `users` VALUES (1,'Jon','Balles','jon@mail.com','','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(3,'Ramón','Brietz Sanabria','test@test.com','$2a$12$7lF/l7O4CYJ2nzsqLtzX/eHDM7wCcFuF3yZJqmF72LDrzgSfNfw/m','1678210261666_avatar_.jpg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(4,'Jon','Balles','jon@gmail.com','$2a$12$irYdKP2o.gDv1chC/dqDaOxOlVgAbh1xe3EdQYpdUGi0.e8SybOna','11111111111111.jpg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(7,'testeando','Registro','testeo@mail.com','$2a$12$zyvgfFjvvwTfSNcoIjugN.QM2JWyh8xLHePx1/CWcAHK9lNrHmqCi','avatar_default.jpeg',0,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(8,'Nico','Fili','nico@fili.com','$2a$12$dgX2HtrUhUHkagioparHjezIvbUAJ..IWqYortUsP3V3uUDuCms/G','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(11,'ro','Belen','Rocio@belen.com','$2a$12$Unp1jKOojGqGh2iLy.AIIOg6Tk4VFiFmvoLZ8uuxs6X5orJvqluk2','avatar_default.jpeg',1,NULL,'2023-04-19 18:31:30','2023-04-19 18:31:30'),(13,'ramon','Britez','jjjjjjj@jjjj.com','$2a$12$m/1BY4VQmctKKIqAihwaveDZAoXTEUsxrbLYENRAZsBBtnfZdXtz2','avatar_default.jpeg',0,NULL,'2023-05-06 17:55:40','2023-05-06 17:55:40'),(54,'Dile mama guevo','Mama wewoooo','mama@wewo.com','$2a$12$OAJohoR6yQyQ2USCkEhTBeNRU31nGPGMyHOOpATelZHd/pvaWbo86','avatar_default.jpeg',0,NULL,'2023-05-07 19:47:39','2023-05-07 19:47:39'),(67,'ramon','britez','test2@test.com','$2a$12$1kLZwuLI2r/MvM6dyZndx.6q1OcATH6g7qWVU1K5sv/e3xIG2Q4hW','1683676614124_avatar_.jpg',0,'0','2023-05-09 23:56:42','2023-05-10 00:02:29'),(68,'ramon','britez','test343@test.com','$2a$12$VN1YlEfn6C6P/5SPzaY/eubm8jvvdB5JXt8xvbtT3bFILUIhMoM/u','1683677262471_avatar_.jpeg',0,'','2023-05-10 00:04:28','2023-05-10 00:11:30'),(69,'Cosme','Fulanito','prueba@user.com','$2a$12$i21pQc0WSaGBknO9wrIBZe4WsLfqtBmIAWBTV8Cz8YKv/0YtDS5ii','avatar_default.jpeg',0,NULL,'2023-05-10 01:22:29','2023-05-10 01:22:29'),(70,'Cosme','Fulanito','prueba@admin.com','$2a$12$0EjMPElUraw.XAPWkOQafeVoCkUGzsvAGrYtsULnyBXeAc6l7jeoK','1683681806918_avatar_.png',1,NULL,'2023-05-10 01:23:27','2023-05-10 01:23:27');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -342,4 +343,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-29 17:41:22
+-- Dump completed on 2023-05-09 22:25:49

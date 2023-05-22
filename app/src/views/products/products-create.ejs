@@ -17,14 +17,14 @@
 			</div>
 			
 			<div class="login__menu-form">
-				<form action="/admin/productCreate" method="post" enctype="multipart/form-data" novalidate>
+				<form action="/admin/productCreate" method="post" enctype="multipart/form-data" novalidate id="newProductForm">
 					<div class="form-container">
 						
 						
 						<div class="input">
 							<label for="name" class="form-label">Nombre del producto:</label>
 							<input type="text" id="name" name="name" placeholder="Ej: Comida para gatos" class="form-input <%= locals.errors && errors.name ? 'is-invalid' : null%>"  value="<%= locals.old && locals.old.name ? locals.old.name : null %>">
-							<small class="text-error"><%= locals.errors && errors.name ? errors.name.msg : null%></small>
+							<small class="text-error" id="error-name"><%= locals.errors && errors.name ? errors.name.msg : null%></small>
 						</div>
 						<!--
 						<div class="input">
@@ -47,25 +47,25 @@
 								</option>
 								<% }) %>
 							</select>
-							<small class="text-error"><%= locals.errors && errors.brand ? errors.brand.msg : null%></small>
+							<small class="text-error" id="error-brand"><%= locals.errors && errors.brand ? errors.brand.msg : "" %></small>
 						</div>
 
 						<div class="input">
 							<label for="price" class="form-label">Precio del producto:</label>
 							<input type="number" id="price" name="price" placeholder="Ej: 5678" class="form-input" value="<%= locals.old && locals.old.price ? locals.old.price : null %>">
-							<small class="text-error"><%= locals.errors && errors.price ? errors.price.msg : null%></small>
+							<small class="text-error" id="error-price"><%= locals.errors && errors.price ? errors.price.msg : null%></small>
 						</div>
 						
 						<div class="input">
 							<label for="discount" class="form-label">Descuento:</label>
 							<input type="number" id="discount" name="discount" placeholder="Ej: 15" class="form-input" value="0" <%= locals.old && locals.old.discount ? locals.old.discount : null %>>
-							<small class="text-error"><%= locals.errors && errors.discount ? errors.discount.msg : null%></small>
+							<small class="text-error" id="error-discount"><%= locals.errors && errors.discount ? errors.discount.msg : null%></small>
 						</div>
 						
 						<div class="input">
 							<label for="weight" class="form-label">Peso:</label>
 							<input type="number" id="weight" name="weight" placeholder="Ej: 20kg" class="form-input" value="<%= locals.old && locals.old.weight ? locals.old.weight : null %>">
-							<small class="text-error"><%= locals.errors && errors.weight ? errors.weight.msg : null%></small>
+							<small class="text-error" id="error-weight"><%= locals.errors && errors.weight ? errors.weight.msg : null%></small>
 						</div>
 						
 						<!--
@@ -110,7 +110,7 @@
 							</option>
 							<% }) %>
 						</select>
-						<small class="text-error"><%= locals.errors && errors.pet ? errors.pet.msg : null%></small>
+						<small class="text-error" id="error-pet"><%= locals.errors && errors.pet ? errors.pet.msg : "" %></small>
 					</div>
 						
 					<div class="selectores">
@@ -127,18 +127,18 @@
 								</option>
 								<% }) %>
 						</select>
-						<small class="text-error"><%= locals.errors && errors.category ? errors.category.msg : null%></small>
+						<small class="text-error" id="error-category"><%= locals.errors && errors.category ? errors.category.msg : "" %></small>
 					</div>
 						<div class="input-file">
 							<label for="image">Agregar imagen del producto</label>
 							<input type="file" id="image" name="image" multiple accept="image/*">
-							<small class="text-error"><%= locals.errors && errors.image? errors.image.msg : null%></small>
+							<small class="text-error" id="error-image"><%= locals.errors && errors.image? errors.image.msg : ""%></small>
 						</div>
 
 						<div class="description">
 							<label for="description" class="form-label">Descripción:</label>
 							<textarea name="description" id="description" class="form-input"><%= locals.old && locals.old.description ? locals.old.description : null %></textarea>
-							<small class="text-error"><%= locals.errors && errors.description? errors.description.msg : null%></small>
+							<small class="text-error" id="error-description"><%= locals.errors && errors.description? errors.description.msg : null%></small>
 						</div>
 						
 						<div class="save-product">
@@ -154,6 +154,6 @@
 
 
     <%- include('../partials/footer') %> 
-    
+    <script src="/JS/newProduct.js"></script>
 </body>
 </html>

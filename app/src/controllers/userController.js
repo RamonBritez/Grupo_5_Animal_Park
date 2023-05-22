@@ -4,6 +4,8 @@ const session = require("express-session");
 let {User, Address} = require("../database/models");
 const { where } = require("sequelize");
 const { error } = require("console");
+const path = require("path");
+const fs = require('fs');
 
 
 
@@ -75,7 +77,7 @@ module.exports = {
                 last_name:apellido,
                 email,
                 pass:  bcrypt.hashSync(password, 12),
-                avatar: req.file ? req.file.filename : "avatar_default.jpeg",
+                avatar: req.file ? req.file.filename : 'avatar_default.jpg',
                 rol_id: 0,
             })
             .then(() => {
@@ -84,6 +86,15 @@ module.exports = {
             .catch((error) => console.log(error))
 
             } else {
+
+                // Elimina la imagen del avatar cargada si hay errores en el formulario
+                if (req.file) {
+                    fs.unlink(req.file.path, (err) => {
+                        if (err) {
+                            console.error('Error al eliminar la imagen del avatar:', err);
+                         }
+                     });
+                }
             res.render("users/register", {
                 errors: errors.mapped(),
                 old: req.body,
@@ -159,6 +170,7 @@ module.exports = {
 
             let userId = req.session.user.id;
             
+            
                 Address.upsert({
                     address,
                     postal_code,
@@ -167,17 +179,27 @@ module.exports = {
                     user_id: userId
                 })
                 .then(() => {
-                    User.update({
-                        first_name: userName,
-                        last_name: apellido,
-                        tel: tel,
-                        avatar: req.file ? req.file.filename : User.avatar,
-                        },{
-                        where: {
-                            id: userId
-                        },
+                    let oldAvatarPath;
+                    let avatarDefault = path.join(__dirname, '..','..', 'public', 'image','users', 'avatar_default.jpg');
+                    User.findByPk(userId)
+                    .then(user => {
+                        // tenemos la imagen anterior y si es distinto al default
+                        oldAvatarPath = user.avatar ? path.join(__dirname, '..','..', 'public', 'image','users', user.avatar) : '';
+                        const avatarDefault = oldAvatarPath && !fs.existsSync(oldAvatarPath);
+                
+                        // Actualizamos los datos
+                        user.first_name = userName;
+                        user.last_name = apellido;
+                        user.tel = tel;
+                        user.avatar = req.file ? req.file.filename : user.avatar;
+                        return user.save();
                     })
                     .then(() => {
+                        // Elimina la imagen anterior si es que lo cambia
+                        if (oldAvatarPath != avatarDefault && req.file && fs.existsSync(oldAvatarPath)) {
+                            fs.unlinkSync(oldAvatarPath);
+                        }
+                
                         return res.redirect("/users/profile");
                     })
                 })
@@ -205,14 +227,14 @@ module.exports = {
     },
 
     destroyUser: (req, res) => {
-        let userInSessionId = req.session.user.id
+        let userId = req.session.user.id
         req.session.destroy();
         if (req.cookies.userAnimalpark){
           res.cookie('AnimalPark','',{maxAge:-1});
         }
         User.destroy({
           where:{
-            id : userInSessionId
+            id : userId
           }
         })
         return res.redirect('/') 
