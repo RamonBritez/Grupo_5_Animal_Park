@@ -17,6 +17,8 @@
                 <form action="/users/login" method="post">
                   <!--  <ul class="errores" id="errores-login"> -->
                    </ul>
+                   <small class="text-error" id="errorForm"><%=locals.errors && errors.form ? errors.email.msg : "" %> </small>
+                   
                     <div>
                      <label for="email">Tu e-mail
                         <input class="campo" type="email" name="email" placeholder="Ej: jose@email.com" id="email">
