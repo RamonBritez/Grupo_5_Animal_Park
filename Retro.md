@@ -102,3 +102,11 @@ mantener nuestro flujo de trabajo comprometiendonos cada dia mas con el proyecto
 hacer menos:
 confiarnos en nuestros tiempos ya que por un motivo u otro puede fallar perdjudicando asi al equipo.
 </div>
+<h1 align='center'> Sprint 7 </h1>
+<div align="center">
+Hacer mas: Modificaciones en detalles que aunque parezcan minimo, son un gran avance en nosotros.
+Hacer menos: Hacer cosas a las apuradas. Este Sprint lo tomamos un poco a la ligera y al final todos tuvimos un error. 
+Dejar de hacer: Siendo etapas finales no perder el objetivo en estos momentos. 
+Empezar a hacer: Fortalecer nuestras bases invirtiendo mas tiempo en aprender sobre las tecnologias que nos gustan
+Seguir haciendo: Ser integros. Saber que si uno no llega puede confiar en el otro y asi crecer en equipo
+</div>
