@@ -15,6 +15,9 @@ window.addEventListener("load", () => {
     let $discountError = qs("#discountError")
     let $submitError = qs("#submitError")
     let $form = qs('#form')
+    let $file = qs('#image')
+    let $fileErrors = qs('#fileError')
+
     let regExAlpha = /^[a-zA-Z0-9\sñáéíóúü ]{3,25}$/ // Ex Reg acepta entre 3 y 25 caracteres alfanumericos
     let regExdescription = /^[a-zA-Z0-9\sñáéíóúü ]{10,350}$/ // Ex Reg acepta entre 10 y 350 caracteres alfanumericos
     //let regExPrecio = /^[0-9]{1,8}([.][0-9]{2})?$/
@@ -101,20 +104,19 @@ window.addEventListener("load", () => {
                 $weight.classList.add('is-valid');
         }
     })
+
+    $file.addEventListener('change', () => {
+        let filePath = $file.value, //Capturo el valor del input
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
+        if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+            $file.value = '';
+            return false;
+        }
+    })
+
     $form.addEventListener("submit", (event) => {
         event.preventDefault();
-       /* const FORM_ELEMENTS = event.target.elements;
-
-        for (let index = 0; index < FORM_ELEMENTS.length - 1; index++) {
-            const element = FORM_ELEMENTS[index];
-            if(element.value === "" && element.type !== "file") {
-                element.classList.add("is-invalid")
-            }
-            // element.dispatchEvent(new Event("blur")) 
-        }*/
-
-      
-
         let elementosConErrores = document.querySelectorAll(".is-invalid");
         let errores = elementosConErrores.length > 0; 
 
