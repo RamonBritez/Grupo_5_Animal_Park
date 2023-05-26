@@ -31,12 +31,14 @@ const indexRouter = require("./routes");
 const products = require("./routes/products");
 const admin = require("./routes/admin");
 const userRouter = require("./routes/users");
+const apiRouter = require("./routes/apiRouter")
 
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", products);
 app.use("/admin", isAdmin, admin);
 app.use("/users", userRouter);
+app.use(`/api/`, apiRouter);
 
 app.use((req, res, next) => {
   res.status(404).render("error", {
