@@ -99,9 +99,9 @@
 						<div class="input-file">
 							<label for="image">Agregar imagen del producto</label>
 							<input type="file" id="image" name="image" multiple accept="image/*">
-							<small class="text-error"><%= locals.errors && errors.image? errors.image.msg : null%></small>
 						</div>
-
+						<small  id="fileError" class="text-error"><%= locals.errors && errors.image? errors.image.msg : null%></small>
+						
 						<div class="description">
 							<label for="description" class="form-label">Descripción:</label>
 							<textarea name="description" id="description" class="form-input"><%= product.description %></textarea>

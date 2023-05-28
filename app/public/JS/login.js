@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
       errores.push("la contraseña debe tener entre 6 y 12 caracteres");
     }
     if (email.value.length == 0 && password.value.length == 0){
-      alert("asd")
+    
       errorForm.innerText = "debes completar el formulario"
     }
 

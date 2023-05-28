@@ -86,6 +86,15 @@ module.exports = {
             .catch((error) => console.log(error))
 
             } else {
+
+                // Elimina la imagen del avatar cargada si hay errores en el formulario
+                if (req.file) {
+                    fs.unlink(req.file.path, (err) => {
+                        if (err) {
+                            console.error('Error al eliminar la imagen del avatar:', err);
+                         }
+                     });
+                }
             res.render("users/register", {
                 errors: errors.mapped(),
                 old: req.body,
