@@ -53,6 +53,7 @@ const categoriesResult=categories.map(category=>{
           category,
           pet,
           brand,
+          images
         } = product;
         const PRODUCT_DATA_RESPONSE = {
           id,
@@ -64,6 +65,11 @@ const categoriesResult=categories.map(category=>{
           category,
           pet,
           brand,
+          images: images.map(image => {
+            return {
+              url: `http:/localhost:3000/image/products/${image.image}`
+            }
+          })
         };
         return res.status(200).json(PRODUCT_DATA_RESPONSE);
       } else {
