@@ -1,5 +1,9 @@
 function Header() {
-    return ( <></> );
+  return (
+    <header>
+      <p>Animal Park</p>
+    </header>
+  );
 }
 
 export default Header;
