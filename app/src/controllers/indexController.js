@@ -20,40 +20,46 @@ module.exports = {
     });
   },
 
-  search: (req, res) => {
+  search: async (req, res) => {
+    //Capturador de input busqueda y convertir a minusculas para ser indiferente en la busqueda del nombre
     let { keywords } = req.query;
     let text = keywords.toLowerCase();
-    db.Product.findAll({
+
+    //Seteo de condiciones para paginado
+    const page = req.query.page || 1; // Obtiene el número de página actual desde la consulta
+    const limit = 16; // Establece el límite de productos por página
+    const offset = (page - 1) * limit; // Calcula el desplazamiento de acuerdo a la página actual y el límite
+
+
+    const { count, rows: products } = await db.Product.findAndCountAll({
+      offset,
+      limit,
       include: [
         {
           association: "images",
-        },
-        {
-          association: "pet",
-        },
-        {
-          association: "category",
-        },
+        }
       ],
-      /* include: [
-            
-        ],*/
       where: {
         [Op.or]: [
           { name: { [Op.like]: `%${text}%` } },
           { description: { [Op.like]: `%${text}%` } },
-          { "$pet.pet$": { [Op.like]: `%${text}%` } },
-          { "$category.name$": { [Op.like]: `%${text}%` } },
         ],
-      },
-    }).then((products) => {
+      }
+    })
+    
+    // Calcula el número total de paginas
+      const totalPages = Math.ceil(count / limit);
+
       res.render(`products/results`, {
-        keywords,
-        products,
-        session: req.session,
-      });
-    });
+       products,
+       totalPages,
+       currentPage: page,
+       keywords,
+       session: req.session
+     });
+   
   },
+
   admin: (req, res) => {
     res.render("users/admin");
   },

@@ -32,20 +32,20 @@ a {
 /* BOTONES */ 
  .btn{
   border: 2px solid black;
-  padding: 7px 7px;
+  padding: 5px 5px;
   background-color: var(--amarillo);
   color: var(--verdePrueba1);
   font-weight: 500;
   border-radius: 5px;
   text-transform: uppercase;
-  transition: all 1s;
+  transition: all 0.1s;
  }
 
 
 .btn:hover{
   box-shadow: 0 0 10px var(--amarillo);
   background: linear-gradient(var(--verdePrueba3),var(--verdePrueba4),var(--verdePrueba3));
-  border: var(--verdePrueba1) 3px solid;
+  border: var(--verdePrueba1) 2px solid;
   color: var(--verdePrueba1);  
 }
 
@@ -119,14 +119,33 @@ td{
   text-align: center;
 }
 
+.paginado{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  
+  background-color: var(--verdePrueba1);
+}
 
+.paginado .container{
+  align-items: center;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
+.paginado .paginadoItem{
+  margin: 0 10px;
+  color: var(--verdePrueba4);
+  font-weight: 600;
+}
 
-
-
-
-
-
-
-
-
+.paginado .uHere{
+  margin: 0 10px;
+  color: var(--amarillo);
+}

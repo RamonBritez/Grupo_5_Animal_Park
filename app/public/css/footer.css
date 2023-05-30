@@ -16,24 +16,7 @@ footer {
       justify-content: center;
       align-items: center;
   }
-  
-  
-  footer div.boton-arriba a{
-   height: 20px;
-   width: 40px;
-   border-radius: 5px;
-   background-color: var(--verdePrueba2);
-   border: 2px var(--verdePrueba1) solid;
-   border-radius: 5px;
-   text-align: center;
-  }
-  
-  footer div.boton-arriba a:hover{
-      box-shadow: 0 0 10px var(--amarillo);
-      transform: scale(1.2);
-  }
-  
-  
+ 
   footer nav {
       display: flex;
       width: 100%;
@@ -83,7 +66,6 @@ footer {
       align-items: center;
       justify-content: center;
       text-align: center;
-     
   }
   
   
