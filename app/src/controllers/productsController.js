@@ -1,16 +1,43 @@
 const db = require("../database/models/index");
+const { Op, Sequelize } = require("sequelize");
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
   // Root - Show all products
   index: async (req, res) => {
-    let products = await db.Product.findAll({
-      include: [{ association: "images" }],
+    const page = req.query.page || 1; // Obtiene el número de página actual desde la consulta
+    const limit = 16; // Establece el límite de productos por página
+    const offset = (page - 1) * limit; // Calcula el desplazamiento de acuerdo a la página actual y el límite
+
+
+    const { count, rows: products } = await db.Product.findAndCountAll({
+      offset,
+      limit,
+      include: [
+        {
+          association: "images",
+        }
+      ],
     });
-    let oferta = products.filter((product) => product.discount >= 10);
+    const totalPages = Math.ceil(count / limit);
+    const oferta = await db.Product.findAll({
+      limit: 8,
+      include: [
+        {
+          association: "images",
+        }
+      ],
+      where: {
+        discount: {
+          [Sequelize.Op.gte]: 15
+        },
+      }
+    });
     res.render("products/products", {
       products,
+      totalPages,
+      currentPage: page,
       toThousand,
       oferta,
       session: req.session,

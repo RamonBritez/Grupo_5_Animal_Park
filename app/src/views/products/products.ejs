@@ -29,6 +29,28 @@
 
 
 </main>
+<% if (totalPages > 1) { %>
+   
+    <div class="paginado">
+        <div class="container">
+        <% if (currentPage > 1) { %>
+            <a class="btn" href="/products?page=<%= currentPage - 1 %>"><i class="fa-regular fa-circle-left"></i></a>
+        <% } %>
+       
+        <% for (let i = 1; i <= totalPages; i++) { %>
+            <% if (i == currentPage) { %>
+              <span class="uHere" id="uHere"><%= i %></span>
+            <% } else { %>
+              <a class="paginadoItem" href="/products?page=<%= i %>"><%= i %></a>
+            <% } %>
+        <% } %>
+    
+          <% if (currentPage < totalPages) { %>
+            <a class="btn" href="/products?page=<%= +currentPage + 1 %>"><i class="fa-regular fa-circle-right"></i></a>
+          <% } %>
+        </div>
+    </div>
+    <% } %>
 
     <%- include('../partials/footer')  %> 
 </body>
