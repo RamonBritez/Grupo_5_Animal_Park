@@ -2,7 +2,7 @@ const { Product, Category } = require("../database/models");
 
 const getProducts = async () => {
   try {
-    return await Product.findAll();
+    return await Product.findAll({include:{association: "images"}});
   } catch (error) {
     console.error("Error while fetching Products:", error);
     throw new Error("Error fetching Products");

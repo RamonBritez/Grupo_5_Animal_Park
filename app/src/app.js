@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors")
 const path = require("path");
 app.use(express.static("public"));
 const PORT = 3000;
@@ -13,6 +14,7 @@ const db = require("./database/models");
 /* Template engine config */
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
+app.use(cors())
 app.use(methodOverride("_method")); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

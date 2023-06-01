@@ -8,24 +8,27 @@ module.exports = {
     try {
       const products = await getProducts();
       const productsResponse = products.map(
-        ({ id, name, description, category }) => {
+        ({ id, name, description, category, images , price, discount}) => {
           return {
             id,
             name,
             description,
             category,
             detail: "/api/products/" + id,
+            image: `http://localhost:3000/image/products/${images[0].image}`,
+            price,
+            discount
           };
         }
       );
-const categories=await getCategories()
-const categoriesResult=categories.map(category=>{
-    return{
-        id:category.id,
-        name: category.name,
-    count:category.products.length
-    }
-})
+      const categories = await getCategories()
+      const categoriesResult = categories.map(category => {
+        return {
+          id: category.id,
+          name: category.name,
+          count: category.products.length
+        }
+      })
       const RESPONSE = {
         count: products.length,
         countByCategories: categoriesResult,
@@ -67,7 +70,7 @@ const categoriesResult=categories.map(category=>{
           brand,
           images: images.map(image => {
             return {
-              url: `http:/localhost:3000/image/products/${image.image}`
+              url: `http://localhost:3000/image/products/${image.image}`
             }
           })
         };

@@ -2,7 +2,7 @@ function ProductCard({src, alt, name}) {
   return (
     <article className="productCard">
       <img src={src} alt={alt} />
-      <p>{name.slice(0,20)}</p>
+      <p className="subtitle center">{name.slice(0,20)}</p>
     </article>
   );
 }

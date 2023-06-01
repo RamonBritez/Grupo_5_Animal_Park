@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
 import Sidebar from "./components/Sidebar";
 import CategoryCards from "./components/CategoryCards";
+import LastDataContainer from "./components/LastDataContainer";
 
 function Componentize({ children }) {
   const [products, setProducts] = useState(null);
@@ -19,12 +20,14 @@ function Componentize({ children }) {
     const userPromise = getUsers();
     const productPromise = getProducts();
 
-    Promise.all([userPromise, productPromise]).then(([userResult, productResult]) => { 
-      console.log(userResult);
-      console.log(productResult);
-      setUsers(userResult)
-      setProducts(productResult)
-    });
+    Promise.all([userPromise, productPromise]).then(
+      ([userResult, productResult]) => {
+        console.log(userResult);
+        console.log(productResult);
+        setUsers(userResult);
+        setProducts(productResult);
+      }
+    );
   }, []);
 
   return (
@@ -47,32 +50,32 @@ function Componentize({ children }) {
         <Sidebar />
         <main className="content">
           <h1>Dashboard</h1>
+
           <div className="breakLine"></div>
+
           <section className="container">
-            <Card title="Total de productos" number={products?.count} color="red" />
-            <Card title="Total de usuarios" number={users?.count} color="green" />
+            <Card
+              title="Total de productos"
+              number={products?.count}
+              color="lightGreen"
+            />
+            <Card
+              title="Total de usuarios"
+              number={users?.count}
+              color="green"
+            />
           </section>
-          <section className="container wrap">
-            <p className="title">Productos por categoria</p>
-            {products && <CategoryCards categoryList={products.countByCategories}/>}
-          </section>
+
+          {products && (
+            <CategoryCards categoryList={products.countByCategories} />
+          )}
+          
           <section className="container">
-            <section className="container wrap back border round">
+            <section className="container wrap imgBack border round">
               <p className="title center">Ultimo producto creado</p>
-              <section className="container">
-                <img
-                  src={productImg}
-                  alt="IMAGEN"
-                  className="productImage "
-                />
-                <section className="container col">
-                  <p className="subtitle">Alimento para perros</p>
-                  <p>Precio: 10</p>
-                  <p>Descuento: 10</p>
-                </section>
-              </section>
+              {products && <LastDataContainer productList={products} />}
             </section>
-            <section className="container wrap back border round">
+            <section className="container wrap imgBack border round">
               <p className="title center">Ultimo usuario creado</p>
               <section className="container">
                 <img
@@ -88,10 +91,17 @@ function Componentize({ children }) {
               </section>
             </section>
           </section>
-          <section className="container back wrap">
-            <p className="title">Todos los productos</p>
+          <section className="container border imgBack wrap round">
+            <p className="title center">Todos los productos</p>
             <section className="productList">
-              {products && products.products.map(product => <ProductCard src={`http://localhost:3000/image/products/${product.image}`} alt={""} name={product.name}/>)}
+              {products &&
+                products.products.map((product) => (
+                  <ProductCard
+                    src={product.image}
+                    alt={""}
+                    name={product.name}
+                  />
+                ))}
             </section>
           </section>
         </main>
