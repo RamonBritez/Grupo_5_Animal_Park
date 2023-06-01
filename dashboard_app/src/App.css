@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 
+/* 
+Aguante el bootstrap caserito de chingolo
+Eñ bustrap 
+*/
+
 :root {
   --primary: #485550;
   --secondary: #c0eb6a;
@@ -44,7 +49,7 @@ body {
 header {
   height: 50px;
   width: 100%;
-  background-color: var(--secondary);
+  background: linear-gradient(var(--verdePrueba4), var(--verdePrueba3));;
   display: flex;
   align-items: center;
   padding: 5px 30px;
@@ -128,27 +133,31 @@ article.card {
   gap: 10px;
   align-items: center;
   height: 75px;
+  border-radius: 12px;
 }
 
 article.card div.cardLine {
   height: 100%;
   width: 10px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 article.card.red div.cardLine {
-  background-color: red;
+  background-color: var(--verdePrueba4);
 }
 
-article.card.blue div.cardLine {
-  background-color: blue;
+article.card.yellow div.cardLine {
+  background-color: var(--amarillo);
 }
 
 article.card.green div.cardLine {
-  background-color: green;
+  background-color: var(--verdePrueba3);
 }
 
 .center {
   align-items: center;
+  text-align: center;
 }
 
 article.card .cardContent {
@@ -195,6 +204,10 @@ section.productList {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
+.round {
+  border-radius: 25px;
+}
+
 article.productCard {
   width: 200px;
   display: flex;
@@ -202,12 +215,14 @@ article.productCard {
   align-items: center;
   gap: 5px;
   background-color: var(--articleBackground);
-  height: 200px;
+  height: 230px;
   justify-content: space-between;
   overflow: hidden;
 }
 
 article.productCard img {
   width: 100%;
-  height: 100%;
+  height: 200px;
+  object-fit: scale-down;
+  background-color: white;
 }

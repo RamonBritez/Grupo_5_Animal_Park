@@ -1,7 +1,8 @@
-function ProductCard({src, alt}) {
+function ProductCard({src, alt, name}) {
   return (
     <article className="productCard">
       <img src={src} alt={alt} />
+      <p>{name.slice(0,20)}</p>
     </article>
   );
 }

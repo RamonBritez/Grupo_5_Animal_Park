@@ -1,4 +1,4 @@
-const BASE_USERS_URL_API = "http://localhost:3001/api/users"
+const BASE_USERS_URL_API = "http://localhost:3000/api/users"
 
 export const getUsers = async () => {
     try {
