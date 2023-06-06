@@ -59,6 +59,7 @@ header {
 
 header img {
   height: 100%;
+  margin-right: 15px;
 }
 
 .app-wrapper .content-wrapper {
@@ -89,6 +90,10 @@ aside.navBar ul {
   align-items: center;
   width: 100%;
   gap: 20px;
+}
+aside.navBar ul li:hover{
+  text-decoration: underline;
+  text-decoration-color: #f2c94e;
 }
 
 main.content {
@@ -134,6 +139,7 @@ article.card {
   align-items: center;
   height: 75px;
   border-radius: 12px;
+ 
 }
 
 article.card div.cardLine {
@@ -231,4 +237,8 @@ article.productCard img {
   height: 200px;
   object-fit: scale-down;
   background-color: white;
+}
+
+article.productCard:hover img{
+  box-shadow: 0px 10px 15px #f2c94e ;
 }
