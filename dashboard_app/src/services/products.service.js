@@ -2,7 +2,7 @@ const BASE_PRODUCTS_URL_API = "http://localhost:3000/api/products"
 
 export const getProducts = async () => {
     try {
-        const response = await fetch("http://localhost:3000/api/products");
+        const response = await fetch(BASE_PRODUCTS_URL_API);
         const json = await response.json();
         return json;
         
