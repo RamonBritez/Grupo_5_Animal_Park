@@ -24,6 +24,7 @@
             <ul class="menu">
                 <li> <a href="/"> <i class="fa-solid fa-paw"></i> Home <i class="fa-solid fa-paw"></i></a></li>
                 <li> <a href="/products"><i class="fa-solid fa-paw"></i> Productos <i class="fa-solid fa-paw"></i> </a></li>
+                <li> <a href="http://localhost:3001/"><i class="fa-solid fa-paw"></i> Dashboard <i class="fa-solid fa-paw"></i> </a></li>
                 <% if (typeof session.user != "undefined" ) { %>
                     <% if (session.user.rol_id === 1) { %>
                         <li> <a href="/admin"> <i class="fa-solid fa-paw"></i> Administrar <i class="fa-solid fa-paw"></i></a></li>
@@ -83,12 +84,13 @@
                 <li class="btn"><a href="/admin/banner-edit">Editar Banner</a></li>
             <% } else {%>
                 <li class="btn"><a href="/products">Productos</a></li>
-                <li class="btn"><a href="#pets">mascotas</a></li>
+                <li class="btn"><a href="#pets">Mascotas</a></li>
             <% } %>
             <% } else {%>
                 <li class="btn"><a href="/users/register">Registrarme</a></li>
                 <li class="btn"><a href="/products">Productos</a></li>
                 <li class="btn"><a href="#pets">mascotas</a></li>
+                <li class="btn"><a href="http://localhost:3001/">Dashboard</a></li>
         <% } %>
             
         </ul>

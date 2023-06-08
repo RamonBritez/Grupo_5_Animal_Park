@@ -2,6 +2,7 @@ const db = require("../database/models/index");
 const { Op, Sequelize } = require("sequelize");
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+function formatPrice (price){return price.toFixed(2)};
 
 const controller = {
   // Root - Show all products
@@ -61,7 +62,7 @@ const controller = {
     res.render("products/detail", {
       product,
       products,
-      toThousand,
+      formatPrice,
       session: req.session,
     });
   },

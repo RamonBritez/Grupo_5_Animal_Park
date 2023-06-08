@@ -32,12 +32,15 @@
                   <% }) %>
               <% } %>
             </div>
+             
+
+
             <div class="info-product">
                 <h2 class="title"><%- product.name %></h2>
                 <span>$<span id="price"><%- product.price %></span></span>
                 <% if (product.discount > 0) { %>
                     <span>Descuento del <span id="discount"><%- product.discount %></span>%</span>
-                    <span id="final">$<%- product.price - (product.price * product.discount / 100) %></span>
+                    <span id="final">$<%- (product.price - (product.price * product.discount / 100)).toFixed(2) %></span>
                 <% } %>
                     <% if (typeof session.user != 'undefined') { %>
                         <% if ( session.user.rol == 1) { %>
@@ -116,7 +119,7 @@
                 </div>
                 <h2>Total</h2>
                 <div id="totalFinal">
-                    <span id="">$<%= product.price - (product.price * product.discount / 100) %></span>
+                    <span id="">$<%= (product.price - (product.price * product.discount / 100)).toFixed(2) %></span>
                 </div>
             </article>
             <div class="acciones">

@@ -11,7 +11,13 @@ function myFunction(imgs) {
 
   /* FUENTE: https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp */
 
+
   /* Contador de cantidad de productos */
+  function formatPrice(price) {
+    return price.toFixed(2);
+  }
+
+
 let counter = 1
 let $count = document.getElementById('count');
 let final = Number(document.getElementById("price").firstChild.data)
@@ -23,16 +29,14 @@ if(document.getElementById("discount")){
 }
 
 
-  console.log(descuento)
-
   function add () {
     if(counter <= 10) {
         counter = counter + 1
         $count.innerHTML = `<p>${counter}</p>`
         if(descuento != undefined){
-          total.innerHTML= `<span>$${(final - (final * descuento / 100) ) * counter }</span>`
+          total.innerHTML= `<span>$${formatPrice((final - (final * descuento / 100) ) * counter) }</span>`
         }else{
-          total.innerHTML= `<span>$${(final * counter) }</span>`
+          total.innerHTML= `<span>$${formatPrice((final * counter)) }</span>`
         }
        
     }
@@ -44,9 +48,9 @@ if(document.getElementById("discount")){
         counter = counter - 1
         $count.innerHTML = `<p>${counter}</p>`
         if(descuento!= undefined){
-          total.innerHTML= `<span>$${((1 + counter) * (final - (final * descuento / 100))) - (final - (final * descuento / 100))}</span>`
+          total.innerHTML= `<span>$${formatPrice(((1 + counter) * (final - (final * descuento / 100))) - (final - (final * descuento / 100)))}</span>`
         }else{
-          total.innerHTML= `<span>$${((1 + counter) * final) - final}</span>`
+          total.innerHTML= `<span>$${formatPrice(((1 + counter) * final) - final)}</span>`
         }
     }
   }

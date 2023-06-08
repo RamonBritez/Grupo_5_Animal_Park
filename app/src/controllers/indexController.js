@@ -4,13 +4,14 @@ const { Op } = require("sequelize");
 module.exports = {
   index: (req, res) => {
     db.Product.findAll({
+      limit:15,
       include: [
         {
           association: "images",
         },
       ],
     }).then((products) => {
-      let oferta = products.filter((product) => product.discount >= 10);
+      let oferta = products.filter((product) => product.discount >= 5);
 
       res.render("home", {
         products,
