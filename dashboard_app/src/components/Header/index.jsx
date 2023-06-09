@@ -1,7 +1,9 @@
+import logo from "../../assets/logo-large.png"
+
 function Header() {
   return (
     <header>
-      <p>Animal Park</p>
+      <img src={logo} alt="Animal Park" srcset="" />
     </header>
   );
 }

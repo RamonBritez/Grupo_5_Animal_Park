@@ -3,7 +3,6 @@ import "./App.css";
 import { getProducts } from "./services/products.service";
 import { getUsers } from "./services/users.service";
 
-import productImg from "./assets/productImg.png";
 import userImg from "./assets/userImg.png";
 import Card from "./components/Card";
 import Header from "./components/Header";

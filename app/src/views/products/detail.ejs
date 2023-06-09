@@ -20,116 +20,143 @@
               </div>
             </article>
             <div class="miniPics">
-              <% if (product.images.length > 1) { %>
-                <% product.images.forEach(image => { %>
-                  <div class="thumbnailImages">
-                    <img
-                      src="/image/products/<%-image.image %>"
-                      alt="Imagen de producto"
-                      onclick="myFunction(this);"
-                    />
-                  </div>
-                  <% }) %>
-              <% } %>
+              <% if (product.images.length > 1) { %> <%
+              product.images.forEach(image => { %>
+              <div class="thumbnailImages">
+                <img
+                  src="/image/products/<%-image.image %>"
+                  alt="Imagen de producto"
+                  onclick="myFunction(this);"
+                />
+              </div>
+              <% }) %> <% } %>
             </div>
-             
-
 
             <div class="info-product">
-                <h2 class="title"><%- product.name %></h2>
-                <span>$<span id="price"><%- product.price %></span></span>
-                <% if (product.discount > 0) { %>
-                    <span>Descuento del <span id="discount"><%- product.discount %></span>%</span>
-                    <span id="final">$<%- (product.price - (product.price * product.discount / 100)).toFixed(2) %></span>
-                <% } %>
-                    <% if (typeof session.user != 'undefined') { %>
-                        <% if ( session.user.rol == 1) { %>
-                            <div class="btnAdmin">
-                            <form action="/admin/productEdit/<%- product.id %>">
-                                <button  class="btn"> <i class="fa-solid fa-pen-to-square"></i></button>
-                            </form>
-                            
-                            
-                            <button onclick="document.getElementById('delete').classList.add('activeModal')" class="btn">Borrar</button>
-                             
-                        </div>
-                        <div class="adminModal" id="delete">
-                          <div class="admin-deleteModal">
-                            <label>Estas seguro de eliminar este producto?</label>
-                            <label>ID: <%= product.id%></label>
-                            <label>Nombre: <%= product.name %></label>
-                            <label>Precio: $<%= product.price %></label>
-                            <label>Descuento: <%= product.discount%>%</label>
-                            <label>Categoria: <%= product.category.name %></label>
-                            <label>Mascota: <%= product.pet.pet %></label>
-                            <label>Marca: <%= product.brand.brand %></label>
-                            <button class="btn"
-                              onclick="document.getElementById('delete').classList.remove('activeModal')"
-                            >CANCELAR</button>
-                            <form
-                            action="/admin/productDelete/<%= product.id %>?_method=delete"
-                            method="post"
-                            align="center"
-                          
-                          >
-                            <button  class="btn" type="submit">ELIMINAR</button>
-                          </form>
-                        </div>
-                        </div>
-                        <% } %>
-                    <% } %>
+              <h2 class="title"><%- product.name %></h2>
+              <span>$<span id="price"><%- product.price %></span></span>
+              <% if (product.discount > 0) { %>
+              <span
+                >Descuento del
+                <span id="discount"><%- product.discount %></span>%</span
+              >
+              <span id="final"
+                >$<%- (product.price - (product.price * product.discount /
+                100)).toFixed(2) %></span
+              >
+              <% } %> <% if (typeof session.user != 'undefined') { %> <% if (
+              session.user.rol == 1) { %>
+              <div class="btnAdmin">
+                <form action="/admin/productEdit/<%- product.id %>">
+                  <button class="btn">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </form>
+
+                <button
+                  onclick="document.getElementById('delete').classList.add('activeModal')"
+                  class="btn"
+                >
+                  Borrar
+                </button>
+              </div>
+              <div class="adminModal" id="delete">
+                <div class="admin-deleteModal">
+                  <label>Estas seguro de eliminar este producto?</label>
+                  <label>ID: <%= product.id%></label>
+                  <label>Nombre: <%= product.name %></label>
+                  <label>Precio: $<%= product.price %></label>
+                  <label>Descuento: <%= product.discount%>%</label>
+                  <label>Categoria: <%= product.category.name %></label>
+                  <label>Mascota: <%= product.pet.pet %></label>
+                  <label>Marca: <%= product.brand.brand %></label>
+                  <button
+                    class="btn"
+                    onclick="document.getElementById('delete').classList.remove('activeModal')"
+                  >
+                    CANCELAR
+                  </button>
+                  <form
+                    action="/admin/productDelete/<%= product.id %>?_method=delete"
+                    method="post"
+                    align="center"
+                  >
+                    <button class="btn" type="submit">ELIMINAR</button>
+                  </form>
+                </div>
+              </div>
+              <% } %> <% } %>
             </div>
           </div>
         </section>
 
         <section class="compra">
-            <article class="metodo-pago">
-                <div class="cajaEnvio">
-                <h2>Metodos de envio</h2>
-                <div class="options">
-                    <input type="radio" name="envio" value="Correo Argentino" checked>Correo Argentino
-                    <input type="radio" name="envio" value="Andreani"> Andreani
-                    <input type="radio" name="envio" value="Retirar en sucursal"> Retirar en sucursal
+          <article class="metodo-pago">
+            <div class="cajaEnvio">
+              <h2>Metodos de envio</h2>
+              <div class="options">
+                <input
+                  type="radio"
+                  name="envio"
+                  value="Correo Argentino"
+                  checked
+                />Correo Argentino
+                <input type="radio" name="envio" value="Andreani" /> Andreani
+                <input type="radio" name="envio" value="Retirar en sucursal" />
+                Retirar en sucursal
+              </div>
+            </div>
+            <div class="cajaPago">
+              <div class="tipoDePago">
+                <h2>Metodos de pagos</h2>
+                <div>
+                  <input
+                    type="radio"
+                    name="pago"
+                    value="Debito"
+                    checked
+                  />Debito
+                  <input type="radio" name="pago" value="Credito" /> Credito
+                  <input type="radio" name="pago" value="Efectivo" /> Efectivo
                 </div>
-                 </div>
-                <div class="cajaPago">
-                    <div class="tipoDePago">
-                        <h2>Metodos de pagos</h2>
-                        <div>
-                            <input type="radio" name="pago" value="Debito" checked>Debito
-                            <input type="radio" name="pago" value="Credito"> Credito
-                            <input type="radio" name="pago" value="Efectivo"> Efectivo
-                        </div>
-                    </div>
-                    
-                </div>
-                <img src="/image/pagos.png" alt="pagos">
-                <div class="cantidad">
-                    <label for="cantidad">Cantidad</label>
-                    <div class="counter">
-                        <button type="button" class="btn-subtract" onclick="subtract();">
-                            -
-                        </button>
-                        <div id="count">1</div>
-                                
-                        <button type="button" id="btn-add" onclick="add();">
-                            +
-                        </button>
-                    </div>
-                </div>
-                <h2>Total</h2>
-                <div id="totalFinal">
-                    <span id="">$<%= (product.price - (product.price * product.discount / 100)).toFixed(2) %></span>
-                </div>
-            </article>
-            <div class="acciones">
-              <li>
-                <form action="/carrito/<%- product.id %>" method="post">
-                  <button type="submit" class="btn">COMPRAR</button>
-                </form>
-              </li>
-                <li><a href="/error" class="btn">FAVORITOS</a></li>
-            </div> 
+              </div>
+            </div>
+            <img src="/image/pagos.png" alt="pagos" />
+            <div class="cantidad">
+              <label for="cantidad">Cantidad</label>
+              <div class="counter">
+                <button
+                  type="button"
+                  class="btn-subtract"
+                  onclick="subtract();"
+                >
+                  -
+                </button>
+                <div id="count">1</div>
+
+                <button type="button" id="btn-add" onclick="add();">+</button>
+              </div>
+            </div>
+            <h2>Total</h2>
+            <div id="totalFinal">
+              <span id=""
+                >$<%= (product.price - (product.price * product.discount /
+                100)).toFixed(2) %></span
+              >
+            </div>
+          </article>
+          <div class="acciones">
+            <li>
+              <form
+                action="/carrito/<%- product.id %>"
+                method="post"
+                id="cart"
+              >
+                <button type="submit" class="btn">COMPRAR</button>
+              </form>
+            </li>
+            <li><a href="/error" class="btn">FAVORITOS</a></li>
+          </div>
         </section>
       </section>
 
