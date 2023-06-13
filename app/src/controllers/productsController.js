@@ -67,6 +67,32 @@ const controller = {
     });
   },
 
+  category: async (req, res) =>{
+    let categoryId = req.params.id;
+    let products = await db.Product.findAll({
+      include: [{ association: "images" }],
+      where: {
+        category_id: categoryId
+      }
+    });
+    res.render("products/categories", {
+      products,
+      session: req.session
+    })
+  },
+  pet: async (req, res) =>{
+    let categoryId = req.params.id;
+    let products = await db.Product.findAll({
+      include: [{ association: "images" }],
+      where: {
+        pet_id: categoryId
+      }
+    });
+    res.render("products/categories", {
+      products,
+      session: req.session
+    })
+  },
 };
 
 module.exports = controller;

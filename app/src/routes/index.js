@@ -1,18 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/indexController");
+const { carrito, comprar, index, search, aboutUs } = require("../controllers/indexController")
+
 const {isLogged} = require("../middlewares/userCheck")
 
-router.get("/", controller.index); 
+router.get("/", index); 
 
 
 //router.get("/error", controller.error);
 
 
-router.get("/carrito", isLogged, controller.carrito);
-router.post("/carrito/:id", isLogged, controller.comprar)
+router.get("/carrito", isLogged, carrito);
+router.post("/carrito/:id", isLogged, comprar)
 
-router.get('/search', controller.search); 
+router.get('/search', search); 
+router.get('/aboutUs', aboutUs); 
 
 
 

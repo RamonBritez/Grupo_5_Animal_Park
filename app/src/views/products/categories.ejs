@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('../partials/head', {title:'Resultados de tu busqueda'}) %>
+<body>
+	<!-- Header -->
+	<%- include('../partials/header') %>
+	
+	<!-- Resultados -->
+	<main class="results">
+		
+		<%- include('../partials/filtersCategory') %>
+		<%- include("../partials/filterPets")  %>
+		
+
+	<% if (products.length > 0) { %>
+		<section class="ofertas">
+		<h2>Categorias</h2>
+		</section>		 
+		<%- include('../partials/cardResults') %>
+		
+		 
+	<% }else{ %>		
+		<section class="ofertas">
+							<h2 >No hay productos que coincidan con esa búsqueda</h2>
+							<h2>Intentaste buscando por mascotas?</h2>
+							<%- include("../partials/filterPets")  %> 
+		</section>				
+	<% } %>
+		
+	</main>
+
+	
+	<!-- footer -->
+	<%- include('../partials/footer') %>
+	<!-- /footer -->
+</body>	
+</html>

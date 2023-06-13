@@ -98,4 +98,10 @@ module.exports = {
     req.session.user.carrito.push(Number(productoGuardado));
     res.redirect("/carrito");
   },
+
+  aboutUs: (req, res) => {
+    res.render("aboutUs", {
+      session: req.session
+    })
+  }
 };
