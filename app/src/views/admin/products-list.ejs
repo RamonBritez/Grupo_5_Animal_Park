@@ -50,7 +50,7 @@
               </td>
               <td class="adminModal" id="product-<%- id%>">
                 <form
-                  action="/products/delete/<%= id %>?_method=delete"
+                  action="/productDelete/<%= id %>?_method=delete"
                   method="post"
                   class="admin-deleteModal"
                 >
@@ -79,6 +79,5 @@
     </main>
 
     <%- include('../partials/footer') %>
-    
   </body>
 </html>

@@ -10,7 +10,7 @@ import LastCreated from "../../components/LastCreated";
 import Totals from "../../components/Totals";
 import ProductList from "../../components/ProductList";
 
-function Dashboard({ children }) {
+function Dashboard() {
   const [products, setProducts] = useState(null);
   const [users, setUsers] = useState(null);
   const [lastProduct, setLastProduct] = useState(null);
@@ -22,8 +22,6 @@ function Dashboard({ children }) {
 
     Promise.all([userPromise, productPromise]).then(
       ([userResult, productResult]) => {
-        console.log(userResult);
-        console.log(productResult);
         setUsers(userResult);
         setProducts(productResult);
       }
@@ -31,18 +29,20 @@ function Dashboard({ children }) {
   }, []);
 
   useEffect(() => {
-    let lastProductId = products.products[products.products.lenght - 1].id;
-    let lastUserId = users.users[users.users.lenght - 1].id;
+    if (products && users) {
+      let lastProductId = products.products[products.products.length - 1].id;
+      let lastUserId = users.users[users.users.length - 1].id;
 
-    const lastUserPromise = getUserById(lastUserId);
-    const lastProductPromise = getProductById(lastProductId);
+      const lastUserPromise = getUserById(lastUserId);
+      const lastProductPromise = getProductById(lastProductId);
 
-    Promise.all([lastUserPromise, lastProductPromise]).then(
-      ([userResult, productResult]) => {
-        setLastUser(userResult);
-        setLastProduct(productResult);
-      }
-    );
+      Promise.all([lastUserPromise, lastProductPromise]).then(
+        ([userResult, productResult]) => {
+          setLastUser(userResult);
+          setLastProduct(productResult);
+        }
+      );
+    }
   }, [products, users]);
 
   return (
