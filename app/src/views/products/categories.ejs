@@ -10,7 +10,7 @@
 	<main class="results">
 		<h2>Perdido? Usa nuestros filtros</h2>
 		<%- include('../partials/filtersCategory') %>
-		<%- include("../partials/filterPets")  %> 
+		
 
 	<% if (products.length > 0) { %>
 		<section class="ofertas">
@@ -22,12 +22,14 @@
 	<% }else{ %>		
 		<section class="ofertas">
 							<h2 >No hay productos que coincidan con esa búsqueda</h2>
+							<h2>Intentaste buscando por mascotas?</h2>
+							<%- include("../partials/filterPets")  %> 
 		</section>				
 	<% } %>
 		
 	</main>
 
-
+	
 	<!-- footer -->
 	<%- include('../partials/footer') %>
 	<!-- /footer -->
