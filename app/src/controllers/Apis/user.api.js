@@ -6,6 +6,7 @@ const {
   deleteUser,
   getUserByEmail,
 } = require("../../services/user.service");
+const { generateToken } = require("../../helpers/jwt.helper")
 const bcrypt = require("bcrypt");
 
 module.exports = {
@@ -52,5 +53,15 @@ module.exports = {
       return res.status(500).json({ Error: error });
     }
   },
+  loginUser: async (req, res) => {
+    try {
+      const { email } = req.body;
+      const user = await getUserByEmail(email);
+      const token = generateToken(user);
+      return res.status(200).json({ token });
+    } catch (error) {
+      return res.status(500).json({ Error: error });
+    }
+  }
 
 };

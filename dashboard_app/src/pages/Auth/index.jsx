@@ -1,3 +1,5 @@
+import { useAuth } from "../../context/AuthProvider";
+
 function Auth() {
   return (
     <div>
