@@ -17,5 +17,5 @@ window.addEventListener("load", function() {
     }
   
     // Iniciamos el autoplay
-    setInterval(autoPlay, 5000);
+    setInterval(autoPlay, 3500);
   });
