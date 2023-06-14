@@ -101,6 +101,7 @@ footer div#logo a img {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px 35px;
+    padding: 0 10px;
   }
 
   footer div.boton-arriba {

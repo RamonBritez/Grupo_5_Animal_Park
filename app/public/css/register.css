@@ -20,7 +20,6 @@ button:active {
 
 main {
   padding: 20px 10px;
-  min-height: calc(100vh - 72px);
   display: flex;
   flex-direction: column;
   justify-content: center;

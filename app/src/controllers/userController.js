@@ -60,7 +60,7 @@ module.exports = {
     },
 
     register: (req, res) => {
-        res.render("users/register")
+        res.render("users/register", {session: req.session})
     },
 
     processRegister: (req, res) => {
