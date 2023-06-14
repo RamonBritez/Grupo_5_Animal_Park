@@ -351,6 +351,7 @@ main.detail section div.productsContainer { /*recomend y venta*/
         flex-direction: row;
         justify-content: space-around;
         flex-wrap: wrap;
+        align-items: stretch;
     }
 
     main.detail section.producto{
@@ -400,11 +401,9 @@ main.detail section div.productsContainer { /*recomend y venta*/
 
     }
     main.detail section.compra {
-        width: 40%;
+        width: 50%;
         display: flex;
         flex-wrap: wrap;
-        margin-top: 20px;
-        height: 400px;
         align-items: center;
         justify-content: center;
         min-width: 320px;
@@ -415,6 +414,7 @@ main.detail section div.productsContainer { /*recomend y venta*/
         justify-content: center;
         align-items: center;
         width: 100%;
+        gap: 20px;
     }
     main.detail section.compra .metodo-pago .cajaPago, .cajaEnvio{
         display: flex;
@@ -444,6 +444,12 @@ main.detail section div.productsContainer { /*recomend y venta*/
         align-items: center;
         padding: 0 10px;
         justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    main.detail section.compra .metodo-pago div.options .option{
+        display: flex;
+        text-align: center;
+        align-items: center;
     }
     main.detail section.compra .metodo-pago div.options input{
         display: flex;

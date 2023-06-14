@@ -95,15 +95,25 @@
             <div class="cajaEnvio">
               <h2>Metodos de envio</h2>
               <div class="options">
-                <input
-                  type="radio"
-                  name="envio"
-                  value="Correo Argentino"
-                  checked
-                />Correo Argentino
-                <input type="radio" name="envio" value="Andreani" /> Andreani
-                <input type="radio" name="envio" value="Retirar en sucursal" />
-                Retirar en sucursal
+                <div class="option">
+                  <input
+                    type="radio"
+                    name="envio"
+                    value="Correo Argentino"
+                    checked
+                  />Correo Argentino
+                </div>
+                <div class="option">
+                  <input type="radio" name="envio" value="Andreani" /> Andreani
+                </div>
+                <div class="option">
+                  <input
+                    type="radio"
+                    name="envio"
+                    value="Retirar en sucursal"
+                  />
+                  Retirar en sucursal
+                </div>
               </div>
             </div>
             <div class="cajaPago">
@@ -147,11 +157,7 @@
           </article>
           <div class="acciones">
             <li>
-              <form
-                action="/carrito/<%- product.id %>"
-                method="post"
-                id="cart"
-              >
+              <form action="/carrito/<%- product.id %>" method="post" id="cart">
                 <button type="submit" class="btn">COMPRAR</button>
               </form>
             </li>
