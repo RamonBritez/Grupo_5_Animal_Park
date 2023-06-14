@@ -482,6 +482,13 @@ main.detail section div.productsContainer { /*recomend y venta*/
 
     }
 
+    main.detail section.compra .metodo-pago .pago{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
 }
 
   
