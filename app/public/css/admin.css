@@ -1,134 +1,151 @@
-.admin-main{
-    width: 100%;
-    height: 100%;
+.admin-main {
+  width: 100%;
+  height: 100%;
 }
-.admin-main .avatar{
-    width: 200px;
-    height: 220px;
-    object-fit: fill;
+.admin-main .avatar {
+  width: 200px;
+  height: 220px;
+  object-fit: fill;
 }
 
-.admin-main .admin-options{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.admin-main .admin-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0;
 }
-.admin-main .admin-options li{
-margin: 20px 0;
+.admin-main .admin-options li {
+  width: 100%;
+  text-align: center;
+}
+
+.admin-options a.btn, .admin-options button.btn {
+    width: 100%;
+    display: block;
+    font-size: 16px;
 }
 
 .adminModal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    left: 0;
-    overflow: auto;
-    top: 0;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  left: 0;
+  overflow: auto;
+  top: 0;
 }
 
 .adminModal.activeModal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @keyframes Zoom {
-    from {
-        transform: scale(0);
-      }
-  
-      to {
-          transform: scale(1);
-      }
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 .admin-deleteModal {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid black;
-    width: 80%;
-    max-width: 500px;
-    gap: 10px;
-    background-color: #fefefe;
-    animation-name: Zoom;
-    animation-duration: 0.5s;
-    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid black;
+  width: 80%;
+  max-width: 500px;
+  gap: 10px;
+  background-color: #fefefe;
+  animation-name: Zoom;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
-.admin-table{
-    height: 100%;
-    width: 100%;
+.admin-table {
+  height: 100%;
+  width: 100%;
 }
-.admin-table .fila-admin{
-    border: 1px black solid;
-    width: 90%;
-    margin: 15px 5px;
-    justify-content: space-evenly;
-    text-align: center;
+.admin-table .fila-admin {
+  border: 1px black solid;
+  width: 90%;
+  margin: 15px 5px;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
-.admin-table .fila-admin .avatar{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 1rem auto;
-    border: black 1px solid;
+.admin-table .fila-admin .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 1rem auto;
+  border: black 1px solid;
 }
 
 .admin-table .fila-admin .avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-.admin-table .fila-admin .title-admin{
-    border: 2px black solid;
-    justify-content: space-between;
-    font-size: 18px;
+.admin-table .fila-admin .title-admin {
+  border: 2px black solid;
+  justify-content: space-between;
+  font-size: 18px;
 }
 
-.admin-table .fila-admin .data-admin{
-    font-size: 18px;
+.admin-table .fila-admin .data-admin {
+  font-size: 18px;
 }
-.admin-table .fila-admin .img-admin{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.admin-table .fila-admin .img-admin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.admin-table .fila-admin .img-admin img{
+.admin-table .fila-admin .img-admin img {
   width: 75px;
   height: 70px;
   object-fit: scale-down;
 }
 
-.admin-table .fila-admin i{
-    font-size: 20px;
-    padding: 10px;
+.admin-table .fila-admin i {
+  font-size: 20px;
+  padding: 10px;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
+  .admin-main {
+    background-image: url(/image/animalPark/BG-burgerMenu.jpg);
+    background-size: 100%;
+    background-repeat: repeat-y;
+    background-position: center;
+  }
 
-    .admin-main{
-        background-image: url(/image/animalPark/BG-burgerMenu.jpg);
-        background-size: 100%;
-        background-repeat:repeat-y;
-        background-position: center;
-    }
+  .admin-main img {
+    display: block;
+  }
 
+  .admin-main .admin-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+  }
 
-
-.admin-main img{
-        display: block;
-}
-
-
-
+  .admin-main .admin-options li {
+    width: 30%
+  }
 }

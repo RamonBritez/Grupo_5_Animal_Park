@@ -143,6 +143,7 @@ main div.login__menu div.login__menu-form div.crear-cuenta button {
   font-size: 100%;
   margin-bottom: 15px;
   background-color: var(--amarillo);
+  border-radius: 5px;
 }
 
 main div.login__menu div.login__menu-form div.crear-cuenta button:hover{
