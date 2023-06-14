@@ -150,7 +150,7 @@ header nav.navegacion{
     background-color: white;
     padding: 1rem;
     border-radius: .5rem;
-    margin-left: -3rem;
+    right: 0;
   }
 
   .user:hover .menu-user{
