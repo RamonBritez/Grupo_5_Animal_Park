@@ -1,6 +1,8 @@
+import "./index.css"
+
 function LastCreated({ product, user }) {
   return (
-    <section className="container noSidePad">
+    <section className="container no-side-pad">
       <section className="container wrap imgBack border round">
         <p className="title center">Ultimo producto creado</p>
         {product && (

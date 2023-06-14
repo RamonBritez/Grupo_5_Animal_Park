@@ -3,8 +3,6 @@ import "../../App.css";
 import { getProducts, getProductById } from "../../services/products.service";
 import { getUsers, getUserById } from "../../services/users.service";
 
-import Header from "../../components/Header";
-import Sidebar from "../../components/Sidebar";
 import CategoryCards from "../../components/CategoryCards";
 import LastCreated from "../../components/LastCreated";
 import Totals from "../../components/Totals";
@@ -38,6 +36,7 @@ function Dashboard() {
 
       Promise.all([lastUserPromise, lastProductPromise]).then(
         ([userResult, productResult]) => {
+          console.log(userResult);
           setLastUser(userResult);
           setLastProduct(productResult);
         }
@@ -46,31 +45,23 @@ function Dashboard() {
   }, [products, users]);
 
   return (
-    <div className="app-wrapper">
-      <Header />
-      <div className="content-wrapper">
-        <Sidebar />
-        <main className="content">
-          <h1>Dashboard</h1>
+    <>
+      <h1>Dashboard</h1>
 
-          <div className="breakLine"></div>
+      <div className="breakLine"></div>
 
-          {products && users && (
-            <Totals productCount={products.count} userCount={users.count} />
-          )}
+      {products && users && (
+        <Totals productCount={products.count} userCount={users.count} />
+      )}
 
-          {products && (
-            <CategoryCards categoryList={products.countByCategories} />
-          )}
+      {products && <CategoryCards categoryList={products.countByCategories} />}
 
-          {lastProduct && lastUser && (
-            <LastCreated product={lastProduct} user={lastUser} />
-          )}
+      {lastProduct && lastUser && (
+        <LastCreated product={lastProduct} user={lastUser} />
+      )}
 
-          {products && <ProductList products={products} />}
-        </main>
-      </div>
-    </div>
+      {products && <ProductList products={products} />}
+    </>
   );
 }
 

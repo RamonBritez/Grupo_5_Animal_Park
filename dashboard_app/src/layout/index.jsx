@@ -1,13 +1,16 @@
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import "./index.css"
 
 const Layout = ({ children }) => {
   return (
-    <div id="wrapper">
-      <Sidebar />
-      <div id="content-wrapper" className="d-flex flex-column">
-        <Header />
-        <div id="content">{children}</div>
+    <div className="app-wrapper">
+      <Header />
+      <div className="content-wrapper">
+        <Sidebar />
+        <main className="content">
+          {children}
+        </main>
       </div>
     </div>
   );

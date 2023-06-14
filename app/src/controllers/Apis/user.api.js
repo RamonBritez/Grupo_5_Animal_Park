@@ -45,7 +45,7 @@ module.exports = {
         last_name,
         email,
         tel,
-        avatar,
+        avatar: `http://localhost:3000/image/users/${avatar}`,
       };
 
       return res.status(200).json(USER_DATA_RESPONSE);

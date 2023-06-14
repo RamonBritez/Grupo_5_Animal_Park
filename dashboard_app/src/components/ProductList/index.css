@@ -1,0 +1,7 @@
+section.productList {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+  }

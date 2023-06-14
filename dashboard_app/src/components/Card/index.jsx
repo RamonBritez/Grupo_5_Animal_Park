@@ -1,3 +1,5 @@
+import "./index.css"
+
 function Card({title, number, color}) {
   return (
     <article className={`card ${color}`}>

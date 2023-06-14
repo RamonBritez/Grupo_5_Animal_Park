@@ -1,0 +1,37 @@
+article.card {
+  background-color: var(--articleBackground);
+  flex-grow: 1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 75px;
+  border-radius: 12px;
+}
+
+article.card div.cardLine {
+  height: 100%;
+  width: 10px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+article.card.lightGreen div.cardLine {
+  background-color: var(--verdePrueba4);
+}
+
+article.card.yellow div.cardLine {
+  background-color: var(--amarillo);
+}
+
+article.card.green div.cardLine {
+  background-color: var(--verdePrueba3);
+}
+
+article.card .cardContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 10px;
+}

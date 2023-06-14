@@ -1,3 +1,5 @@
+import "./index.css"
+
 function ProductCard({src, alt, name}) {
   return (
     <article className="productCard">
