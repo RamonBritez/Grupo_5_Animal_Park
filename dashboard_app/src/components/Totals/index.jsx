@@ -2,7 +2,7 @@ import Card from "../Card";
 
 function Totals({ productCount, userCount }) {
   return (
-    <section className="container">
+    <section className="container no-side-pad">
       {productCount && (
         <Card
           title="Total de productos"

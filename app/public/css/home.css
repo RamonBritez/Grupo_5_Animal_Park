@@ -2,203 +2,184 @@
 
 /* --- MAIN --- */
 
-main.home{
-    width: 100%;
-    padding: 0%;
-    
+main.home {
+  width: 100%;
+  padding: 0%;
 }
-main div.home-info{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    height: 100px;
-    background-color: var(--amarillo);
-    color: var(--verdePrueba1);   
-}   
-
-main div.home-info div{
- 
- height: 50px;
- width: 50px;
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- margin: 1px 0;
- animation-duration:2s;
- text-align: center;
- width: 30%;
- flex-wrap: nowrap;
+main div.home-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100px;
+  background-color: var(--amarillo);
+  color: var(--verdePrueba1);
 }
 
-main div.home-info div#center{
-border-left: var(--verdePrueba1) 1px solid;
-border-right: var(--verdePrueba1) 1px solid;
-width: 40%;
-
+main div.home-info div {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1px 0;
+  animation-duration: 2s;
+  text-align: center;
+  width: 30%;
+  flex-wrap: nowrap;
 }
-main div.home-info div:last-child{
-    border: none;
+
+main div.home-info div#center {
+  border-left: var(--verdePrueba1) 1px solid;
+  border-right: var(--verdePrueba1) 1px solid;
+  width: 40%;
+}
+main div.home-info div:last-child {
+  border: none;
 }
 
 main div.home-info div i {
-   font-size: 20px;
-   flex-wrap: wrap;
+  font-size: 20px;
+  flex-wrap: wrap;
 }
-main div.home-info div span{
-    font-size: 16px;
+main div.home-info div span {
+  font-size: 16px;
 }
-
-
 
 /* --- PUBLICIDAD --- */
-    .publicidad {
-        display: none;
-    }
+.publicidad {
+  display: none;
+}
 
-    main section.vende-humo{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--amarillo);
-        border: var(--verdePrueba3) 2px solid;
-        margin-bottom: 50px;
-        flex-wrap: nowrap;
-    }
-    main section.vende-humo div.texto{
-       
-        width: 80%;
-        padding: 15px;
-        margin-left: 20px;
-        font-size: 14px;
-        text-align: center;
-    }
-    main section.vende-humo h2 {
-        margin-bottom: 10px;
-        font-size: 14px;
-        
-    }
-    main section.vende-humo div.imagen{
-        display: none;
-    }
-    main section.vende-humo img {
-        width: 75%;
-        height: 75%;
-
-    }
+main section.vende-humo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--amarillo);
+  border: var(--verdePrueba3) 2px solid;
+  margin-bottom: 50px;
+  flex-wrap: nowrap;
+}
+main section.vende-humo div.texto {
+  width: 80%;
+  padding: 15px;
+  margin-left: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+main section.vende-humo h2 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+main section.vende-humo div.imagen {
+  display: none;
+}
+main section.vende-humo img {
+  width: 75%;
+  height: 75%;
+}
 /* --- FIN PUBLICIDAD ---*/
 
-main div#suscribe{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    height: 6.5rem;
-    width: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    background-color: var(--amarillo);
-    text-align: center;
-    justify-content: center;
-   
+main div#suscribe {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 6.5rem;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: var(--amarillo);
+  text-align: center;
+  justify-content: center;
 }
-main div#suscribe h2{
-    padding: 2px 2px;
-}
-
-main div#suscribe div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-main div#suscribe div input{
-    width: 50vw;
-    height: 2rem;
-    font-size: 20px;
-    margin-right: 15px;
-    border-radius: 5px;
-    padding: 2px;
+main div#suscribe h2 {
+  padding: 2px 2px;
 }
 
-main div#suscribe div a{
-    height: 1.8rem;
-    width: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
+main div#suscribe div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main div#suscribe div input {
+  width: 50vw;
+  height: 2rem;
+  font-size: 20px;
+  margin-right: 15px;
+  border-radius: 5px;
+  padding: 2px;
 }
 
-
+main div#suscribe div a {
+  height: 1.8rem;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
 
 /* --- FIN MAIN --- */
 
-
-
-
 /* TABLET */
 
-
 @media (min-width: 768px) {
-
-/*info bajo header */
-main div.home-info div{
+  /*info bajo header */
+  main div.home-info div {
     height: 100px;
     width: 200px;
-}
+  }
 
-main div.home-info div i{
+  main div.home-info div i {
     font-size: 26px;
-}
-main div.home-info div span{
+  }
+  main div.home-info div span {
     font-size: 22px;
-}
+  }
 
-/* Banners */
-main section.publicidad {
-        
+  /* Banners */
+  main section.publicidad {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 50px 0;
     border-radius: 10px;
     width: 100%;
-}
+  }
 
-
-main section.publicidad img {
+  main section.publicidad img {
     width: 100%;
-}
+  }
 
-
-/* texto */
-main section.vende-humo{
+  /* texto */
+  main section.vende-humo {
     justify-content: space-between;
-}
+  }
 
-
-main section.vende-humo div.texto{
+  main section.vende-humo div.texto {
     text-align: start;
     font-size: 16px;
-}
-main section.vende-humo h2 {
+  }
+  main section.vende-humo h2 {
     font-size: 20px;
-    
-}
+  }
 
-main section.vende-humo div.imagen{
+  main section.vende-humo div.imagen {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-main section.publicidad{
+  main section.publicidad {
     padding: 0px 50px;
-}
+  }
 
-
-main div#suscribe div a{
+  main div#suscribe div a {
     font-size: 16px;
+  }
 }
 
+main.home h2.title {
+  font-size: 25px;
 }

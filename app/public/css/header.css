@@ -222,6 +222,7 @@ header img.avatar{
         justify-content: flex-end;
         align-items: center;
         width: 100%; 
+        font-size: 20px;
     }
     
   header nav ul.listaSuperior li {

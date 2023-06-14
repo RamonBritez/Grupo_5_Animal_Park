@@ -20,7 +20,7 @@ function CategoryCards({ categoryList }) {
   });
 
   return (
-    <section className="container wrap">
+    <section className="container wrap no-side-pad">
       <p className="title">Productos por categoria</p>
       {list}
     </section>
