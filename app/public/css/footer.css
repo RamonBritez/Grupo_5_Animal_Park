@@ -32,6 +32,7 @@ footer nav nav.interaccion {
 footer nav nav.interaccion div.info-footer {
   flex-direction: column;
   text-align: center;
+  display: flex;
 }
 
 footer nav nav.interaccion h4 {
@@ -115,5 +116,30 @@ footer div#logo a img {
     width: auto;
     padding: 0 5px;
     order: 3;
+    flex-grow: 1;
   }
+  footer nav nav.interaccion div.info-footer {
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  footer nav nav.interaccion div.info-footer h4{
+    width: 100%;
+    display: block;
+  }
+
+  footer nav nav.interaccion ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 1226px) {
+  
 }
