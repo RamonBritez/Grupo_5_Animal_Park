@@ -142,7 +142,7 @@ main.detail section.compra .metodo-pago div.cantidad{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    flex-direction: column;
     margin-bottom: 5px;
     width: 100%;
 }
