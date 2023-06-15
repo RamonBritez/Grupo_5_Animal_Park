@@ -159,12 +159,20 @@
             </div>
           </article>
           <div class="acciones">
-            <li>
-              <form action="/carrito/<%- product.id %>" method="post" id="cart">
-                <button type="submit" class="btn">COMPRAR</button>
-              </form>
-            </li>
-            <li><a href="/error" class="btn">FAVORITOS</a></li>
+              
+              <form class="botonera" action="/carrito/<%- product.id %>" method="post" id="cart">
+                
+                <button type="submit" class="btn comprar">COMPRAR</button>
+                
+                <div>
+                  <a href="/error" class="btn">FAVORITOS</a>
+                  </div>
+                  
+                
+                
+                </form>
+            
+            
           </div>
         </section>
       </section>

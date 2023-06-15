@@ -37,6 +37,18 @@ main.detail section.producto {
     border-radius: 5px;
 }
 
+.botonera{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.comprar {
+    width: 100px;
+    height: 55px;
+    
+}
+
 /* Mini img */
 
 .miniPics{
