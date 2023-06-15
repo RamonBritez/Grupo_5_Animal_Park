@@ -33,7 +33,7 @@ CREATE TABLE `adresses` (
   UNIQUE KEY `user_id` (`user_id`),
   KEY `adresses_ibfk_1` (`user_id`),
   CONSTRAINT `adresses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,6 @@ CREATE TABLE `adresses` (
 
 LOCK TABLES `adresses` WRITE;
 /*!40000 ALTER TABLE `adresses` DISABLE KEYS */;
-INSERT INTO `adresses` VALUES (1,'Prueeba 123','1824','Buenos Aires','Monte Chingolo',8),(48,'','','','',67),(51,'','','','',68);
 /*!40000 ALTER TABLE `adresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +56,7 @@ CREATE TABLE `brands` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `brand` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +65,7 @@ CREATE TABLE `brands` (
 
 LOCK TABLES `brands` WRITE;
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
-INSERT INTO `brands` VALUES (1,'Voraz'),(2,'nada1'),(3,'Manualidad'),(4,'Varias img'),(5,'dfsfsdf');
+INSERT INTO `brands` VALUES (8,'Vital Can'),(9,'Purina'),(10,'Royal Canin'),(11,'Sin marca'),(12,'Mon Ami'),(13,'Osspret'),(14,'Pedigree'),(15,'Whiskas');
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,7 +149,6 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,8,NULL,NULL,15000.00,5,0),(2,8,NULL,NULL,12.00,2,0),(3,8,NULL,NULL,6426.00,4,1);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,7 +190,7 @@ CREATE TABLE `product_images` (
   PRIMARY KEY (`id`),
   KEY `product_images_FK` (`product_id`),
   CONSTRAINT `product_images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +199,7 @@ CREATE TABLE `product_images` (
 
 LOCK TABLES `product_images` WRITE;
 /*!40000 ALTER TABLE `product_images` DISABLE KEYS */;
-INSERT INTO `product_images` VALUES (6,'1676164813110_products_.png',1),(7,'1676165016569_products_.png',2),(8,'1676165325047_products_.png',3),(9,'1676165377177_products_.png',4),(10,'1676165429489_products_.png',5),(11,'1676166281180_products_.PNG',6),(12,'1676166390464_products_.png',7),(13,'1676166482766_products_.png',8),(14,'1676166605412_products_.png',9),(15,'1676166732128_products_.webp',10),(16,'1676166988307_products_.jpg',11),(17,'1676168189895_products_.webp',12),(18,'1676239983247_products_.jfif',13),(19,'1676923640818_products_.png',14),(20,'1676933887692_products_.png',15),(21,'1677013187826_products_.jpg',16),(22,'1676934665503_products_.png',17),(23,'1676934573105_products_.webp',18),(24,'default.jpg',19),(25,'1678135385598_products_.jpg',20),(26,'1678300734493_products_.jpg',21),(27,'1678300734517_products_.jpg',21),(28,'1678300734550_products_.jpg',21),(29,'default.jpg',22),(30,'default.jpg',23),(31,'default.jpg',24),(32,'default.jpg',25),(33,'default.jpg',26),(34,'default.jpg',27),(35,'default.jpg',28);
+INSERT INTO `product_images` VALUES (46,'1686796107283_products_.png',39),(47,'1686796107285_products_.png',39),(48,'1686796107291_products_.png',39),(49,'1686796345619_products_.png',40),(50,'1686796471970_products_.png',41),(51,'1686796471972_products_.png',41),(52,'1686796669115_products_.png',42),(53,'1686796669117_products_.png',42),(55,'1686796826474_products_.png',44),(56,'1686797270521_products_.png',45),(57,'1686797270543_products_.png',45),(58,'1686797400355_products_.png',46),(59,'1686797505258_products_.png',47),(61,'1686797620662_products_.png',49),(62,'1686797716106_products_.png',50),(63,'1686798255470_products_.png',51),(64,'1686798255515_products_.png',51),(65,'1686798394258_products_.png',52),(66,'1686798394261_products_.png',52),(67,'1686798546408_products_.png',53),(68,'1686798546411_products_.png',53),(69,'1686798630167_products_.png',54),(70,'1686798696366_products_.png',55),(71,'1686798794538_products_.png',56),(72,'1686798794540_products_.png',56),(73,'1686798794548_products_.png',56),(74,'1686798794549_products_.png',56),(75,'1686798864273_products_.png',57),(76,'1686798930098_products_.png',58),(77,'1686798980785_products_.png',59),(78,'1686799065300_products_.png',60),(79,'1686799139976_products_.png',61),(80,'1686799224671_products_.png',62),(81,'1686799311529_products_.png',63),(82,'1686799311532_products_.png',63),(83,'1686799385150_products_.png',64),(84,'1686799385151_products_.png',64),(85,'1686799466202_products_.png',65),(86,'1686799466203_products_.png',65),(87,'1686799602463_products_.png',66),(88,'1686799689933_products_.png',67),(89,'1686799689938_products_.png',67),(90,'1686799743275_products_.png',68),(91,'1686799743277_products_.png',68),(92,'1686799879055_products_.png',69);
 /*!40000 ALTER TABLE `product_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,7 +230,7 @@ CREATE TABLE `products` (
   CONSTRAINT `products_FK` FOREIGN KEY (`pet_id`) REFERENCES `pets` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `products_FK_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `products_FK_2` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,7 +239,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'la prueba','No se, estaba probando las validaciones y el tema de mantener la session',100.00,10,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(2,'Nutrique Gato Adulto Castrado','Control de peso',4105.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(3,'Nutrique Gato Adulto Urinary Care','Urinary Care',3689.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(4,'Nutrique Gato Bebé','Gato bebé y gato cachorro',11398.00,25,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(5,'Nutrique Gato Kitten','Kitten cachorro',782.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(6,'Ropa Para Perros','Buzo Vestido Ambar ',1500.00,10,0.0,2,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(7,'Nutrique Cachorro','Raza Mediana',1394.00,5,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(8,'Nutrique Perro Adulto','Raza pequeña y mini',7420.00,0,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(9,'Alfalfa en cubos','Ricos en vitaminas para todo tipo de roedores',700.00,5,0.0,1,3,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(10,'Shulet Tortugin','Alimento completo para tortugas acuáticas y complemento para terrestres',350.00,0,0.0,1,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(11,'Hectopar','Pulguicida para gatos mas de 4kg',500.00,0,0.0,5,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(12,'Shulet Tropical','Alimento completo balanceado para peces tropicales',870.00,0,0.0,1,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(13,'Zoomarlo','Mazorca de maíz premium',1400.00,0,0.0,1,3,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(14,'Sieger','Sieger katze gato urinario',3800.00,0,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(15,'Complete','Perro adulto +7 años',9600.00,0,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(16,'Alimento','Alimento para Perros Voraz Carne 21 kilos.',5200.00,10,0.0,1,1,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(17,'Bonacqua','Azul de mitelino 50ml',1300.00,0,0.0,5,4,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(18,'Alimento Whiskas','para gato adulto sabor pescado',5040.00,15,0.0,1,2,1,1,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(19,'Zoomarlo','asdasdaDFDASFawsdfds',1234.00,0,0.0,2,2,1,2,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(20,'Disfraz de Gallina','Decora a tu tortuga con este maravilloso atuendo',1500.00,0,0.0,4,5,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(21,'test multiple','Varias imagenes de prueba para test',8500.00,99,0.0,4,5,1,4,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(22,'asdasdas','dxcsdfsafdgdfsdf',333.00,30,0.0,3,6,1,5,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(23,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(24,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(25,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(26,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(27,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36'),(28,'ropa tortugas','dfsdfsdfsdf',12334.00,99,0.0,4,2,1,3,'2023-04-20 20:28:36','2023-04-20 20:28:36');
+INSERT INTO `products` VALUES (39,'Vital Can Complete Senior','Una dieta pensada para una vida plena. Contribuye con la protección cardíaca, renal y articular y aporta un complejo antiage.\r\n\r\nIndicado para perros mayores a 7 años de razas medianas y grandes',13470.00,15,20.0,1,1,1,8,'2023-06-15 02:28:27','2023-06-15 02:29:52'),(40,'Vital Can Premium Adulto','Durante la vida adulta del perro cambian sus requerimientos y necesidades nutricionales. Premium Perro Adulto aporta niveles de energía adecuados para esta etapa, colabora con una piel sana, un pelo brilloso y además brinda ingredientes de gran digestibilidad.',12050.00,0,20.0,1,1,1,8,'2023-06-15 02:32:25','2023-06-15 02:32:25'),(41,'Vital Can Balanced Adulto','Programa Equilibrio Saludable. Indicado para perros adultos de raza mediana de 12 meses hasta 7 años.',17560.00,0,20.0,1,1,1,8,'2023-06-15 02:34:31','2023-06-15 02:34:31'),(42,'Purina Excellent Adulto','Los perros adultos tienen diferentes necesidades nutricionales que los cachorros o los perros maduros. PURINA Excellent Maintenance Adulto ofrece una fórmula completa que incluye tocoferoles mezclados fuente de vitamina E, y sin colorantes ni saborizantes artiﬁciales aportando un óptimo balance nutricional y un sabor irresistible.',18370.00,0,20.0,1,1,1,9,'2023-06-15 02:37:49','2023-06-15 02:37:49'),(44,'Royal Canin Performance','El Alimento Club Performance Perro Adulto está diseñado para cubrir todas las necesidades nutricionales de los perros adultos de más de 12 meses de edad. Está enriquecido con vitaminas para asegurar una dieta balanceada que llene a tu mascota de energía y vitalidad.',23360.00,0,20.0,1,1,1,10,'2023-06-15 02:40:26','2023-06-15 02:40:26'),(45,'Mon Ami Dental Clean','¿Sabés lo importante que es la salud dental de tu perro? ¿Le das el cuidado que requiere? La higiene dental ayuda a prevenir enfermedades y mejora el aliento de tu mascota. Como sabemos lo tedioso que es realizar cotidianamente la limpieza dental de tu perro, desarrollamos Mon Ami Dental, una solución para este problema. El uso diario y continuado ',310.00,0,0.0,5,1,1,12,'2023-06-15 02:47:50','2023-06-15 02:47:50'),(46,'Osspret Shampoo','Shampoo para cachorros, Pulguicida, Garrapaticida con glicerina.\r\nCachorros mayores de 2 meses y adultos cuya dermatitis alérgica por pulgas puedan conducir a dematosis descamativas. Humectante. Garrapaticida. Dejar actuar 10 a 15 minutos. No usar en felinos. Diluir 1 en 5 de agua en el momento de uso. Enjuagar bien. Componentes: Base de lavado sua',2170.00,0,0.0,5,1,1,13,'2023-06-15 02:50:00','2023-06-15 02:50:00'),(47,'Guante Peine Sacapelo','Cepilla el pelo de tu mascota mientras la acaricias.\r\nTiene puntas de goma especialmente suaves, libera el pelo muerto y la suciedad.\r\nAporta al pelaje un brillo sedoso, masajea la piel y estimula el riego sanguíneo, para todos los tipos de pelaje.\r\nAdecuada para pieles sensibles y mascotas jóvenes.',2390.00,0,0.0,5,1,1,11,'2023-06-15 02:51:45','2023-06-15 02:51:45'),(49,'Alicate 12cm x 5cm','Las uñas de los cachorros se desgastan naturalmente cuando caminan por superficies duras, pero si crecen demasiado, es posible que tengas que cortarlas. Los espolones deben cortarse con cuidado, para evitar lastimar los vasos sanguíneos que existen en las uñas del cachorro\r\n\r\nCon filos curvos que permite cortar las uñas de forma rápida y pareja\r\nPa',1840.00,0,0.0,5,1,1,11,'2023-06-15 02:53:40','2023-06-15 02:53:40'),(50,'Repelente Vaporizador','Repelente A Otra Parte Vaporizador',3910.00,0,0.0,5,1,1,11,'2023-06-15 02:55:16','2023-06-15 02:55:16'),(51,'Campera Soft Talle 55','Campera Soft Reflectiva Talle 55',15040.00,0,1.0,4,1,1,11,'2023-06-15 03:04:15','2023-06-15 03:04:15'),(52,'Camiseta Argentina','Camiseta Futbol Argentina Talle 7 - 8 - 9 - 10\r\n\r\nTALLE 7: LARGO 52cm ANCHO 35cm\r\n\r\nTALLE 8: LARGO 55cm ANCHO 37cm\r\n\r\nTALLE 9: LARGO 65cm ANCHO 41cm\r\n\r\nTALLE 11: LARGO 69cm ANCHO 44cm',8890.00,0,0.0,4,1,1,11,'2023-06-15 03:06:34','2023-06-15 03:06:34'),(53,'Campera Con Capucha','Campera Con Capucha Senior Jack Talle 5',12110.00,0,0.0,4,1,1,11,'2023-06-15 03:09:06','2023-06-15 03:09:06'),(54,'Pelota Maciza','Pelota Maciza ideal para tu perro',1410.00,0,0.0,3,1,1,11,'2023-06-15 03:10:30','2023-06-15 03:10:30'),(55,'Hueso de Soga','Hueso Soga Mediano 32 cm aprox.',1240.00,0,0.0,3,1,1,11,'2023-06-15 03:11:36','2023-06-15 03:11:36'),(56,'Juguetes de goma','Juguetes para Perros Vinilo',990.00,0,0.0,3,1,1,11,'2023-06-15 03:13:14','2023-06-15 03:13:14'),(57,'Comedero de acero 11cm','Este tipo de comedero tiene ventajas como ser resistente a la corrosión, fácil de limpiar, mantener higiénico, y duradero a lo largo del tiempo.\r\n\r\nAdemás, su material es seguro para los animales y no retiene olores ni sabores, lo que lo hace ideal para alimentos frescos. Podes encontrarlo en diferentes tamaños y capacidades para adaptarse a las ne',1400.00,0,0.0,2,1,1,11,'2023-06-15 03:14:24','2023-06-15 03:14:24'),(58,'Comedero Con Tolva','Comedero/Bebedero Con Tolva 1,5L / 700g',3000.00,0,0.0,2,1,1,11,'2023-06-15 03:15:30','2023-06-15 03:15:30'),(59,'Comedero doble','Comedero/Bebedero Con Tolva 1,5L / 700g',810.00,0,0.0,2,1,1,11,'2023-06-15 03:16:20','2023-06-15 03:16:20'),(60,'Colchoneta Luky Chica','Colchoneta Luky Chica 50cm x 65cm x 3cm',8300.00,0,1.0,6,1,1,11,'2023-06-15 03:17:45','2023-06-15 03:17:45'),(61,'Colchoneta Chipre Grande','Colchoneta Chipre Grande 85cm x 65cm',8730.00,0,1.0,6,1,1,11,'2023-06-15 03:18:59','2023-06-15 03:18:59'),(62,'Colchoneta Kansas Grande','Colchoneta Kansas Grande ideal para tu perro',11820.00,0,1.0,6,1,1,11,'2023-06-15 03:20:24','2023-06-15 03:20:24'),(63,'Transportador De Lona','Bolso Transportador De Lona Con Ventana Chico 25cm x 25cm x 40cm',14890.00,0,0.0,2,1,1,11,'2023-06-15 03:21:51','2023-06-15 03:21:51'),(64,'Bolso Transparente','Bolso Transparente Hiperventilable Y Plegable Chico',22850.00,0,0.0,2,1,1,11,'2023-06-15 03:23:05','2023-06-15 03:23:05'),(65,'Transportadora 48x32x30cm','Transportadora Gloria N°1 48cm x 32cm x 30cm',18970.00,0,0.0,2,1,1,11,'2023-06-15 03:24:26','2023-06-15 03:24:26'),(66,'Pedigree Biscrok 500 gr','Los snacks se pueden utilizar para entrenar y recompensar, son perfectos para momentos de conexión, además de poder ayudar a mantener su salud oral.\r\n\r\nPor ello BISCROK™ son Crujientes Galletas en forma de hueso enriquecidas con calcio y omega 6, ideales para entrenar, premiar y consentir a tu perro a cualquier hora del día.\r\n\r\nCon Calcio y Omega 6',1530.00,0,1.0,1,1,1,14,'2023-06-15 03:26:42','2023-06-15 03:26:42'),(67,'Palitos 10 Unidades','Palitos 10 Unidades, ricas golosinas para tu mascota',150.00,0,0.0,1,1,1,11,'2023-06-15 03:28:09','2023-06-15 03:28:09'),(68,'Hueso 9/10 24cm Largo','Huesos de Cuero\r\nMedidas:\r\nHueso 3/4: 9cm Aprox.\r\nHueso 4/5: 10cm Aprox.\r\nHueso 5/6: 13,5cm Aprox.\r\nHueso 6/7: 16cm Aprox.\r\nHueso 7/8: 18,5cm Aprox.\r\nHueso 8/9: 21cm Aprox.\r\nHueso 9/10: 24cm Aprox.\r\nHueso 10/11: 26cm Aprox.\r\nHueso 11/12: 27cm Aprox.\r\nHueso 12/13: 31cm Aprox.\r\nHueso 13/14: 32cm Aprox.\r\nHueso 14/15: 36cm Aprox.\r\nHueso 15/16: 38,5cm A',1650.00,0,0.0,3,1,1,11,'2023-06-15 03:29:03','2023-06-15 03:29:03'),(69,'Whiskas Pescado 10kg','Whiskas Adulto Sabor Pescado le aportará a tu gato una nutrición 100% completa y balanceada. Es ideal para satisfacer las diferentes necesidades nutricionales a lo largo de toda su vida adulta. Óptima nutrición proporcionando minerales controlados y todos los nutrientes y energía necesarios para explorar el mundo.',9560.00,0,10.0,1,2,1,15,'2023-06-15 03:31:19','2023-06-15 03:31:19');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -317,7 +315,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `users_un` (`email`),
   KEY `users_FK` (`rol_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -326,7 +324,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Jon','Balles','jon@mail.com','','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(3,'Ramón','Brietz Sanabria','test@test.com','$2a$12$7lF/l7O4CYJ2nzsqLtzX/eHDM7wCcFuF3yZJqmF72LDrzgSfNfw/m','1678210261666_avatar_.jpg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(4,'Jon','Balles','jon@gmail.com','$2a$12$irYdKP2o.gDv1chC/dqDaOxOlVgAbh1xe3EdQYpdUGi0.e8SybOna','11111111111111.jpg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(7,'testeando','Registro','testeo@mail.com','$2a$12$zyvgfFjvvwTfSNcoIjugN.QM2JWyh8xLHePx1/CWcAHK9lNrHmqCi','avatar_default.jpeg',0,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(8,'Nico','Fili','nico@fili.com','$2a$12$dgX2HtrUhUHkagioparHjezIvbUAJ..IWqYortUsP3V3uUDuCms/G','avatar_default.jpeg',1,NULL,'2023-04-18 00:02:00','2023-04-18 00:02:00'),(11,'ro','Belen','Rocio@belen.com','$2a$12$Unp1jKOojGqGh2iLy.AIIOg6Tk4VFiFmvoLZ8uuxs6X5orJvqluk2','avatar_default.jpeg',1,NULL,'2023-04-19 18:31:30','2023-04-19 18:31:30'),(13,'ramon','Britez','jjjjjjj@jjjj.com','$2a$12$m/1BY4VQmctKKIqAihwaveDZAoXTEUsxrbLYENRAZsBBtnfZdXtz2','avatar_default.jpeg',0,NULL,'2023-05-06 17:55:40','2023-05-06 17:55:40'),(54,'Dile mama guevo','Mama wewoooo','mama@wewo.com','$2a$12$OAJohoR6yQyQ2USCkEhTBeNRU31nGPGMyHOOpATelZHd/pvaWbo86','avatar_default.jpeg',0,NULL,'2023-05-07 19:47:39','2023-05-07 19:47:39'),(67,'ramon','britez','test2@test.com','$2a$12$1kLZwuLI2r/MvM6dyZndx.6q1OcATH6g7qWVU1K5sv/e3xIG2Q4hW','1683676614124_avatar_.jpg',0,'0','2023-05-09 23:56:42','2023-05-10 00:02:29'),(68,'ramon','britez','test343@test.com','$2a$12$VN1YlEfn6C6P/5SPzaY/eubm8jvvdB5JXt8xvbtT3bFILUIhMoM/u','1683677262471_avatar_.jpeg',0,'','2023-05-10 00:04:28','2023-05-10 00:11:30'),(69,'Cosme','Fulanito','prueba@user.com','$2a$12$i21pQc0WSaGBknO9wrIBZe4WsLfqtBmIAWBTV8Cz8YKv/0YtDS5ii','avatar_default.jpeg',0,NULL,'2023-05-10 01:22:29','2023-05-10 01:22:29'),(70,'Cosme','Fulanito','prueba@admin.com','$2a$12$0EjMPElUraw.XAPWkOQafeVoCkUGzsvAGrYtsULnyBXeAc6l7jeoK','1683681806918_avatar_.png',1,NULL,'2023-05-10 01:23:27','2023-05-10 01:23:27');
+INSERT INTO `users` VALUES (76,'Nicolas','Filippelli','nicolasfilippelli19@gmail.com','$2a$12$4f9.0Pu8L9JojyQVdwptK.6QkCZsYBrWO/B4TiLxKjWyZCVofN.FG','1686796560227_avatar_.png',1,NULL,'2023-06-15 02:36:00','2023-06-15 02:36:00');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -343,4 +341,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-09 22:25:49
+-- Dump completed on 2023-06-15  0:33:07
