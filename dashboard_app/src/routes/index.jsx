@@ -7,17 +7,14 @@ import { NotFound } from "../pages/NotFound";
 
 const AppRoutes = () => {
   return (
-    <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-
-        {/* <Route path="/login" element={<Auth />} />
+        <Route path="/login" element={<Auth />} />
         <Route path="/" element={<ProtectedRoute />}>
-        </Route> */}
+          <Route path="/" element={<Dashboard />} />
+        </Route>
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
   );
 };
 

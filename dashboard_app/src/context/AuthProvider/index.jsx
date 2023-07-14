@@ -63,6 +63,7 @@ export const AuthProvider = ({ children }) => {
     currentUser,
     login,
     logout,
+    setCurrentUser // Para testing, remover despues
   };
 
   return (
