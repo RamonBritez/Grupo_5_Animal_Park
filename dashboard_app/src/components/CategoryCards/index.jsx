@@ -1,5 +1,6 @@
 import Card from "../Card";
 
+
 function CategoryCards({ categoryList }) {
   const list = categoryList.map((category, i) => {
     let color;

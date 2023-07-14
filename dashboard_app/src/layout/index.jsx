@@ -1,18 +1,17 @@
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import "./index.css"
+import { Container, Row, Col } from "react-bootstrap";
+import styles from "./index.module.css"
 
 const Layout = ({ children }) => {
   return (
-    <div className="app-wrapper">
+    <Container style={{paddingTop: "90px", paddingLeft: "110px"}}> 
       <Header />
-      <div className="content-wrapper">
-        <Sidebar />
-        <main className="content">
-          {children}
-        </main>
-      </div>
-    </div>
+      <Container>
+      <Sidebar />
+        {children}
+      </Container>
+    </Container>
   );
 };
 

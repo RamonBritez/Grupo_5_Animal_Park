@@ -1,11 +1,24 @@
 import logo from "../../assets/logo-large.png"
-import "./index.css"
+import styles from "./index.module.css"
+import { Navbar, Container } from "react-bootstrap";
 
 function Header() {
   return (
-    <header>
-      <img src={logo} alt="Animal Park" srcset="" />
-    </header>
+    <Navbar className={styles.header} fixed="top">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src={logo}
+              width="150"
+              height="50"
+              className="d-inline-block align-center"
+            />
+            {"  "}Animal Park
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+
   );
 }
 

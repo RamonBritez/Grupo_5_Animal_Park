@@ -1,14 +1,25 @@
-import "./index.css"
+import { Col, ListGroup, Row } from "react-bootstrap";
+import styles from "./index.module.css"
 
 function Sidebar() {
   return (
-    <aside className="navBar">
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-      </ul>
-    </aside>
+    <Col className={`${styles.sidebar}`}>
+      <Row>
+        <ListGroup>
+          <ListGroup.Item action href="/">
+           Home
+          </ListGroup.Item>
+          <hr className="sidebar-divider mb-3 mt-3"/>
+          <ListGroup.Item action href="/products">
+           Products
+          </ListGroup.Item>
+          <hr className="sidebar-divider mb-3 mt-3"/>
+          <ListGroup.Item action href="/users">
+           Users
+          </ListGroup.Item>
+        </ListGroup>
+      </Row>
+    </Col>
   );
 }
 

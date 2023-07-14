@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../../App.css";
+import styles from "./index.module.css"
 import { getProducts, getProductById } from "../../services/products.service";
 import { getUsers, getUserById } from "../../services/users.service";
 
@@ -7,6 +8,7 @@ import CategoryCards from "../../components/CategoryCards";
 import LastCreated from "../../components/LastCreated";
 import Totals from "../../components/Totals";
 import ProductList from "../../components/ProductList";
+import { Container,Col,Row } from "react-bootstrap";
 
 function Dashboard() {
   const [products, setProducts] = useState(null);
@@ -45,23 +47,26 @@ function Dashboard() {
   }, [products, users]);
 
   return (
-    <>
+    
+      <Row>
+
       <h1>Dashboard</h1>
 
       <div className="breakLine"></div>
 
       {products && users && (
         <Totals productCount={products.count} userCount={users.count} />
-      )}
+        )}
 
       {products && <CategoryCards categoryList={products.countByCategories} />}
 
       {lastProduct && lastUser && (
         <LastCreated product={lastProduct} user={lastUser} />
-      )}
+        )}
 
       {products && <ProductList products={products} />}
-    </>
+        </Row>
+   
   );
 }
 

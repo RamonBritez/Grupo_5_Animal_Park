@@ -1,11 +1,24 @@
-import "./index.css"
+import { Col, Card } from "react-bootstrap";
+import styles from "./index.module.css"
 
 function ProductCard({src, alt, name}) {
   return (
-    <article className="productCard">
-      <img src={src} alt={alt} />
-      <p className="subtitle center">{name.slice(0,20)}</p>
-    </article>
+    <Col md={3}>
+    <Card className={`mb-4 text-center ${styles.product}`}>
+        <Card.Img
+            variant="top"
+            src={src}
+            alt={`Imagen de ${alt}`}
+            className={styles.imagen}
+        />
+
+        <Card.Body>
+            <Card.Title>{name}</Card.Title>
+       
+        </Card.Body>
+    </Card>
+</Col>
+ 
   );
 }
 

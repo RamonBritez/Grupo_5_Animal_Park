@@ -4,4 +4,5 @@ section.productList {
     gap: 20px;
     width: 100%;
     justify-content: center;
+    background-color: red;
   }
