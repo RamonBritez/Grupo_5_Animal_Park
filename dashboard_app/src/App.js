@@ -13,7 +13,6 @@ function App() {
           <Layout>
             <AppRoutes />
           </Layout>
-          
         </AuthProvider>
       </Router>
     </div>

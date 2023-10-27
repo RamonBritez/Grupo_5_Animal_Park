@@ -6,7 +6,7 @@ function Header() {
   return (
     <Navbar className={styles.header} fixed="top">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand >
             <img
               alt=""
               src={logo}

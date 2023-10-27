@@ -7,6 +7,8 @@ function validate(req, res, next) {
         return next();
     }
     const extractedErrors = errors.mapped();
+    console.log("---------------------------------\nERROR\n---------------------------------")
+    console.log(extractedErrors)
 
     return res.status(422).json({ errors: extractedErrors })
 }

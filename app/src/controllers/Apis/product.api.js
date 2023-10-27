@@ -8,7 +8,7 @@ module.exports = {
     try {
       const products = await getProducts();
       const productsResponse = products.map(
-        ({ id, name, description, category, images , price, discount}) => {
+        ({ id, name, description, category, images, price, discount }) => {
           return {
             id,
             name,

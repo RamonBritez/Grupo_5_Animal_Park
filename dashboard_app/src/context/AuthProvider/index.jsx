@@ -27,8 +27,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     if (storedToken) {
       const decodedToken = storedToken ? jwt_decode(storedToken) : null;
-      const { user } = decodedToken ? decodedToken.payload : null;
-      setCurrentUser(user);
+      setCurrentUser(decodedToken);
       return navigate("/");
     }
   }, []);
@@ -45,8 +44,7 @@ export const AuthProvider = ({ children }) => {
       .then(({ token }) => {
         localStorage.setItem("_token", token);
         const decodedToken = token ? jwt_decode(token) : null;
-        const { user } = decodedToken ? decodedToken.payload : null;
-        setCurrentUser(user);
+        setCurrentUser(decodedToken);
 
         return navigate("/");
       })
@@ -62,8 +60,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     currentUser,
     login,
-    logout,
-    setCurrentUser // Para testing, remover despues
+    logout
   };
 
   return (

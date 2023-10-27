@@ -20,15 +20,17 @@ const getUserById = async (id) => {
 
 const getUserByEmail = async (email) => {
   try {
-    return await User.findOne({
+    const user = await User.findOne({
       where: {
         email,
       },
     });
+    return user;
   } catch (error) {
     console.error("Error while fetching user:", error);
     throw new Error("Error fetching user");
   }
+  
 };
 
 const insertUser = async (userData) => {
